@@ -5,7 +5,7 @@ import Footer from '../components/Footer.astro';
 import WhatsAppWidget from '../components/WhatsAppWidget.astro';
 
 const title = "Nos Services de Plomberie & Chauffage à Bruxelles | Fbaleste";
-const description = "Découvrez nos services : débouchage canalisation, dépannage chaudière, recherche de fuite non destructive et installation sanitaire sur Bruxelles.";
+const description = "Découvrez l'ensemble de nos services : débouchage, dépannage chaudière, recherche de fuite non destructive, traitement de l'eau et installation sanitaire.";
 ---
 
 <Layout title={title} description={description}>
@@ -13,65 +13,55 @@ const description = "Découvrez nos services : débouchage canalisation, dépann
   
   <main class="page-content pt-top">
     <div class="container header-section text-center animate-fade-in">
-      <h1>Expertise Complète en <span class="highlight">Plomberie & Chauffage</span></h1>
+      <h1>Notre <span class="highlight">Expertise</span></h1>
       <p>Des interventions garanties, réalisées par des plombiers chauffagistes certifiés.</p>
     </div>
 
-    <div class="container services-list mt-3">
-      <section id="urgence" class="service-row glass">
-        <div class="service-text">
-          <h2>Urgence Plomberie Bruxelles</h2>
-          <p>Une fuite majeure ou une rupture de canalisation ? Notre équipe d'intervention rapide est disponible 24/7. Nous sécurisons votre installation, identifions le problème et effectuons les réparations nécessaires avec des pièces garanties.</p>
-          <ul>
-            <li>✓ Intervention en moins de 30 minutes</li>
-            <li>✓ Réparation fuite d'eau bruxelles</li>
-            <li>✓ Mise en sécurité (gaz et eau)</li>
-          </ul>
-        </div>
-      </section>
+    <div class="container mt-3 mb-3">
+      <div class="services-grid">
+        <a href="/depannage-urgence" class="service-card glass">
+          <div class="icon-placeholder">🚨</div>
+          <h2>Dépannage d'Urgence</h2>
+          <p>Intervention 24/7 en moins de 30 minutes pour sécuriser et réparer vos fuites d'eau ou pannes majeures.</p>
+          <span class="read-more">Découvrir →</span>
+        </a>
 
-      <section id="debouchage" class="service-row glass">
-        <div class="service-text">
-          <h2>Débouchage Canalisation Bruxelles</h2>
-          <p>Un évier bouché ou des WC qui refoulent ? Nous utilisons des techniques de curage et d'hydrocurage haute pression pour résoudre définitivement vos problèmes d'évacuation, sans endommager vos tuyaux.</p>
-          <ul>
-            <li>✓ Débouchage WC et éviers</li>
-            <li>✓ Curage canalisation haute pression</li>
-            <li>✓ Inspection par caméra endoscopique</li>
-          </ul>
-        </div>
-      </section>
+        <a href="/debouchage" class="service-card glass">
+          <div class="icon-placeholder">🚽</div>
+          <h2>Débouchage</h2>
+          <p>Curage haute pression et débouchage manuel de vos canalisations, WC, éviers et égouts.</p>
+          <span class="read-more">Découvrir →</span>
+        </a>
 
-      <section id="fuite" class="service-row glass">
-        <div class="service-text">
-          <h2>Recherche de Fuite Non Destructive</h2>
-          <p>Finis les murs cassés pour trouver une fuite ! Nous utilisons des technologies avancées (caméra thermique, gaz traceur, écoute électro-acoustique) pour localiser la source du problème avec une précision chirurgicale.</p>
-          <ul>
-            <li>✓ Détection fuite d'eau par caméra thermique</li>
-            <li>✓ Rapport détaillé pour assurance habitation</li>
-            <li>✓ Plombier agréé assurance</li>
-          </ul>
-        </div>
-      </section>
+        <a href="/detection-fuite" class="service-card glass">
+          <div class="icon-placeholder">🔍</div>
+          <h2>Détection de Fuites</h2>
+          <p>Recherche non destructive par caméra thermique et gaz traceur. Rapport agréé assurances.</p>
+          <span class="read-more">Découvrir →</span>
+        </a>
 
-      <section id="chauffage" class="service-row glass">
-        <div class="service-text">
-          <h2>Plombier Chauffagiste Bruxelles</h2>
-          <p>Votre chaudière est en panne en plein hiver ? Nos techniciens interviennent sur toutes les marques (Vaillant, Bulex, Junkers) pour le dépannage, l'entretien annuel ou l'installation complète de systèmes performants.</p>
-          <ul>
-            <li>✓ Entretien chaudière gaz bruxelles</li>
-            <li>✓ Remplacement chaudière condensation</li>
-            <li>✓ Réparation boiler électrique</li>
-          </ul>
-        </div>
-      </section>
+        <a href="/chauffage-chaudiere" class="service-card glass">
+          <div class="icon-placeholder">🔥</div>
+          <h2>Chauffage & Chaudières</h2>
+          <p>Installation, entretien légal et réparation de vos chaudières et chauffe-eau toutes marques.</p>
+          <span class="read-more">Découvrir →</span>
+        </a>
+
+        <a href="/installations-sanitaires" class="service-card glass">
+          <div class="icon-placeholder">🚿</div>
+          <h2>Installations Sanitaires</h2>
+          <p>Rénovation de salle de bain, installation de WC suspendus, douches à l'italienne et robinetterie.</p>
+          <span class="read-more">Découvrir →</span>
+        </a>
+
+        <a href="/traitement-eau" class="service-card glass">
+          <div class="icon-placeholder">💧</div>
+          <h2>Traitement de l'Eau</h2>
+          <p>Protection contre le calcaire via l'installation d'adoucisseurs d'eau et de filtres professionnels.</p>
+          <span class="read-more">Découvrir →</span>
+        </a>
+      </div>
     </div>
-
-    <section class="container mt-3 mb-3 cta-section text-center glass animate-fade-in">
-      <h2>Besoin d'une Intervention Immédiate ?</h2>
-      <p>Nos tarifs sont transparents et nos devis gratuits.</p>
-      <a href="tel:+32000000000" class="btn btn-accent btn-large mt-1 pulse-animation">Appeler le 0492 775 775</a>
-    </section>
   </main>
   
   <WhatsAppWidget />
@@ -95,47 +85,47 @@ const description = "Découvrez nos services : débouchage canalisation, dépann
     color: var(--accent);
   }
   
-  .services-list {
-    display: flex;
-    flex-direction: column;
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
     gap: 2rem;
   }
   
-  .service-row {
-    padding: 3rem;
-    border-radius: 16px;
+  .service-card {
     display: flex;
     flex-direction: column;
-  }
-  
-  .service-text h2 {
-    font-size: 2rem;
-    color: var(--primary);
-  }
-  
-  .service-text ul {
-    margin-top: 1rem;
-    font-weight: 600;
-    color: var(--text-muted);
-  }
-  
-  .service-text li {
-    margin-bottom: 0.5rem;
-  }
-  
-  .cta-section {
-    padding: 4rem 2rem;
+    padding: 2.5rem;
     border-radius: 16px;
-    background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
-    color: var(--white);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-decoration: none;
+    color: inherit;
   }
   
-  .cta-section h2 {
-    color: var(--white);
+  .service-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 40px 0 rgba(15, 76, 129, 0.15);
   }
   
-  .btn-large {
-    padding: 1rem 2.5rem;
-    font-size: 1.2rem;
+  .icon-placeholder {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+  }
+  
+  .service-card h2 {
+    font-size: 1.5rem;
+    color: var(--primary);
+    margin-bottom: 1rem;
+  }
+  
+  .service-card p {
+    color: var(--text-muted);
+    flex-grow: 1;
+    margin-bottom: 1.5rem;
+  }
+  
+  .read-more {
+    font-weight: 600;
+    color: var(--accent);
+    align-self: flex-start;
   }
 </style>

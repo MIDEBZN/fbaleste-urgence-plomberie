@@ -1,0 +1,133 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import WhatsAppWidget from '../components/WhatsAppWidget.astro';
+
+const title = "Détection de Fuite Non Destructive Bruxelles | Agréé Assurances";
+const description = "Recherche de fuite d'eau sans casser. Caméra thermique, gaz traceur, écoute électro-acoustique. Rapport certifié pour les assurances à Bruxelles.";
+---
+
+<Layout title={title} description={description}>
+  <Header />
+  
+  <main class="page-content pt-top">
+    <div class="container header-section text-center animate-fade-in">
+      <h1>Détection de <span class="highlight">Fuites</span></h1>
+      <p>Localisation ultra-précise de vos fuites d'eau ou de gaz, sans endommager vos installations.</p>
+      <a href="tel:+32000000000" class="btn btn-primary btn-large mt-1">Prendre Rendez-vous</a>
+    </div>
+
+    <div class="container grid mt-3">
+      <div class="glass card">
+        <h2>Ce qui est inclus</h2>
+        <ul class="check-list">
+          <li>Inspection par caméra thermique (Infrarouge)</li>
+          <li>Recherche par gaz traceur (Azote/Hydrogène)</li>
+          <li>Détection par écoute électro-acoustique</li>
+          <li>Passage de caméra endoscopique dans les conduites</li>
+          <li>Test de mise en pression des tuyauteries</li>
+          <li>Rédaction d'un rapport détaillé pour l'assurance (photos à l'appui)</li>
+        </ul>
+      </div>
+
+      <div class="glass card">
+        <h2>Problèmes fréquents résolus</h2>
+        <ul class="cross-list">
+          <li>Facture d'eau anormalement élevée</li>
+          <li>Taches d'humidité, moisissures au mur ou plafond</li>
+          <li>Baisse de pression constante dans la chaudière</li>
+          <li>Compteur d'eau qui tourne alors que tout est fermé</li>
+          <li>Odeur persistante d'humidité ou de gaz</li>
+        </ul>
+      </div>
+    </div>
+
+    <section class="container mt-3 glass section-padding">
+      <h2 class="text-center">Notre Processus Sans Casse</h2>
+      <div class="process-grid mt-2">
+        <div class="process-step">
+          <div class="step-num">1</div>
+          <h3>Inspection Visuelle & Pression</h3>
+          <p>Nous isolons les circuits (chaud, froid, chauffage) et testons la pression pour cibler la zone problématique.</p>
+        </div>
+        <div class="process-step">
+          <div class="step-num">2</div>
+          <h3>Technologies de Détection</h3>
+          <p>Utilisation d'imagerie thermique ou de gaz traceur pour voir "à travers" les murs et dalles.</p>
+        </div>
+        <div class="process-step">
+          <div class="step-num">3</div>
+          <h3>Localisation Exacte</h3>
+          <p>Nous marquons l'emplacement précis de la fuite au centimètre près.</p>
+        </div>
+        <div class="process-step">
+          <div class="step-num">4</div>
+          <h3>Rapport & Réparation</h3>
+          <p>Fourniture d'un rapport pour l'assurance et proposition d'un devis pour la réparation ciblée.</p>
+        </div>
+      </div>
+    </section>
+
+    <div class="container grid mt-3">
+      <div class="glass card">
+        <h2>Pourquoi Nous Choisir ?</h2>
+        <ul class="check-list">
+          <li><strong>Zéro Casse Inutile :</strong> Nous évitons les démolitions hasardeuses qui coûtent cher en rénovation.</li>
+          <li><strong>Agréé Assurances :</strong> Nos rapports sont reconnus par toutes les grandes compagnies (Ethias, AXA, AG, etc.).</li>
+          <li><strong>Matériel de pointe :</strong> Caméras Flir, gaz traceurs homologués.</li>
+        </ul>
+      </div>
+
+      <div class="glass card info-box">
+        <h2>Disponibilité & Zone d'Intervention</h2>
+        <p><strong>Disponibilité :</strong> Intervention rapide sur rendez-vous ou en urgence en cas de dégât des eaux menaçant la structure.</p>
+        <p><strong>Zone d'Intervention :</strong> Bruxelles, Brabant Wallon, Brabant Flamand.</p>
+      </div>
+    </div>
+
+    <section class="container mt-3 mb-3 glass section-padding">
+      <h2 class="text-center">Questions Fréquentes (FAQ)</h2>
+      <div class="faq-list mt-2">
+        <div class="faq-item">
+          <h4>L'assurance rembourse-t-elle la recherche de fuite ?</h4>
+          <p>Dans la grande majorité des cas, oui. Les contrats d'assurance habitation couvrent les frais de recherche de fuite pour limiter le sinistre. Notre rapport est conçu spécifiquement pour leur être transmis.</p>
+        </div>
+        <div class="faq-item">
+          <h4>Pouvez-vous réparer la fuite le jour même ?</h4>
+          <p>Si la fuite est accessible après localisation, nous pouvons procéder à la réparation immédiatement (sur accord du devis). Si la fuite nécessite de casser un carrelage, nous sécurisons l'installation et planifions les travaux.</p>
+        </div>
+        <div class="faq-item">
+          <h4>Qu'est-ce que le gaz traceur ?</h4>
+          <p>C'est un mélange inoffensif et inodore (azote + hydrogène) injecté dans le tuyau vidé de son eau. Le gaz s'échappe par la micro-fuite et remonte à la surface, où il est détecté par notre capteur très sensible.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+  
+  <WhatsAppWidget />
+  <Footer />
+</Layout>
+
+<style>
+  .pt-top { padding-top: 120px; }
+  .header-section h1 { font-size: 3rem; margin-bottom: 1rem; }
+  .highlight { color: var(--accent); }
+  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; }
+  .card { padding: 2rem; border-radius: 16px; }
+  .section-padding { padding: 3rem; border-radius: 16px; }
+  
+  .check-list li, .cross-list li { margin-bottom: 0.8rem; position: relative; padding-left: 1.5rem; }
+  .check-list li::before { content: '✓'; position: absolute; left: 0; color: var(--primary); font-weight: bold; }
+  .cross-list li::before { content: '⚠'; position: absolute; left: 0; color: var(--accent); font-weight: bold; }
+  
+  .process-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem; }
+  .process-step { text-align: center; }
+  .step-num { width: 50px; height: 50px; background: var(--primary); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; font-weight: bold; margin: 0 auto 1rem; }
+  
+  .info-box { background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%); color: white; }
+  .info-box h2 { color: white; }
+  
+  .faq-item { margin-bottom: 1.5rem; border-bottom: 1px solid rgba(0,0,0,0.1); padding-bottom: 1rem; }
+  .faq-item h4 { color: var(--primary); margin-bottom: 0.5rem; }
+</style>

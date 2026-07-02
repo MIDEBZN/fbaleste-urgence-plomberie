@@ -1,0 +1,133 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import WhatsAppWidget from '../components/WhatsAppWidget.astro';
+
+const title = "Débouchage Canalisation Bruxelles | WC, Éviers, Égouts";
+const description = "Service professionnel de débouchage à Bruxelles. Curage haute pression, inspection caméra, vidange de fosse septique. Intervention rapide et tarifs transparents.";
+---
+
+<Layout title={title} description={description}>
+  <Header />
+  
+  <main class="page-content pt-top">
+    <div class="container header-section text-center animate-fade-in">
+      <h1>Service de <span class="highlight">Débouchage</span> Expert</h1>
+      <p>Élimination définitive des bouchons pour WC, éviers, égouts et canalisations.</p>
+      <a href="tel:+32000000000" class="btn btn-primary btn-large mt-1 pulse-animation">Demander un Débouchage</a>
+    </div>
+
+    <div class="container grid mt-3">
+      <div class="glass card">
+        <h2>Ce qui est inclus</h2>
+        <ul class="check-list">
+          <li>Débouchage manuel (furet professionnel) de WC et éviers</li>
+          <li>Curage haute pression (hydrocurage) des égouts</li>
+          <li>Inspection des canalisations par caméra endoscopique</li>
+          <li>Vidange et entretien de fosses septiques</li>
+          <li>Nettoyage de siphons et colonnes d'évacuation</li>
+          <li>Traitement préventif contre le tartre et la graisse</li>
+        </ul>
+      </div>
+
+      <div class="glass card">
+        <h2>Problèmes fréquents résolus</h2>
+        <ul class="cross-list">
+          <li>WC complètement bouché ou l'eau remonte</li>
+          <li>Évier de cuisine qui s'écoule très lentement</li>
+          <li>Mauvaises odeurs d'égout dans la salle de bain</li>
+          <li>Canalisations extérieures engorgées par des racines</li>
+          <li>Fosse septique pleine ou débordante</li>
+        </ul>
+      </div>
+    </div>
+
+    <section class="container mt-3 glass section-padding">
+      <h2 class="text-center">Notre Processus de Débouchage</h2>
+      <div class="process-grid mt-2">
+        <div class="process-step">
+          <div class="step-num">1</div>
+          <h3>Diagnostic Caméra</h3>
+          <p>Nous introduisons une caméra pour localiser la nature et la position exacte du bouchon sans rien casser.</p>
+        </div>
+        <div class="process-step">
+          <div class="step-num">2</div>
+          <h3>Choix de l'Outil</h3>
+          <p>Furet électrique pour les petits bouchons ou camion hydrocureur pour les calcaires incrustés.</p>
+        </div>
+        <div class="process-step">
+          <div class="step-num">3</div>
+          <h3>Intervention</h3>
+          <p>Destruction du bouchon et nettoyage complet des parois de la canalisation.</p>
+        </div>
+        <div class="process-step">
+          <div class="step-num">4</div>
+          <h3>Contrôle Final</h3>
+          <p>Test d'écoulement à fort débit pour garantir que le problème est résolu à 100%.</p>
+        </div>
+      </div>
+    </section>
+
+    <div class="container grid mt-3">
+      <div class="glass card">
+        <h2>Pourquoi Nous Choisir ?</h2>
+        <ul class="check-list">
+          <li><strong>Technologie de pointe :</strong> Caméras HD et hydrocureuses puissantes.</li>
+          <li><strong>Solutions durables :</strong> Nous ne repoussons pas le bouchon, nous le détruisons.</li>
+          <li><strong>Hygiène garantie :</strong> Nous laissons les lieux parfaitement propres après intervention.</li>
+        </ul>
+      </div>
+
+      <div class="glass card info-box">
+        <h2>Disponibilité & Zone d'Intervention</h2>
+        <p><strong>Disponibilité :</strong> Dépannage urgent 24/7 pour les engorgements critiques, ou sur rendez-vous pour les curages préventifs.</p>
+        <p><strong>Zone d'Intervention :</strong> Camions d'intervention déployés partout à Bruxelles (1000 à 1210) et en périphérie.</p>
+      </div>
+    </div>
+
+    <section class="container mt-3 mb-3 glass section-padding">
+      <h2 class="text-center">Questions Fréquentes (FAQ)</h2>
+      <div class="faq-list mt-2">
+        <div class="faq-item">
+          <h4>Combien coûte un débouchage ?</h4>
+          <p>Les prix varient selon la complexité (débouchage manuel vs hydrocurage). Nous fournissons toujours un devis clair avant de commencer. Nos tarifs incluent le déplacement.</p>
+        </div>
+        <div class="faq-item">
+          <h4>Est-ce que les produits chimiques suffisent ?</h4>
+          <p>Souvent non. Les produits chimiques du commerce peuvent endommager vos tuyaux (PVC) et sont toxiques. Un débouchage mécanique ou par pression d'eau est beaucoup plus sûr et durable.</p>
+        </div>
+        <div class="faq-item">
+          <h4>Faites-vous la vidange de fosse septique ?</h4>
+          <p>Oui, nous disposons des camions pompes nécessaires pour vidanger les fosses septiques, les micro-stations et les bacs à graisse.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+  
+  <WhatsAppWidget />
+  <Footer />
+</Layout>
+
+<style>
+  .pt-top { padding-top: 120px; }
+  .header-section h1 { font-size: 3rem; margin-bottom: 1rem; }
+  .highlight { color: var(--accent); }
+  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; }
+  .card { padding: 2rem; border-radius: 16px; }
+  .section-padding { padding: 3rem; border-radius: 16px; }
+  
+  .check-list li, .cross-list li { margin-bottom: 0.8rem; position: relative; padding-left: 1.5rem; }
+  .check-list li::before { content: '✓'; position: absolute; left: 0; color: var(--primary); font-weight: bold; }
+  .cross-list li::before { content: '⚠'; position: absolute; left: 0; color: var(--accent); font-weight: bold; }
+  
+  .process-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem; }
+  .process-step { text-align: center; }
+  .step-num { width: 50px; height: 50px; background: var(--primary); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; font-weight: bold; margin: 0 auto 1rem; }
+  
+  .info-box { background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%); color: white; }
+  .info-box h2 { color: white; }
+  
+  .faq-item { margin-bottom: 1.5rem; border-bottom: 1px solid rgba(0,0,0,0.1); padding-bottom: 1rem; }
+  .faq-item h4 { color: var(--primary); margin-bottom: 0.5rem; }
+</style>

@@ -1,0 +1,133 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import WhatsAppWidget from '../components/WhatsAppWidget.astro';
+
+const title = "Dépannage d'Urgence Plomberie Bruxelles | Intervention 24/7";
+const description = "Besoin d'un plombier en urgence ? Fbaleste intervient en moins de 30 minutes à Bruxelles pour tout problème de fuite, rupture ou engorgement grave.";
+---
+
+<Layout title={title} description={description}>
+  <Header />
+  
+  <main class="page-content pt-top">
+    <div class="container header-section text-center animate-fade-in">
+      <h1><span class="highlight">Dépannage d'Urgence</span> 24/7</h1>
+      <p>Une réaction immédiate pour limiter les dégâts et sécuriser votre domicile.</p>
+      <a href="tel:+32000000000" class="btn btn-accent btn-large mt-1 pulse-animation">Intervention Immédiate : 0492 775 775</a>
+    </div>
+
+    <div class="container grid mt-3">
+      <div class="glass card">
+        <h2>Ce qui est inclus</h2>
+        <ul class="check-list">
+          <li>Fermeture des vannes d'arrêt principales</li>
+          <li>Colmatage temporaire ou définitif de fuites</li>
+          <li>Remplacement de tuyauterie percée</li>
+          <li>Mise en sécurité des installations (eau, gaz)</li>
+          <li>Réparation express de robinetterie et WC</li>
+          <li>Aide à la déclaration d'assurance (photos, constat)</li>
+        </ul>
+      </div>
+
+      <div class="glass card">
+        <h2>Problèmes fréquents résolus</h2>
+        <ul class="cross-list">
+          <li>Rupture soudaine de canalisation (inondation)</li>
+          <li>Fuite de gaz suspectée</li>
+          <li>Panne totale de chaudière en plein hiver</li>
+          <li>WC bouché menaçant de déborder</li>
+          <li>Fuite importante sous l'évier ou la baignoire</li>
+        </ul>
+      </div>
+    </div>
+
+    <section class="container mt-3 glass section-padding">
+      <h2 class="text-center">Notre Processus en 4 Étapes</h2>
+      <div class="process-grid mt-2">
+        <div class="process-step">
+          <div class="step-num">1</div>
+          <h3>Diagnostic Téléphonique</h3>
+          <p>Nous vous indiquons immédiatement les gestes de sécurité à effectuer (couper l'eau/gaz).</p>
+        </div>
+        <div class="process-step">
+          <div class="step-num">2</div>
+          <h3>Déplacement Rapide</h3>
+          <p>Un technicien arrive chez vous en moins de 30 minutes, équipé pour l'urgence.</p>
+        </div>
+        <div class="process-step">
+          <div class="step-num">3</div>
+          <h3>Devis Avant Travaux</h3>
+          <p>Un tarif clair vous est communiqué sur place avant toute intervention.</p>
+        </div>
+        <div class="process-step">
+          <div class="step-num">4</div>
+          <h3>Réparation Sécurisée</h3>
+          <p>Le problème est réparé avec des pièces certifiées et l'espace est nettoyé.</p>
+        </div>
+      </div>
+    </section>
+
+    <div class="container grid mt-3">
+      <div class="glass card">
+        <h2>Pourquoi Nous Choisir ?</h2>
+        <ul class="check-list">
+          <li><strong>Agréé Assurances :</strong> Factures conformes pour vos indemnisations.</li>
+          <li><strong>Stock Permanent :</strong> Pièces de rechange dans nos véhicules.</li>
+          <li><strong>Transparence :</strong> Pas de frais cachés, même de nuit.</li>
+        </ul>
+      </div>
+
+      <div class="glass card info-box">
+        <h2>Disponibilité & Zone d'Intervention</h2>
+        <p><strong>Disponibilité :</strong> 24h/24, 7j/7, incluant les nuits, week-ends et jours fériés.</p>
+        <p><strong>Zone d'Intervention :</strong> Les 19 communes de la Région de Bruxelles-Capitale (Ixelles, Uccle, Schaerbeek, Anderlecht, etc.) et sa périphérie immédiate.</p>
+      </div>
+    </div>
+
+    <section class="container mt-3 mb-3 glass section-padding">
+      <h2 class="text-center">Questions Fréquentes (FAQ)</h2>
+      <div class="faq-list mt-2">
+        <div class="faq-item">
+          <h4>En combien de temps pouvez-vous être là ?</h4>
+          <p>Pour les urgences vitales (fuite majeure), nous visons un temps de réponse de moins de 30 minutes sur Bruxelles.</p>
+        </div>
+        <div class="faq-item">
+          <h4>Les tarifs sont-ils majorés la nuit ?</h4>
+          <p>Oui, les interventions de nuit, week-end et jours fériés ont une majoration légale, mais le prix exact vous est toujours communiqué au téléphone avant notre départ.</p>
+        </div>
+        <div class="faq-item">
+          <h4>Collaborez-vous avec les assurances ?</h4>
+          <p>Absolument. Nous sommes des plombiers agréés et nos rapports (avec photos et détails techniques) sont parfaitement valables pour votre compagnie d'assurance.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+  
+  <WhatsAppWidget />
+  <Footer />
+</Layout>
+
+<style>
+  .pt-top { padding-top: 120px; }
+  .header-section h1 { font-size: 3rem; margin-bottom: 1rem; }
+  .highlight { color: var(--accent); }
+  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; }
+  .card { padding: 2rem; border-radius: 16px; }
+  .section-padding { padding: 3rem; border-radius: 16px; }
+  
+  .check-list li, .cross-list li { margin-bottom: 0.8rem; position: relative; padding-left: 1.5rem; }
+  .check-list li::before { content: '✓'; position: absolute; left: 0; color: var(--primary); font-weight: bold; }
+  .cross-list li::before { content: '⚠'; position: absolute; left: 0; color: var(--accent); font-weight: bold; }
+  
+  .process-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem; }
+  .process-step { text-align: center; }
+  .step-num { width: 50px; height: 50px; background: var(--primary); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; font-weight: bold; margin: 0 auto 1rem; }
+  
+  .info-box { background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%); color: white; }
+  .info-box h2 { color: white; }
+  
+  .faq-item { margin-bottom: 1.5rem; border-bottom: 1px solid rgba(0,0,0,0.1); padding-bottom: 1rem; }
+  .faq-item h4 { color: var(--primary); margin-bottom: 0.5rem; }
+</style>

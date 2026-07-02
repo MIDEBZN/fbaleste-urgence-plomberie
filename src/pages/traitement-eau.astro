@@ -1,0 +1,133 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import WhatsAppWidget from '../components/WhatsAppWidget.astro';
+
+const title = "Traitement de l'Eau Bruxelles | Adoucisseurs et Filtration";
+const description = "Protégez vos canalisations et votre peau avec nos solutions de traitement de l'eau. Installation d'adoucisseurs d'eau et de filtres sur Bruxelles.";
+---
+
+<Layout title={title} description={description}>
+  <Header />
+  
+  <main class="page-content pt-top">
+    <div class="container header-section text-center animate-fade-in">
+      <h1>Traitement de <span class="highlight">l'Eau</span></h1>
+      <p>Dites adieu au calcaire et profitez d'une eau pure, douce et saine dans toute votre maison.</p>
+      <a href="/contact" class="btn btn-primary btn-large mt-1">Demander un Devis Gratuit</a>
+    </div>
+
+    <div class="container grid mt-3">
+      <div class="glass card">
+        <h2>Ce qui est inclus</h2>
+        <ul class="check-list">
+          <li>Analyse de la dureté de l'eau à votre domicile</li>
+          <li>Installation d'adoucisseurs d'eau (sel ou CO2)</li>
+          <li>Pose de systèmes de filtration sous évier (osmose inverse)</li>
+          <li>Installation de filtres anti-sédiments (charbon actif)</li>
+          <li>Entretien annuel et rechargement des systèmes</li>
+          <li>Réglage de la dureté résiduelle pour une eau parfaite</li>
+        </ul>
+      </div>
+
+      <div class="glass card">
+        <h2>Problèmes fréquents résolus</h2>
+        <ul class="cross-list">
+          <li>Dépôts de calcaire blancs sur les robinets et parois de douche</li>
+          <li>Durée de vie réduite de l'électroménager (lave-linge, chaudière)</li>
+          <li>Peau sèche et cheveux ternes après la douche</li>
+          <li>Surconsommation de produits détergents et savons</li>
+          <li>Goût de chlore ou eau trouble au robinet</li>
+        </ul>
+      </div>
+    </div>
+
+    <section class="container mt-3 glass section-padding">
+      <h2 class="text-center">Notre Processus d'Installation</h2>
+      <div class="process-grid mt-2">
+        <div class="process-step">
+          <div class="step-num">1</div>
+          <h3>Test de Dureté</h3>
+          <p>Nous mesurons précisément le taux de calcaire (degrés français °f) de votre eau.</p>
+        </div>
+        <div class="process-step">
+          <div class="step-num">2</div>
+          <h3>Dimensionnement</h3>
+          <p>Nous sélectionnons l'appareil adapté à la taille de votre foyer et à votre consommation d'eau.</p>
+        </div>
+        <div class="process-step">
+          <div class="step-num">3</div>
+          <h3>Installation Raccordement</h3>
+          <p>Pose de l'adoucisseur près de l'arrivée d'eau principale avec un système by-pass de sécurité.</p>
+        </div>
+        <div class="process-step">
+          <div class="step-num">4</div>
+          <h3>Mise en Service</h3>
+          <p>Programmation de la vanne, ajout de sel, et test de la nouvelle douceur de l'eau.</p>
+        </div>
+      </div>
+    </section>
+
+    <div class="container grid mt-3">
+      <div class="glass card">
+        <h2>Pourquoi Nous Choisir ?</h2>
+        <ul class="check-list">
+          <li><strong>Économies Garanties :</strong> Un adoucisseur réduit de 15% vos factures d'énergie (chauffe-eau non entartré) et prolonge la vie de vos appareils.</li>
+          <li><strong>Confort Quotidien :</strong> Linge plus doux, vaisselle brillante sans traces, nettoyage facilité.</li>
+          <li><strong>Entretien Suivi :</strong> Nous proposons des contrats d'entretien pour garantir le bon fonctionnement continu de votre appareil.</li>
+        </ul>
+      </div>
+
+      <div class="glass card info-box">
+        <h2>Disponibilité & Zone d'Intervention</h2>
+        <p><strong>Disponibilité :</strong> Sur rendez-vous pour les installations. Interventions de maintenance régulières.</p>
+        <p><strong>Zone d'Intervention :</strong> Bruxelles et environs (une région particulièrement touchée par l'eau "dure").</p>
+      </div>
+    </div>
+
+    <section class="container mt-3 mb-3 glass section-padding">
+      <h2 class="text-center">Questions Fréquentes (FAQ)</h2>
+      <div class="faq-list mt-2">
+        <div class="faq-item">
+          <h4>L'eau de Bruxelles est-elle vraiment calcaire ?</h4>
+          <p>Oui. La dureté de l'eau à Bruxelles varie souvent entre 25°f et 35°f (degrés français), ce qui est classé comme eau "dure" à "très dure". Un adoucisseur est vivement recommandé.</p>
+        </div>
+        <div class="faq-item">
+          <h4>L'eau adoucie est-elle potable ?</h4>
+          <p>Absolument. Un adoucisseur à résine échange les ions calcium contre du sodium, ce qui modifie légèrement la teneur en sodium sans dépasser les normes de potabilité. Toutefois, pour les personnes au régime strict sans sel, un point d'eau non adouci peut être conservé à la cuisine.</p>
+        </div>
+        <div class="faq-item">
+          <h4>À quelle fréquence faut-il rajouter du sel ?</h4>
+          <p>Cela dépend de votre consommation d'eau et de la taille du bac, mais en moyenne, une vérification et un rajout tous les 1 à 2 mois sont suffisants.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+  
+  <WhatsAppWidget />
+  <Footer />
+</Layout>
+
+<style>
+  .pt-top { padding-top: 120px; }
+  .header-section h1 { font-size: 3rem; margin-bottom: 1rem; }
+  .highlight { color: var(--accent); }
+  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; }
+  .card { padding: 2rem; border-radius: 16px; }
+  .section-padding { padding: 3rem; border-radius: 16px; }
+  
+  .check-list li, .cross-list li { margin-bottom: 0.8rem; position: relative; padding-left: 1.5rem; }
+  .check-list li::before { content: '✓'; position: absolute; left: 0; color: var(--primary); font-weight: bold; }
+  .cross-list li::before { content: '⚠'; position: absolute; left: 0; color: var(--accent); font-weight: bold; }
+  
+  .process-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem; }
+  .process-step { text-align: center; }
+  .step-num { width: 50px; height: 50px; background: var(--primary); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; font-weight: bold; margin: 0 auto 1rem; }
+  
+  .info-box { background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%); color: white; }
+  .info-box h2 { color: white; }
+  
+  .faq-item { margin-bottom: 1.5rem; border-bottom: 1px solid rgba(0,0,0,0.1); padding-bottom: 1rem; }
+  .faq-item h4 { color: var(--primary); margin-bottom: 0.5rem; }
+</style>

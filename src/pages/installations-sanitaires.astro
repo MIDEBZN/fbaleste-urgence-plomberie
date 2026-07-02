@@ -1,0 +1,134 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import WhatsAppWidget from '../components/WhatsAppWidget.astro';
+
+const title = "Installations Sanitaires Bruxelles | Rénovation Salle de Bain & WC";
+const description = "Spécialiste en installation sanitaire à Bruxelles. Pose de douches à l'italienne, baignoires, WC suspendus Geberit, éviers et robinetterie moderne.";
+---
+
+<Layout title={title} description={description}>
+  <Header />
+  
+  <main class="page-content pt-top">
+    <div class="container header-section text-center animate-fade-in">
+      <h1>Installations <span class="highlight">Sanitaires</span></h1>
+      <p>Des installations modernes, durables et esthétiques pour sublimer vos espaces d'eau.</p>
+      <a href="/contact" class="btn btn-primary btn-large mt-1">Demander un Devis Gratuit</a>
+    </div>
+
+    <div class="container grid mt-3">
+      <div class="glass card">
+        <h2>Ce qui est inclus</h2>
+        <ul class="check-list">
+          <li>Rénovation complète ou partielle de salle de bain</li>
+          <li>Installation de douches à l'italienne et cabines</li>
+          <li>Pose de baignoires (classiques, îlots)</li>
+          <li>Installation de WC standards, broyeurs et WC suspendus (ex: Geberit)</li>
+          <li>Pose d'éviers, lavabos et vasques</li>
+          <li>Installation de robinetterie haut de gamme (Grohe, Hansgrohe)</li>
+          <li>Création de nouvelles arrivées d'eau (machines à laver, cuisine)</li>
+        </ul>
+      </div>
+
+      <div class="glass card">
+        <h2>Problèmes fréquents résolus (Rénovation)</h2>
+        <ul class="cross-list">
+          <li>Anciennes installations vétustes et fuyantes</li>
+          <li>Pression d'eau insuffisante dans la douche</li>
+          <li>Salle de bain mal agencée ou inadaptée (PMR)</li>
+          <li>Robinetterie entartrée et difficile à utiliser</li>
+          <li>Chasse d'eau encastrée défectueuse</li>
+        </ul>
+      </div>
+    </div>
+
+    <section class="container mt-3 glass section-padding">
+      <h2 class="text-center">Notre Processus d'Installation</h2>
+      <div class="process-grid mt-2">
+        <div class="process-step">
+          <div class="step-num">1</div>
+          <h3>Étude sur Mesure</h3>
+          <p>Visite à domicile pour comprendre vos besoins, évaluer l'espace et les raccordements existants.</p>
+        </div>
+        <div class="process-step">
+          <div class="step-num">2</div>
+          <h3>Devis Détaillé</h3>
+          <p>Proposition claire incluant les matériaux, la main d'œuvre et les délais, sans surprise.</p>
+        </div>
+        <div class="process-step">
+          <div class="step-num">3</div>
+          <h3>Installation Soignée</h3>
+          <p>Travail minutieux, respect des normes d'étanchéité et finitions esthétiques impeccables.</p>
+        </div>
+        <div class="process-step">
+          <div class="step-num">4</div>
+          <h3>Test et Garantie</h3>
+          <p>Mise en eau, vérification de la pression, nettoyage du chantier et garantie sur les travaux.</p>
+        </div>
+      </div>
+    </section>
+
+    <div class="container grid mt-3">
+      <div class="glass card">
+        <h2>Pourquoi Nous Choisir ?</h2>
+        <ul class="check-list">
+          <li><strong>Matériaux de Qualité :</strong> Nous travaillons avec les meilleures marques (Geberit, Grohe, Villeroy & Boch) pour une durabilité maximale.</li>
+          <li><strong>Design et Esthétique :</strong> Une plomberie invisible et élégante pour les salles de bain modernes.</li>
+          <li><strong>Propreté du Chantier :</strong> Nous protégeons votre intérieur et nettoyons tout avant de partir.</li>
+        </ul>
+      </div>
+
+      <div class="glass card info-box">
+        <h2>Disponibilité & Zone d'Intervention</h2>
+        <p><strong>Disponibilité :</strong> Sur rendez-vous pour les devis d'installation et de rénovation. Respect strict des délais annoncés.</p>
+        <p><strong>Zone d'Intervention :</strong> Bruxelles, Brabant Wallon, Brabant Flamand.</p>
+      </div>
+    </div>
+
+    <section class="container mt-3 mb-3 glass section-padding">
+      <h2 class="text-center">Questions Fréquentes (FAQ)</h2>
+      <div class="faq-list mt-2">
+        <div class="faq-item">
+          <h4>Combien de temps prend une rénovation de salle de bain ?</h4>
+          <p>Selon l'ampleur des travaux (remplacement simple vs rénovation complète avec carrelage), cela peut prendre de 2 jours à 2 semaines. Nous planifions cela précisément dans le devis.</p>
+        </div>
+        <div class="faq-item">
+          <h4>Peut-on installer un WC suspendu n'importe où ?</h4>
+          <p>Généralement oui, mais cela nécessite l'installation d'un "bâti-support" qui sera caché derrière une cloison (souvent en plâtre). Il faut donc s'assurer d'avoir un peu de profondeur (environ 15-20 cm) et vérifier l'emplacement de la colonne d'évacuation.</p>
+        </div>
+        <div class="faq-item">
+          <h4>Achetez-vous les sanitaires ou dois-je le faire ?</h4>
+          <p>Au choix ! Nous pouvons vous fournir un catalogue avec des tarifs professionnels avantageux, ou installer les équipements que vous avez déjà achetés.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+  
+  <WhatsAppWidget />
+  <Footer />
+</Layout>
+
+<style>
+  .pt-top { padding-top: 120px; }
+  .header-section h1 { font-size: 3rem; margin-bottom: 1rem; }
+  .highlight { color: var(--accent); }
+  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; }
+  .card { padding: 2rem; border-radius: 16px; }
+  .section-padding { padding: 3rem; border-radius: 16px; }
+  
+  .check-list li, .cross-list li { margin-bottom: 0.8rem; position: relative; padding-left: 1.5rem; }
+  .check-list li::before { content: '✓'; position: absolute; left: 0; color: var(--primary); font-weight: bold; }
+  .cross-list li::before { content: '⚠'; position: absolute; left: 0; color: var(--accent); font-weight: bold; }
+  
+  .process-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem; }
+  .process-step { text-align: center; }
+  .step-num { width: 50px; height: 50px; background: var(--primary); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; font-weight: bold; margin: 0 auto 1rem; }
+  
+  .info-box { background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%); color: white; }
+  .info-box h2 { color: white; }
+  
+  .faq-item { margin-bottom: 1.5rem; border-bottom: 1px solid rgba(0,0,0,0.1); padding-bottom: 1rem; }
+  .faq-item h4 { color: var(--primary); margin-bottom: 0.5rem; }
+</style>
