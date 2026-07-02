@@ -1,0 +1,191 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import WhatsAppWidget from '../components/WhatsAppWidget.astro';
+
+const title = "Plombier Urgence Bruxelles | Dépannage 24/7 en 30 Min";
+const description = "Besoin d'un plombier en urgence à Bruxelles ? Fbaleste Urgence Plomberie intervient 24/7. Agréé assurances, devis gratuit. Fuite, débouchage, chaudière.";
+---
+
+<Layout title={title} description={description}>
+  <Header />
+  
+  <main>
+    <section class="hero">
+      <div class="hero-overlay"></div>
+      <div class="container hero-content">
+        <div class="hero-glass glass animate-fade-in">
+          <span class="badge badge-emergency">Intervention en < 30 Min</span>
+          <h1>Plombier Urgence Bruxelles <br/> <span class="highlight">Dépannage 24/7</span></h1>
+          <p class="hero-subtitle">Fuite d'eau, canalisation bouchée, panne de chauffage ? Ne laissez pas la situation s'aggraver. Nos plombiers chauffagistes agréés interviennent immédiatement sur toutes les communes de Bruxelles.</p>
+          
+          <div class="hero-actions">
+            <a href="tel:+32000000000" class="btn btn-accent btn-large pulse-animation">
+              0492 775 775 (Urgence)
+            </a>
+            <a href="/devis" class="btn btn-primary btn-large">
+              Demander un Devis Gratuit
+            </a>
+          </div>
+          
+          <div class="trust-signals">
+            <span class="trust-item">✓ Agréé Assurances</span>
+            <span class="trust-item">✓ Prix Transparents</span>
+            <span class="trust-item">✓ 4.9/5 (500+ Avis)</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="services-overview container mt-3 mb-3">
+      <h2 class="text-center">Nos Services Principaux</h2>
+      <p class="text-center mb-2">Des solutions rapides et durables pour tous vos problèmes de plomberie.</p>
+      
+      <div class="grid">
+        <div class="card glass">
+          <h3>Débouchage Canalisation</h3>
+          <p>Dégorgement d'urgence pour WC, éviers, et égouts. Matériel haute pression pour un débouchage canalisation Bruxelles efficace.</p>
+          <a href="/services#debouchage" class="link-arrow">En savoir plus →</a>
+        </div>
+        <div class="card glass">
+          <h3>Recherche de Fuite</h3>
+          <p>Détection fuite d'eau par caméra thermique. Méthode non destructive pour préserver vos murs et sols. Agrée pour rapport assurance.</p>
+          <a href="/services#fuite" class="link-arrow">En savoir plus →</a>
+        </div>
+        <div class="card glass">
+          <h3>Plombier Chauffagiste</h3>
+          <p>Entretien chaudière gaz Bruxelles, dépannage chauffage urgent et installation de nouvelles chaudières à condensation.</p>
+          <a href="/services#chauffage" class="link-arrow">En savoir plus →</a>
+        </div>
+      </div>
+    </section>
+  </main>
+  
+  <WhatsAppWidget />
+  <Footer />
+</Layout>
+
+<style>
+  .hero {
+    position: relative;
+    height: 100vh;
+    min-height: 600px;
+    display: flex;
+    align-items: center;
+    background-image: url('/images/hero_bg.png');
+    background-size: cover;
+    background-position: center;
+  }
+  
+  .hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(15, 76, 129, 0.8) 0%, rgba(43, 45, 66, 0.8) 100%);
+  }
+  
+  .hero-content {
+    position: relative;
+    z-index: 10;
+    width: 100%;
+  }
+  
+  .hero-glass {
+    max-width: 700px;
+    padding: 3rem;
+    border-radius: 16px;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: var(--white);
+  }
+  
+  .hero-glass h1 {
+    color: var(--white);
+    font-size: 3.5rem;
+    line-height: 1.1;
+    margin-top: 1rem;
+  }
+  
+  .highlight {
+    color: var(--accent);
+  }
+  
+  .badge-emergency {
+    background-color: var(--accent);
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    display: inline-block;
+  }
+  
+  .hero-subtitle {
+    font-size: 1.2rem;
+    margin: 1.5rem 0;
+    opacity: 0.9;
+  }
+  
+  .hero-actions {
+    display: flex;
+    gap: 1rem;
+    margin-top: 2rem;
+    flex-wrap: wrap;
+  }
+  
+  .btn-large {
+    padding: 1rem 2rem;
+    font-size: 1.1rem;
+  }
+  
+  .trust-signals {
+    display: flex;
+    gap: 1.5rem;
+    margin-top: 2rem;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #e2e8f0;
+    flex-wrap: wrap;
+  }
+  
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+  }
+  
+  .card {
+    padding: 2rem;
+    border-radius: 12px;
+    transition: transform 0.3s ease;
+  }
+  
+  .card:hover {
+    transform: translateY(-5px);
+  }
+  
+  .card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+  }
+  
+  .link-arrow {
+    display: inline-block;
+    margin-top: 1rem;
+    color: var(--primary);
+    font-weight: 600;
+  }
+  
+  .link-arrow:hover {
+    color: var(--accent);
+  }
+
+  @media (max-width: 768px) {
+    .hero-glass h1 {
+      font-size: 2.5rem;
+    }
+    .hero-actions {
+      flex-direction: column;
+    }
+  }
+</style>

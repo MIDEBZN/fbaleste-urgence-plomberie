@@ -1,0 +1,161 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import WhatsAppWidget from '../components/WhatsAppWidget.astro';
+
+const title = "Contactez Fbaleste | Devis Plombier Bruxelles Gratuit";
+const description = "Demandez un devis plombier Bruxelles gratuit. Intervention d'urgence, débouchage ou installation. Contactez Fbaleste Urgence Plomberie 24/7.";
+---
+
+<Layout title={title} description={description}>
+  <Header />
+  
+  <main class="page-content pt-top">
+    <div class="container header-section text-center animate-fade-in">
+      <h1>Demandez votre <span class="highlight">Devis Gratuit</span></h1>
+      <p>Une urgence ou un projet ? Nous vous répondons immédiatement.</p>
+    </div>
+
+    <div class="container contact-grid mt-3 mb-3">
+      <div class="contact-info glass">
+        <h2>Coordonnées</h2>
+        <p class="mb-2">N'hésitez pas à nous appeler pour toute urgence (24/7) ou à nous envoyer un message via WhatsApp avec des photos de votre problème pour une estimation rapide.</p>
+        
+        <div class="info-item">
+          <strong>📞 Téléphone (Urgence) :</strong>
+          <a href="tel:+32000000000">0492 775 775</a>
+        </div>
+        <div class="info-item">
+          <strong>💬 WhatsApp :</strong>
+          <a href="https://wa.me/32492775775" target="_blank">Envoyer un message</a>
+        </div>
+        <div class="info-item">
+          <strong>✉️ Email :</strong>
+          <a href="mailto:contact@fbaleste-plomberie.be">contact@fbaleste-plomberie.be</a>
+        </div>
+        <div class="info-item">
+          <strong>📍 Zones Couvertes :</strong>
+          <span>Bruxelles et Périphérie (19 communes)</span>
+        </div>
+      </div>
+
+      <div class="contact-form glass">
+        <h2>Envoyez-nous un message</h2>
+        <!-- Using formsubmit.co for global contact form functionality without backend -->
+        <form action="https://formsubmit.co/contact@fbaleste-plomberie.be" method="POST">
+          <input type="hidden" name="_subject" value="Nouveau message depuis le site Web Fbaleste !">
+          <input type="hidden" name="_captcha" value="false">
+          
+          <div class="form-group">
+            <label for="name">Nom / Entreprise</label>
+            <input type="text" id="name" name="name" required placeholder="Votre nom" />
+          </div>
+          
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required placeholder="votre@email.com" />
+          </div>
+          
+          <div class="form-group">
+            <label for="phone">Téléphone</label>
+            <input type="tel" id="phone" name="phone" required placeholder="04XX XX XX XX" />
+          </div>
+          
+          <div class="form-group">
+            <label for="message">Description de votre problème</label>
+            <textarea id="message" name="message" rows="5" required placeholder="Ex: J'ai une fuite sous l'évier..."></textarea>
+          </div>
+          
+          <button type="submit" class="btn btn-primary w-100">Envoyer la demande</button>
+        </form>
+      </div>
+    </div>
+  </main>
+  
+  <WhatsAppWidget />
+  <Footer />
+</Layout>
+
+<style>
+  .pt-top {
+    padding-top: 120px;
+  }
+  
+  .header-section {
+    margin-bottom: 3rem;
+  }
+  
+  .header-section h1 {
+    font-size: 3rem;
+  }
+  
+  .highlight {
+    color: var(--accent);
+  }
+
+  .contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+  }
+
+  .glass {
+    padding: 3rem;
+    border-radius: 16px;
+  }
+
+  .info-item {
+    margin-bottom: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+
+  .info-item a, .info-item span {
+    color: var(--primary);
+    font-size: 1.1rem;
+    font-weight: 600;
+  }
+
+  .info-item a:hover {
+    color: var(--accent);
+  }
+
+  .form-group {
+    margin-bottom: 1.5rem;
+  }
+
+  label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    color: var(--primary);
+  }
+
+  input, textarea {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    font-family: inherit;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+  }
+
+  input:focus, textarea:focus {
+    outline: none;
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(15, 76, 129, 0.1);
+  }
+
+  .w-100 {
+    width: 100%;
+  }
+
+  @media (max-width: 768px) {
+    .contact-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

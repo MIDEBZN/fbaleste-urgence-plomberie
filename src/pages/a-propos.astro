@@ -1,0 +1,87 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import WhatsAppWidget from '../components/WhatsAppWidget.astro';
+
+const title = "À propos | Artisan Plombier Bruxelles - Fbaleste";
+const description = "Découvrez Fbaleste Urgence Plomberie. Artisan plombier certifié, agréé assurances, offrant des services honnêtes et transparents à Bruxelles.";
+---
+
+<Layout title={title} description={description}>
+  <Header />
+  
+  <main class="page-content pt-top">
+    <div class="container header-section text-center animate-fade-in">
+      <h1>Votre <span class="highlight">Artisan Plombier</span> de Confiance</h1>
+      <p>Honnêteté, transparence et expertise pour votre sérénité.</p>
+    </div>
+
+    <div class="container glass content-box mt-2 mb-3">
+      <div class="about-grid">
+        <div class="about-text">
+          <h2>Qui est Fbaleste Urgence Plomberie ?</h2>
+          <p>Fondée sur l'idée que les urgences de plomberie ne devraient pas être synonymes d'arnaques, Fbaleste est une entreprise locale bruxelloise dédiée à fournir un service irréprochable et transparent.</p>
+          <p>Nous savons qu'une fuite d'eau ou une chaudière en panne est stressante. C'est pourquoi notre promesse est simple : un diagnostic précis, un devis clair avant toute intervention, et une réparation durable avec des pièces certifiées.</p>
+          
+          <h3 class="mt-2">Pourquoi nous choisir ?</h3>
+          <ul class="reasons-list mt-1">
+            <li><strong>Plombier Agréé Assurance :</strong> Nous fournissons les rapports détaillés nécessaires (photos, tests) pour vos réclamations suite à un dégât des eaux.</li>
+            <li><strong>Transparence Totale :</strong> Pas de frais cachés. Nos tarifs sont clairs dès le départ. Vous ne payez que ce qui a été approuvé.</li>
+            <li><strong>Expertise Continue :</strong> Nos techniciens sont formés en permanence sur les nouvelles technologies (pompes à chaleur, condensation, recherche non destructive).</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </main>
+  
+  <WhatsAppWidget />
+  <Footer />
+</Layout>
+
+<style>
+  .pt-top {
+    padding-top: 120px;
+  }
+  
+  .header-section {
+    margin-bottom: 3rem;
+  }
+  
+  .header-section h1 {
+    font-size: 3rem;
+  }
+  
+  .highlight {
+    color: var(--accent);
+  }
+
+  .content-box {
+    padding: 4rem;
+    border-radius: 16px;
+  }
+  
+  .about-text h2 {
+    font-size: 2.2rem;
+  }
+  
+  .about-text p {
+    margin-bottom: 1.5rem;
+    font-size: 1.1rem;
+    color: var(--text-muted);
+  }
+  
+  .reasons-list li {
+    margin-bottom: 1rem;
+    padding-left: 1.5rem;
+    position: relative;
+  }
+  
+  .reasons-list li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: var(--accent);
+    font-weight: bold;
+  }
+</style>

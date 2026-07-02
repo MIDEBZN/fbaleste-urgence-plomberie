@@ -1,0 +1,141 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import WhatsAppWidget from '../components/WhatsAppWidget.astro';
+
+const title = "Nos Services de Plomberie & Chauffage à Bruxelles | Fbaleste";
+const description = "Découvrez nos services : débouchage canalisation, dépannage chaudière, recherche de fuite non destructive et installation sanitaire sur Bruxelles.";
+---
+
+<Layout title={title} description={description}>
+  <Header />
+  
+  <main class="page-content pt-top">
+    <div class="container header-section text-center animate-fade-in">
+      <h1>Expertise Complète en <span class="highlight">Plomberie & Chauffage</span></h1>
+      <p>Des interventions garanties, réalisées par des plombiers chauffagistes certifiés.</p>
+    </div>
+
+    <div class="container services-list mt-3">
+      <section id="urgence" class="service-row glass">
+        <div class="service-text">
+          <h2>Urgence Plomberie Bruxelles</h2>
+          <p>Une fuite majeure ou une rupture de canalisation ? Notre équipe d'intervention rapide est disponible 24/7. Nous sécurisons votre installation, identifions le problème et effectuons les réparations nécessaires avec des pièces garanties.</p>
+          <ul>
+            <li>✓ Intervention en moins de 30 minutes</li>
+            <li>✓ Réparation fuite d'eau bruxelles</li>
+            <li>✓ Mise en sécurité (gaz et eau)</li>
+          </ul>
+        </div>
+      </section>
+
+      <section id="debouchage" class="service-row glass">
+        <div class="service-text">
+          <h2>Débouchage Canalisation Bruxelles</h2>
+          <p>Un évier bouché ou des WC qui refoulent ? Nous utilisons des techniques de curage et d'hydrocurage haute pression pour résoudre définitivement vos problèmes d'évacuation, sans endommager vos tuyaux.</p>
+          <ul>
+            <li>✓ Débouchage WC et éviers</li>
+            <li>✓ Curage canalisation haute pression</li>
+            <li>✓ Inspection par caméra endoscopique</li>
+          </ul>
+        </div>
+      </section>
+
+      <section id="fuite" class="service-row glass">
+        <div class="service-text">
+          <h2>Recherche de Fuite Non Destructive</h2>
+          <p>Finis les murs cassés pour trouver une fuite ! Nous utilisons des technologies avancées (caméra thermique, gaz traceur, écoute électro-acoustique) pour localiser la source du problème avec une précision chirurgicale.</p>
+          <ul>
+            <li>✓ Détection fuite d'eau par caméra thermique</li>
+            <li>✓ Rapport détaillé pour assurance habitation</li>
+            <li>✓ Plombier agréé assurance</li>
+          </ul>
+        </div>
+      </section>
+
+      <section id="chauffage" class="service-row glass">
+        <div class="service-text">
+          <h2>Plombier Chauffagiste Bruxelles</h2>
+          <p>Votre chaudière est en panne en plein hiver ? Nos techniciens interviennent sur toutes les marques (Vaillant, Bulex, Junkers) pour le dépannage, l'entretien annuel ou l'installation complète de systèmes performants.</p>
+          <ul>
+            <li>✓ Entretien chaudière gaz bruxelles</li>
+            <li>✓ Remplacement chaudière condensation</li>
+            <li>✓ Réparation boiler électrique</li>
+          </ul>
+        </div>
+      </section>
+    </div>
+
+    <section class="container mt-3 mb-3 cta-section text-center glass animate-fade-in">
+      <h2>Besoin d'une Intervention Immédiate ?</h2>
+      <p>Nos tarifs sont transparents et nos devis gratuits.</p>
+      <a href="tel:+32000000000" class="btn btn-accent btn-large mt-1 pulse-animation">Appeler le 0492 775 775</a>
+    </section>
+  </main>
+  
+  <WhatsAppWidget />
+  <Footer />
+</Layout>
+
+<style>
+  .pt-top {
+    padding-top: 120px;
+  }
+  
+  .header-section {
+    margin-bottom: 3rem;
+  }
+  
+  .header-section h1 {
+    font-size: 3rem;
+  }
+  
+  .highlight {
+    color: var(--accent);
+  }
+  
+  .services-list {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+  
+  .service-row {
+    padding: 3rem;
+    border-radius: 16px;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .service-text h2 {
+    font-size: 2rem;
+    color: var(--primary);
+  }
+  
+  .service-text ul {
+    margin-top: 1rem;
+    font-weight: 600;
+    color: var(--text-muted);
+  }
+  
+  .service-text li {
+    margin-bottom: 0.5rem;
+  }
+  
+  .cta-section {
+    padding: 4rem 2rem;
+    border-radius: 16px;
+    background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+    color: var(--white);
+  }
+  
+  .cta-section h2 {
+    color: var(--white);
+  }
+  
+  .btn-large {
+    padding: 1rem 2.5rem;
+    font-size: 1.2rem;
+  }
+</style>

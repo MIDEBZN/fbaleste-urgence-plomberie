@@ -1,0 +1,103 @@
+---
+---
+<header class="header glass" id="main-header">
+  <div class="container header-content">
+    <div class="logo">
+      <a href="/">
+        <span class="logo-text">Fbaleste <span class="logo-accent">Urgence Plomberie</span></span>
+      </a>
+    </div>
+    
+    <nav class="main-nav">
+      <ul>
+        <li><a href="/">Accueil</a></li>
+        <li><a href="/services">Services</a></li>
+        <li><a href="/zones">Zones d'Intervention</a></li>
+        <li><a href="/a-propos">À propos</a></li>
+        <li><a href="/contact">Contact</a></li>
+      </ul>
+    </nav>
+    
+    <div class="cta-wrapper">
+      <a href="tel:+32000000000" class="btn btn-accent pulse-animation">
+        SOS 24/7 : 0492 775 775
+      </a>
+    </div>
+  </div>
+</header>
+
+<style>
+  .header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    padding: 1rem 0;
+    transition: all 0.3s ease;
+  }
+  
+  .header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .logo-text {
+    font-family: 'Outfit', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: var(--primary);
+  }
+  
+  .logo-accent {
+    color: var(--accent);
+  }
+  
+  .main-nav ul {
+    display: flex;
+    gap: 2rem;
+  }
+  
+  .main-nav a {
+    font-weight: 600;
+    color: var(--text-main);
+    transition: color 0.3s ease;
+    position: relative;
+  }
+  
+  .main-nav a:hover {
+    color: var(--primary);
+  }
+  
+  .main-nav a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -4px;
+    left: 0;
+    background-color: var(--primary);
+    transition: width 0.3s ease;
+  }
+  
+  .main-nav a:hover::after {
+    width: 100%;
+  }
+
+  .pulse-animation {
+    animation: pulse 2s infinite;
+  }
+
+  @keyframes pulse {
+    0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(255, 74, 74, 0.7); }
+    70% { transform: scale(1.05); box-shadow: 0 0 0 10px rgba(255, 74, 74, 0); }
+    100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(255, 74, 74, 0); }
+  }
+
+  @media (max-width: 768px) {
+    .main-nav {
+      display: none;
+    }
+  }
+</style>

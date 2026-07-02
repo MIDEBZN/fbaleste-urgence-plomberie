@@ -1,0 +1,94 @@
+---
+---
+<footer class="footer">
+  <div class="container footer-grid">
+    <div class="footer-info">
+      <h3>Fbaleste Urgence Plomberie</h3>
+      <p>Votre partenaire de confiance pour tous vos besoins en plomberie à Bruxelles. Intervention rapide, prix transparents et service de qualité.</p>
+      <div class="certifications">
+        <span class="badge">Agréé Assurances</span>
+        <span class="badge">Intervention en < 1h</span>
+      </div>
+    </div>
+    
+    <div class="footer-links">
+      <h4>Services</h4>
+      <ul>
+        <li><a href="/services#urgence">Plomberie d'Urgence</a></li>
+        <li><a href="/services#debouchage">Débouchage Canalisation</a></li>
+        <li><a href="/services#fuite">Recherche de Fuite</a></li>
+        <li><a href="/services#chauffage">Chauffagiste</a></li>
+      </ul>
+    </div>
+    
+    <div class="footer-contact">
+      <h4>Contact</h4>
+      <p><strong>Urgences 24/7 :</strong> <a href="tel:+32000000000">0492 775 775</a></p>
+      <p><strong>Email :</strong> <a href="mailto:contact@fbaleste-plomberie.be">contact@fbaleste-plomberie.be</a></p>
+      <p><strong>Zones :</strong> Toute la région de Bruxelles-Capitale</p>
+    </div>
+  </div>
+  
+  <div class="footer-bottom text-center">
+    <p>&copy; {new Date().getFullYear()} Fbaleste Urgence Plomberie. Tous droits réservés.</p>
+  </div>
+</footer>
+
+<style>
+  .footer {
+    background-color: var(--primary);
+    color: var(--white);
+    padding: 4rem 0 0 0;
+    margin-top: 4rem;
+  }
+  
+  .footer h3, .footer h4 {
+    color: var(--white);
+  }
+  
+  .footer-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 3rem;
+    margin-bottom: 3rem;
+  }
+  
+  .footer-links ul li {
+    margin-bottom: 0.5rem;
+  }
+  
+  .footer-links a {
+    color: #cbd5e1;
+    transition: color 0.3s ease;
+  }
+  
+  .footer-links a:hover {
+    color: var(--accent);
+  }
+
+  .footer-contact p {
+    margin-bottom: 0.5rem;
+    color: #cbd5e1;
+  }
+  
+  .certifications {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1.5rem;
+  }
+  
+  .badge {
+    background: rgba(255,255,255,0.1);
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    font-size: 0.85rem;
+    font-weight: 600;
+  }
+  
+  .footer-bottom {
+    background-color: var(--primary-dark);
+    padding: 1.5rem 0;
+    color: #94a3b8;
+    font-size: 0.9rem;
+  }
+</style>

@@ -1,0 +1,106 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import WhatsAppWidget from '../components/WhatsAppWidget.astro';
+
+const title = "Plombier Ixelles, Uccle, Schaerbeek | Nos Zones d'Intervention";
+const description = "Intervention plombier rapide sur toute la région de Bruxelles-Capitale. Découvrez nos zones couvertes : Ixelles, Uccle, Schaerbeek, Anderlecht et alentours.";
+---
+
+<Layout title={title} description={description}>
+  <Header />
+  
+  <main class="page-content pt-top">
+    <div class="container header-section text-center animate-fade-in">
+      <h1>Nos Zones <span class="highlight">d'Intervention</span></h1>
+      <p>Un plombier de garde près de chez vous, sur l'ensemble de la Région Bruxelles-Capitale.</p>
+    </div>
+
+    <div class="container glass content-box mt-2 mb-3">
+      <div class="text-center mb-2">
+        <p>Pour garantir une intervention en moins de 30 minutes, nos techniciens sont stratégiquement répartis sur l'ensemble des 19 communes de Bruxelles. Que vous ayez besoin d'un plombier à Ixelles ou d'un chauffagiste à Uccle, nous sommes à votre disposition 24/7.</p>
+      </div>
+
+      <div class="zones-grid">
+        <ul class="zones-list">
+          <li><a href="/contact">Plombier Bruxelles Centre (1000)</a></li>
+          <li><a href="/contact">Plombier Schaerbeek (1030)</a></li>
+          <li><a href="/contact">Plombier Etterbeek (1040)</a></li>
+          <li><a href="/contact">Plombier Ixelles (1050)</a></li>
+          <li><a href="/contact">Plombier Saint-Gilles (1060)</a></li>
+        </ul>
+        <ul class="zones-list">
+          <li><a href="/contact">Plombier Anderlecht (1070)</a></li>
+          <li><a href="/contact">Plombier Molenbeek (1080)</a></li>
+          <li><a href="/contact">Plombier Koekelberg (1081)</a></li>
+          <li><a href="/contact">Plombier Jette (1090)</a></li>
+          <li><a href="/contact">Plombier Evere (1140)</a></li>
+        </ul>
+        <ul class="zones-list">
+          <li><a href="/contact">Plombier Woluwe-Saint-Pierre (1150)</a></li>
+          <li><a href="/contact">Plombier Auderghem (1160)</a></li>
+          <li><a href="/contact">Plombier Uccle (1180)</a></li>
+          <li><a href="/contact">Plombier Forest (1190)</a></li>
+          <li><a href="/contact">Plombier Woluwe-Saint-Lambert (1200)</a></li>
+        </ul>
+      </div>
+    </div>
+  </main>
+  
+  <WhatsAppWidget />
+  <Footer />
+</Layout>
+
+<style>
+  .pt-top {
+    padding-top: 120px;
+  }
+  
+  .header-section {
+    margin-bottom: 3rem;
+  }
+  
+  .header-section h1 {
+    font-size: 3rem;
+  }
+  
+  .highlight {
+    color: var(--accent);
+  }
+
+  .content-box {
+    padding: 4rem;
+    border-radius: 16px;
+  }
+  
+  .zones-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+  }
+  
+  .zones-list li {
+    margin-bottom: 1rem;
+  }
+  
+  .zones-list a {
+    color: var(--primary);
+    font-weight: 600;
+    transition: color 0.3s ease;
+    display: flex;
+    align-items: center;
+  }
+
+  .zones-list a::before {
+    content: '📍';
+    margin-right: 8px;
+    font-size: 1.2rem;
+  }
+  
+  .zones-list a:hover {
+    color: var(--accent);
+    transform: translateX(5px);
+  }
+</style>
