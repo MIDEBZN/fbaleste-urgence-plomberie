@@ -1,0 +1,144 @@
+---
+---
+<section class="social-proof mt-3 mb-3">
+  <!-- Stats & Trust -->
+  <div class="stats-section container glass mb-3 text-center">
+    <h2>Fbaleste en Chiffres</h2>
+    <div class="stats-grid mt-2">
+      <div class="stat-item">
+        <span class="stat-number">< 30 min</span>
+        <span class="stat-label">Temps de Réponse Moyen</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-number">100%</span>
+        <span class="stat-label">Transparence des Prix</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-number">24/7</span>
+        <span class="stat-label">Disponibilité Urgence</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-number">500+</span>
+        <span class="stat-label">Clients Satisfaits</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Testimonials -->
+  <div class="testimonials-section container mb-3">
+    <div class="text-center mb-2">
+      <h2>Ils nous recommandent</h2>
+      <div class="review-badge mt-1">
+        <span class="stars">★★★★★</span>
+        <strong>4.9/5 sur Google</strong> (Basé sur plus de 500 avis certifiés)
+      </div>
+    </div>
+    
+    <div class="testimonials-grid mt-2">
+      <div class="testimonial-card glass">
+        <div class="stars">★★★★★</div>
+        <p>"Intervention hyper rapide un dimanche soir pour une fuite sous l'évier. Le plombier a été très pro, m'a expliqué le problème et le prix était clair dès le début. Je recommande vivement !"</p>
+        <div class="author mt-1"><strong>— Sophie M.</strong> (Ixelles)</div>
+      </div>
+      <div class="testimonial-card glass">
+        <div class="stars">★★★★★</div>
+        <p>"Chaudière en panne en plein hiver. Fbaleste est arrivé en moins d'une heure. Pièce changée sur place car ils avaient le stock. Travail propre et soigné."</p>
+        <div class="author mt-1"><strong>— Thomas V.</strong> (Uccle)</div>
+      </div>
+      <div class="testimonial-card glass">
+        <div class="stars">★★★★★</div>
+        <p>"J'ai fait appel à eux pour un débouchage d'égout compliqué. Équipement au top (caméra, haute pression). Le rapport d'intervention m'a permis d'être remboursé par mon assurance."</p>
+        <div class="author mt-1"><strong>— Ahmed K.</strong> (Bruxelles-Ville)</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Map -->
+  <div class="map-section container glass mb-3">
+    <div class="map-text text-center mb-2">
+      <h2>Notre Zone d'Intervention</h2>
+      <p>Nos plombiers sont stratégiquement répartis dans les 19 communes de Bruxelles pour garantir une arrivée en moins de 30 minutes, 24 heures sur 24.</p>
+    </div>
+    <div class="map-container">
+      <iframe 
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d161203.95155169974!2d4.241584824840833!3d50.85501869814463!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c3a4ed73c76867%3A0xc18b3a66787302a7!2sBruxelles!5e0!3m2!1sfr!2sbe!4v1700000000000!5m2!1sfr!2sbe" 
+        width="100%" 
+        height="400" 
+        style="border:0; border-radius: 12px;" 
+        allowfullscreen="" 
+        loading="lazy" 
+        referrerpolicy="no-referrer-when-downgrade">
+      </iframe>
+    </div>
+  </div>
+</section>
+
+<style>
+  .stats-section {
+    padding: 3rem;
+    border-radius: 16px;
+    background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+    color: white;
+  }
+  .stats-section h2 { color: white; }
+  .stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 2rem;
+  }
+  .stat-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .stat-number {
+    font-size: 2.5rem;
+    font-weight: 800;
+    font-family: 'Outfit', sans-serif;
+    color: var(--accent);
+  }
+  .stat-label {
+    font-size: 1rem;
+    font-weight: 600;
+    margin-top: 0.5rem;
+    color: #cbd5e1;
+  }
+  
+  .review-badge {
+    display: inline-block;
+    padding: 0.5rem 1.5rem;
+    border-radius: 50px;
+    background: white;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    border: 1px solid #e2e8f0;
+  }
+  .stars {
+    color: #f59e0b;
+    letter-spacing: 2px;
+    font-size: 1.2rem;
+  }
+  
+  .testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+  }
+  .testimonial-card {
+    padding: 2rem;
+    border-radius: 16px;
+    border: 1px solid #e2e8f0;
+  }
+  .testimonial-card p {
+    font-style: italic;
+    margin: 1rem 0;
+    color: var(--text-muted);
+  }
+  
+  .map-section {
+    padding: 3rem;
+    border-radius: 16px;
+  }
+  .map-container iframe {
+    box-shadow: 0 10px 30px rgba(15, 76, 129, 0.1);
+  }
+</style>
