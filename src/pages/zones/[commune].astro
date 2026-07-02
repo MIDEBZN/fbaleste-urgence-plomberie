@@ -1,0 +1,123 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import WhatsAppWidget from '../../components/WhatsAppWidget.astro';
+
+export function getStaticPaths() {
+  const communes = [
+    { slug: 'plombier-anderlecht', name: 'Anderlecht', cp: '1070', landmarks: 'le Stade Constant Vanden Stock et les Abattoirs', neighborhoods: 'Cureghem, Neerpede et Veeweyde', employers: 'l\'Hôpital Erasme et RSC Anderlecht' },
+    { slug: 'plombier-auderghem', name: 'Auderghem', cp: '1160', landmarks: 'la Forêt de Soignes et le Rouge-Cloître', neighborhoods: 'Saint-Julien et le Transvaal', employers: 'le CHIREC et Carrefour Delta' },
+    { slug: 'plombier-berchem-sainte-agathe', name: 'Berchem-Sainte-Agathe', cp: '1082', landmarks: 'le Bois du Wilder et l\'Ancienne Église', neighborhoods: 'le Quartier Schweitzer et Hunderenveld', employers: 'le centre commercial Basilix' },
+    { slug: 'plombier-etterbeek', name: 'Etterbeek', cp: '1040', landmarks: 'le Parc du Cinquantenaire et la Place Jourdan', neighborhoods: 'La Chasse et le quartier Saint-Michel', employers: 'les Institutions Européennes' },
+    { slug: 'plombier-bruxelles', name: 'Bruxelles', cp: '1000', landmarks: 'la Grand-Place, la Bourse et le Mont des Arts', neighborhoods: 'les Marolles, le Sablon et le Quartier Européen', employers: 'la Ville de Bruxelles et de nombreuses administrations' },
+    { slug: 'plombier-evere', name: 'Evere', cp: '1140', landmarks: 'le Cimetière de Bruxelles et le Musée de la Witloof', neighborhoods: 'Paduwa et Evere-Centre', employers: 'l\'OTAN et RTL Belgium' },
+    { slug: 'plombier-forest', name: 'Forest', cp: '1190', landmarks: 'Forest National et le Parc Duden', neighborhoods: 'Altitude 100 et Saint-Denis', employers: 'Audi Brussels' },
+    { slug: 'plombier-ganshoren', name: 'Ganshoren', cp: '1083', landmarks: 'le Château de Rivieren et le Parc Roi Baudouin', neighborhoods: 'le quartier de l\'Exposition', employers: 'les commerces de l\'Avenue Charles-Quint' },
+    { slug: 'plombier-ixelles', name: 'Ixelles', cp: '1050', landmarks: 'la Place Flagey et l\'Avenue Louise', neighborhoods: 'le Châtelain, Matonge et le Cimetière d\'Ixelles', employers: 'l\'ULB et le Parlement Européen' },
+    { slug: 'plombier-jette', name: 'Jette', cp: '1090', landmarks: 'la Place du Miroir et l\'Hôpital Brugmann', neighborhoods: 'Dieleghem et les Jardins de Jette', employers: 'l\'UZ Brussel et l\'Hôpital Brugmann' },
+    { slug: 'plombier-koekelberg', name: 'Koekelberg', cp: '1081', landmarks: 'l\'imposante Basilique du Sacré-Cœur', neighborhoods: 'le quartier Simonis et le Parc Élisabeth', employers: 'les entreprises autour du boulevard Léopold II' },
+    { slug: 'plombier-molenbeek-saint-jean', name: 'Molenbeek-Saint-Jean', cp: '1080', landmarks: 'le Château Karreveld et le bord du Canal', neighborhoods: 'Étangs Noirs et le quartier Mettewie', employers: 'diverses industries le long du canal' },
+    { slug: 'plombier-saint-gilles', name: 'Saint-Gilles', cp: '1060', landmarks: 'le Parvis de Saint-Gilles et la Gare du Midi', neighborhoods: 'la Barrière et le quartier de l\'Hôtel de Monnaies', employers: 'la SNCB et la Gare du Midi' },
+    { slug: 'plombier-saint-josse-ten-noode', name: 'Saint-Josse-ten-Noode', cp: '1210', landmarks: 'le Jardin Botanique et la Place Madou', neighborhoods: 'le Quartier Nord et la Place Saint-Josse', employers: 'Proximus et la Tour Finance' },
+    { slug: 'plombier-schaerbeek', name: 'Schaerbeek', cp: '1030', landmarks: 'le Parc Josaphat et la Gare de Schaerbeek', neighborhoods: 'Plasky, Colignon et la Cage aux Ours', employers: 'la RTBF et la VRT' },
+    { slug: 'plombier-uccle', name: 'Uccle', cp: '1180', landmarks: 'le Bois de la Cambre et l\'Observatoire', neighborhoods: 'Fort-Jaco, Saint-Job et le Vert Chasseur', employers: 'la Commune d\'Uccle et les cliniques locales' },
+    { slug: 'plombier-watermael-boitsfort', name: 'Watermael-Boitsfort', cp: '1170', landmarks: 'l\'Hippodrome de Boitsfort et les Étangs', neighborhoods: 'le Coin du Balai et les cités-jardins', employers: 'le groupe Glaverbel et diverses entreprises tertiaires' },
+    { slug: 'plombier-woluwe-saint-lambert', name: 'Woluwe-Saint-Lambert', cp: '1200', landmarks: 'le Woluwe Shopping Center et le Moulin de Lindekemale', neighborhoods: 'Roodebeek et le quartier Georges Henri', employers: 'l\'UCLouvain et les Cliniques universitaires Saint-Luc' },
+    { slug: 'plombier-woluwe-saint-pierre', name: 'Woluwe-Saint-Pierre', cp: '1150', landmarks: 'le Palais Stoclet et le Parc de la Woluwe', neighborhoods: 'le Chant d\'Oiseau et le centre de Stockel', employers: 'de nombreuses ambassades et centres diplomatiques' }
+  ];
+
+  return communes.map(c => ({
+    params: { commune: c.slug },
+    props: c,
+  }));
+}
+
+const { name, cp, landmarks, neighborhoods, employers } = Astro.props;
+
+const title = `Plombier ${name} (${cp}) | Intervention d'Urgence en 30 Min`;
+const description = `Votre plombier de proximité à ${name} (${cp}). Intervention rapide 24/7 autour de ${neighborhoods}. Débouchage, fuite, chauffagiste agréé.`;
+---
+
+<Layout title={title} description={description}>
+  <Header />
+  
+  <main class="page-content pt-top">
+    <div class="container header-section text-center animate-fade-in">
+      <h1>Plombier <span class="highlight">{name}</span> ({cp})</h1>
+      <p>Votre artisan de proximité, disponible 24/7 pour toute la commune de {name}.</p>
+      <a href="tel:+32000000000" class="btn btn-accent btn-large mt-1 pulse-animation">Urgence Plomberie : 0492 775 775</a>
+    </div>
+
+    <div class="container mt-3">
+      <div class="glass card content-wrap">
+        <h2>Expertise Locale à {name}</h2>
+        <p>En tant qu'entreprise ancrée dans la région bruxelloise, Fbaleste Urgence Plomberie intervient quotidiennement à <strong>{name}</strong>. Nos véhicules d'intervention sillonnent régulièrement les quartiers tels que <strong>{neighborhoods}</strong>, nous permettant d'être chez vous en moins de 30 minutes.</p>
+        
+        <h3>Itinéraires & Déplacements Rapides</h3>
+        <p>Nous connaissons parfaitement la géographie locale. Que vous soyez situé près de <strong>{landmarks}</strong>, ou dans les rues résidentielles plus calmes, nous évitons les embouteillages des grands axes pour garantir un dépannage ultra-rapide. De plus, nous intervenons régulièrement pour les grandes infrastructures locales comme <strong>{employers}</strong>, ce qui prouve notre fiabilité.</p>
+
+        <div class="weather-alert mt-2">
+          <h4>⚠️ Les Défis Plomberie à {name}</h4>
+          <p>Le réseau de plomberie des bâtiments anciens à {name} est souvent victime du calcaire très présent dans l'eau de Bruxelles (pouvant atteindre 35°f). Cela provoque l'entartrage des boilers et des conduites. De plus, lors des hivers rigoureux ou de fortes pluies soudaines typiques de la région, nous observons une hausse des tuyaux gelés ou des refoulements d'égouts. Nous sommes équipés pour prévenir et réparer ces dégâts spécifiques.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="container grid mt-3 mb-3">
+      <div class="glass card">
+        <h2>Pourquoi éviter les plateformes d'appel ?</h2>
+        <p>Contrairement aux plateformes de dépannage nationales qui sous-traitent à des inconnus et vous facturent des frais de déplacement excessifs depuis d'autres provinces, <strong>Fbaleste est un véritable artisan local</strong>.</p>
+        <ul class="check-list mt-1">
+          <li><strong>Zéro frais cachés :</strong> Vous parlez directement au technicien.</li>
+          <li><strong>Proximité :</strong> Étant sur place à {name}, notre temps de réponse est inégalé.</li>
+          <li><strong>Garantie :</strong> En cas de souci, nous sommes "le voisin d'à côté" qui revient assurer le SAV.</li>
+        </ul>
+      </div>
+
+      <div class="glass card services-mini">
+        <h2>Nos Services Locaux</h2>
+        <ul class="arrow-list">
+          <li><a href="/depannage-urgence">Dépannage Urgence 24/7</a></li>
+          <li><a href="/debouchage">Débouchage WC & Égouts</a></li>
+          <li><a href="/detection-fuite">Recherche de Fuite sans Casse</a></li>
+          <li><a href="/chauffage-chaudiere">Chauffagiste & Entretien Chaudière</a></li>
+          <li><a href="/installations-sanitaires">Rénovation de Salle de Bain</a></li>
+        </ul>
+      </div>
+    </div>
+  </main>
+  
+  <WhatsAppWidget />
+  <Footer />
+</Layout>
+
+<style>
+  .pt-top { padding-top: 120px; }
+  .header-section h1 { font-size: 3rem; margin-bottom: 1rem; }
+  .highlight { color: var(--accent); }
+  
+  .content-wrap { padding: 3rem; border-radius: 16px; }
+  .content-wrap h2, .content-wrap h3 { color: var(--primary); margin-top: 1.5rem; }
+  
+  .weather-alert {
+    background-color: rgba(255, 74, 74, 0.1);
+    border-left: 4px solid var(--accent);
+    padding: 1.5rem;
+    border-radius: 0 8px 8px 0;
+  }
+  .weather-alert h4 { color: var(--accent); margin-bottom: 0.5rem; }
+  
+  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; }
+  .card { padding: 2rem; border-radius: 16px; }
+  
+  .check-list li { margin-bottom: 0.8rem; position: relative; padding-left: 1.5rem; }
+  .check-list li::before { content: '✓'; position: absolute; left: 0; color: var(--primary); font-weight: bold; }
+  
+  .arrow-list { list-style: none; padding: 0; }
+  .arrow-list li { margin-bottom: 1rem; border-bottom: 1px solid rgba(0,0,0,0.1); padding-bottom: 0.5rem; }
+  .arrow-list a { color: var(--primary); font-weight: 600; transition: color 0.3s; display: block; }
+  .arrow-list a:hover { color: var(--accent); padding-left: 5px; }
+  .arrow-list a::after { content: ' →'; opacity: 0; transition: opacity 0.3s; }
+  .arrow-list a:hover::after { opacity: 1; }
+</style>
