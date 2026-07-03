@@ -1,5 +1,5 @@
 ---
-layout: ../../../layouts/BlogLayout.astro
+layout: ../../layouts/BlogLayout.astro
 title: "Prix Débouchage Canalisation à Bruxelles : Ce qu'il Faut Attendre"
 description: "Quel budget prévoir pour un débouchage d'égout ou de WC à Bruxelles ? Furet manuel, électrique ou inspection caméra : découvrez les tarifs réels et justes."
 ---
