@@ -1,0 +1,81 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import WhatsAppWidget from '../../components/WhatsAppWidget.astro';
+
+const posts = await Astro.glob('./*.md');
+---
+
+<Layout title="Blog Plomberie & Conseils | Fbaleste Urgence" description="Découvrez tous nos articles, conseils et guides sur la plomberie et le chauffage à Bruxelles.">
+  <Header />
+  
+  <main class="page-content" style="padding-top: 120px; min-height: 80vh;">
+    <div class="container">
+      <div class="section-title text-center">
+        <h2>Notre <span class="text-accent">Blog</span> & Conseils</h2>
+        <p>Guides pratiques, tarifs et astuces d'experts pour l'entretien de votre plomberie à Bruxelles.</p>
+      </div>
+
+      <div class="blog-grid">
+        {posts.map((post) => (
+          <a href={post.url} class="blog-card glass">
+            <h3>{post.frontmatter.title}</h3>
+            <p>{post.frontmatter.description}</p>
+            <span class="read-more">Lire l'article &rarr;</span>
+          </a>
+        ))}
+      </div>
+    </div>
+  </main>
+  
+  <WhatsAppWidget />
+  <Footer />
+</Layout>
+
+<style>
+  .blog-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+    margin-bottom: 5rem;
+  }
+  
+  .blog-card {
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
+    border-radius: 12px;
+    text-decoration: none;
+    color: var(--text-main);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+  }
+  
+  .blog-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(15, 76, 129, 0.15);
+  }
+  
+  .blog-card h3 {
+    font-size: 1.3rem;
+    color: var(--primary);
+    margin-bottom: 1rem;
+    line-height: 1.4;
+  }
+  
+  .blog-card p {
+    font-size: 0.95rem;
+    color: var(--text-color);
+    margin-bottom: 1.5rem;
+    flex-grow: 1;
+    line-height: 1.6;
+  }
+  
+  .read-more {
+    font-weight: 700;
+    color: var(--accent);
+    margin-top: auto;
+  }
+</style>
