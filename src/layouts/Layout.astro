@@ -6,7 +6,6 @@ interface Props {
 
 const { title, description } = Astro.props;
 import '../styles/global.css';
-import GlobalContactForm from '../components/GlobalContactForm.astro';
 ---
 
 <!doctype html>
@@ -22,6 +21,5 @@ import GlobalContactForm from '../components/GlobalContactForm.astro';
 	</head>
 	<body>
 		<slot />
-		<GlobalContactForm />
 	</body>
 </html>
