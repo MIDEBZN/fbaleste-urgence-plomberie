@@ -1,0 +1,77 @@
+---
+import Layout from './Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import WhatsAppWidget from '../components/WhatsAppWidget.astro';
+
+const { frontmatter } = Astro.props;
+---
+<Layout title={frontmatter.title} description={frontmatter.description}>
+  <Header />
+  
+  <main class="page-content" style="padding-top: 120px;">
+    <div class="container" style="max-width: 900px; margin: 0 auto; margin-bottom: 4rem;">
+      <article class="glass card blog-article" style="padding: 3rem; border-radius: 16px;">
+        <slot />
+      </article>
+    </div>
+  </main>
+  
+  <WhatsAppWidget />
+  <Footer />
+</Layout>
+
+<style is:global>
+  .blog-article h1 {
+    font-size: 2.5rem;
+    color: var(--primary);
+    margin-bottom: 1.5rem;
+    line-height: 1.2;
+  }
+  .blog-article h2 {
+    font-size: 1.8rem;
+    color: var(--primary);
+    margin-top: 2.5rem;
+    margin-bottom: 1rem;
+    border-bottom: 2px solid rgba(15, 76, 129, 0.1);
+    padding-bottom: 0.5rem;
+  }
+  .blog-article h3 {
+    font-size: 1.4rem;
+    color: var(--accent);
+    margin-top: 1.5rem;
+    margin-bottom: 0.8rem;
+  }
+  .blog-article p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: var(--text-color);
+    margin-bottom: 1.2rem;
+  }
+  .blog-article ul, .blog-article ol {
+    margin-bottom: 1.5rem;
+    padding-left: 1.5rem;
+  }
+  .blog-article li {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    margin-bottom: 0.5rem;
+  }
+  .blog-article strong {
+    color: var(--primary);
+    font-weight: 700;
+  }
+  .blog-article a {
+    color: var(--accent);
+    text-decoration: underline;
+    font-weight: 600;
+  }
+  .blog-article blockquote {
+    background: rgba(15, 76, 129, 0.05);
+    border-left: 4px solid var(--accent);
+    padding: 1.5rem;
+    margin: 2rem 0;
+    border-radius: 0 8px 8px 0;
+    font-style: italic;
+  }
+</style>
