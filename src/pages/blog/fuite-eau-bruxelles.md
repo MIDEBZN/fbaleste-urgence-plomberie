@@ -1,5 +1,5 @@
 ---
-layout: ../../../layouts/BlogLayout.astro
+layout: ../../layouts/BlogLayout.astro
 title: "Fuite d'Eau à Bruxelles : Causes, Conséquences et Solutions Rapides"
 description: "Découvrez les causes des fuites d'eau à Bruxelles, les conséquences sur votre logement et les solutions rapides pour stopper les dégâts. Appel d'urgence 0492 775 775."
 ---

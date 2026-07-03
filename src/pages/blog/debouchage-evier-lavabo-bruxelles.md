@@ -1,5 +1,5 @@
 ---
-layout: ../../../layouts/BlogLayout.astro
+layout: ../../layouts/BlogLayout.astro
 title: "Débouchage Évier et Lavabo à Bruxelles : Astuces DIY et Intervention Professionnelle"
 description: "L'eau stagne dans votre évier de cuisine ou de salle de bain ? Nos experts plombiers à Bruxelles vous partagent leurs meilleures méthodes pour un débouchage réussi."
 ---

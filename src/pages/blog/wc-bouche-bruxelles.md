@@ -1,5 +1,5 @@
 ---
-layout: ../../../layouts/BlogLayout.astro
+layout: ../../layouts/BlogLayout.astro
 title: "WC Bouché à Bruxelles : Comment Agir et Quand Appeler un Professionnel"
 description: "Un WC bouché à Bruxelles ? Découvrez nos astuces efficaces pour le déboucher vous-même, les erreurs à éviter, et quand contacter un plombier en urgence."
 ---

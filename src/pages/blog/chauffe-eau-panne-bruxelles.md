@@ -1,5 +1,5 @@
 ---
-layout: ../../../layouts/BlogLayout.astro
+layout: ../../layouts/BlogLayout.astro
 title: "Chauffe-Eau en Panne à Bruxelles : Diagnostic et Réparation par un Expert"
 description: "Plus d'eau chaude ? Découvrez comment identifier l'origine de la panne de votre boiler ou chauffe-eau à Bruxelles et quand faire appel à un plombier chauffagiste."
 ---

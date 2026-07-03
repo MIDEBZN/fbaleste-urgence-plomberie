@@ -1,5 +1,5 @@
 ---
-layout: ../../../layouts/BlogLayout.astro
+layout: ../../layouts/BlogLayout.astro
 title: "Basse Pression d'Eau à Bruxelles : Causes et Solutions pour Retrouver un Bon Débit"
 description: "Votre pommeau de douche manque de pression ? L'eau chaude coule au goutte à goutte ? Découvrez les causes de la basse pression d'eau à Bruxelles et comment la réparer."
 ---

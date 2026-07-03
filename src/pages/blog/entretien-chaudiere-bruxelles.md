@@ -1,5 +1,5 @@
 ---
-layout: ../../../layouts/BlogLayout.astro
+layout: ../../layouts/BlogLayout.astro
 title: "Entretien de Chaudière à Bruxelles : Pourquoi C'est Essentiel et Obligatoire"
 description: "L'entretien régulier de votre chaudière au gaz est une obligation légale à Bruxelles. Découvrez les tarifs, les économies d'énergie et les risques pour votre sécurité."
 ---

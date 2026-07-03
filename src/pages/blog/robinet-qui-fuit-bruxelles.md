@@ -1,5 +1,5 @@
 ---
-layout: ../../../layouts/BlogLayout.astro
+layout: ../../layouts/BlogLayout.astro
 title: "Robinet qui Fuit à Bruxelles : Réparer ou Remplacer ? Le Guide Complet"
 description: "Un robinet qui goutte gaspille des centaines de litres d'eau. Découvrez s'il faut changer le joint, la cartouche ou remplacer complètement votre robinetterie."
 ---

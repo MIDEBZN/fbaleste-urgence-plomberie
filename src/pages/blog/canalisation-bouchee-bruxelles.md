@@ -1,5 +1,5 @@
 ---
-layout: ../../../layouts/BlogLayout.astro
+layout: ../../layouts/BlogLayout.astro
 title: "Canalisation Bouchée à Bruxelles : Prévention et Solutions Efficaces"
 description: "Évier qui refoule ou égout bloqué ? Apprenez comment déboucher une canalisation à Bruxelles, les erreurs à éviter, et les avantages d'un curage professionnel."
 ---
