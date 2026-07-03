@@ -4,7 +4,7 @@ import Header from '../../components/Header.astro';
 import Footer from '../../components/Footer.astro';
 import WhatsAppWidget from '../../components/WhatsAppWidget.astro';
 
-const posts = await Astro.glob('./*.md');
+const posts = Object.values(import.meta.glob('./*.md', { eager: true }));
 ---
 
 <Layout title="Blog Plomberie & Conseils | Fbaleste Urgence" description="Découvrez tous nos articles, conseils et guides sur la plomberie et le chauffage à Bruxelles.">
