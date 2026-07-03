@@ -58,5 +58,5 @@ Non, cessez d'utiliser ces produits chimiques ! Non seulement ils sont dangereux
 
 > **Malgré vos précautions, vous faites face à une urgence plomberie ?**
 > Fbaleste est votre partenaire de confiance à Bruxelles pour les dépannages rapides et les réparations durables.
-> 📞 **Contactez notre équipe de plombiers agréés au 0492 775 775.**
+> 📞 **Contactez notre équipe de plombiers agréés au 0465 76 75 11.**
 > [Visitez notre page Dépannage d'Urgence](/depannage-urgence)

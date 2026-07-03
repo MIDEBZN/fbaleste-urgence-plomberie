@@ -69,5 +69,5 @@ En cas de dégât des eaux, l'assurance rembourse la "Recherche de fuite" et les
 
 > **Chez Fbaleste Urgence Plomberie, l'honnêteté est notre marque de fabrique.**
 > Aucun frais caché. Nos techniciens vous informent du prix total estimé dès notre arrivée sur place. Vous restez maître de votre budget.
-> 📞 **Pour une intervention claire et sans surprise, appelez le 0492 775 775.**
+> 📞 **Pour une intervention claire et sans surprise, appelez le 0465 76 75 11.**
 > [Découvrez toutes nos garanties sur la page À Propos](/a-propos)

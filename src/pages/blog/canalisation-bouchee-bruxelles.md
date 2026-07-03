@@ -73,5 +73,5 @@ Le prix dépend de la localisation du bouchon. Un débouchage manuel/ventouse co
 
 > **Évier bloqué ? Eau stagnante ? Faites appel à un expert !**
 > Ne prenez pas le risque d'endommager vos tuyaux avec des produits chimiques. Fbaleste Urgence Plomberie intervient 24/7 sur tout Bruxelles.
-> 📞 **Appelez le 0492 775 775** pour un débouchage rapide et garanti.
+> 📞 **Appelez le 0465 76 75 11** pour un débouchage rapide et garanti.
 > [Visitez notre page Débouchage pour plus d'informations](/debouchage)

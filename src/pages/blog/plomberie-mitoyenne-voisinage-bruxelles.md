@@ -59,5 +59,5 @@ C'est l'erreur la plus commune ! N'appliquez jamais de peinture sur un mur ou un
 
 > **Une fuite chez votre voisin détruit votre plafond ? Besoin de détecter l'origine avec précision ?**
 > Fbaleste intervient rapidement pour effectuer une recherche de fuite non destructive par caméra endoscopique ou thermique. Nos rapports d'intervention font foi auprès des assurances belges.
-> 📞 **Contactez l'urgence au 0492 775 775.**
+> 📞 **Contactez l'urgence au 0465 76 75 11.**
 > [En savoir plus sur nos méthodes de Recherche de Fuite](/detection-fuite)

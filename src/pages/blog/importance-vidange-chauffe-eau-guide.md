@@ -56,5 +56,5 @@ Si l'eau chaude est sale mais que l'eau froide est limpide, le problème vient d
 
 > **Vos factures d'électricité explosent et l'eau chaude se fait rare ?**
 > Ne laissez pas le calcaire détruire votre chauffe-eau. Fbaleste réalise le détartrage complet et professionnel de toutes marques de boilers à Bruxelles.
-> 📞 **Prenez rendez-vous dès maintenant au 0492 775 775.**
+> 📞 **Prenez rendez-vous dès maintenant au 0465 76 75 11.**
 > [Visitez notre section Chauffage & Chaudières pour nos tarifs d'entretien](/chauffage-chaudiere)

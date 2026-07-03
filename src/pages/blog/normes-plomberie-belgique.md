@@ -71,5 +71,5 @@ Non, pas sans l'accord écrit du propriétaire. L'installation d'un lave-vaissel
 
 > **Un litige, une panne ou un doute sur la conformité de votre installation ?**
 > Qu'il s'agisse d'un diagnostic d'urgence ou d'une attestation d'entretien, nos experts agréés travaillent dans la plus stricte légalité et transparence.
-> 📞 **Appelez Fbaleste au 0492 775 775.**
+> 📞 **Appelez Fbaleste au 0465 76 75 11.**
 > [Visitez notre page Contact pour toute demande](/contact)

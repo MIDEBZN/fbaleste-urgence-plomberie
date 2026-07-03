@@ -64,5 +64,5 @@ Sauf si vous avez de solides connaissances en électricité, c'est fortement dé
 
 > **Plus d'eau chaude à Bruxelles ? Ne prenez pas de risque avec l'électricité et le gaz.**
 > Nos artisans agréés Fbaleste identifient la panne avec précision et vous proposent une réparation transparente ou un remplacement si nécessaire.
-> 📞 **Contactez notre équipe Chauffage au 0492 775 775** pour une intervention d'urgence !
+> 📞 **Contactez notre équipe Chauffage au 0465 76 75 11** pour une intervention d'urgence !
 > [Découvrez nos services Chauffage & Chaudières](/chauffage-chaudiere)

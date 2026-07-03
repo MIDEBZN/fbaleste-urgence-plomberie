@@ -73,5 +73,5 @@ Pour un chauffe-eau au gaz instantané, l'eau chaude est disponible à la minute
 
 > **Vous souhaitez un devis précis pour le remplacement de votre chauffe-eau ?**
 > Les experts de Fbaleste étudient vos besoins et votre budget pour vous proposer la solution la plus économique et durable.
-> 📞 **Contactez-nous au 0492 775 775 pour un diagnostic gratuit.**
+> 📞 **Contactez-nous au 0465 76 75 11 pour un diagnostic gratuit.**
 > [Découvrez nos services Chauffage & Chaudières](/chauffage-chaudiere)

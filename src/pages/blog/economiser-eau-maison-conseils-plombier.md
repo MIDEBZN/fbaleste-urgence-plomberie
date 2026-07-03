@@ -61,5 +61,5 @@ C'est non seulement autorisé, mais souvent obligatoire pour les nouvelles const
 
 > **Vous suspectez une fuite invisible ou souhaitez moderniser votre robinetterie pour faire des économies ?**
 > Nos plombiers réalisent des diagnostics complets et installent des équipements hydro-économes de qualité professionnelle.
-> 📞 **Contactez Fbaleste Urgence Plomberie au 0492 775 775.**
+> 📞 **Contactez Fbaleste Urgence Plomberie au 0465 76 75 11.**
 > [Visitez notre page Installations Sanitaires](/installations-sanitaires)

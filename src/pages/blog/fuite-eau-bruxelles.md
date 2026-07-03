@@ -1,7 +1,7 @@
 ---
 layout: ../../layouts/BlogLayout.astro
 title: "Fuite d'Eau à Bruxelles : Causes, Conséquences et Solutions Rapides"
-description: "Découvrez les causes des fuites d'eau à Bruxelles, les conséquences sur votre logement et les solutions rapides pour stopper les dégâts. Appel d'urgence 0492 775 775."
+description: "Découvrez les causes des fuites d'eau à Bruxelles, les conséquences sur votre logement et les solutions rapides pour stopper les dégâts. Appel d'urgence 0465 76 75 11."
 ---
 
 # Fuite d'Eau à Bruxelles : Causes, Conséquences et Solutions Rapides
@@ -80,5 +80,5 @@ Directement non. Mais l'accumulation de calcaire (le tartre) augmente la pressio
 
 > **Une urgence fuite d'eau à Bruxelles ? Ne laissez pas la situation s'aggraver !**
 > L'équipe de Fbaleste Urgence Plomberie intervient en moins de 30 minutes sur l'ensemble des 19 communes de Bruxelles. 
-> 📞 **Contactez-nous immédiatement au 0492 775 775** pour une intervention rapide, professionnelle et agréée par les assurances.
+> 📞 **Contactez-nous immédiatement au 0465 76 75 11** pour une intervention rapide, professionnelle et agréée par les assurances.
 > [Demander un dépannage en ligne](/contact)

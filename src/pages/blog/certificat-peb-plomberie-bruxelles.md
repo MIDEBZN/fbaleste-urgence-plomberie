@@ -58,5 +58,5 @@ Curieusement, non. Bien qu'une douche rapide consomme moins d'eau (et donc moins
 
 > **Envie de moderniser votre installation de chauffage pour améliorer votre PEB ?**
 > Nos chauffagistes Fbaleste installent des chaudières à condensation à très haut rendement avec vannes thermostatiques, respectant toutes les normes bruxelloises.
-> 📞 **Demandez un devis sans engagement au 0492 775 775 !**
+> 📞 **Demandez un devis sans engagement au 0465 76 75 11 !**
 > [Consultez nos services Chauffage & Chaudières](/chauffage-chaudiere)

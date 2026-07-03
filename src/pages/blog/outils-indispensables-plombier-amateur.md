@@ -60,5 +60,5 @@ Les acides vendus en grande surface créent une réaction exothermique (dégagem
 
 > **Le bricolage a mal tourné ? Un écrou a cédé et l'eau coule sans arrêt ?**
 > Pas de panique. Coupez l'eau générale et laissez les professionnels de Fbaleste Urgence Plomberie prendre le relais. Nous réparons vos installations de manière sécurisée et durable à Bruxelles.
-> 📞 **Intervention d'urgence au 0492 775 775 !**
+> 📞 **Intervention d'urgence au 0465 76 75 11 !**
 > [Consultez nos tarifs de Dépannage](/depannage-urgence)

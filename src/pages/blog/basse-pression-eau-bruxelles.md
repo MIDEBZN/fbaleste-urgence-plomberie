@@ -59,5 +59,5 @@ Attention, il ne faut pas confondre la "pression de l'eau aux robinets" et la "p
 
 > **Marre des douches sans pression ou sans eau chaude ?**
 > Qu'il s'agisse d'un problème de calcaire, de chaudière ou de tuyauterie ancienne, les experts de Fbaleste ont la solution pour ramener le confort dans votre salle de bain à Bruxelles.
-> 📞 **Appelez-nous au 0492 775 775** pour planifier une intervention.
+> 📞 **Appelez-nous au 0465 76 75 11** pour planifier une intervention.
 > [Visitez notre page Traitement de l'Eau](/traitement-eau)

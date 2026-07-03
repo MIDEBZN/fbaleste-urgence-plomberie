@@ -61,5 +61,5 @@ Excellente ! Le tube multicouche a une durée de vie théorique estimée à plus
 
 > **Ne laissez pas des tuyaux pourris dicter la fin de vos vieux jours.**
 > Fbaleste Urgence Plomberie réalise le diagnostic vidéo et le remplacement intégral de vos réseaux vétustes dans tout Bruxelles, avec des matériaux modernes et garantis.
-> 📞 **Programmez une visite d'évaluation au 0492 775 775.**
+> 📞 **Programmez une visite d'évaluation au 0465 76 75 11.**
 > [Visitez notre page Installations Sanitaires pour un devis gratuit](/installations-sanitaires)

@@ -66,5 +66,5 @@ La précipitation du calcaire (sa transformation de l'état dissous à la pierre
 
 > **Marre du calcaire qui détruit votre maison bruxelloise ?**
 > Protégez votre plomberie et votre confort. Nos plombiers installent des adoucisseurs d'eau haut de gamme adaptés à la dureté locale.
-> 📞 **Contactez Fbaleste Urgence Plomberie au 0492 775 775** pour un devis gratuit !
+> 📞 **Contactez Fbaleste Urgence Plomberie au 0465 76 75 11** pour un devis gratuit !
 > [Découvrez nos solutions de Traitement de l'Eau](/traitement-eau)

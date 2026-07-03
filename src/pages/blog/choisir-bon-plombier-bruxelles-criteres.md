@@ -59,5 +59,5 @@ Si vous avez été forcé à payer une facture exorbitante pour un travail inuti
 
 > **Ne confiez pas la sécurité de votre maison au hasard.**
 > Fbaleste Urgence Plomberie est une entreprise agréée, transparente sur ses tarifs et notée 4.9/5 par les Bruxellois.
-> 📞 **Contactez notre équipe de professionnels au 0492 775 775.**
+> 📞 **Contactez notre équipe de professionnels au 0465 76 75 11.**
 > [Découvrez nos Engagements et Garanties](/a-propos)

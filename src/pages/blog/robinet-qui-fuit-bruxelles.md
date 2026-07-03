@@ -66,5 +66,5 @@ Si vous fournissez le robinet, le plombier facturera le déplacement et la main-
 
 > **Un robinet récalcitrant ou une fuite sous votre évier ?**
 > Nos artisans interviennent sur Bruxelles pour réparer ou remplacer votre robinetterie de manière professionnelle et durable.
-> 📞 **Appelez Fbaleste Urgence Plomberie au 0492 775 775 !**
+> 📞 **Appelez Fbaleste Urgence Plomberie au 0465 76 75 11 !**
 > [Consultez nos services d'Installations Sanitaires](/installations-sanitaires)

@@ -75,5 +75,5 @@ Oui, c'est de la physique de base : l'eau se dilate en chauffant. La pression pe
 
 > **Plus de chauffage ? Chaudière en panne à Bruxelles ?**
 > Nos chauffagistes agréés Fbaleste interviennent 24/7 pour diagnostiquer et réparer votre système de chauffage dans les plus brefs délais.
-> 📞 **Appelez l'urgence chauffage au 0492 775 775.**
+> 📞 **Appelez l'urgence chauffage au 0465 76 75 11.**
 > [Découvrez nos services Chauffage & Chaudières](/chauffage-chaudiere)

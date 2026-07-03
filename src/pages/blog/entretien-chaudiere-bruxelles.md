@@ -64,5 +64,5 @@ La purge des radiateurs est une opération simple que l'occupant est censé fair
 
 > **Votre chaudière n'a pas été contrôlée depuis plus de 2 ans ?**
 > Fbaleste Urgence Plomberie dispose d'une équipe de chauffagistes certifiés et agréés pour la Région de Bruxelles-Capitale.
-> 📞 **Programmez votre entretien dès aujourd'hui au 0492 775 775** ou demandez un rendez-vous en ligne.
+> 📞 **Programmez votre entretien dès aujourd'hui au 0465 76 75 11** ou demandez un rendez-vous en ligne.
 > [Visitez notre page Chauffage & Chaudières pour nos tarifs](/chauffage-chaudiere)

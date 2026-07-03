@@ -87,5 +87,5 @@ La loi belge est claire : le débouchage "simple" lié à l'usage quotidien (pap
 
 > **Toilettes bloquées ? Risque de débordement ? Ne perdez pas de temps !**
 > L'équipe de Fbaleste Urgence Plomberie est équipée pour tout type de débouchage, des WC aux égouts, partout à Bruxelles et environs.
-> 📞 **Appelez-nous au 0492 775 775** pour une intervention d'urgence en 30 minutes.
+> 📞 **Appelez-nous au 0465 76 75 11** pour une intervention d'urgence en 30 minutes.
 > [Contactez-nous pour un devis](/contact)
