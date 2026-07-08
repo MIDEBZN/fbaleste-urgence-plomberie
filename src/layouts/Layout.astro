@@ -1,11 +1,56 @@
 ---
 interface Props {
-	title: string;
-	description: string;
+	title?: string;
+	description?: string;
 }
 
-const { title, description } = Astro.props;
+const { 
+  title = "Fbaleste Urgence Plomberie | Dépannage Plombier Bruxelles", 
+  description = "Fbaleste Urgence Plomberie est votre expert pour tout dépannage et réparation en plomberie. Intervention rapide garantie."
+} = Astro.props;
 import '../styles/global.css';
+
+const canonicalURL = new URL(Astro.url.pathname, Astro.site || 'https://www.urgenceplomberie.be');
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "PlumbingService",
+  "name": "Fbaleste Urgence Plomberie",
+  "url": Astro.site?.toString() || 'https://www.urgenceplomberie.be/',
+  "telephone": "+32000000000",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Bruxelles",
+    "addressCountry": "BE"
+  },
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Services Catalog",
+    "itemListElement": [
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Dépannage Urgence Plomberie"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Réparation Fuite d'Eau"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Débouchage Canalisations"
+        }
+      }
+    ]
+  }
+};
 ---
 
 <!doctype html>
@@ -17,7 +62,9 @@ import '../styles/global.css';
 		<meta name="generator" content={Astro.generator} />
 		<title>{title} | Fbaleste Urgence Plomberie</title>
 		<meta name="description" content={description} />
+		<link rel="canonical" href={canonicalURL} />
 		<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Outfit:wght@400;700&display=swap" rel="stylesheet">
+		<script type="application/ld+json" set:html={JSON.stringify(schema)} />
 	</head>
 	<body>
 		<slot />
