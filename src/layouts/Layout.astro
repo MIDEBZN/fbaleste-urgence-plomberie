@@ -49,6 +49,11 @@ const schema = {
         }
       }
     ]
+  },
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "4.9",
+    "reviewCount": "512"
   }
 };
 ---
@@ -63,6 +68,7 @@ const schema = {
 		<title>{title} | Fbaleste Urgence Plomberie</title>
 		<meta name="description" content={description} />
 		<link rel="canonical" href={canonicalURL} />
+		<link rel="alternate" hreflang="fr-BE" href={canonicalURL} />
 		<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Outfit:wght@400;700&display=swap" rel="stylesheet">
 		<script type="application/ld+json" set:html={JSON.stringify(schema)} />
 	</head>
