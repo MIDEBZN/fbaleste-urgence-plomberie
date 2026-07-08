@@ -2,11 +2,13 @@
 interface Props {
 	title?: string;
 	description?: string;
+  preloadImage?: string;
 }
 
 const { 
   title = "Fbaleste Urgence Plomberie | Dépannage Plombier Bruxelles", 
-  description = "Fbaleste Urgence Plomberie est votre expert pour tout dépannage et réparation en plomberie. Intervention rapide garantie."
+  description = "Fbaleste Urgence Plomberie est votre expert pour tout dépannage et réparation en plomberie. Intervention rapide garantie.",
+  preloadImage
 } = Astro.props;
 import '../styles/global.css';
 
@@ -69,7 +71,10 @@ const schema = {
 		<meta name="description" content={description} />
 		<link rel="canonical" href={canonicalURL} />
 		<link rel="alternate" hreflang="fr-BE" href={canonicalURL} />
-		<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Outfit:wght@400;700&display=swap" rel="stylesheet">
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Outfit:wght@400;700&display=swap" rel="stylesheet" />
+		{preloadImage && <link rel="preload" href={preloadImage} as="image" />}
 		<script type="application/ld+json" set:html={JSON.stringify(schema)} />
 	</head>
 	<body>
