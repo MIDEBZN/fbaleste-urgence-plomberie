@@ -1,7 +1,7 @@
 # Action Plan
 
 - URL: `https://www.urgenceplomberie.be`
-- Overall score: `68/100`
+- Overall score: `64/100`
 
 ## Priority Fixes
 
@@ -20,52 +20,47 @@
    - Area: `environment`
    - Evidence: Title length/content is likely suboptimal for rankings and click-through.
    - Fix: Update page templates to set complete title/meta/OG/Twitter tags.
-4. **No llms.txt found**
-   - Priority: `Warning`
-   - Area: `environment`
-   - Evidence: AI crawlers and assistants have no curated machine-readable guidance for key pages.
-   - Fix: Add `/llms.txt` at site root with concise site description and key URLs.
-5. **1 broken links detected**
+4. **1 broken links detected**
    - Priority: `Warning`
    - Area: `environment`
    - Evidence: Broken internal links hurt crawl flow and user trust.
    - Fix: Repair or remove broken internal links and refresh outdated navigation targets.
-6. **Social meta tags are incomplete**
+5. **Social meta tags are incomplete**
    - Priority: `Warning`
    - Area: `environment`
    - Evidence: Missing OG/Twitter tags weakens social previews and share quality.
    - Fix: Update page templates to set complete title/meta/OG/Twitter tags.
-7. **No Wikidata entry found for 'Plombier Urgence Bruxelles'.**
+6. **No Wikidata entry found for 'Plombier Urgence Bruxelles'.**
    - Priority: `Info`
    - Area: `Wikidata`
    - Evidence: See audit output.
    - Fix: If the entity meets Wikidata notability guidelines, create or improve an item with accurate third-party references. Do not create one solely for SEO.
-8. **No Wikipedia article found for 'Plombier Urgence Bruxelles'.**
+7. **No Wikipedia article found for 'Plombier Urgence Bruxelles'.**
    - Priority: `Info`
    - Area: `Wikipedia`
    - Evidence: See audit output.
    - Fix: Only pursue Wikipedia if the entity meets independent notability standards. Otherwise, strengthen official schema, sameAs profiles, citations, and About/Contact signals.
-9. **Performance measurement incomplete**
+8. **Performance measurement incomplete**
    - Priority: `Info`
    - Area: `environment`
    - Evidence: PageSpeed API returned an error, so CWV recommendations are less reliable.
    - Fix: Set `PAGESPEED_API_KEY` in your environment or `.env` file (see `.env.example`), then rerun. The CLI also accepts `--api-key`. Prioritize LCP/INP/CLS fixes from that output.
-10. **Missing sameAs link to Wikipedia (Primary KG signal).**
+9. **Missing sameAs link to Wikipedia (Primary KG signal).**
    - Priority: `Info`
    - Area: `sameAs`
    - Evidence: See audit output.
    - Fix: Add the existing official 'wikipedia.org' URL to sameAs; do not create this profile solely for SEO.
-11. **Missing sameAs link to Wikidata (Primary KG signal).**
+10. **Missing sameAs link to Wikidata (Primary KG signal).**
    - Priority: `Info`
    - Area: `sameAs`
    - Evidence: See audit output.
    - Fix: Add the existing official 'wikidata.org' URL to sameAs; do not create this profile solely for SEO.
-12. **Missing sameAs link to LinkedIn (Strong KG signal).**
+11. **Missing sameAs link to LinkedIn (Strong KG signal).**
    - Priority: `Info`
    - Area: `sameAs`
    - Evidence: See audit output.
    - Fix: Add 'linkedin.com' profile URL to sameAs array in your entity schema.
-13. **Missing sameAs link to Twitter/X (Strong KG signal).**
+12. **Missing sameAs link to Twitter/X (Strong KG signal).**
    - Priority: `Info`
    - Area: `sameAs`
    - Evidence: See audit output.

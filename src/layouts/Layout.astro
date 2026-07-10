@@ -16,12 +16,15 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site || 'https://www.urge
 
 const schema = {
   "@context": "https://schema.org",
-  "@type": "PlumbingService",
+  "@type": ["Organization", "PlumbingService"],
   "name": "Fbaleste Urgence Plomberie",
   "url": Astro.site?.toString() || 'https://www.urgenceplomberie.be/',
+  "logo": "https://www.urgenceplomberie.be/logo.png",
   "telephone": "+32465767511",
   "sameAs": [
-    "https://maps.app.goo.gl/oGRZHeiCwteckNcG6"
+    "https://maps.app.goo.gl/oGRZHeiCwteckNcG6",
+    "https://www.linkedin.com/company/urgenceplomberie",
+    "https://twitter.com/urgenceplomberie"
   ],
   "address": {
     "@type": "PostalAddress",
@@ -73,6 +76,21 @@ const schema = {
 		<title>{title} | Fbaleste Urgence Plomberie</title>
 		<meta name="description" content={description} />
 		<link rel="canonical" href={canonicalURL} />
+		
+		<!-- Open Graph / Facebook -->
+		<meta property="og:type" content="website" />
+		<meta property="og:url" content={canonicalURL} />
+		<meta property="og:title" content={`${title} | Fbaleste Urgence Plomberie`} />
+		<meta property="og:description" content={description} />
+		<meta property="og:image" content={new URL('/logo.png', Astro.site || 'https://www.urgenceplomberie.be')} />
+
+		<!-- Twitter -->
+		<meta property="twitter:card" content="summary_large_image" />
+		<meta property="twitter:url" content={canonicalURL} />
+		<meta property="twitter:title" content={`${title} | Fbaleste Urgence Plomberie`} />
+		<meta property="twitter:description" content={description} />
+		<meta property="twitter:image" content={new URL('/logo.png', Astro.site || 'https://www.urgenceplomberie.be')} />
+
 		<link rel="alternate" hreflang="fr-BE" href={canonicalURL} />
 		<link rel="preconnect" href="https://fonts.googleapis.com">
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>

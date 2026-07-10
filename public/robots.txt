@@ -1,4 +1,33 @@
 User-agent: *
 Allow: /
 
+# Answer Engine & AI Search Bots (Explicitly Allowed for AEO)
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Omgilibot
+Allow: /
+
+# Aggressive Scraping Bots (Blocked)
+User-agent: CCBot
+Disallow: /
+
+User-agent: Bytespider
+Disallow: /
+
+User-agent: Diffbot
+Disallow: /
+
 Sitemap: https://www.urgenceplomberie.be/sitemap-index.xml

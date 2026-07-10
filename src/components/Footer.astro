@@ -37,6 +37,31 @@ import GlobalContactForm from './GlobalContactForm.astro';
     </div>
   </div>
   
+  <div class="container footer-zones" style="margin-bottom: 3rem; padding-top: 2rem; border-top: 1px solid rgba(255,255,255,0.1);">
+    <h4 style="margin-bottom: 1rem; color: var(--white);">Nos Zones d'Intervention à Bruxelles</h4>
+    <div style="display: flex; flex-wrap: wrap; gap: 0.8rem; font-size: 0.85rem;">
+      <a href="/zones/plombier-bruxelles" class="zone-tag">Bruxelles (1000)</a>
+      <a href="/zones/plombier-schaerbeek" class="zone-tag">Schaerbeek</a>
+      <a href="/zones/plombier-etterbeek" class="zone-tag">Etterbeek</a>
+      <a href="/zones/plombier-ixelles" class="zone-tag">Ixelles</a>
+      <a href="/zones/plombier-saint-gilles" class="zone-tag">Saint-Gilles</a>
+      <a href="/zones/plombier-saint-josse-ten-noode" class="zone-tag">Saint-Josse</a>
+      <a href="/zones/plombier-anderlecht" class="zone-tag">Anderlecht</a>
+      <a href="/zones/plombier-molenbeek-saint-jean" class="zone-tag">Molenbeek</a>
+      <a href="/zones/plombier-koekelberg" class="zone-tag">Koekelberg</a>
+      <a href="/zones/plombier-berchem-sainte-agathe" class="zone-tag">Berchem-Sainte-Agathe</a>
+      <a href="/zones/plombier-ganshoren" class="zone-tag">Ganshoren</a>
+      <a href="/zones/plombier-jette" class="zone-tag">Jette</a>
+      <a href="/zones/plombier-evere" class="zone-tag">Evere</a>
+      <a href="/zones/plombier-woluwe-saint-pierre" class="zone-tag">Woluwe-Saint-Pierre</a>
+      <a href="/zones/plombier-auderghem" class="zone-tag">Auderghem</a>
+      <a href="/zones/plombier-watermael-boitsfort" class="zone-tag">Watermael-Boitsfort</a>
+      <a href="/zones/plombier-uccle" class="zone-tag">Uccle</a>
+      <a href="/zones/plombier-forest" class="zone-tag">Forest</a>
+      <a href="/zones/plombier-woluwe-saint-lambert" class="zone-tag">Woluwe-Saint-Lambert</a>
+    </div>
+  </div>
+  
   <div class="footer-bottom text-center">
     <p>&copy; {new Date().getFullYear()} Fbaleste Urgence Plomberie. Tous droits réservés.</p>
   </div>
@@ -97,5 +122,18 @@ import GlobalContactForm from './GlobalContactForm.astro';
     padding: 1.5rem 0;
     color: #94a3b8;
     font-size: 0.9rem;
+  }
+  
+  .zone-tag {
+    color: #cbd5e1;
+    background: rgba(255,255,255,0.05);
+    padding: 0.4rem 0.8rem;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+    text-decoration: none;
+  }
+  .zone-tag:hover {
+    color: var(--white);
+    background: var(--accent);
   }
 </style>

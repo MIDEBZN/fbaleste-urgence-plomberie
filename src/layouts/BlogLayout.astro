@@ -5,6 +5,23 @@ import Footer from '../components/Footer.astro';
 import WhatsAppWidget from '../components/WhatsAppWidget.astro';
 
 const { frontmatter } = Astro.props;
+
+// Get all posts to build an internal linking structure (prev/next)
+const allPostsObj = import.meta.glob('../pages/blog/*.md', { eager: true });
+const allPosts = Object.values(allPostsObj);
+const currentUrl = Astro.url.pathname.replace(/\/$/, '');
+const currentIndex = allPosts.findIndex(post => {
+  const postUrl = post.url?.replace(/\/$/, '');
+  return postUrl === currentUrl;
+});
+
+let nextPost = null;
+let prevPost = null;
+
+if (currentIndex !== -1 && allPosts.length > 1) {
+  nextPost = allPosts[(currentIndex + 1) % allPosts.length];
+  prevPost = allPosts[(currentIndex - 1 + allPosts.length) % allPosts.length];
+}
 ---
 <Layout title={frontmatter.title} description={frontmatter.description}>
   <Header />
@@ -14,6 +31,19 @@ const { frontmatter } = Astro.props;
       <article class="glass card blog-article" style="padding: 3rem; border-radius: 16px;">
         <slot />
       </article>
+
+      {nextPost && prevPost && (
+        <div class="glass card mt-3" style="padding: 2rem; border-radius: 16px; margin-top: 2rem; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 1rem;">
+          <div style="flex: 1; min-width: 250px;">
+            <p style="font-size: 0.9rem; color: var(--text-color); margin-bottom: 0.5rem;">Article précédent</p>
+            <a href={prevPost.url} style="color: var(--primary); font-weight: 600; text-decoration: none; font-size: 1.1rem; transition: color 0.3s;">← {prevPost.frontmatter.title}</a>
+          </div>
+          <div style="flex: 1; min-width: 250px; text-align: right;">
+            <p style="font-size: 0.9rem; color: var(--text-color); margin-bottom: 0.5rem;">Article suivant</p>
+            <a href={nextPost.url} style="color: var(--primary); font-weight: 600; text-decoration: none; font-size: 1.1rem; transition: color 0.3s;">{nextPost.frontmatter.title} →</a>
+          </div>
+        </div>
+      )}
     </div>
   </main>
   
