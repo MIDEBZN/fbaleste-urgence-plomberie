@@ -6,25 +6,25 @@ import WhatsAppWidget from '../../components/WhatsAppWidget.astro';
 
 export function getStaticPaths() {
   const communes = [
-    { slug: 'plombier-anderlecht', name: 'Anderlecht', cp: '1070', landmarks: 'le Stade Constant Vanden Stock et les Abattoirs', neighborhoods: 'Cureghem, Neerpede et Veeweyde', employers: 'l\'Hôpital Erasme et RSC Anderlecht' },
-    { slug: 'plombier-auderghem', name: 'Auderghem', cp: '1160', landmarks: 'la Forêt de Soignes et le Rouge-Cloître', neighborhoods: 'Saint-Julien et le Transvaal', employers: 'le CHIREC et Carrefour Delta' },
-    { slug: 'plombier-berchem-sainte-agathe', name: 'Berchem-Sainte-Agathe', cp: '1082', landmarks: 'le Bois du Wilder et l\'Ancienne Église', neighborhoods: 'le Quartier Schweitzer et Hunderenveld', employers: 'le centre commercial Basilix' },
-    { slug: 'plombier-etterbeek', name: 'Etterbeek', cp: '1040', landmarks: 'le Parc du Cinquantenaire et la Place Jourdan', neighborhoods: 'La Chasse et le quartier Saint-Michel', employers: 'les Institutions Européennes' },
-    { slug: 'plombier-bruxelles', name: 'Bruxelles', cp: '1000', landmarks: 'la Grand-Place, la Bourse et le Mont des Arts', neighborhoods: 'les Marolles, le Sablon et le Quartier Européen', employers: 'la Ville de Bruxelles et de nombreuses administrations' },
-    { slug: 'plombier-evere', name: 'Evere', cp: '1140', landmarks: 'le Cimetière de Bruxelles et le Musée de la Witloof', neighborhoods: 'Paduwa et Evere-Centre', employers: 'l\'OTAN et RTL Belgium' },
-    { slug: 'plombier-forest', name: 'Forest', cp: '1190', landmarks: 'Forest National et le Parc Duden', neighborhoods: 'Altitude 100 et Saint-Denis', employers: 'Audi Brussels' },
-    { slug: 'plombier-ganshoren', name: 'Ganshoren', cp: '1083', landmarks: 'le Château de Rivieren et le Parc Roi Baudouin', neighborhoods: 'le quartier de l\'Exposition', employers: 'les commerces de l\'Avenue Charles-Quint' },
-    { slug: 'plombier-ixelles', name: 'Ixelles', cp: '1050', landmarks: 'la Place Flagey et l\'Avenue Louise', neighborhoods: 'le Châtelain, Matonge et le Cimetière d\'Ixelles', employers: 'l\'ULB et le Parlement Européen' },
-    { slug: 'plombier-jette', name: 'Jette', cp: '1090', landmarks: 'la Place du Miroir et l\'Hôpital Brugmann', neighborhoods: 'Dieleghem et les Jardins de Jette', employers: 'l\'UZ Brussel et l\'Hôpital Brugmann' },
-    { slug: 'plombier-koekelberg', name: 'Koekelberg', cp: '1081', landmarks: 'l\'imposante Basilique du Sacré-Cœur', neighborhoods: 'le quartier Simonis et le Parc Élisabeth', employers: 'les entreprises autour du boulevard Léopold II' },
-    { slug: 'plombier-molenbeek-saint-jean', name: 'Molenbeek-Saint-Jean', cp: '1080', landmarks: 'le Château Karreveld et le bord du Canal', neighborhoods: 'Étangs Noirs et le quartier Mettewie', employers: 'diverses industries le long du canal' },
-    { slug: 'plombier-saint-gilles', name: 'Saint-Gilles', cp: '1060', landmarks: 'le Parvis de Saint-Gilles et la Gare du Midi', neighborhoods: 'la Barrière et le quartier de l\'Hôtel de Monnaies', employers: 'la SNCB et la Gare du Midi' },
-    { slug: 'plombier-saint-josse-ten-noode', name: 'Saint-Josse-ten-Noode', cp: '1210', landmarks: 'le Jardin Botanique et la Place Madou', neighborhoods: 'le Quartier Nord et la Place Saint-Josse', employers: 'Proximus et la Tour Finance' },
-    { slug: 'plombier-schaerbeek', name: 'Schaerbeek', cp: '1030', landmarks: 'le Parc Josaphat et la Gare de Schaerbeek', neighborhoods: 'Plasky, Colignon et la Cage aux Ours', employers: 'la RTBF et la VRT' },
-    { slug: 'plombier-uccle', name: 'Uccle', cp: '1180', landmarks: 'le Bois de la Cambre et l\'Observatoire', neighborhoods: 'Fort-Jaco, Saint-Job et le Vert Chasseur', employers: 'la Commune d\'Uccle et les cliniques locales' },
-    { slug: 'plombier-watermael-boitsfort', name: 'Watermael-Boitsfort', cp: '1170', landmarks: 'l\'Hippodrome de Boitsfort et les Étangs', neighborhoods: 'le Coin du Balai et les cités-jardins', employers: 'le groupe Glaverbel et diverses entreprises tertiaires' },
-    { slug: 'plombier-woluwe-saint-lambert', name: 'Woluwe-Saint-Lambert', cp: '1200', landmarks: 'le Woluwe Shopping Center et le Moulin de Lindekemale', neighborhoods: 'Roodebeek et le quartier Georges Henri', employers: 'l\'UCLouvain et les Cliniques universitaires Saint-Luc' },
-    { slug: 'plombier-woluwe-saint-pierre', name: 'Woluwe-Saint-Pierre', cp: '1150', landmarks: 'le Palais Stoclet et le Parc de la Woluwe', neighborhoods: 'le Chant d\'Oiseau et le centre de Stockel', employers: 'de nombreuses ambassades et centres diplomatiques' }
+    { slug: 'plombier-anderlecht', name: 'Anderlecht', cp: '1070', prep: 'd\'', landmarks: 'le Stade Constant Vanden Stock et les Abattoirs', neighborhoods: 'Cureghem, Neerpede, Veeweyde', building_context: 'Les anciens bâtiments industriels rénovés et les maisons de rangée classiques nécessitent souvent une mise aux normes de la plomberie.', nearby: [{name: 'Molenbeek', slug: 'plombier-molenbeek-saint-jean'}, {name: 'Forest', slug: 'plombier-forest'}] },
+    { slug: 'plombier-auderghem', name: 'Auderghem', cp: '1160', prep: 'd\'', landmarks: 'la Forêt de Soignes et le Rouge-Cloître', neighborhoods: 'Saint-Julien, le Transvaal, le quartier de l\'Église', building_context: 'Les villas et habitations résidentielles proches de la forêt font face à des problèmes spécifiques d\'humidité et d\'entretien de chaudières.', nearby: [{name: 'Watermael-Boitsfort', slug: 'plombier-watermael-boitsfort'}, {name: 'Woluwe-Saint-Pierre', slug: 'plombier-woluwe-saint-pierre'}] },
+    { slug: 'plombier-berchem-sainte-agathe', name: 'Berchem-Sainte-Agathe', cp: '1082', prep: 'de ', landmarks: 'le Bois du Wilder et l\'Ancienne Église', neighborhoods: 'le Quartier Schweitzer, Hunderenveld', building_context: 'Les nombreuses nouvelles constructions côtoient des habitations plus anciennes nécessitant un détartrage régulier dû à la dureté de l\'eau locale.', nearby: [{name: 'Ganshoren', slug: 'plombier-ganshoren'}, {name: 'Koekelberg', slug: 'plombier-koekelberg'}] },
+    { slug: 'plombier-etterbeek', name: 'Etterbeek', cp: '1040', prep: 'd\'', landmarks: 'le Parc du Cinquantenaire et la Place Jourdan', neighborhoods: 'La Chasse, le quartier Saint-Michel, le quartier européen', building_context: 'Beaucoup d\'appartements en copropriété et de maisons de maître divisées demandent une expertise en recherche de fuite sans casse et en gestion des colonnes communes.', nearby: [{name: 'Ixelles', slug: 'plombier-ixelles'}, {name: 'Schaerbeek', slug: 'plombier-schaerbeek'}] },
+    { slug: 'plombier-bruxelles', name: 'Bruxelles', cp: '1000', prep: 'de ', landmarks: 'la Grand-Place, la Bourse et le Mont des Arts', neighborhoods: 'les Marolles, le Sablon, le Quartier Européen, le Pentagone', building_context: 'Le centre historique de la ville regorge de conduites anciennes, ce qui entraîne des bouchons fréquents nécessitant un hydrocurage professionnel.', nearby: [{name: 'Ixelles', slug: 'plombier-ixelles'}, {name: 'Saint-Gilles', slug: 'plombier-saint-gilles'}] },
+    { slug: 'plombier-evere', name: 'Evere', cp: '1140', prep: 'd\'', landmarks: 'le Cimetière de Bruxelles et le Musée de la Witloof', neighborhoods: 'Paduwa, Evere-Centre, le haut d\'Evere', building_context: 'Les immeubles à appartements plus récents nécessitent un entretien régulier des chaudières individuelles au gaz pour garantir leur bon rendement.', nearby: [{name: 'Schaerbeek', slug: 'plombier-schaerbeek'}, {name: 'Woluwe-Saint-Lambert', slug: 'plombier-woluwe-saint-lambert'}] },
+    { slug: 'plombier-forest', name: 'Forest', cp: '1190', prep: 'de ', landmarks: 'Forest National et le Parc Duden', neighborhoods: 'Altitude 100, Saint-Denis, le quartier Bervoets', building_context: 'Les dénivelés importants de la commune peuvent influencer la pression d\'eau, nécessitant parfois l\'installation de réducteurs ou de surpresseurs.', nearby: [{name: 'Uccle', slug: 'plombier-uccle'}, {name: 'Saint-Gilles', slug: 'plombier-saint-gilles'}] },
+    { slug: 'plombier-ganshoren', name: 'Ganshoren', cp: '1083', prep: 'de ', landmarks: 'le Château de Rivieren et le Parc Roi Baudouin', neighborhoods: 'le quartier de l\'Exposition, le centre', building_context: 'Les habitations résidentielles nécessitent souvent le remplacement préventif de chauffe-eau vétustes pour éviter les dégâts des eaux.', nearby: [{name: 'Jette', slug: 'plombier-jette'}, {name: 'Berchem-Sainte-Agathe', slug: 'plombier-berchem-sainte-agathe'}] },
+    { slug: 'plombier-ixelles', name: 'Ixelles', cp: '1050', prep: 'd\'', landmarks: 'la Place Flagey et l\'Avenue Louise', neighborhoods: 'le Châtelain, Matonge, le Cimetière d\'Ixelles, l\'ULB', building_context: 'La forte présence de kots étudiants et de colocations entraîne une sollicitation intensive des sanitaires (bouchons fréquents dans les douches et WC).', nearby: [{name: 'Etterbeek', slug: 'plombier-etterbeek'}, {name: 'Saint-Gilles', slug: 'plombier-saint-gilles'}, {name: 'Bruxelles', slug: 'plombier-bruxelles'}] },
+    { slug: 'plombier-jette', name: 'Jette', cp: '1090', prep: 'de ', landmarks: 'la Place du Miroir et le parc de la Jeunesse', neighborhoods: 'Dieleghem, les Jardins de Jette, le centre', building_context: 'On y trouve de nombreuses maisons unifamiliales nécessitant la mise à jour des installations de chauffage pour répondre aux normes actuelles de PEB.', nearby: [{name: 'Ganshoren', slug: 'plombier-ganshoren'}, {name: 'Laeken (Bruxelles)', slug: 'plombier-bruxelles'}] },
+    { slug: 'plombier-koekelberg', name: 'Koekelberg', cp: '1081', prep: 'de ', landmarks: 'l\'imposante Basilique du Sacré-Cœur', neighborhoods: 'le quartier Simonis, le Parc Élisabeth', building_context: 'Les habitations de caractère autour de la basilique ont souvent des réseaux de plomberie d\'origine qu\'il est recommandé d\'inspecter par caméra.', nearby: [{name: 'Molenbeek', slug: 'plombier-molenbeek-saint-jean'}, {name: 'Ganshoren', slug: 'plombier-ganshoren'}] },
+    { slug: 'plombier-molenbeek-saint-jean', name: 'Molenbeek-Saint-Jean', cp: '1080', prep: 'de ', landmarks: 'le Château Karreveld et le bord du Canal', neighborhoods: 'Étangs Noirs, le quartier Mettewie, le centre historique', building_context: 'La diversité des logements, des immeubles modernes aux lofts industriels, requiert une grande polyvalence pour les dépannages sanitaires.', nearby: [{name: 'Anderlecht', slug: 'plombier-anderlecht'}, {name: 'Koekelberg', slug: 'plombier-koekelberg'}] },
+    { slug: 'plombier-saint-gilles', name: 'Saint-Gilles', cp: '1060', prep: 'de ', landmarks: 'le Parvis de Saint-Gilles et la Gare du Midi', neighborhoods: 'la Barrière, le quartier de l\'Hôtel des Monnaies, le haut de Saint-Gilles', building_context: 'Les célèbres maisons Art Nouveau de la commune disposent de toitures et de corniches spécifiques où des fuites sournoises peuvent apparaître.', nearby: [{name: 'Forest', slug: 'plombier-forest'}, {name: 'Ixelles', slug: 'plombier-ixelles'}] },
+    { slug: 'plombier-saint-josse-ten-noode', name: 'Saint-Josse-ten-Noode', cp: '1210', prep: 'de ', landmarks: 'le Jardin Botanique et la Place Madou', neighborhoods: 'le Quartier Nord, la Place Saint-Josse', building_context: 'La commune la plus dense de Bruxelles présente des défis uniques pour les canalisations d\'immeubles partagés, souvent sujets aux engorgements.', nearby: [{name: 'Schaerbeek', slug: 'plombier-schaerbeek'}, {name: 'Bruxelles', slug: 'plombier-bruxelles'}] },
+    { slug: 'plombier-schaerbeek', name: 'Schaerbeek', cp: '1030', prep: 'de ', landmarks: 'le Parc Josaphat et la Gare de Schaerbeek', neighborhoods: 'Plasky, Colignon, la Cage aux Ours, Meiser', building_context: 'Les grandes maisons bourgeoises divisées en appartements posent souvent des problèmes de pression d\'eau aux étages supérieurs.', nearby: [{name: 'Evere', slug: 'plombier-evere'}, {name: 'Saint-Josse', slug: 'plombier-saint-josse-ten-noode'}] },
+    { slug: 'plombier-uccle', name: 'Uccle', cp: '1180', prep: 'd\'', landmarks: 'le Bois de la Cambre et l\'Observatoire', neighborhoods: 'Fort-Jaco, Saint-Job, le Vert Chasseur, le centre', building_context: 'Les grandes propriétés et villas isolées nécessitent souvent l\'installation de systèmes d\'adoucisseur d\'eau performants pour protéger les installations luxueuses.', nearby: [{name: 'Forest', slug: 'plombier-forest'}, {name: 'Watermael-Boitsfort', slug: 'plombier-watermael-boitsfort'}] },
+    { slug: 'plombier-watermael-boitsfort', name: 'Watermael-Boitsfort', cp: '1170', prep: 'de ', landmarks: 'l\'Hippodrome de Boitsfort et les Étangs', neighborhoods: 'le Coin du Balai, les cités-jardins (Floréal, Logis)', building_context: 'Les cités-jardins historiques demandent une attention particulière lors des rénovations sanitaires pour respecter le caractère des bâtiments.', nearby: [{name: 'Auderghem', slug: 'plombier-auderghem'}, {name: 'Uccle', slug: 'plombier-uccle'}] },
+    { slug: 'plombier-woluwe-saint-lambert', name: 'Woluwe-Saint-Lambert', cp: '1200', prep: 'de ', landmarks: 'le Woluwe Shopping Center et le Moulin de Lindekemale', neighborhoods: 'Roodebeek, le quartier Georges Henri, Kapelleveld', building_context: 'Les immeubles à appartements de taille moyenne font face à des besoins réguliers d\'entretien des colonnes de décharge communes.', nearby: [{name: 'Woluwe-Saint-Pierre', slug: 'plombier-woluwe-saint-pierre'}, {name: 'Evere', slug: 'plombier-evere'}] },
+    { slug: 'plombier-woluwe-saint-pierre', name: 'Woluwe-Saint-Pierre', cp: '1150', prep: 'de ', landmarks: 'le Palais Stoclet et le Parc de la Woluwe', neighborhoods: 'le Chant d\'Oiseau, le centre de Stockel, Sainte-Alix', building_context: 'Les résidences récentes et les habitations haut de gamme sont souvent équipées de systèmes de chauffage par le sol qui requièrent un désembouage spécialisé.', nearby: [{name: 'Woluwe-Saint-Lambert', slug: 'plombier-woluwe-saint-lambert'}, {name: 'Auderghem', slug: 'plombier-auderghem'}] }
   ];
 
   return communes.map(c => ({
@@ -33,10 +33,10 @@ export function getStaticPaths() {
   }));
 }
 
-const { name, cp, landmarks, neighborhoods, employers } = Astro.props;
+const { name, cp, prep, landmarks, neighborhoods, building_context, nearby } = Astro.props;
 
-const title = `Plombier ${name} (${cp}) | Intervention d'Urgence en 30 Min`;
-const description = `Votre plombier de proximité à ${name} (${cp}). Intervention rapide 24/7 autour de ${neighborhoods}. Débouchage, fuite, chauffagiste agréé.`;
+const title = `Plombier à ${name} (${cp}) 24/7 – Dépannage et Urgences | Fbaleste`;
+const description = `Besoin d'un plombier en urgence sur la commune ${prep}${name} (${cp}) ? Intervention rapide, devis transparent. Débouchage, recherche de fuite, chauffagiste agréé.`;
 ---
 
 <Layout title={title} description={description}>
@@ -44,48 +44,83 @@ const description = `Votre plombier de proximité à ${name} (${cp}). Interventi
   
   <main class="page-content pt-top">
     <div class="container header-section text-center animate-fade-in">
-      <h1>Plombier <span class="highlight">{name}</span> ({cp})</h1>
-      <p>Votre artisan de proximité, disponible 24/7 pour toute la commune de {name}.</p>
-      <a href="tel:+32465767511" class="btn btn-accent btn-large mt-1 pulse-animation">Urgence Plomberie : 0465 76 75 11</a>
+      <h1>Plombier à <span class="highlight">{name}</span> – Dépannage et Urgences 24/7</h1>
+      <p>Votre artisan de proximité, disponible tous les jours pour toute la commune {prep}{name} ({cp}).</p>
+      <a href="tel:+32465767511" class="btn btn-accent btn-large mt-1 pulse-animation">Appeler un Plombier : 0465 76 75 11</a>
     </div>
 
     <div class="container mt-3">
       <div class="glass card content-wrap">
-        <h2>Expertise Locale à {name}</h2>
-        <p>En tant qu'entreprise ancrée dans la région bruxelloise, Fbaleste Urgence Plomberie intervient quotidiennement à <strong>{name}</strong>. Nos véhicules d'intervention sillonnent régulièrement les quartiers tels que <strong>{neighborhoods}</strong>, nous permettant d'être chez vous en moins de 30 minutes.</p>
+        <h2>Nos services de plomberie à {name}</h2>
+        <p>En tant qu'entreprise ancrée dans la région bruxelloise, Fbaleste Urgence Plomberie intervient régulièrement à <strong>{name}</strong>. Nous offrons une gamme complète de services pour répondre à toutes vos urgences et vos projets de rénovation :</p>
+        <ul class="check-list mt-1">
+          <li><strong>Dépannage Urgent :</strong> Réparation de fuites d'eau invisibles, tuyaux percés et robinetterie défectueuse.</li>
+          <li><strong>Débouchage :</strong> Dégorgement de canalisations, WC bouchés, éviers et baignoires avec matériel haute pression.</li>
+          <li><strong>Chauffage :</strong> Dépannage de chaudières, contrôle périodique PEB, et réparation de chauffe-eau.</li>
+        </ul>
         
-        <h3>Itinéraires & Déplacements Rapides</h3>
-        <p>Nous connaissons parfaitement la géographie locale. Que vous soyez situé près de <strong>{landmarks}</strong>, ou dans les rues résidentielles plus calmes, nous évitons les embouteillages des grands axes pour garantir un dépannage ultra-rapide. De plus, nous intervenons régulièrement pour les grandes infrastructures locales comme <strong>{employers}</strong>, ce qui prouve notre fiabilité.</p>
+        <h3>Problèmes fréquents dans les logements {prep}{name}</h3>
+        <p>{building_context} De plus, l'eau très dure de Bruxelles (souvent au-delà de 30°f) provoque un entartrage rapide de vos installations. Nos techniciens connaissent ces particularités locales et sont équipés pour y remédier durablement.</p>
 
-        <div class="weather-alert mt-2">
-          <h4>⚠️ Les Défis Plomberie à {name}</h4>
-          <p>Le réseau de plomberie des bâtiments anciens à {name} est souvent victime du calcaire très présent dans l'eau de Bruxelles (pouvant atteindre 35°f). Cela provoque l'entartrage des boilers et des conduites. De plus, lors des hivers rigoureux ou de fortes pluies soudaines typiques de la région, nous observons une hausse des tuyaux gelés ou des refoulements d'égouts. Nous sommes équipés pour prévenir et réparer ces dégâts spécifiques.</p>
-        </div>
+        <h3>Quartiers desservis</h3>
+        <p>Nos plombiers couvrent l'intégralité du code postal {cp}. Nous intervenons rapidement dans les quartiers tels que <strong>{neighborhoods}</strong>. Que vous résidiez près de <strong>{landmarks}</strong> ou dans les rues résidentielles avoisinantes, notre connaissance du terrain nous permet d'éviter les axes encombrés pour vous dépanner au plus vite.</p>
       </div>
     </div>
 
     <div class="container grid mt-3 mb-3">
       <div class="glass card">
-        <h2>Pourquoi éviter les plateformes d'appel ?</h2>
-        <p>Contrairement aux plateformes de dépannage nationales qui sous-traitent à des inconnus et vous facturent des frais de déplacement excessifs depuis d'autres provinces, <strong>Fbaleste est un véritable artisan local</strong>.</p>
-        <ul class="check-list mt-1">
-          <li><strong>Zéro frais cachés :</strong> Vous parlez directement au technicien.</li>
-          <li><strong>Proximité :</strong> Étant sur place à {name}, notre temps de réponse est inégalé.</li>
-          <li><strong>Garantie :</strong> En cas de souci, nous sommes "le voisin d'à côté" qui revient assurer le SAV.</li>
+        <h2>Tarifs et Devis</h2>
+        <p>Chez Fbaleste, la transparence est primordiale. Fini les mauvaises surprises au moment de payer.</p>
+        <ul class="arrow-list mt-1">
+          <li><strong>Déplacement et Diagnostic :</strong> Un tarif forfaitaire clair annoncé dès votre appel.</li>
+          <li><strong>Devis Avant Travaux :</strong> Aucune réparation n'est commencée sans votre accord explicite sur le prix.</li>
+          <li><strong>Interventions Soir & Week-end :</strong> Nos tarifs de garde sont transparents et majorés uniquement selon les dispositions légales et conventionnelles. Le prix final vous est toujours communiqué au préalable.</li>
         </ul>
       </div>
 
-      <div class="glass card services-mini">
-        <h2>Nos Services Locaux</h2>
-        <ul class="arrow-list">
-          <li><a href="/depannage-urgence">Dépannage Urgence 24/7</a></li>
-          <li><a href="/debouchage">Débouchage WC & Égouts</a></li>
-          <li><a href="/detection-fuite">Recherche de Fuite sans Casse</a></li>
-          <li><a href="/chauffage-chaudiere">Chauffagiste & Entretien Chaudière</a></li>
-          <li><a href="/installations-sanitaires">Rénovation de Salle de Bain</a></li>
+      <div class="glass card">
+        <h2>Pourquoi choisir Fbaleste à {name} ?</h2>
+        <p>Contrairement aux plateformes de dépannage nationales qui sous-traitent, nous sommes une véritable entreprise locale.</p>
+        <ul class="check-list mt-1">
+          <li><strong>Proximité :</strong> Notre temps de réponse est optimisé pour la région bruxelloise (habituellement entre 30 et 60 minutes).</li>
+          <li><strong>Expertise :</strong> Artisans qualifiés et respectueux des normes belges (PEB).</li>
+          <li><strong>Garantie :</strong> Travail soigné et facturation détaillée pour vos assurances.</li>
         </ul>
       </div>
     </div>
+    
+    <div class="container mt-3 mb-3">
+      <div class="glass card content-wrap">
+        <h2>FAQ Locale : Plomberie à {name}</h2>
+        
+        <div class="faq-item">
+          <h4>Intervenez-vous la nuit et le dimanche à {name} ?</h4>
+          <p>Oui, notre service de garde est opérationnel 24h/24 et 7j/7 pour les urgences sévères (grosse fuite d'eau, canalisation totalement bouchée, panne totale de chauffage en hiver).</p>
+        </div>
+        
+        <div class="faq-item">
+          <h4>Le devis est-il communiqué avant l'intervention ?</h4>
+          <p>Absolument. Une fois sur place, le technicien évalue le problème et vous remet un devis clair. Si vous acceptez, la réparation commence immédiatement.</p>
+        </div>
+        
+        <div class="faq-item">
+          <h4>Prenez-vous en charge la recherche de fuite sans casse ?</h4>
+          <p>Oui, nous utilisons des caméras endoscopiques, des caméras thermiques et des détecteurs acoustiques pour trouver les fuites encastrées dans les murs ou sous les sols de votre logement à {name}, limitant ainsi les dégâts.</p>
+        </div>
+      </div>
+    </div>
+    
+    <div class="container mt-3 mb-3 text-center">
+      <h3 style="color: var(--white); margin-bottom: 1rem;">Communes Voisines</h3>
+      <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 1rem;">
+        {nearby.map((n) => (
+          <a href={`/zones/${n.slug}`} class="btn btn-outline" style="background: rgba(255,255,255,0.1); color: white; border: 1px solid rgba(255,255,255,0.3); padding: 0.5rem 1rem; border-radius: 50px; text-decoration: none; transition: background 0.3s;">
+            Plombier à {n.name}
+          </a>
+        ))}
+      </div>
+    </div>
+
   </main>
   
   <WhatsAppWidget />
@@ -94,30 +129,26 @@ const description = `Votre plombier de proximité à ${name} (${cp}). Interventi
 
 <style>
   .pt-top { padding-top: 120px; }
-  .header-section h1 { font-size: 3rem; margin-bottom: 1rem; }
+  .header-section h1 { font-size: 2.8rem; margin-bottom: 1rem; }
   .highlight { color: var(--accent); }
   
   .content-wrap { padding: 3rem; border-radius: 16px; }
-  .content-wrap h2, .content-wrap h3 { color: var(--primary); margin-top: 1.5rem; }
-  
-  .weather-alert {
-    background-color: rgba(255, 74, 74, 0.1);
-    border-left: 4px solid var(--accent);
-    padding: 1.5rem;
-    border-radius: 0 8px 8px 0;
-  }
-  .weather-alert h4 { color: var(--accent); margin-bottom: 0.5rem; }
+  .content-wrap h2, .content-wrap h3 { color: var(--primary); margin-top: 1.5rem; margin-bottom: 0.8rem; }
+  .content-wrap p { margin-bottom: 1rem; line-height: 1.6; }
   
   .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; }
   .card { padding: 2rem; border-radius: 16px; }
+  .card h2 { color: var(--primary); margin-bottom: 1rem; }
   
-  .check-list li { margin-bottom: 0.8rem; position: relative; padding-left: 1.5rem; }
+  .check-list li { margin-bottom: 0.8rem; position: relative; padding-left: 1.5rem; line-height: 1.5; }
   .check-list li::before { content: '✓'; position: absolute; left: 0; color: var(--primary); font-weight: bold; }
   
   .arrow-list { list-style: none; padding: 0; }
-  .arrow-list li { margin-bottom: 1rem; border-bottom: 1px solid rgba(0,0,0,0.1); padding-bottom: 0.5rem; }
-  .arrow-list a { color: var(--primary); font-weight: 600; transition: color 0.3s; display: block; }
-  .arrow-list a:hover { color: var(--accent); padding-left: 5px; }
-  .arrow-list a::after { content: ' →'; opacity: 0; transition: opacity 0.3s; }
-  .arrow-list a:hover::after { opacity: 1; }
+  .arrow-list li { margin-bottom: 1rem; border-bottom: 1px solid rgba(0,0,0,0.1); padding-bottom: 0.5rem; line-height: 1.5; }
+  
+  .faq-item { margin-bottom: 1.5rem; border-bottom: 1px solid #e2e8f0; padding-bottom: 1rem; }
+  .faq-item:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+  .faq-item h4 { color: var(--primary); margin-bottom: 0.5rem; }
+  
+  .btn-outline:hover { background: rgba(255,255,255,0.2) !important; }
 </style>

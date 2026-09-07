@@ -1,0 +1,41 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+
+const title = "Politique des Cookies | Fbaleste Urgence Plomberie";
+const description = "Informations sur l'utilisation des cookies sur le site Fbaleste Urgence Plomberie.";
+---
+
+<Layout title={title} description={description}>
+  <Header />
+  <main class="page-content pt-top container">
+    <div class="glass content-wrap mt-3 mb-3">
+      <h1>Politique des Cookies</h1>
+      
+      <h2>1. Qu'est-ce qu'un cookie ?</h2>
+      <p>Un "cookie" est un petit fichier texte déposé sur votre terminal (ordinateur, tablette, smartphone) lors de la visite d'un site ou de la consultation d'une publicité. Il a pour but de collecter des informations relatives à votre navigation et de vous adresser des services adaptés à votre terminal.</p>
+
+      <h2>2. Les cookies que nous utilisons</h2>
+      <p>Notre site utilise un nombre très limité de cookies :</p>
+      <ul>
+        <li><strong>Cookies techniques (strictement nécessaires) :</strong> Ils sont indispensables au bon fonctionnement du site et ne peuvent être désactivés.</li>
+        <li><strong>Cookies de mesure d'audience :</strong> Si implémentés, ils nous permettent de connaître l'utilisation et les performances de notre site pour en améliorer le fonctionnement (ex: pages les plus consultées). Ces données sont anonymisées.</li>
+      </ul>
+
+      <h2>3. Gestion des cookies</h2>
+      <p>Vous pouvez à tout moment configurer votre navigateur pour qu'il n'accepte pas les cookies. Cependant, certaines fonctionnalités de notre site pourraient ne plus fonctionner correctement.</p>
+    </div>
+  </main>
+  <Footer />
+</Layout>
+
+<style>
+  .pt-top { padding-top: 120px; }
+  .content-wrap { padding: 3rem; border-radius: 16px; max-width: 800px; margin: 0 auto; }
+  h1 { color: var(--primary); margin-bottom: 2rem; }
+  h2 { color: var(--accent); margin-top: 1.5rem; margin-bottom: 1rem; font-size: 1.4rem; }
+  p, ul { margin-bottom: 1rem; line-height: 1.6; }
+  ul { padding-left: 1.5rem; }
+  li { margin-bottom: 0.5rem; }
+</style>

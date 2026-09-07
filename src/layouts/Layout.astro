@@ -16,20 +16,24 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site || 'https://www.urge
 
 const schema = {
   "@context": "https://schema.org",
-  "@type": ["Organization", "PlumbingService"],
+  "@type": ["LocalBusiness", "Plumber"],
+  "@id": "https://www.urgenceplomberie.be/#business",
   "name": "Fbaleste Urgence Plomberie",
   "url": Astro.site?.toString() || 'https://www.urgenceplomberie.be/',
   "logo": "https://www.urgenceplomberie.be/logo.png",
   "telephone": "+32465767511",
-  "sameAs": [
-    "https://maps.app.goo.gl/oGRZHeiCwteckNcG6",
-    "https://www.linkedin.com/company/urgenceplomberie",
-    "https://twitter.com/urgenceplomberie"
-  ],
+  "email": "contact@urgenceplomberie.be",
   "address": {
     "@type": "PostalAddress",
-    "addressLocality": "Bruxelles",
+    "streetAddress": "Av. d'Auderghem 287",
+    "postalCode": "1040",
+    "addressLocality": "Etterbeek",
+    "addressRegion": "Bruxelles-Capitale",
     "addressCountry": "BE"
+  },
+  "areaServed": {
+    "@type": "AdministrativeArea",
+    "name": "Région de Bruxelles-Capitale"
   },
   "hasOfferCatalog": {
     "@type": "OfferCatalog",
@@ -57,11 +61,6 @@ const schema = {
         }
       }
     ]
-  },
-  "aggregateRating": {
-    "@type": "AggregateRating",
-    "ratingValue": "4.9",
-    "reviewCount": "512"
   }
 };
 ---

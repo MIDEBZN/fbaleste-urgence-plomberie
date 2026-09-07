@@ -22,9 +22,33 @@ if (currentIndex !== -1 && allPosts.length > 1) {
   nextPost = allPosts[(currentIndex + 1) % allPosts.length];
   prevPost = allPosts[(currentIndex - 1 + allPosts.length) % allPosts.length];
 }
+
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": frontmatter.title,
+  "description": frontmatter.description,
+  "author": {
+    "@type": "Organization",
+    "name": "Fbaleste Urgence Plomberie"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Fbaleste Urgence Plomberie",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://www.urgenceplomberie.be/logo.png"
+    }
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": `https://www.urgenceplomberie.be${currentUrl}`
+  }
+};
 ---
 <Layout title={frontmatter.title} description={frontmatter.description}>
   <Header />
+  <script type="application/ld+json" set:html={JSON.stringify(articleSchema)} />
   
   <main class="page-content" style="padding-top: 120px;">
     <div class="container" style="max-width: 900px; margin: 0 auto; margin-bottom: 4rem;">

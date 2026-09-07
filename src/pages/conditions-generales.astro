@@ -1,0 +1,46 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+
+const title = "Conditions Générales | Fbaleste Urgence Plomberie";
+const description = "Conditions générales d'intervention et de prestation de services de Fbaleste Urgence Plomberie.";
+---
+
+<Layout title={title} description={description}>
+  <Header />
+  <main class="page-content pt-top container">
+    <div class="glass content-wrap mt-3 mb-3">
+      <h1>Conditions Générales d'Intervention</h1>
+      
+      <h2>1. Objet</h2>
+      <p>Les présentes conditions générales s'appliquent à l'ensemble des prestations de services et interventions d'urgence (plomberie, chauffage, débouchage) réalisées par l'entreprise Fbaleste Urgence Plomberie.</p>
+
+      <h2>2. Devis et Prix</h2>
+      <p>Un devis est systématiquement communiqué (par téléphone ou sur place) avant toute intervention. Le prix comprend les frais de déplacement, la main-d'œuvre (taux horaire), et les pièces de rechange éventuelles. En cas d'intervention de nuit, le week-end ou les jours fériés, une majoration peut s'appliquer et sera clairement annoncée avant travaux.</p>
+
+      <h2>3. Interventions et Délais</h2>
+      <p>Fbaleste Urgence Plomberie s'engage à intervenir le plus rapidement possible. Les délais annoncés (ex: 30 à 60 minutes) sont estimatifs et dépendent de la disponibilité des techniciens, de la circulation et de la localisation à Bruxelles.</p>
+
+      <h2>4. Garanties</h2>
+      <p>Nos travaux sont réalisés dans les règles de l'art. Une garantie de 2 ans s'applique sur les pièces de rechange neuves fournies et posées par nos techniciens, sous réserve d'une utilisation normale par le client.</p>
+
+      <h2>5. Paiement</h2>
+      <p>Le paiement est exigible immédiatement à la fin de l'intervention, au comptant, par carte bancaire ou en espèces. Une facture acquittée est remise au client.</p>
+
+      <h2>6. Litiges</h2>
+      <p>En cas de litige, les parties s'engagent à rechercher une solution à l'amiable. À défaut, les tribunaux de l'arrondissement judiciaire de Bruxelles seront seuls compétents.</p>
+    </div>
+  </main>
+  <Footer />
+</Layout>
+
+<style>
+  .pt-top { padding-top: 120px; }
+  .content-wrap { padding: 3rem; border-radius: 16px; max-width: 800px; margin: 0 auto; }
+  h1 { color: var(--primary); margin-bottom: 2rem; }
+  h2 { color: var(--accent); margin-top: 1.5rem; margin-bottom: 1rem; font-size: 1.4rem; }
+  p, ul { margin-bottom: 1rem; line-height: 1.6; }
+  ul { padding-left: 1.5rem; }
+  li { margin-bottom: 0.5rem; }
+</style>

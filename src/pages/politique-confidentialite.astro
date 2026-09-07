@@ -1,0 +1,48 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+
+const title = "Politique de Confidentialité | Fbaleste Urgence Plomberie";
+const description = "Politique de confidentialité concernant la gestion de vos données personnelles sur le site de Fbaleste Urgence Plomberie.";
+---
+
+<Layout title={title} description={description}>
+  <Header />
+  <main class="page-content pt-top container">
+    <div class="glass content-wrap mt-3 mb-3">
+      <h1>Politique de Confidentialité</h1>
+      
+      <h2>1. Collecte des données</h2>
+      <p>Lors de l'utilisation de notre formulaire de contact, nous collectons les données suivantes : nom, adresse e-mail, numéro de téléphone, et les détails de votre problème de plomberie. Ces données sont collectées sur la base de votre consentement et dans le but de pouvoir répondre à votre demande de devis ou d'intervention.</p>
+
+      <h2>2. Utilisation des données</h2>
+      <p>Vos données personnelles sont utilisées exclusivement pour :</p>
+      <ul>
+        <li>Vous recontacter suite à une demande.</li>
+        <li>Établir un devis ou organiser une intervention.</li>
+        <li>La gestion administrative liée à nos prestations.</li>
+      </ul>
+
+      <h2>3. Conservation des données</h2>
+      <p>Vos données sont conservées le temps nécessaire à la finalité de leur traitement, et au maximum pendant 3 ans après notre dernier contact, sauf obligation légale de conservation (par exemple pour la facturation).</p>
+
+      <h2>4. Partage des données</h2>
+      <p>Vos données ne sont ni vendues, ni louées, ni cédées à des tiers. Elles peuvent être transmises uniquement à nos techniciens pour la réalisation de l'intervention ou aux autorités compétentes en cas d'obligation légale.</p>
+
+      <h2>5. Vos droits</h2>
+      <p>Conformément au RGPD, vous disposez d'un droit d'accès, de rectification, de suppression et d'opposition concernant vos données personnelles. Pour exercer ces droits, veuillez nous contacter à l'adresse email suivante : <strong>contact@urgenceplomberie.be</strong>.</p>
+    </div>
+  </main>
+  <Footer />
+</Layout>
+
+<style>
+  .pt-top { padding-top: 120px; }
+  .content-wrap { padding: 3rem; border-radius: 16px; max-width: 800px; margin: 0 auto; }
+  h1 { color: var(--primary); margin-bottom: 2rem; }
+  h2 { color: var(--accent); margin-top: 1.5rem; margin-bottom: 1rem; font-size: 1.4rem; }
+  p, ul { margin-bottom: 1rem; line-height: 1.6; }
+  ul { padding-left: 1.5rem; }
+  li { margin-bottom: 0.5rem; }
+</style>
