@@ -1,3 +1,5 @@
 {
-  "name": "fbaleste-urgence-plomberie"
+  "name": "fbaleste-urgence-plomberie",
+  "cleanUrls": true,
+  "trailingSlash": true
 }
