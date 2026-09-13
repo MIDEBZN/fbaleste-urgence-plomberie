@@ -1,5 +1,5 @@
 {
-  "totalAudited": 63,
+  "totalAudited": 93,
   "failuresCount": 0,
   "warningsCount": 0,
   "failures": [],
@@ -40,7 +40,7 @@
           "Plumber"
         ]
       ],
-      "internalLinksCount": 67
+      "internalLinksCount": 97
     },
     {
       "url": "https://www.urgenceplomberie.be/blog/5-gestes-prevenir-problemes-plomberie/",
@@ -71,6 +71,20 @@
       "internalLinksCount": 48
     },
     {
+      "url": "https://www.urgenceplomberie.be/blog/boiler-fuit-que-faire-etterbeek/",
+      "title": "Boiler qui Fuit à Etterbeek ? Gestes Réflexes et Réparation",
+      "h1": "Que faire si mon boiler fuit à Etterbeek ?",
+      "schemas": [
+        [
+          "LocalBusiness",
+          "Plumber"
+        ],
+        "Article",
+        "BreadcrumbList"
+      ],
+      "internalLinksCount": 49
+    },
+    {
       "url": "https://www.urgenceplomberie.be/blog/canalisation-bouchee-bruxelles/",
       "title": "Canalisation Bouchée à Bruxelles : Prévention et Solutions Efficaces",
       "h1": "Canalisation Bouchée à Bruxelles : Prévention et Solutions Efficaces",
@@ -85,6 +99,20 @@
       "internalLinksCount": 48
     },
     {
+      "url": "https://www.urgenceplomberie.be/blog/canalisation-refoule-appartement-etterbeek/",
+      "title": "Canalisation qui Refoule à Etterbeek ? Gestes d&#39;Urgence",
+      "h1": "Que faire si une canalisation refoule dans mon appartement à Etterbeek ?",
+      "schemas": [
+        [
+          "LocalBusiness",
+          "Plumber"
+        ],
+        "Article",
+        "BreadcrumbList"
+      ],
+      "internalLinksCount": 49
+    },
+    {
       "url": "https://www.urgenceplomberie.be/blog/certificat-peb-plomberie-bruxelles/",
       "title": "Certificat PEB et Plomberie à Bruxelles : Ce que Vous Devez Savoir",
       "h1": "Certificat PEB et Plomberie à Bruxelles : Ce que Vous Devez Savoir",
@@ -97,6 +125,20 @@
         "BreadcrumbList"
       ],
       "internalLinksCount": 48
+    },
+    {
+      "url": "https://www.urgenceplomberie.be/blog/chasse-eau-ne-remplit-plus-etterbeek/",
+      "title": "Chasse d&#39;Eau qui ne se Remplit Plus à Etterbeek ? Solutions",
+      "h1": "Pourquoi ma chasse d’eau ne se remplit-elle plus à Etterbeek ?",
+      "schemas": [
+        [
+          "LocalBusiness",
+          "Plumber"
+        ],
+        "Article",
+        "BreadcrumbList"
+      ],
+      "internalLinksCount": 49
     },
     {
       "url": "https://www.urgenceplomberie.be/blog/chauffe-eau-panne-bruxelles/",
@@ -127,6 +169,34 @@
       "internalLinksCount": 48
     },
     {
+      "url": "https://www.urgenceplomberie.be/blog/comment-choisir-bon-plombier-etterbeek/",
+      "title": "Comment Choisir un Plombier Fiable à Etterbeek en 2026 ?",
+      "h1": "Comment choisir un plombier fiable à Etterbeek ?",
+      "schemas": [
+        [
+          "LocalBusiness",
+          "Plumber"
+        ],
+        "Article",
+        "BreadcrumbList"
+      ],
+      "internalLinksCount": 49
+    },
+    {
+      "url": "https://www.urgenceplomberie.be/blog/compteur-eau-tourne-robinets-fermes-etterbeek/",
+      "title": "Compteur d&#39;Eau qui Tourne Tout Seul à Etterbeek ? Réflexes",
+      "h1": "Mon compteur d’eau tourne alors que tous les robinets sont fermés, que faire à Etterbeek ?",
+      "schemas": [
+        [
+          "LocalBusiness",
+          "Plumber"
+        ],
+        "Article",
+        "BreadcrumbList"
+      ],
+      "internalLinksCount": 49
+    },
+    {
       "url": "https://www.urgenceplomberie.be/blog/cout-installation-chauffe-eau-bruxelles/",
       "title": "Coût d&#39;Installation d&#39;un Nouveau Chauffe-Eau à Bruxelles : Budget et Options",
       "h1": "Coût d’Installation d’un Nouveau Chauffe-Eau à Bruxelles : Budget et Options",
@@ -155,6 +225,34 @@
       "internalLinksCount": 48
     },
     {
+      "url": "https://www.urgenceplomberie.be/blog/delai-intervention-plombier-urgence-etterbeek/",
+      "title": "Délai d&#39;Arrivée d&#39;un Plombier Urgent à Etterbeek (24/7)",
+      "h1": "Quel est le délai d’intervention d’un plombier urgent à Etterbeek ?",
+      "schemas": [
+        [
+          "LocalBusiness",
+          "Plumber"
+        ],
+        "Article",
+        "BreadcrumbList"
+      ],
+      "internalLinksCount": 49
+    },
+    {
+      "url": "https://www.urgenceplomberie.be/blog/devis-obligatoire-plombier-urgence-etterbeek/",
+      "title": "Un Plombier Doit-il Donner un Devis à Etterbeek ? La Loi",
+      "h1": "Un plombier à Etterbeek doit-il donner un devis avant l’intervention ?",
+      "schemas": [
+        [
+          "LocalBusiness",
+          "Plumber"
+        ],
+        "Article",
+        "BreadcrumbList"
+      ],
+      "internalLinksCount": 49
+    },
+    {
       "url": "https://www.urgenceplomberie.be/blog/durete-eau-calcaire-bruxelles/",
       "title": "Dureté de l&#39;Eau à Bruxelles : Impacts sur Votre Plomberie et Solutions",
       "h1": "Dureté de l’Eau à Bruxelles : Impacts sur Votre Plomberie et Solutions",
@@ -167,6 +265,20 @@
         "BreadcrumbList"
       ],
       "internalLinksCount": 48
+    },
+    {
+      "url": "https://www.urgenceplomberie.be/blog/eau-coule-plafond-appartement-etterbeek/",
+      "title": "Eau Coule du Plafond à Etterbeek ? Guide Réflexe 24/7",
+      "h1": "Que faire si de l’eau coule du plafond de votre appartement à Etterbeek ?",
+      "schemas": [
+        [
+          "LocalBusiness",
+          "Plumber"
+        ],
+        "Article",
+        "BreadcrumbList"
+      ],
+      "internalLinksCount": 49
     },
     {
       "url": "https://www.urgenceplomberie.be/blog/economiser-eau-maison-conseils-plombier/",
@@ -195,6 +307,34 @@
         "BreadcrumbList"
       ],
       "internalLinksCount": 48
+    },
+    {
+      "url": "https://www.urgenceplomberie.be/blog/evier-bouche-que-faire-etterbeek/",
+      "title": "Évier Bouché à Etterbeek ? Astuces et Débouchage 24/7",
+      "h1": "Que faire si mon évier est bouché à Etterbeek ?",
+      "schemas": [
+        [
+          "LocalBusiness",
+          "Plumber"
+        ],
+        "Article",
+        "BreadcrumbList"
+      ],
+      "internalLinksCount": 49
+    },
+    {
+      "url": "https://www.urgenceplomberie.be/blog/eviter-arnaque-plombier-urgence-etterbeek/",
+      "title": "Éviter une Arnaque de Plombier à Etterbeek : Guide 24/7",
+      "h1": "Comment éviter une arnaque de plombier en urgence à Etterbeek ?",
+      "schemas": [
+        [
+          "LocalBusiness",
+          "Plumber"
+        ],
+        "Article",
+        "BreadcrumbList"
+      ],
+      "internalLinksCount": 50
     },
     {
       "url": "https://www.urgenceplomberie.be/blog/fuite-eau-bruxelles/",
@@ -239,6 +379,20 @@
       "internalLinksCount": 48
     },
     {
+      "url": "https://www.urgenceplomberie.be/blog/odeur-egout-salle-de-bain-etterbeek/",
+      "title": "Odeur d&#39;Égout dans la Salle de Bain à Etterbeek ? Causes",
+      "h1": "Pourquoi une odeur d’égout remonte-t-elle dans ma salle de bain à Etterbeek ?",
+      "schemas": [
+        [
+          "LocalBusiness",
+          "Plumber"
+        ],
+        "Article",
+        "BreadcrumbList"
+      ],
+      "internalLinksCount": 49
+    },
+    {
       "url": "https://www.urgenceplomberie.be/blog/outils-indispensables-plombier-amateur/",
       "title": "Les Outils Indispensables du Plombier Amateur : Pour les Petits Dépannages",
       "h1": "Les Outils Indispensables du Plombier Amateur : Pour les Petits Dépannages",
@@ -281,6 +435,48 @@
       "internalLinksCount": 48
     },
     {
+      "url": "https://www.urgenceplomberie.be/blog/plombier-dimanche-jours-feries-etterbeek/",
+      "title": "Plombier le Dimanche et Jours Fériés à Etterbeek 7j/7",
+      "h1": "Un plombier intervient-il le dimanche et les jours fériés à Etterbeek ?",
+      "schemas": [
+        [
+          "LocalBusiness",
+          "Plumber"
+        ],
+        "Article",
+        "BreadcrumbList"
+      ],
+      "internalLinksCount": 49
+    },
+    {
+      "url": "https://www.urgenceplomberie.be/blog/plus-eau-chaude-appartement-etterbeek/",
+      "title": "Plus d&#39;Eau Chaude à Etterbeek ? Causes et Solutions 24/7",
+      "h1": "Pourquoi n’ai-je plus d’eau chaude dans mon appartement à Etterbeek ?",
+      "schemas": [
+        [
+          "LocalBusiness",
+          "Plumber"
+        ],
+        "Article",
+        "BreadcrumbList"
+      ],
+      "internalLinksCount": 49
+    },
+    {
+      "url": "https://www.urgenceplomberie.be/blog/pression-eau-faible-appartement-etterbeek/",
+      "title": "Pression d&#39;Eau Faible à Etterbeek ? Causes et Solutions",
+      "h1": "Pourquoi ai-je une pression d’eau faible dans mon appartement à Etterbeek ?",
+      "schemas": [
+        [
+          "LocalBusiness",
+          "Plumber"
+        ],
+        "Article",
+        "BreadcrumbList"
+      ],
+      "internalLinksCount": 49
+    },
+    {
       "url": "https://www.urgenceplomberie.be/blog/prix-debouchage-canalisation-bruxelles/",
       "title": "Prix Débouchage Canalisation à Bruxelles : Ce qu&#39;il Faut Attendre",
       "h1": "Prix Débouchage Canalisation à Bruxelles : Ce qu’il Faut Attendre",
@@ -293,6 +489,104 @@
         "BreadcrumbList"
       ],
       "internalLinksCount": 48
+    },
+    {
+      "url": "https://www.urgenceplomberie.be/blog/prix-debouchage-wc-etterbeek/",
+      "title": "Prix Débouchage de WC à Etterbeek : Tarifs et Devis 2026",
+      "h1": "Quel est le prix d’un débouchage de WC à Etterbeek ?",
+      "schemas": [
+        [
+          "LocalBusiness",
+          "Plumber"
+        ],
+        "Article",
+        "BreadcrumbList"
+      ],
+      "internalLinksCount": 49
+    },
+    {
+      "url": "https://www.urgenceplomberie.be/blog/prix-hydrocurage-canalisation-etterbeek/",
+      "title": "Prix Hydrocurage Canalisation à Etterbeek : Tarifs 2026",
+      "h1": "Combien coûte un hydrocurage de canalisation à Etterbeek ?",
+      "schemas": [
+        [
+          "LocalBusiness",
+          "Plumber"
+        ],
+        "Article",
+        "BreadcrumbList"
+      ],
+      "internalLinksCount": 49
+    },
+    {
+      "url": "https://www.urgenceplomberie.be/blog/prix-inspection-camera-canalisation-etterbeek/",
+      "title": "Prix Inspection Caméra Canalisation à Etterbeek : Tarifs 2026",
+      "h1": "Combien coûte une inspection caméra de canalisation à Etterbeek ?",
+      "schemas": [
+        [
+          "LocalBusiness",
+          "Plumber"
+        ],
+        "Article",
+        "BreadcrumbList"
+      ],
+      "internalLinksCount": 49
+    },
+    {
+      "url": "https://www.urgenceplomberie.be/blog/prix-plombier-urgence-etterbeek/",
+      "title": "Prix Plombier en Urgence à Etterbeek : Tarifs et Devis 2026",
+      "h1": "Combien coûte un plombier en urgence à Etterbeek ?",
+      "schemas": [
+        [
+          "LocalBusiness",
+          "Plumber"
+        ],
+        "Article",
+        "BreadcrumbList"
+      ],
+      "internalLinksCount": 49
+    },
+    {
+      "url": "https://www.urgenceplomberie.be/blog/prix-recherche-fuite-non-destructive-etterbeek/",
+      "title": "Prix Recherche de Fuite d&#39;Eau à Etterbeek : Tarifs 2026",
+      "h1": "Combien coûte une recherche de fuite non destructive à Etterbeek ?",
+      "schemas": [
+        [
+          "LocalBusiness",
+          "Plumber"
+        ],
+        "Article",
+        "BreadcrumbList"
+      ],
+      "internalLinksCount": 49
+    },
+    {
+      "url": "https://www.urgenceplomberie.be/blog/prix-remplacement-boiler-etterbeek/",
+      "title": "Prix Remplacement Boiler à Etterbeek : Tarifs et Devis 2026",
+      "h1": "Combien coûte le remplacement d’un boiler à Etterbeek ?",
+      "schemas": [
+        [
+          "LocalBusiness",
+          "Plumber"
+        ],
+        "Article",
+        "BreadcrumbList"
+      ],
+      "internalLinksCount": 49
+    },
+    {
+      "url": "https://www.urgenceplomberie.be/blog/prix-remplacement-robinet-etterbeek/",
+      "title": "Prix Remplacement Robinet à Etterbeek : Tarifs et Pose 2026",
+      "h1": "Combien coûte le remplacement d’un robinet à Etterbeek ?",
+      "schemas": [
+        [
+          "LocalBusiness",
+          "Plumber"
+        ],
+        "Article",
+        "BreadcrumbList"
+      ],
+      "internalLinksCount": 49
     },
     {
       "url": "https://www.urgenceplomberie.be/blog/problemes-chauffage-bruxelles/",
@@ -309,6 +603,20 @@
       "internalLinksCount": 48
     },
     {
+      "url": "https://www.urgenceplomberie.be/blog/quand-inspecter-canalisation-camera-etterbeek/",
+      "title": "Quand Inspecter ses Canalisations par Caméra à Etterbeek ?",
+      "h1": "Quand faut-il faire inspecter ses canalisations par caméra à Etterbeek ?",
+      "schemas": [
+        [
+          "LocalBusiness",
+          "Plumber"
+        ],
+        "Article",
+        "BreadcrumbList"
+      ],
+      "internalLinksCount": 49
+    },
+    {
       "url": "https://www.urgenceplomberie.be/blog/quand-remplacer-tuyaux-plomberie-bruxelles/",
       "title": "Quand Faut-il Remplacer Ses Tuyaux ? Signes et Coûts à Bruxelles",
       "h1": "Quand Faut-il Remplacer Ses Tuyaux ? Signes et Coûts à Bruxelles",
@@ -321,6 +629,76 @@
         "BreadcrumbList"
       ],
       "internalLinksCount": 48
+    },
+    {
+      "url": "https://www.urgenceplomberie.be/blog/que-faire-avant-arrivee-plombier-fuite-etterbeek/",
+      "title": "Fuite d&#39;Eau à Etterbeek : Que Faire Avant le Plombier ?",
+      "h1": "Que faire avant l’arrivée du plombier lorsqu’une fuite se produit à Etterbeek ?",
+      "schemas": [
+        [
+          "LocalBusiness",
+          "Plumber"
+        ],
+        "Article",
+        "BreadcrumbList"
+      ],
+      "internalLinksCount": 49
+    },
+    {
+      "url": "https://www.urgenceplomberie.be/blog/qui-appeler-fuite-eau-nuit-etterbeek/",
+      "title": "Fuite d&#39;Eau la Nuit à Etterbeek : Qui Appeler 24h/24 ?",
+      "h1": "Qui appeler pour une fuite d’eau la nuit à Etterbeek ?",
+      "schemas": [
+        [
+          "LocalBusiness",
+          "Plumber"
+        ],
+        "Article",
+        "BreadcrumbList"
+      ],
+      "internalLinksCount": 49
+    },
+    {
+      "url": "https://www.urgenceplomberie.be/blog/qui-paie-debouchage-canalisation-commune-etterbeek/",
+      "title": "Débouchage Colonne Commune à Etterbeek : Qui Doit Payer ?",
+      "h1": "Qui paie le débouchage d’une canalisation commune dans un immeuble à Etterbeek ?",
+      "schemas": [
+        [
+          "LocalBusiness",
+          "Plumber"
+        ],
+        "Article",
+        "BreadcrumbList"
+      ],
+      "internalLinksCount": 49
+    },
+    {
+      "url": "https://www.urgenceplomberie.be/blog/qui-paie-fuite-eau-locataire-proprietaire-etterbeek/",
+      "title": "Fuite d&#39;Eau à Etterbeek : Qui Paie, Locataire ou Bailleur ?",
+      "h1": "Qui doit payer une fuite d’eau à Etterbeek, le locataire ou le propriétaire ?",
+      "schemas": [
+        [
+          "LocalBusiness",
+          "Plumber"
+        ],
+        "Article",
+        "BreadcrumbList"
+      ],
+      "internalLinksCount": 49
+    },
+    {
+      "url": "https://www.urgenceplomberie.be/blog/remboursement-assurance-recherche-fuite-etterbeek/",
+      "title": "Assurance et Recherche de Fuite à Etterbeek : Prise en Charge",
+      "h1": "L’assurance habitation rembourse-t-elle une recherche de fuite à Etterbeek ?",
+      "schemas": [
+        [
+          "LocalBusiness",
+          "Plumber"
+        ],
+        "Article",
+        "BreadcrumbList"
+      ],
+      "internalLinksCount": 49
     },
     {
       "url": "https://www.urgenceplomberie.be/blog/renovation-salle-de-bain-bruxelles/",
@@ -365,9 +743,51 @@
       "internalLinksCount": 58
     },
     {
+      "url": "https://www.urgenceplomberie.be/blog/taux-tva-plomberie-belgique-etterbeek/",
+      "title": "Taux de TVA Plomberie à Etterbeek : 6% ou 21% en 2026 ?",
+      "h1": "Quel taux de TVA s’applique aux travaux de plomberie à Etterbeek ?",
+      "schemas": [
+        [
+          "LocalBusiness",
+          "Plumber"
+        ],
+        "Article",
+        "BreadcrumbList"
+      ],
+      "internalLinksCount": 49
+    },
+    {
+      "url": "https://www.urgenceplomberie.be/blog/trouver-fuite-eau-cachee-sans-casser-etterbeek/",
+      "title": "Trouver une Fuite d&#39;Eau Cachée Sans Casser à Etterbeek",
+      "h1": "Comment trouver une fuite d’eau cachée sans casser les murs à Etterbeek ?",
+      "schemas": [
+        [
+          "LocalBusiness",
+          "Plumber"
+        ],
+        "Article",
+        "BreadcrumbList"
+      ],
+      "internalLinksCount": 49
+    },
+    {
       "url": "https://www.urgenceplomberie.be/blog/wc-bouche-bruxelles/",
       "title": "WC Bouché à Bruxelles : Comment Agir et Quand Appeler un Professionnel",
       "h1": "WC Bouché à Bruxelles : Comment Agir et Quand Appeler un Professionnel",
+      "schemas": [
+        [
+          "LocalBusiness",
+          "Plumber"
+        ],
+        "Article",
+        "BreadcrumbList"
+      ],
+      "internalLinksCount": 49
+    },
+    {
+      "url": "https://www.urgenceplomberie.be/blog/wc-coule-sans-arret-etterbeek/",
+      "title": "WC qui Coule Sans Arrêt à Etterbeek ? Causes et Réparation",
+      "h1": "Pourquoi mon WC coule-t-il sans arrêt à Etterbeek ?",
       "schemas": [
         [
           "LocalBusiness",
