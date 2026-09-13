@@ -57,4 +57,4 @@ Dans certains anciens appartements ou combles, il n'y a pas de grosse colonne d'
 > **Un projet de rénovation de salle de bain à Bruxelles ?**
 > Ne laissez pas le hasard ruiner votre design. Fbaleste réalise l'installation complète, esthétique et durable de vos équipements sanitaires.
 > 📞 **Demandez un rendez-vous conseil au 0465 76 75 11.**
-> [Découvrez nos services d'Installations Sanitaires](/installations-sanitaires)
+> [Découvrez nos services d'Installations Sanitaires](/installations-sanitaires/)

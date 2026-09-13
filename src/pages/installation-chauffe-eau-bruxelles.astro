@@ -1,0 +1,225 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import WhatsAppWidget from '../components/WhatsAppWidget.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+
+const title = "Installation Chauffe-Eau Bruxelles | Remplacement et Devis";
+const description = "Installation et remplacement de chauffe-eau et boiler à Bruxelles. Pose d'appareils électriques et thermodynamiques, dépose de l'ancien et devis clair.";
+
+const faqs = [
+  {
+    question: "Comment choisir la bonne capacité de chauffe-eau pour mon logement ?",
+    answer: "La capacité idéale dépend de la composition de votre foyer et des points de puisage : comptez environ 50 à 80 litres pour 1 personne, 100 à 150 litres pour 2 à 3 personnes, et 200 à 300 litres pour une famille de 4 personnes et plus avec baignoire."
+  },
+  {
+    question: "Pourquoi est-il crucial de choisir une résistance stéatite à Bruxelles ?",
+    answer: "En raison de la très forte dureté de l'eau à Bruxelles (souvent supérieure à 30°f), une résistance blindée (plongée directement dans l'eau) s'entartre en quelques mois et surconsomme de l'énergie. La résistance stéatite, protégée par un fourreau émaillé, n'est jamais en contact direct avec l'eau et offre une durée de vie bien supérieure."
+  },
+  {
+    question: "Prenez-vous en charge la dépose et l'évacuation de l'ancien boiler ?",
+    answer: "Oui. L'intervention comprend la vidange complète, la dépose soignée de votre ancien appareil et son acheminement vers le centre de recyclage agréé."
+  },
+  {
+    question: "Le remplacement du groupe de sécurité est-il obligatoire lors de l'installation ?",
+    answer: "Oui, c'est une exigence réglementaire et de sécurité essentielle. Le groupe de sécurité neuf protège la cuve contre les surpressions lors de la chauffe et évite tout risque de rupture ou d'inondation."
+  },
+  {
+    question: "Quels sont les facteurs qui déterminent le prix d'un remplacement de chauffe-eau ?",
+    answer: "Le tarif dépend du type d'appareil (boiler électrique vertical/horizontal ou chauffe-eau thermodynamique), de sa contenance, de l'accessibilité du local technique (étage sans ascenseur) et des raccordements hydrauliques ou électriques requis. Un devis clair est établi avant travaux."
+  }
+];
+
+const serviceSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "@id": "https://www.urgenceplomberie.be/installation-chauffe-eau-bruxelles/#service",
+  "name": "Installation et Remplacement de Chauffe-Eau Bruxelles",
+  "description": description,
+  "provider": {
+    "@id": "https://www.urgenceplomberie.be/#business"
+  },
+  "areaServed": {
+    "@type": "AdministrativeArea",
+    "name": "Région de Bruxelles-Capitale"
+  },
+  "url": "https://www.urgenceplomberie.be/installation-chauffe-eau-bruxelles/"
+};
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faqs.map(faq => ({
+    "@type": "Question",
+    "name": faq.question,
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": faq.answer
+    }
+  }))
+};
+
+const breadcrumbItems = [
+  { name: 'Accueil', url: '/' },
+  { name: 'Services', url: '/services/' },
+  { name: 'Installation Chauffe-Eau' }
+];
+---
+
+<Layout title={title} description={description} schema={[serviceSchema, faqSchema]}>
+  <Header />
+  
+  <main class="page-content pt-top">
+    <div class="container">
+      <Breadcrumbs items={breadcrumbItems} />
+    </div>
+
+    <div class="container header-section text-center animate-fade-in">
+      <span class="badge badge-water">Production d'Eau Chaude Sanitaire</span>
+      <h1>Installation et remplacement de chauffe-eau à Bruxelles</h1>
+      <p class="subtitle-text">Boiler électrique, chauffe-eau thermodynamique ou instantané : dimensionnement sur mesure, dépose de l'ancien matériel et pose sécurisée aux normes dans les 19 communes de Bruxelles.</p>
+      <div class="header-cta-group mt-1">
+        <a href="tel:+32465767511" class="btn btn-accent btn-large pulse-animation">
+          📞 0465 76 75 11 (Conseil Boiler)
+        </a>
+        <a href="/contact/" class="btn btn-primary btn-large">
+          Demander un Devis Chauffe-Eau
+        </a>
+      </div>
+    </div>
+
+    <div class="container grid mt-3">
+      <div class="glass card">
+        <h2>Nos prestations chauffe-eau & boiler</h2>
+        <ul class="check-list">
+          <li>Remplacement de boilers électriques verticaux, horizontaux ou sur socle</li>
+          <li>Pose de chauffe-eau à résistance stéatite (idéal pour l'eau calcaire de Bruxelles)</li>
+          <li>Installation de chauffe-eau thermodynamiques pour économies d'énergie</li>
+          <li>Remplacement systématique du groupe de sécurité et pose de réducteur de pression</li>
+          <li>Vidange et évacuation de l'ancien chauffe-eau vers la déchetterie</li>
+          <li>Raccordement électrique sécurisé aux normes de sécurité en vigueur</li>
+        </ul>
+      </div>
+
+      <div class="glass card">
+        <h2>Signes qu'il faut remplacer votre appareil</h2>
+        <ul class="cross-list">
+          <li>Cuve percée avec fuite d'eau continue par le fond du ballon</li>
+          <li>L'eau chaude devient tiède beaucoup plus vite qu'auparavant</li>
+          <li>Eau colorée ou chargée de particules de rouille lors du tirage</li>
+          <li>Bruits de sifflement ou claquements lors de la montée en température (calcaire massif)</li>
+          <li>Appareil âgé de plus de 10 à 12 ans surconsommant de l'électricité</li>
+        </ul>
+      </div>
+    </div>
+
+    <section class="container mt-3 glass section-padding">
+      <h2 class="text-center">Protocole d'Installation d'un Chauffe-Eau</h2>
+      <div class="process-grid mt-2">
+        <div class="process-step">
+          <div class="step-num">1</div>
+          <h3>Dimensionnement</h3>
+          <p>Calcul du volume d'eau chaude journalier nécessaire et vérification des fixations murales porteuses.</p>
+        </div>
+        <div class="process-step">
+          <div class="step-num">2</div>
+          <h3>Dépose Ancien Matériel</h3>
+          <p>Vidange complète sécurisée, déconnexion hydraulique et électrique, et enlèvement de la vieille cuve.</p>
+        </div>
+        <div class="process-step">
+          <div class="step-num">3</div>
+          <h3>Pose & Sécurité</h3>
+          <p>Installation du nouvel appareil, pose d'un groupe de sécurité neuf et raccordement aux conduites.</p>
+        </div>
+        <div class="process-step">
+          <div class="step-num">4</div>
+          <h3>Mise en Eau & Test</h3>
+          <p>Remplissage, purge de l'air, vérification de l'étanchéité sous pression et réglage du thermostat à 60°C.</p>
+        </div>
+      </div>
+    </section>
+
+    <div class="container grid mt-3">
+      <div class="glass card">
+        <h2>Tarifs et Précision du Devis</h2>
+        <p>Un remplacement de chauffe-eau doit être transparent de bout en bout :</p>
+        <ul class="arrow-list mt-1">
+          <li><strong>Devis tout compris :</strong> Matériel certifié, groupe de sécurité, raccords diélectriques et main-d'œuvre.</li>
+          <li><strong>TVA réduite à 6% :</strong> Pour les habitations de plus de 10 ans occupées à titre privé.</li>
+          <li><strong>Protection durable :</strong> Pour éviter l'entartrage prématuré, pensez à coupler votre installation avec un <a href="/traitement-eau/">adoucisseur d'eau à Bruxelles</a>.</li>
+          <li>Consultez notre guide budgétaire : <a href="/blog/cout-installation-chauffe-eau-bruxelles/">Coût d'installation d'un chauffe-eau à Bruxelles</a>.</li>
+        </ul>
+      </div>
+
+      <div class="glass card info-box">
+        <h2>Services Associés</h2>
+        <ul class="check-list">
+          <li>Besoin d'un dépannage sur votre système de chauffage ? <a href="/chauffage-chaudiere/">Chauffagiste d'urgence</a></li>
+          <li>Robinetterie et sanitaires : <a href="/reparation-robinetterie-bruxelles/">Réparation de robinetterie</a></li>
+          <li>Zone couverte : l'ensemble des 19 communes de Bruxelles-Capitale.</li>
+        </ul>
+      </div>
+    </div>
+
+    <section class="container mt-3 mb-3 glass section-padding">
+      <h2 class="text-center">Questions Fréquentes sur les Chauffe-Eau à Bruxelles</h2>
+      <div class="faq-list mt-2">
+        {faqs.map(faq => (
+          <div class="faq-item">
+            <h4>{faq.question}</h4>
+            <p>{faq.answer}</p>
+          </div>
+        ))}
+      </div>
+    </section>
+  </main>
+  
+  <WhatsAppWidget />
+  <Footer />
+</Layout>
+
+<style>
+  .pt-top { padding-top: 120px; }
+  .header-section h1 { font-size: 2.8rem; margin-bottom: 0.8rem; color: var(--primary); }
+  .subtitle-text { max-width: 750px; margin: 0 auto 1.5rem auto; font-size: 1.15rem; line-height: 1.6; color: var(--text-main); }
+  .header-cta-group { display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap; margin-bottom: 1rem; }
+  
+  .badge-water {
+    background-color: #d97706;
+    color: white;
+    padding: 0.4rem 1rem;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 0.85rem;
+    display: inline-block;
+    margin-bottom: 1rem;
+  }
+
+  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2rem; }
+  .card { padding: 2.5rem; border-radius: 16px; }
+  .card h2 { color: var(--primary); margin-bottom: 1.2rem; font-size: 1.5rem; }
+
+  .check-list, .cross-list { list-style: none; padding: 0; }
+  .check-list li, .cross-list li { margin-bottom: 0.9rem; line-height: 1.6; position: relative; padding-left: 1.6rem; }
+  .check-list li::before { content: '✓'; position: absolute; left: 0; color: var(--primary); font-weight: bold; }
+  .cross-list li::before { content: '⚠'; position: absolute; left: 0; color: var(--accent); font-weight: bold; }
+
+  .section-padding { padding: 3rem; border-radius: 16px; }
+
+  .process-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.5rem; }
+  .process-step { background: rgba(255,255,255,0.7); padding: 1.5rem; border-radius: 12px; border: 1px solid #e2e8f0; }
+  .step-num { width: 36px; height: 36px; background: var(--primary); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; margin-bottom: 0.8rem; }
+  .process-step h3 { font-size: 1.15rem; color: var(--primary); margin-bottom: 0.5rem; }
+  .process-step p { font-size: 0.95rem; line-height: 1.5; color: var(--text-muted); }
+
+  .faq-list { max-width: 850px; margin: 0 auto; }
+  .faq-item { margin-bottom: 1.5rem; border-bottom: 1px solid #e2e8f0; padding-bottom: 1.2rem; }
+  .faq-item:last-child { border-bottom: none; }
+  .faq-item h4 { color: var(--primary); font-size: 1.15rem; margin-bottom: 0.5rem; }
+  .faq-item p { color: var(--text-main); line-height: 1.6; }
+
+  @media (max-width: 768px) {
+    .header-section h1 { font-size: 2.1rem; }
+  }
+</style>

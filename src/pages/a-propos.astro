@@ -3,15 +3,25 @@ import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import WhatsAppWidget from '../components/WhatsAppWidget.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
 
 const title = "À propos | Artisan Plombier Bruxelles - Fbaleste";
-const description = "Découvrez Fbaleste Urgence Plomberie. Artisan plombier certifié, agréé assurances, offrant des services honnêtes et transparents à Bruxelles.";
+const description = "Découvrez Fbaleste Urgence Plomberie. Artisan plombier qualifié, rapport pour assurance, offrant des services honnêtes et transparents à Bruxelles.";
+
+const breadcrumbItems = [
+  { name: 'Accueil', url: '/' },
+  { name: 'À propos' }
+];
 ---
 
 <Layout title={title} description={description}>
   <Header />
   
   <main class="page-content pt-top">
+    <div class="container">
+      <Breadcrumbs items={breadcrumbItems} />
+    </div>
+
     <div class="container header-section text-center animate-fade-in">
       <h1>Votre <span class="highlight">Artisan Plombier</span> de Confiance</h1>
       <p>Honnêteté, transparence et expertise pour votre sérénité.</p>
@@ -21,14 +31,15 @@ const description = "Découvrez Fbaleste Urgence Plomberie. Artisan plombier cer
       <div class="about-grid">
         <div class="about-text">
           <h2>Qui est Fbaleste Urgence Plomberie ?</h2>
-          <p>Fondée sur l'idée que les urgences de plomberie ne devraient pas être synonymes d'arnaques, Fbaleste est une entreprise locale bruxelloise dédiée à fournir un service irréprochable et transparent.</p>
-          <p>Nous savons qu'une fuite d'eau ou une chaudière en panne est stressante. C'est pourquoi notre promesse est simple : un diagnostic précis, un devis clair avant toute intervention, et une réparation durable avec des pièces certifiées.</p>
+          <p>Fondée sur l'idée que les urgences de plomberie ne devraient pas être synonymes de mauvaises surprises, Fbaleste est une entreprise locale bruxelloise établie au 287 Avenue d'Auderghem à Etterbeek, dédiée à fournir un service irréprochable et transparent.</p>
+          <p>Nous savons qu'une fuite d'eau ou une chaudière en panne est une source majeure de stress. C'est pourquoi notre engagement est clair : un diagnostic précis, un devis transparent validé avant toute intervention, et une réparation durable avec des pièces certifiées.</p>
           
           <h3 class="mt-2">Pourquoi nous choisir ?</h3>
           <ul class="reasons-list mt-1">
-            <li><strong>Plombier Agréé Assurance :</strong> Nous fournissons les rapports détaillés nécessaires (photos, tests) pour vos réclamations suite à un dégât des eaux.</li>
-            <li><strong>Transparence Totale :</strong> Pas de frais cachés. Nos tarifs sont clairs dès le départ. Vous ne payez que ce qui a été approuvé.</li>
-            <li><strong>Expertise Continue :</strong> Nos techniciens sont formés en permanence sur les nouvelles technologies (pompes à chaleur, condensation, recherche non destructive).</li>
+            <li><strong>Rapports Conformes pour Assurances :</strong> Nous fournissons les rapports détaillés nécessaires (photos, tests de pression) pour vos dossiers de dégât des eaux auprès de votre assurance habitation.</li>
+            <li><strong>Transparence Totale :</strong> Pas de frais cachés. Nos tarifs vous sont expliqués dès le départ et confirmés par devis sur place. Vous ne payez que ce qui a été approuvé.</li>
+            <li><strong>Matériel Professionnel :</strong> Nos techniciens utilisent des équipements de pointe (caméras thermiques, gaz traceur, hydrocureuses, furets électriques industriels).</li>
+            <li><strong>Implantation Locale :</strong> Établis au cœur de la capitale, nous intervenons dans les 19 communes de Bruxelles sans intermédiaire.</li>
           </ul>
         </div>
       </div>
@@ -50,6 +61,7 @@ const description = "Découvrez Fbaleste Urgence Plomberie. Artisan plombier cer
   
   .header-section h1 {
     font-size: 3rem;
+    color: var(--primary);
   }
   
   .highlight {
@@ -57,31 +69,61 @@ const description = "Découvrez Fbaleste Urgence Plomberie. Artisan plombier cer
   }
 
   .content-box {
-    padding: 4rem;
+    padding: 3rem;
     border-radius: 16px;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
   }
-  
+
   .about-text h2 {
-    font-size: 2.2rem;
-  }
-  
-  .about-text p {
-    margin-bottom: 1.5rem;
-    font-size: 1.1rem;
-    color: var(--text-muted);
-  }
-  
-  .reasons-list li {
+    color: var(--primary);
     margin-bottom: 1rem;
-    padding-left: 1.5rem;
-    position: relative;
+    font-size: 1.8rem;
   }
-  
+
+  .about-text h3 {
+    color: var(--accent);
+    margin-bottom: 1rem;
+    font-size: 1.4rem;
+  }
+
+  .about-text p {
+    font-size: 1.05rem;
+    line-height: 1.8;
+    color: var(--text-main);
+    margin-bottom: 1.2rem;
+  }
+
+  .reasons-list {
+    list-style: none;
+    padding: 0;
+  }
+
+  .reasons-list li {
+    font-size: 1.05rem;
+    line-height: 1.7;
+    margin-bottom: 1rem;
+    position: relative;
+    padding-left: 1.8rem;
+  }
+
   .reasons-list li::before {
     content: '✓';
     position: absolute;
     left: 0;
-    color: var(--accent);
+    color: var(--primary);
     font-weight: bold;
+    font-size: 1.2rem;
+  }
+
+  .reasons-list li strong {
+    color: var(--primary);
+  }
+
+  @media (max-width: 768px) {
+    .content-box {
+      padding: 1.5rem;
+    }
   }
 </style>

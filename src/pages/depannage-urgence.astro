@@ -3,104 +3,177 @@ import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import WhatsAppWidget from '../components/WhatsAppWidget.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
 
-const title = "Dépannage d'Urgence Plomberie Bruxelles | Intervention 24/7";
-const description = "Besoin d'un plombier en urgence ? Fbaleste intervient rapidement à Bruxelles pour tout problème de fuite, rupture ou engorgement grave.";
+const title = "Dépannage Plomberie Urgence Bruxelles 24/7 | Fbaleste";
+const description = "Fuite, WC bouché, tuyau cassé ou panne urgente à Bruxelles. Intervention 24/7 et devis communiqué avant les travaux. Appelez Fbaleste.";
+
+const faqs = [
+  {
+    question: "Quelles sont les pannes considérées comme une urgence absolue ?",
+    answer: "Une rupture nette de canalisation, un dégât des eaux actif menaçant le plancher ou les voisins, un WC unique totalement bouché qui déborde, ou une fuite d'eau à proximité d'une armoire électrique constituent des urgences absolues nécessitant une intervention immédiate."
+  },
+  {
+    question: "Que dois-je faire immédiatement avant l'arrivée du plombier ?",
+    answer: "Fermez sur-le-champ votre vanne d'arrêt générale d'arrivée d'eau (souvent située près du compteur d'eau). Si la fuite est proche de prises de courant, coupez le fusible au tableau électrique. Épongez l'eau stagnante pour préserver les parquets et prévenez vos voisins du dessous en cas d'immeuble mitoyen."
+  },
+  {
+    question: "Quelles sont les communes desservies en urgence à Bruxelles ?",
+    answer: "Nous couvrons l'ensemble des 19 communes de la Région de Bruxelles-Capitale : Etterbeek, Ixelles, Uccle, Schaerbeek, Bruxelles-Ville, Saint-Gilles, Auderghem, Anderlecht, Molenbeek, Woluwe-Saint-Pierre, Woluwe-Saint-Lambert, Evere, Forest, Jette, Ganshoren, Koekelberg, Berchem-Sainte-Agathe, Saint-Josse et Watermael-Boitsfort."
+  },
+  {
+    question: "Comment sont fixés les prix lors d'une intervention d'urgence ?",
+    answer: "La tarification comprend un forfait de déplacement et la main-d'œuvre avec majoration éventuelle selon les plages horaires (soirée, nuit, week-end). Dès son arrivée, le technicien évalue la panne et vous remet un devis ferme et transparent avant d'effectuer les réparations."
+  },
+  {
+    question: "Fournissez-vous les documents requis pour mon assurance ?",
+    answer: "Oui. En cas de dégât des eaux, nous établissons une facture détaillée et un constat technique mentionnant l'origine du sinistre et les réparations effectuées pour simplifier votre prise en charge auprès de votre compagnie d'assurance habitation."
+  }
+];
+
+const serviceSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "@id": "https://www.urgenceplomberie.be/depannage-urgence/#service",
+  "name": "Dépannage Plomberie Urgence Bruxelles 24/7",
+  "description": description,
+  "provider": {
+    "@id": "https://www.urgenceplomberie.be/#business"
+  },
+  "areaServed": {
+    "@type": "AdministrativeArea",
+    "name": "Région de Bruxelles-Capitale"
+  },
+  "url": "https://www.urgenceplomberie.be/depannage-urgence/"
+};
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faqs.map(faq => ({
+    "@type": "Question",
+    "name": faq.question,
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": faq.answer
+    }
+  }))
+};
+
+const breadcrumbItems = [
+  { name: 'Accueil', url: '/' },
+  { name: 'Services', url: '/services/' },
+  { name: 'Dépannage Urgence 24/7' }
+];
 ---
 
-<Layout title={title} description={description}>
+<Layout title={title} description={description} schema={[serviceSchema, faqSchema]}>
   <Header />
   
   <main class="page-content pt-top">
-    <div class="container header-section text-center animate-fade-in">
-      <h1>Plombier d'Urgence à <span class="highlight">Bruxelles</span> 24/7</h1>
-      <p>Une réaction immédiate pour limiter les dégâts et sécuriser votre domicile.</p>
-      <a href="tel:+32465767511" class="btn btn-accent btn-large mt-1 pulse-animation">Intervention Immédiate : 0465 76 75 11</a>
+    <div class="container">
+      <Breadcrumbs items={breadcrumbItems} />
     </div>
 
+    <div class="container header-section text-center animate-fade-in">
+      <span class="badge badge-emergency">Intervention 24/7 dans tout Bruxelles</span>
+      <h1>Dépannage plomberie en urgence à Bruxelles</h1>
+      <p class="subtitle-text">Fuite d'eau active, canalisation cassée, WC qui refoule ou panne d'eau chaude : intervention rapide jour et nuit avec devis annoncé avant travaux.</p>
+      <div class="header-cta-group mt-1">
+        <a href="tel:+32465767511" class="btn btn-accent btn-large pulse-animation" id="btn-emergency-call">
+          📞 SOS Urgence : 0465 76 75 11
+        </a>
+        <a href="/contact/" class="btn btn-primary btn-large">
+          Formulaire de Contact Urgent
+        </a>
+      </div>
+    </div>
+
+    <!-- Section 1: Situations treated as emergencies -->
     <div class="container grid mt-3">
       <div class="glass card">
-        <h2>Ce qui est inclus</h2>
-        <ul class="check-list">
-          <li>Fermeture des vannes d'arrêt principales</li>
-          <li>Colmatage temporaire ou définitif de fuites</li>
-          <li>Remplacement de tuyauterie percée</li>
-          <li>Mise en sécurité des installations (eau, gaz)</li>
-          <li>Réparation express de robinetterie et WC</li>
-          <li>Aide à la déclaration d'assurance (photos, constat)</li>
+        <h2>Situations traitées en urgence</h2>
+        <ul class="cross-list">
+          <li><strong>Fuite majeure d'eau :</strong> Canalisation sous pression rompue, inondation de plancher ou plafond qui suinte.</li>
+          <li><strong>WC bouché refoulant :</strong> Risque de débordement immédiat des eaux usées sanitaires.</li>
+          <li><strong>Tuyau gelé ou fissuré :</strong> Rupture suite au dégel ou choc thermique.</li>
+          <li><strong>Fuite sur chauffe-eau ou groupe de sécurité :</strong> Écoulement continu menaçant le local technique.</li>
+          <li><strong>Soupçon de fuite sur installation gaz :</strong> Mise en sécurité immédiate des conduites intérieures.</li>
         </ul>
       </div>
 
+      <!-- Section 2: What to do before arrival -->
       <div class="glass card">
-        <h2>Problèmes fréquents résolus</h2>
-        <ul class="cross-list">
-          <li>Rupture soudaine de canalisation (inondation)</li>
-          <li>Fuite de gaz suspectée</li>
-          <li>Panne totale de chaudière en plein hiver</li>
-          <li>WC bouché menaçant de déborder</li>
-          <li>Fuite importante sous l'évier ou la baignoire</li>
-        </ul>
+        <h2>Que faire avant l'arrivée du technicien ?</h2>
+        <ol class="steps-list">
+          <li><strong>Couper l'alimentation générale d'eau :</strong> Fermez la vanne principale située près du compteur Vivaqua.</li>
+          <li><strong>Sécuriser l'électricité :</strong> Si l'eau touche des prises ou plinthes électriques, coupez le disjoncteur général.</li>
+          <li><strong>Éponger et contenir l'eau :</strong> Placez des bassines et serpillières pour freiner l'infiltration vers les voisins.</li>
+          <li><strong>Préparer l'accès :</strong> Dégagez l'espace autour du compteur, de la vanne et du point de fuite.</li>
+          <li><strong>Prendre des photos :</strong> Photographiez l'étendue des dégâts pour votre dossier d'assurance.</li>
+        </ol>
       </div>
     </div>
 
+    <!-- Section 3: Process & Pricing Transparency -->
     <section class="container mt-3 glass section-padding">
-      <h2 class="text-center">Notre Processus en 4 Étapes</h2>
+      <h2 class="text-center">Fonctionnement et Devis Transparent</h2>
+      <p class="text-center max-w-700 mb-2">Aucun frais surprise : chaque intervention fait l'objet d'un accord clair sur le prix avant exécution des réparations.</p>
+      
       <div class="process-grid mt-2">
         <div class="process-step">
           <div class="step-num">1</div>
           <h3>Diagnostic Téléphonique</h3>
-          <p>Nous vous indiquons immédiatement les gestes de sécurité à effectuer (couper l'eau/gaz).</p>
+          <p>Nous évaluons l'urgence et vous indiquons les premières consignes de sécurité à appliquer.</p>
         </div>
         <div class="process-step">
           <div class="step-num">2</div>
-          <h3>Déplacement Rapide</h3>
-          <p>Un technicien arrive rapidement chez vous (souvent entre 30 et 60 min), équipé pour l'urgence.</p>
+          <h3>Arrivée Sécurisée</h3>
+          <p>Le plombier arrive sur site avec un véhicule équipé pour faire face aux réparations immédiates.</p>
         </div>
         <div class="process-step">
           <div class="step-num">3</div>
           <h3>Devis Avant Travaux</h3>
-          <p>Un tarif clair vous est communiqué sur place avant toute intervention.</p>
+          <p>La panne est inspectée et un tarif clair et détaillé vous est soumis pour validation expresse.</p>
         </div>
         <div class="process-step">
           <div class="step-num">4</div>
-          <h3>Réparation Sécurisée</h3>
-          <p>Le problème est réparé avec des pièces certifiées et l'espace est nettoyé.</p>
+          <h3>Réparation Durable</h3>
+          <p>Remplacement des pièces défectueuses aux normes belges et nettoyage de la zone d'intervention.</p>
         </div>
       </div>
     </section>
 
+    <!-- Section 4: Areas Covered & Local Hubs -->
     <div class="container grid mt-3">
       <div class="glass card">
-        <h2>Pourquoi Nous Choisir ?</h2>
-        <ul class="check-list">
-          <li><strong>Devis Transparent :</strong> Factures détaillées pour vos indemnisations.</li>
-          <li><strong>Stock Permanent :</strong> Pièces de rechange dans nos véhicules.</li>
-          <li><strong>Transparence :</strong> Pas de frais cachés, même de nuit.</li>
-        </ul>
+        <h2>Zones couvertes à Bruxelles</h2>
+        <p>Notre service d'urgence dessert les 19 communes de la Région de Bruxelles-Capitale sans exception :</p>
+        <p>Interventions prioritaires à <a href="/zones/plombier-etterbeek/">Etterbeek</a>, <a href="/zones/plombier-auderghem/">Auderghem</a>, <a href="/zones/plombier-ixelles/">Ixelles</a>, <a href="/zones/plombier-uccle/">Uccle</a>, <a href="/zones/plombier-schaerbeek/">Schaerbeek</a> et <a href="/zones/plombier-bruxelles/">Bruxelles Centre</a>.</p>
+        <p><a href="/zones/" class="text-link">Voir l'ensemble de nos 19 zones d'intervention locales →</a></p>
       </div>
 
       <div class="glass card info-box">
-        <h2>Disponibilité & Zone d'Intervention</h2>
-        <p><strong>Disponibilité :</strong> 24h/24, 7j/7, incluant les nuits, week-ends et jours fériés.</p>
-        <p><strong>Zone d'Intervention :</strong> Les 19 communes de la Région de Bruxelles-Capitale (Ixelles, Uccle, Schaerbeek, Anderlecht, etc.) et sa périphérie immédiate.</p>
+        <h2>Services Associés</h2>
+        <ul class="check-list">
+          <li>Besoin d'un diagnostic non destructif ? <a href="/detection-fuite/">Détection de fuite sans casse</a></li>
+          <li>Canalisation obstruée ? <a href="/debouchage/">Débouchage haute pression</a></li>
+          <li>Chasse d'eau qui fuit ? <a href="/reparation-toilette-chasse-eau-bruxelles/">Réparation de toilette & chasse d'eau</a></li>
+          <li>Consultez notre guide : <a href="/blog/tarif-plombier-bruxelles-prix/">Tarifs d'un plombier à Bruxelles en 2026</a></li>
+        </ul>
       </div>
     </div>
 
+    <!-- Section 5: Visible FAQs -->
     <section class="container mt-3 mb-3 glass section-padding">
-      <h2 class="text-center">Questions Fréquentes (FAQ)</h2>
+      <h2 class="text-center">Foire Aux Questions : Dépannage d'Urgence</h2>
       <div class="faq-list mt-2">
-        <div class="faq-item">
-          <h4>En combien de temps pouvez-vous être là ?</h4>
-          <p>Pour les urgences vitales (fuite majeure), nous visons un temps de réponse rapide, généralement entre 30 et 60 minutes selon la commune et la circulation.</p>
-        </div>
-        <div class="faq-item">
-          <h4>Les tarifs sont-ils majorés la nuit ?</h4>
-          <p>Les interventions de nuit, le week-end et les jours fériés peuvent faire l'objet d'une majoration. Le tarif vous est toujours communiqué clairement avant notre départ.</p>
-        </div>
-        <div class="faq-item">
-          <h4>Collaborez-vous avec les assurances ?</h4>
-          <p>Absolument. Nous sommes des plombiers agréés et nos rapports (avec photos et détails techniques) sont parfaitement valables pour votre compagnie d'assurance.</p>
-        </div>
+        {faqs.map(faq => (
+          <div class="faq-item">
+            <h4>{faq.question}</h4>
+            <p>{faq.answer}</p>
+          </div>
+        ))}
       </div>
     </section>
   </main>
@@ -111,23 +184,52 @@ const description = "Besoin d'un plombier en urgence ? Fbaleste intervient rapid
 
 <style>
   .pt-top { padding-top: 120px; }
-  .header-section h1 { font-size: 3rem; margin-bottom: 1rem; }
-  .highlight { color: var(--accent); }
-  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; }
-  .card { padding: 2rem; border-radius: 16px; }
+  .header-section h1 { font-size: 2.8rem; margin-bottom: 0.8rem; color: var(--primary); }
+  .subtitle-text { max-width: 750px; margin: 0 auto 1.5rem auto; font-size: 1.15rem; line-height: 1.6; color: var(--text-main); }
+  .header-cta-group { display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap; margin-bottom: 1rem; }
+  
+  .badge-emergency {
+    background-color: var(--accent);
+    color: white;
+    padding: 0.4rem 1rem;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 0.85rem;
+    display: inline-block;
+    margin-bottom: 1rem;
+  }
+
+  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2rem; }
+  .card { padding: 2.5rem; border-radius: 16px; }
+  .card h2 { color: var(--primary); margin-bottom: 1.2rem; font-size: 1.5rem; }
+
+  .cross-list, .check-list { list-style: none; padding: 0; }
+  .cross-list li, .check-list li { margin-bottom: 0.9rem; line-height: 1.6; }
+  .cross-list li strong, .check-list li strong { color: var(--primary); }
+  
+  .steps-list { padding-left: 1.2rem; }
+  .steps-list li { margin-bottom: 0.8rem; line-height: 1.5; }
+  .steps-list li strong { color: var(--primary); }
+
   .section-padding { padding: 3rem; border-radius: 16px; }
+  .max-w-700 { max-width: 700px; margin-left: auto; margin-right: auto; }
   
-  .check-list li, .cross-list li { margin-bottom: 0.8rem; position: relative; padding-left: 1.5rem; }
-  .check-list li::before { content: '✓'; position: absolute; left: 0; color: var(--primary); font-weight: bold; }
-  .cross-list li::before { content: '⚠'; position: absolute; left: 0; color: var(--accent); font-weight: bold; }
-  
-  .process-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem; }
-  .process-step { text-align: center; }
-  .step-num { width: 50px; height: 50px; background: var(--primary); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; font-weight: bold; margin: 0 auto 1rem; }
-  
-  .info-box { background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%); color: white; }
-  .info-box h2 { color: white; }
-  
-  .faq-item { margin-bottom: 1.5rem; border-bottom: 1px solid rgba(0,0,0,0.1); padding-bottom: 1rem; }
-  .faq-item h4 { color: var(--primary); margin-bottom: 0.5rem; }
+  .process-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.5rem; }
+  .process-step { background: rgba(255,255,255,0.7); padding: 1.5rem; border-radius: 12px; border: 1px solid #e2e8f0; }
+  .step-num { width: 36px; height: 36px; background: var(--primary); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; margin-bottom: 0.8rem; }
+  .process-step h3 { font-size: 1.15rem; color: var(--primary); margin-bottom: 0.5rem; }
+  .process-step p { font-size: 0.95rem; line-height: 1.5; color: var(--text-muted); }
+
+  .faq-list { max-width: 850px; margin: 0 auto; }
+  .faq-item { margin-bottom: 1.5rem; border-bottom: 1px solid #e2e8f0; padding-bottom: 1.2rem; }
+  .faq-item:last-child { border-bottom: none; }
+  .faq-item h4 { color: var(--primary); font-size: 1.15rem; margin-bottom: 0.5rem; }
+  .faq-item p { color: var(--text-main); line-height: 1.6; }
+
+  .text-link { color: var(--primary); font-weight: 600; text-decoration: underline; }
+  .text-link:hover { color: var(--accent); }
+
+  @media (max-width: 768px) {
+    .header-section h1 { font-size: 2.1rem; }
+  }
 </style>

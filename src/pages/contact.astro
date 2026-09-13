@@ -3,15 +3,25 @@ import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import WhatsAppWidget from '../components/WhatsAppWidget.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
 
 const title = "Contactez Fbaleste | Devis Plombier Bruxelles Gratuit";
-const description = "Demandez un devis plombier Bruxelles gratuit. Intervention d'urgence, débouchage ou installation. Contactez Fbaleste Urgence Plomberie 24/7.";
+const description = "Demandez un devis plombier Bruxelles gratuit. Intervention d'urgence 24/7, débouchage ou installation. Contactez Fbaleste Urgence Plomberie.";
+
+const breadcrumbItems = [
+  { name: 'Accueil', url: '/' },
+  { name: 'Contact' }
+];
 ---
 
 <Layout title={title} description={description}>
   <Header />
   
   <main class="page-content pt-top">
+    <div class="container">
+      <Breadcrumbs items={breadcrumbItems} />
+    </div>
+
     <div class="container header-section text-center animate-fade-in">
       <h1>Demandez votre <span class="highlight">Devis Gratuit</span></h1>
       <p>Une urgence ou un projet ? Nous vous répondons immédiatement.</p>
@@ -20,32 +30,35 @@ const description = "Demandez un devis plombier Bruxelles gratuit. Intervention 
     <div class="container contact-grid mt-3 mb-3">
       <div class="contact-info glass">
         <h2>Coordonnées</h2>
-        <p class="mb-2">N'hésitez pas à nous appeler pour toute urgence (24/7) ou à nous envoyer un message via WhatsApp avec des photos de votre problème pour une estimation rapide.</p>
+        <p class="mb-2">N'hésitez pas à nous appeler pour toute urgence (24/7) ou à nous envoyer un message avec des photos de votre problème pour une estimation rapide.</p>
         
         <div class="info-item">
-          <strong>📞 Téléphone (Urgence) :</strong>
+          <strong>📞 Téléphone (Urgence 24/7) :</strong>
           <a href="tel:+32465767511">0465 76 75 11</a>
         </div>
         <div class="info-item">
           <strong>💬 WhatsApp :</strong>
-          <a href="https://wa.me/32465767511" target="_blank">Envoyer un message</a>
+          <a href="https://wa.me/32465767511" target="_blank" rel="noopener noreferrer">Envoyer un message WhatsApp</a>
         </div>
         <div class="info-item">
           <strong>✉️ Email :</strong>
           <a href="mailto:contact@urgenceplomberie.be">contact@urgenceplomberie.be</a>
         </div>
         <div class="info-item">
-          <strong>📍 Zones Couvertes :</strong>
-          <span>Bruxelles et Périphérie (19 communes)</span>
+          <strong>📍 Adresse & Base locale :</strong>
+          <span>Avenue d'Auderghem 287, 1040 Etterbeek</span>
+        </div>
+        <div class="info-item">
+          <strong>🗺️ Zones Couvertes :</strong>
+          <span>Région de Bruxelles-Capitale (19 communes)</span>
         </div>
       </div>
 
       <div class="contact-form glass">
         <h2>Envoyez-nous un message</h2>
-        <!-- Using formsubmit.co for global contact form functionality without backend -->
         <form action="https://formsubmit.co/midebzn@gmail.com" method="POST">
-          <input type="hidden" name="_subject" value="Nouveau message depuis le site Web Fbaleste !">
-          <input type="hidden" name="_captcha" value="false">
+          <input type="hidden" name="_subject" value="Nouveau message depuis le site Web Fbaleste !" />
+          <input type="hidden" name="_captcha" value="false" />
           
           <div class="form-group">
             <label for="name">Nom / Entreprise</label>
@@ -64,7 +77,7 @@ const description = "Demandez un devis plombier Bruxelles gratuit. Intervention 
           
           <div class="form-group">
             <label for="message">Description de votre problème</label>
-            <textarea id="message" name="message" rows="5" required placeholder="Ex: J'ai une fuite sous l'évier..."></textarea>
+            <textarea id="message" name="message" rows="5" required placeholder="Ex: J'ai une fuite sous l'évier, un WC bouché, une chaudière en panne..."></textarea>
           </div>
           
           <button type="submit" class="btn btn-primary w-100">Envoyer la demande</button>
@@ -88,6 +101,7 @@ const description = "Demandez un devis plombier Bruxelles gratuit. Intervention 
   
   .header-section h1 {
     font-size: 3rem;
+    color: var(--primary);
   }
   
   .highlight {
@@ -114,7 +128,7 @@ const description = "Demandez un devis plombier Bruxelles gratuit. Intervention 
 
   .info-item a, .info-item span {
     color: var(--primary);
-    font-size: 1.1rem;
+    font-size: 1.05rem;
     font-weight: 600;
   }
 
@@ -156,6 +170,9 @@ const description = "Demandez un devis plombier Bruxelles gratuit. Intervention 
   @media (max-width: 768px) {
     .contact-grid {
       grid-template-columns: 1fr;
+    }
+    .glass {
+      padding: 1.5rem;
     }
   }
 </style>

@@ -1,14 +1,16 @@
 ---
 interface Props {
-	title?: string;
-	description?: string;
+  title?: string;
+  description?: string;
   preloadImage?: string;
+  schema?: any;
 }
 
 const { 
-  title = "Fbaleste Urgence Plomberie | Dépannage Plombier Bruxelles", 
+  title = "Plombier Bruxelles 24/7 | Fuite, Débouchage, Chauffage", 
   description = "Fbaleste Urgence Plomberie est votre expert pour tout dépannage et réparation en plomberie. Intervention rapide garantie.",
-  preloadImage
+  preloadImage,
+  schema: customSchema
 } = Astro.props;
 import '../styles/global.css';
 
@@ -18,15 +20,22 @@ if (!pathname.endsWith('/')) {
 }
 const canonicalURL = new URL(pathname, Astro.site || 'https://www.urgenceplomberie.be');
 
-const schema = {
+const businessSchema = {
   "@context": "https://schema.org",
   "@type": ["LocalBusiness", "Plumber"],
   "@id": "https://www.urgenceplomberie.be/#business",
   "name": "Fbaleste Urgence Plomberie",
-  "url": Astro.site?.toString() || 'https://www.urgenceplomberie.be/',
+  "url": "https://www.urgenceplomberie.be/",
   "logo": "https://www.urgenceplomberie.be/logo.png",
   "telephone": "+32465767511",
   "email": "contact@urgenceplomberie.be",
+  "priceRange": "€€",
+  "openingHoursSpecification": {
+    "@type": "OpeningHoursSpecification",
+    "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+    "opens": "00:00",
+    "closes": "23:59"
+  },
   "address": {
     "@type": "PostalAddress",
     "streetAddress": "Av. d'Auderghem 287",
@@ -39,58 +48,46 @@ const schema = {
     "@type": "AdministrativeArea",
     "name": "Région de Bruxelles-Capitale"
   },
-  "hasOfferCatalog": {
-    "@type": "OfferCatalog",
-    "name": "Services Catalog",
-    "itemListElement": [
-      {
-        "@type": "Offer",
-        "itemOffered": {
-          "@type": "Service",
-          "name": "Dépannage Urgence Plomberie"
-        }
-      },
-      {
-        "@type": "Offer",
-        "itemOffered": {
-          "@type": "Service",
-          "name": "Réparation Fuite d'Eau"
-        }
-      },
-      {
-        "@type": "Offer",
-        "itemOffered": {
-          "@type": "Service",
-          "name": "Débouchage Canalisations"
-        }
-      }
-    ]
-  }
+  "sameAs": [
+    "https://maps.app.goo.gl/WW4tpxVLW8qVs56M6"
+  ]
 };
+
+const schemasToRender = [];
+// Always render the business entity
+schemasToRender.push(businessSchema);
+
+if (customSchema) {
+  if (Array.isArray(customSchema)) {
+    schemasToRender.push(...customSchema);
+  } else {
+    schemasToRender.push(customSchema);
+  }
+}
 ---
 
 <!doctype html>
 <html lang="fr">
 	<head>
 		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<link rel="icon" type="image/png" href="/logo.png" />
 		<meta name="generator" content={Astro.generator} />
-		<title>{title} | Fbaleste Urgence Plomberie</title>
+		<title>{title}</title>
 		<meta name="description" content={description} />
 		<link rel="canonical" href={canonicalURL} />
 		
 		<!-- Open Graph / Facebook -->
 		<meta property="og:type" content="website" />
 		<meta property="og:url" content={canonicalURL} />
-		<meta property="og:title" content={`${title} | Fbaleste Urgence Plomberie`} />
+		<meta property="og:title" content={title} />
 		<meta property="og:description" content={description} />
 		<meta property="og:image" content={new URL('/logo.png', Astro.site || 'https://www.urgenceplomberie.be')} />
 
 		<!-- Twitter -->
 		<meta property="twitter:card" content="summary_large_image" />
 		<meta property="twitter:url" content={canonicalURL} />
-		<meta property="twitter:title" content={`${title} | Fbaleste Urgence Plomberie`} />
+		<meta property="twitter:title" content={title} />
 		<meta property="twitter:description" content={description} />
 		<meta property="twitter:image" content={new URL('/logo.png', Astro.site || 'https://www.urgenceplomberie.be')} />
 
@@ -99,7 +96,9 @@ const schema = {
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 		<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Outfit:wght@400;700&display=swap" rel="stylesheet" />
 		{preloadImage && <link rel="preload" href={preloadImage} as="image" />}
-		<script type="application/ld+json" set:html={JSON.stringify(schema)} />
+		{schemasToRender.map((s) => (
+			<script type="application/ld+json" set:html={JSON.stringify(s)} />
+		))}
 	</head>
 	<body>
 		<slot />

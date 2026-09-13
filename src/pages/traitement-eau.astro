@@ -3,104 +3,174 @@ import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import WhatsAppWidget from '../components/WhatsAppWidget.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
 
-const title = "Traitement de l'Eau Bruxelles | Adoucisseurs et Filtration";
-const description = "Protégez vos canalisations et votre peau avec nos solutions de traitement de l'eau. Installation d'adoucisseurs d'eau et de filtres sur Bruxelles.";
+const title = "Adoucisseur d’Eau Bruxelles | Installation et Entretien";
+const description = "Installation, réglage et entretien d’adoucisseur d’eau à Bruxelles. Diagnostic de dureté, choix du système et devis selon votre logement.";
+
+const faqs = [
+  {
+    question: "Pourquoi l'installation d'un adoucisseur est-elle indispensable à Bruxelles ?",
+    answer: "L'eau courante distribuée dans la capitale belge présente une dureté élevée, souvent comprise entre 25°f et 35°f (degrés français). Ce calcaire incruste prématurément les serpentins de chaudière, les résistances de boiler, les machines à laver et obstrue les mousseurs de robinetterie."
+  },
+  {
+    question: "Quel est le coût d'installation d'un adoucisseur d'eau à Bruxelles ?",
+    answer: "Le tarif dépend de la capacité de l'appareil (calculée selon le nombre d'occupants et le volume d'eau consommé), du type de technologie (adoucisseur volumétrique à sel ou au CO2) et des raccordements nécessaires. Un devis sur mesure est remis après analyse de votre logement."
+  },
+  {
+    question: "L'eau adoucie reste-t-elle potable pour la consommation ?",
+    answer: "Oui. L'échange d'ions calcium contre du sodium respecte les normes sanitaires de potabilité en Belgique. Nous réglons systématiquement une dureté résiduelle idéale (entre 8°f et 12°f) pour préserver un équilibre minéral parfait et protéger vos tuyauteries contre l'acidité."
+  },
+  {
+    question: "Quelle est la fréquence d'entretien d'un adoucisseur d'eau ?",
+    answer: "Un contrôle annuel est recommandé pour vérifier le bon fonctionnement de la vanne volumétrique, nettoyer le bac à sel, désinfecter les résines échangeuses d'ions et contrôler la dureté de l'eau en sortie d'appareil."
+  },
+  {
+    question: "Quelle est la différence entre un adoucisseur et un système de filtration ?",
+    answer: "L'adoucisseur élimine le calcaire responsable de l'entartrage de vos canalisations et appareils. La filtration (filtre à sédiments, charbon actif ou osmoseur sous évier) élimine le chlore, les particules en suspension, les mauvais goûts et les micro-polluants."
+  }
+];
+
+const serviceSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "@id": "https://www.urgenceplomberie.be/traitement-eau/#service",
+  "name": "Installation et Entretien d'Adoucisseur d'Eau Bruxelles",
+  "description": description,
+  "provider": {
+    "@id": "https://www.urgenceplomberie.be/#business"
+  },
+  "areaServed": {
+    "@type": "AdministrativeArea",
+    "name": "Région de Bruxelles-Capitale"
+  },
+  "url": "https://www.urgenceplomberie.be/traitement-eau/"
+};
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faqs.map(faq => ({
+    "@type": "Question",
+    "name": faq.question,
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": faq.answer
+    }
+  }))
+};
+
+const breadcrumbItems = [
+  { name: 'Accueil', url: '/' },
+  { name: 'Services', url: '/services/' },
+  { name: 'Adoucisseur d’Eau' }
+];
 ---
 
-<Layout title={title} description={description}>
+<Layout title={title} description={description} schema={[serviceSchema, faqSchema]}>
   <Header />
   
   <main class="page-content pt-top">
-    <div class="container header-section text-center animate-fade-in">
-      <h1>Adoucisseur et Traitement de l'Eau à <span class="highlight">Bruxelles</span></h1>
-      <p>Dites adieu au calcaire et profitez d'une eau pure, douce et saine dans toute votre maison.</p>
-      <a href="/contact/" class="btn btn-primary btn-large mt-1">Demander un Devis Gratuit</a>
+    <div class="container">
+      <Breadcrumbs items={breadcrumbItems} />
     </div>
 
+    <div class="container header-section text-center animate-fade-in">
+      <span class="badge badge-water">Protection Anti-Calcaire Durable</span>
+      <h1>Installation d’adoucisseur d’eau à Bruxelles</h1>
+      <p class="subtitle-text">Protégez vos canalisations, prolongez la durée de vie de votre chaudière et profitez d'une eau douce au quotidien grâce à un adoucisseur adapté aux eaux très dures de la région bruxelloise.</p>
+      <div class="header-cta-group mt-1">
+        <a href="tel:+32465767511" class="btn btn-accent btn-large pulse-animation">
+          📞 0465 76 75 11 (Conseil Anti-Calcaire)
+        </a>
+        <a href="/contact/" class="btn btn-primary btn-large">
+          Demander un Devis Adoucisseur
+        </a>
+      </div>
+    </div>
+
+    <!-- Main Section: Adoucisseur d'eau focus -->
     <div class="container grid mt-3">
       <div class="glass card">
-        <h2>Ce qui est inclus</h2>
+        <h2>Pourquoi installer un adoucisseur à Bruxelles ?</h2>
+        <p>Avec une dureté souvent supérieure à 30°f, l'eau bruxelloise fait partie des plus dures de Belgique :</p>
         <ul class="check-list">
-          <li>Analyse de la dureté de l'eau à votre domicile</li>
-          <li>Installation d'adoucisseurs d'eau (sel ou CO2)</li>
-          <li>Pose de systèmes de filtration sous évier (osmose inverse)</li>
-          <li>Installation de filtres anti-sédiments (charbon actif)</li>
-          <li>Entretien annuel et rechargement des systèmes</li>
-          <li>Réglage de la dureté résiduelle pour une eau parfaite</li>
+          <li><strong>Protection du chauffe-eau et de la chaudière :</strong> 1 mm de tartre sur une résistance engendre jusqu'à 10% de surconsommation électrique.</li>
+          <li><strong>Longévité des équipements sanitaires :</strong> Fini les parois de douche blanchies, les mitigeurs grippés et les joints calcifiés.</li>
+          <li><strong>Confort corporel et textile :</strong> Peau moins sèche, cheveux plus soyeux et linge nettement plus souple sans abus d'adoucissant.</li>
+          <li><strong>Économie de détergents :</strong> Réduction de 40% à 50% de la quantité de savon, shampoing et produits lessiviels nécessaires.</li>
+          <li>Découvrez notre guide complet : <a href="/blog/durete-eau-calcaire-bruxelles/">Impacts du calcaire à Bruxelles et solutions</a>.</li>
         </ul>
       </div>
 
       <div class="glass card">
-        <h2>Problèmes fréquents résolus</h2>
-        <ul class="cross-list">
-          <li>Dépôts de calcaire blancs sur les robinets et parois de douche</li>
-          <li>Durée de vie réduite de l'électroménager (lave-linge, chaudière)</li>
-          <li>Peau sèche et cheveux ternes après la douche</li>
-          <li>Surconsommation de produits détergents et savons</li>
-          <li>Goût de chlore ou eau trouble au robinet</li>
+        <h2>Notre gamme d'adoucisseurs certifiés</h2>
+        <p>Nous sélectionnons et installons des systèmes fiables répondant aux exigences Belgaqua :</p>
+        <ul class="arrow-list mt-1">
+          <li><strong>Adoucisseurs volumétriques à résine :</strong> Régénération intelligente uniquement en fonction du volume d'eau réellement consommé pour économiser le sel et l'eau.</li>
+          <li><strong>Systèmes compacts pour appartements :</strong> Intégration aisée sous un plan de travail ou dans un placard technique exigu.</li>
+          <li><strong>Modèles haute capacité pour maisons et copropriétés :</strong> Traitement des débits élevés sans perte de pression.</li>
+          <li><strong>By-pass de sécurité inclus :</strong> Possibilité d'isoler l'appareil pour l'arrosage extérieur en un geste.</li>
         </ul>
       </div>
     </div>
 
+    <!-- Process: Diagnostic to Installation -->
     <section class="container mt-3 glass section-padding">
-      <h2 class="text-center">Notre Processus d'Installation</h2>
+      <h2 class="text-center">Protocole d'Installation d'un Adoucisseur</h2>
       <div class="process-grid mt-2">
         <div class="process-step">
           <div class="step-num">1</div>
-          <h3>Test de Dureté</h3>
-          <p>Nous mesurons précisément le taux de calcaire (degrés français °f) de votre eau.</p>
+          <h3>Test de Dureté Local</h3>
+          <p>Mesure précise du titre hydrotimétrique (°f) à votre robinet pour dimensionner l'appareil avec exactitude.</p>
         </div>
         <div class="process-step">
           <div class="step-num">2</div>
-          <h3>Dimensionnement</h3>
-          <p>Nous sélectionnons l'appareil adapté à la taille de votre foyer et à votre consommation d'eau.</p>
+          <h3>Raccordement & By-Pass</h3>
+          <p>Installation sur l'arrivée d'eau générale avec vanne by-pass, clapet anti-retour et filtre anti-sédiments amont.</p>
         </div>
         <div class="process-step">
           <div class="step-num">3</div>
-          <h3>Installation Raccordement</h3>
-          <p>Pose de l'adoucisseur près de l'arrivée d'eau principale avec un système by-pass de sécurité.</p>
+          <h3>Mise en Service & Réglage</h3>
+          <p>Paramétrage électronique de la vanne, programmation des cycles et calibration de la dureté résiduelle (8–10°f).</p>
         </div>
         <div class="process-step">
           <div class="step-num">4</div>
-          <h3>Mise en Service</h3>
-          <p>Programmation de la vanne, ajout de sel, et test de la nouvelle douceur de l'eau.</p>
+          <h3>Contrat & Suivi</h3>
+          <p>Remise du certificat de conformité et proposition d'un entretien annuel pour le suivi de votre matériel.</p>
         </div>
       </div>
     </section>
 
+    <!-- Secondary Section: Filtration & Purifiers -->
     <div class="container grid mt-3">
       <div class="glass card">
-        <h2>Pourquoi Nous Choisir ?</h2>
-        <ul class="check-list">
-          <li><strong>Économies Garanties :</strong> Un adoucisseur réduit de 15% vos factures d'énergie (chauffe-eau non entartré) et prolonge la vie de vos appareils.</li>
-          <li><strong>Confort Quotidien :</strong> Linge plus doux, vaisselle brillante sans traces, nettoyage facilité.</li>
-          <li><strong>Entretien Suivi :</strong> Nous proposons des contrats d'entretien pour garantir le bon fonctionnement continu de votre appareil.</li>
+        <h2>Filtration et Osmoseurs (Sous-Section Complémentaire)</h2>
+        <p>En complément de l'adoucisseur, nous posons des systèmes de purification au point d'usage :</p>
+        <ul class="check-list mt-1">
+          <li><strong>Filtres à charbon actif :</strong> Élimination du goût de chlore et des odeurs pour une eau pure au robinet de cuisine.</li>
+          <li><strong>Filtres à sédiments lavables :</strong> Retenue des boues, sables et rouilles provenant du réseau urbain.</li>
+          <li><strong>Osmose inverse sous évier :</strong> Filtration ultra-fine pour une eau de boisson comparable à une eau de source.</li>
         </ul>
       </div>
 
       <div class="glass card info-box">
-        <h2>Disponibilité & Zone d'Intervention</h2>
-        <p><strong>Disponibilité :</strong> Sur rendez-vous pour les installations. Interventions de maintenance régulières.</p>
-        <p><strong>Zone d'Intervention :</strong> Bruxelles et environs (une région particulièrement touchée par l'eau "dure").</p>
+        <h2>Zone d'Intervention & Devis</h2>
+        <p><strong>Couverture géographique :</strong> L'ensemble de la Région de Bruxelles-Capitale (19 communes : Uccle, Ixelles, Etterbeek, Auderghem, Woluwe, Schaerbeek, etc.).</p>
+        <p>Découvrez aussi nos services de <a href="/installation-chauffe-eau-bruxelles/">remplacement de chauffe-eau</a> et de <a href="/installations-sanitaires/">rénovation sanitaire</a>.</p>
       </div>
     </div>
 
+    <!-- 5 Visible FAQs -->
     <section class="container mt-3 mb-3 glass section-padding">
-      <h2 class="text-center">Questions Fréquentes (FAQ)</h2>
+      <h2 class="text-center">Questions Fréquentes sur les Adoucisseurs d'Eau</h2>
       <div class="faq-list mt-2">
-        <div class="faq-item">
-          <h4>L'eau de Bruxelles est-elle vraiment calcaire ?</h4>
-          <p>Oui. La dureté de l'eau à Bruxelles varie souvent entre 25°f et 35°f (degrés français), ce qui est classé comme eau "dure" à "très dure". Un adoucisseur est vivement recommandé.</p>
-        </div>
-        <div class="faq-item">
-          <h4>L'eau adoucie est-elle potable ?</h4>
-          <p>Absolument. Un adoucisseur à résine échange les ions calcium contre du sodium, ce qui modifie légèrement la teneur en sodium sans dépasser les normes de potabilité. Toutefois, pour les personnes au régime strict sans sel, un point d'eau non adouci peut être conservé à la cuisine.</p>
-        </div>
-        <div class="faq-item">
-          <h4>À quelle fréquence faut-il rajouter du sel ?</h4>
-          <p>Cela dépend de votre consommation d'eau et de la taille du bac, mais en moyenne, une vérification et un rajout tous les 1 à 2 mois sont suffisants.</p>
-        </div>
+        {faqs.map(faq => (
+          <div class="faq-item">
+            <h4>{faq.question}</h4>
+            <p>{faq.answer}</p>
+          </div>
+        ))}
       </div>
     </section>
   </main>
@@ -111,23 +181,49 @@ const description = "Protégez vos canalisations et votre peau avec nos solution
 
 <style>
   .pt-top { padding-top: 120px; }
-  .header-section h1 { font-size: 3rem; margin-bottom: 1rem; }
-  .highlight { color: var(--accent); }
-  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; }
-  .card { padding: 2rem; border-radius: 16px; }
-  .section-padding { padding: 3rem; border-radius: 16px; }
+  .header-section h1 { font-size: 2.8rem; margin-bottom: 0.8rem; color: var(--primary); }
+  .subtitle-text { max-width: 750px; margin: 0 auto 1.5rem auto; font-size: 1.15rem; line-height: 1.6; color: var(--text-main); }
+  .header-cta-group { display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap; margin-bottom: 1rem; }
   
-  .check-list li, .cross-list li { margin-bottom: 0.8rem; position: relative; padding-left: 1.5rem; }
+  .badge-water {
+    background-color: #0284c7;
+    color: white;
+    padding: 0.4rem 1rem;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 0.85rem;
+    display: inline-block;
+    margin-bottom: 1rem;
+  }
+
+  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2rem; }
+  .card { padding: 2.5rem; border-radius: 16px; }
+  .card h2 { color: var(--primary); margin-bottom: 1.2rem; font-size: 1.5rem; }
+
+  .check-list { list-style: none; padding: 0; }
+  .check-list li { margin-bottom: 0.9rem; line-height: 1.6; position: relative; padding-left: 1.6rem; }
   .check-list li::before { content: '✓'; position: absolute; left: 0; color: var(--primary); font-weight: bold; }
-  .cross-list li::before { content: '⚠'; position: absolute; left: 0; color: var(--accent); font-weight: bold; }
+  .check-list li strong { color: var(--primary); }
   
-  .process-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem; }
-  .process-step { text-align: center; }
-  .step-num { width: 50px; height: 50px; background: var(--primary); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; font-weight: bold; margin: 0 auto 1rem; }
-  
-  .info-box { background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%); color: white; }
-  .info-box h2 { color: white; }
-  
-  .faq-item { margin-bottom: 1.5rem; border-bottom: 1px solid rgba(0,0,0,0.1); padding-bottom: 1rem; }
-  .faq-item h4 { color: var(--primary); margin-bottom: 0.5rem; }
+  .arrow-list { list-style: none; padding: 0; }
+  .arrow-list li { margin-bottom: 1rem; border-bottom: 1px solid rgba(0,0,0,0.06); padding-bottom: 0.5rem; line-height: 1.6; }
+  .arrow-list li strong { color: var(--primary); }
+
+  .section-padding { padding: 3rem; border-radius: 16px; }
+
+  .process-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.5rem; }
+  .process-step { background: rgba(255,255,255,0.7); padding: 1.5rem; border-radius: 12px; border: 1px solid #e2e8f0; }
+  .step-num { width: 36px; height: 36px; background: var(--primary); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; margin-bottom: 0.8rem; }
+  .process-step h3 { font-size: 1.15rem; color: var(--primary); margin-bottom: 0.5rem; }
+  .process-step p { font-size: 0.95rem; line-height: 1.5; color: var(--text-muted); }
+
+  .faq-list { max-width: 850px; margin: 0 auto; }
+  .faq-item { margin-bottom: 1.5rem; border-bottom: 1px solid #e2e8f0; padding-bottom: 1.2rem; }
+  .faq-item:last-child { border-bottom: none; }
+  .faq-item h4 { color: var(--primary); font-size: 1.15rem; margin-bottom: 0.5rem; }
+  .faq-item p { color: var(--text-main); line-height: 1.6; }
+
+  @media (max-width: 768px) {
+    .header-section h1 { font-size: 2.1rem; }
+  }
 </style>

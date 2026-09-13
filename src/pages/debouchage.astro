@@ -3,42 +3,108 @@ import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import WhatsAppWidget from '../components/WhatsAppWidget.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
 
 const title = "Débouchage Canalisation Bruxelles | WC, Éviers, Égouts";
-const description = "Service professionnel de débouchage à Bruxelles. Curage haute pression, inspection caméra, vidange de fosse septique. Intervention rapide et tarifs transparents.";
+const description = "Service professionnel de débouchage de canalisation à Bruxelles. Curage haute pression, furet mécanique et passage caméra. Devis clair avant travaux.";
+
+const faqs = [
+  {
+    question: "Combien coûte un débouchage de canalisation à Bruxelles ?",
+    answer: "Le tarif dépend de la technique requise : débouchage mécanique au furet professionnel pour un siphon ou WC, ou curage hydrodynamique haute pression pour une colonne principale ou un égout. Le prix exact vous est communiqué avant le début des opérations."
+  },
+  {
+    question: "Les produits chimiques déboucheurs du commerce sont-ils efficaces ?",
+    answer: "Souvent inefficaces sur les bouchons massifs ou profonds, les déboucheurs chimiques liquides ou en granulés sont corrosifs pour les canalisations en PVC ancien et dangereux pour les techniciens. Un dégorgement mécanique ou hydrocureur est bien plus efficace et respectueux de vos tuyauteries."
+  },
+  {
+    question: "Quand faut-il procéder à une inspection caméra de la canalisation ?",
+    answer: "Si les engorgements se répètent fréquemment ou si un refoulement persiste malgré le curage, l'inspection vidéo permet d'identifier l'origine exacte (fissure, contre-pente, tartre calcifié ou présence de racines). Découvrez notre service dédié d'inspection caméra de canalisation."
+  },
+  {
+    question: "Intervenez-vous en urgence la nuit pour un WC bouché qui déborde ?",
+    answer: "Oui, notre permanence d'urgence opère 24h/24 et 7j/7 dans les 19 communes de Bruxelles pour les urgences sanitaires majeures."
+  }
+];
+
+const serviceSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "@id": "https://www.urgenceplomberie.be/debouchage/#service",
+  "name": "Débouchage Canalisation Bruxelles",
+  "description": description,
+  "provider": {
+    "@id": "https://www.urgenceplomberie.be/#business"
+  },
+  "areaServed": {
+    "@type": "AdministrativeArea",
+    "name": "Région de Bruxelles-Capitale"
+  },
+  "url": "https://www.urgenceplomberie.be/debouchage/"
+};
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faqs.map(faq => ({
+    "@type": "Question",
+    "name": faq.question,
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": faq.answer
+    }
+  }))
+};
+
+const breadcrumbItems = [
+  { name: 'Accueil', url: '/' },
+  { name: 'Services', url: '/services/' },
+  { name: 'Débouchage Canalisation' }
+];
 ---
 
-<Layout title={title} description={description}>
+<Layout title={title} description={description} schema={[serviceSchema, faqSchema]}>
   <Header />
   
   <main class="page-content pt-top">
+    <div class="container">
+      <Breadcrumbs items={breadcrumbItems} />
+    </div>
+
     <div class="container header-section text-center animate-fade-in">
-      <h1>Débouchage de Canalisation à <span class="highlight">Bruxelles</span></h1>
-      <p>Élimination définitive des bouchons pour WC, éviers, égouts et canalisations.</p>
-      <a href="tel:+32465767511" class="btn btn-primary btn-large mt-1 pulse-animation">Demander un Débouchage</a>
+      <span class="badge badge-unclog">Dégorgement Rapide 24/7</span>
+      <h1>Débouchage de canalisation à Bruxelles</h1>
+      <p class="subtitle-text">Élimination rapide et durable des bouchons pour WC, éviers, douches, colonnes d'évacuation et réseaux d'égouttage dans les 19 communes de Bruxelles.</p>
+      <div class="header-cta-group mt-1">
+        <a href="tel:+32465767511" class="btn btn-accent btn-large pulse-animation">
+          📞 0465 76 75 11 (SOS Débouchage)
+        </a>
+        <a href="/contact/" class="btn btn-primary btn-large">
+          Demander un Devis
+        </a>
+      </div>
     </div>
 
     <div class="container grid mt-3">
       <div class="glass card">
-        <h2>Ce qui est inclus</h2>
+        <h2>Nos prestations de débouchage</h2>
         <ul class="check-list">
-          <li>Débouchage manuel (furet professionnel) de WC et éviers</li>
-          <li>Curage haute pression (hydrocurage) des égouts</li>
-          <li>Inspection des canalisations par caméra endoscopique</li>
-          <li>Vidange et entretien de fosses septiques</li>
-          <li>Nettoyage de siphons et colonnes d'évacuation</li>
-          <li>Traitement préventif contre le tartre et la graisse</li>
+          <li>Débouchage mécanique au furet électrique professionnel (WC, lavabos, éviers, douches)</li>
+          <li>Curage hydrodynamique haute pression (hydrocurage) des égouts et colonnes</li>
+          <li>Diagnostic vidéo interne : découvrez notre service d'<a href="/inspection-camera-canalisation-bruxelles/">inspection caméra de canalisation</a></li>
+          <li>Nettoyage et dégraissage de siphons et canalisations d'évacuation</li>
+          <li>Élimination des dépôts de savon, graisses et lingettes bloquées</li>
         </ul>
       </div>
 
       <div class="glass card">
         <h2>Problèmes fréquents résolus</h2>
         <ul class="cross-list">
-          <li>WC complètement bouché ou l'eau remonte</li>
-          <li>Évier de cuisine qui s'écoule très lentement</li>
-          <li>Mauvaises odeurs d'égout dans la salle de bain</li>
-          <li>Canalisations extérieures engorgées par des racines</li>
-          <li>Fosse septique pleine ou débordante</li>
+          <li>WC complètement bouché ou l'eau remonte dangereusement</li>
+          <li>Évier de cuisine avec stagnation et écoulement au goutte à goutte</li>
+          <li>Mauvaises odeurs persistantes d'égout dans la salle de bain</li>
+          <li>Canalisations extérieures engorgées ou encombrées</li>
+          <li>Débordement de baignoire ou receveur de douche</li>
         </ul>
       </div>
     </div>
@@ -48,23 +114,23 @@ const description = "Service professionnel de débouchage à Bruxelles. Curage h
       <div class="process-grid mt-2">
         <div class="process-step">
           <div class="step-num">1</div>
-          <h3>Diagnostic Caméra</h3>
-          <p>Nous introduisons une caméra pour localiser la nature et la position exacte du bouchon sans rien casser.</p>
+          <h3>Localisation</h3>
+          <p>Identification de la nature et de la position exacte du bouchon (siphon, colonne ou regard extérieur).</p>
         </div>
         <div class="process-step">
           <div class="step-num">2</div>
           <h3>Choix de l'Outil</h3>
-          <p>Furet électrique pour les petits bouchons ou camion hydrocureur pour les calcaires incrustés.</p>
+          <p>Furet électrique rotatif pour les sanitaires ou buse haute pression pour les conduites principales.</p>
         </div>
         <div class="process-step">
           <div class="step-num">3</div>
-          <h3>Intervention</h3>
-          <p>Destruction du bouchon et nettoyage complet des parois de la canalisation.</p>
+          <h3>Destruction du Bouchon</h3>
+          <p>Désagrégation complète de l'obstruction et curage des parois de la canalisation.</p>
         </div>
         <div class="process-step">
           <div class="step-num">4</div>
-          <h3>Contrôle Final</h3>
-          <p>Test d'écoulement à fort débit pour garantir que le problème est résolu à 100%.</p>
+          <h3>Contrôle d'Écoulement</h3>
+          <p>Test à fort débit pour s'assurer de la parfaite évacuation et restitution de la fluidité.</p>
         </div>
       </div>
     </section>
@@ -73,34 +139,29 @@ const description = "Service professionnel de débouchage à Bruxelles. Curage h
       <div class="glass card">
         <h2>Pourquoi Nous Choisir ?</h2>
         <ul class="check-list">
-          <li><strong>Technologie de pointe :</strong> Caméras HD et hydrocureuses puissantes.</li>
-          <li><strong>Solutions durables :</strong> Nous ne repoussons pas le bouchon, nous le détruisons.</li>
-          <li><strong>Hygiène garantie :</strong> Nous laissons les lieux parfaitement propres après intervention.</li>
+          <li><strong>Outillage Professionnel :</strong> Matériel haute pression et furets mécaniques industriels.</li>
+          <li><strong>Transparence Tarifaire :</strong> Devis clair et validé avant le début du chantier.</li>
+          <li><strong>Propreté Respectée :</strong> Nettoyage rigoureux de la zone après intervention.</li>
+          <li>Pour en savoir plus, consultez notre article : <a href="/blog/prix-debouchage-canalisation-bruxelles/">Prix d'un débouchage de canalisation à Bruxelles</a>.</li>
         </ul>
       </div>
 
       <div class="glass card info-box">
-        <h2>Disponibilité & Zone d'Intervention</h2>
-        <p><strong>Disponibilité :</strong> Dépannage urgent 24/7 pour les engorgements critiques, ou sur rendez-vous pour les curages préventifs.</p>
-        <p><strong>Zone d'Intervention :</strong> Camions d'intervention déployés partout à Bruxelles (1000 à 1210) et en périphérie.</p>
+        <h2>Zone d'Intervention</h2>
+        <p><strong>Disponibilité :</strong> 24h/24 et 7j/7 pour les urgences sévères ou sur rendez-vous.</p>
+        <p><strong>Secteur :</strong> L'ensemble des 19 communes de Bruxelles-Capitale (Bruxelles-Ville, Ixelles, Uccle, Schaerbeek, Etterbeek, Auderghem, Anderlecht, etc.).</p>
       </div>
     </div>
 
     <section class="container mt-3 mb-3 glass section-padding">
-      <h2 class="text-center">Questions Fréquentes (FAQ)</h2>
+      <h2 class="text-center">Questions Fréquentes sur le Débouchage</h2>
       <div class="faq-list mt-2">
-        <div class="faq-item">
-          <h4>Combien coûte un débouchage ?</h4>
-          <p>Les prix varient selon la complexité (débouchage manuel vs hydrocurage). Nous fournissons toujours un devis clair avant de commencer. Nos tarifs incluent le déplacement.</p>
-        </div>
-        <div class="faq-item">
-          <h4>Est-ce que les produits chimiques suffisent ?</h4>
-          <p>Souvent non. Les produits chimiques du commerce peuvent endommager vos tuyaux (PVC) et sont toxiques. Un débouchage mécanique ou par pression d'eau est beaucoup plus sûr et durable.</p>
-        </div>
-        <div class="faq-item">
-          <h4>Faites-vous la vidange de fosse septique ?</h4>
-          <p>Oui, nous disposons des camions pompes nécessaires pour vidanger les fosses septiques, les micro-stations et les bacs à graisse.</p>
-        </div>
+        {faqs.map(faq => (
+          <div class="faq-item">
+            <h4>{faq.question}</h4>
+            <p>{faq.answer}</p>
+          </div>
+        ))}
       </div>
     </section>
   </main>
@@ -111,23 +172,45 @@ const description = "Service professionnel de débouchage à Bruxelles. Curage h
 
 <style>
   .pt-top { padding-top: 120px; }
-  .header-section h1 { font-size: 3rem; margin-bottom: 1rem; }
-  .highlight { color: var(--accent); }
-  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; }
-  .card { padding: 2rem; border-radius: 16px; }
-  .section-padding { padding: 3rem; border-radius: 16px; }
+  .header-section h1 { font-size: 2.8rem; margin-bottom: 0.8rem; color: var(--primary); }
+  .subtitle-text { max-width: 750px; margin: 0 auto 1.5rem auto; font-size: 1.15rem; line-height: 1.6; color: var(--text-main); }
+  .header-cta-group { display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap; margin-bottom: 1rem; }
   
-  .check-list li, .cross-list li { margin-bottom: 0.8rem; position: relative; padding-left: 1.5rem; }
+  .badge-unclog {
+    background-color: var(--accent);
+    color: white;
+    padding: 0.4rem 1rem;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 0.85rem;
+    display: inline-block;
+    margin-bottom: 1rem;
+  }
+
+  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2rem; }
+  .card { padding: 2.5rem; border-radius: 16px; }
+  .card h2 { color: var(--primary); margin-bottom: 1.2rem; font-size: 1.5rem; }
+
+  .check-list, .cross-list { list-style: none; padding: 0; }
+  .check-list li, .cross-list li { margin-bottom: 0.9rem; line-height: 1.6; position: relative; padding-left: 1.6rem; }
   .check-list li::before { content: '✓'; position: absolute; left: 0; color: var(--primary); font-weight: bold; }
   .cross-list li::before { content: '⚠'; position: absolute; left: 0; color: var(--accent); font-weight: bold; }
-  
-  .process-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem; }
-  .process-step { text-align: center; }
-  .step-num { width: 50px; height: 50px; background: var(--primary); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; font-weight: bold; margin: 0 auto 1rem; }
-  
-  .info-box { background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%); color: white; }
-  .info-box h2 { color: white; }
-  
-  .faq-item { margin-bottom: 1.5rem; border-bottom: 1px solid rgba(0,0,0,0.1); padding-bottom: 1rem; }
-  .faq-item h4 { color: var(--primary); margin-bottom: 0.5rem; }
+
+  .section-padding { padding: 3rem; border-radius: 16px; }
+
+  .process-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.5rem; }
+  .process-step { background: rgba(255,255,255,0.7); padding: 1.5rem; border-radius: 12px; border: 1px solid #e2e8f0; }
+  .step-num { width: 36px; height: 36px; background: var(--primary); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; margin-bottom: 0.8rem; }
+  .process-step h3 { font-size: 1.15rem; color: var(--primary); margin-bottom: 0.5rem; }
+  .process-step p { font-size: 0.95rem; line-height: 1.5; color: var(--text-muted); }
+
+  .faq-list { max-width: 850px; margin: 0 auto; }
+  .faq-item { margin-bottom: 1.5rem; border-bottom: 1px solid #e2e8f0; padding-bottom: 1.2rem; }
+  .faq-item:last-child { border-bottom: none; }
+  .faq-item h4 { color: var(--primary); font-size: 1.15rem; margin-bottom: 0.5rem; }
+  .faq-item p { color: var(--text-main); line-height: 1.6; }
+
+  @media (max-width: 768px) {
+    .header-section h1 { font-size: 2.1rem; }
+  }
 </style>

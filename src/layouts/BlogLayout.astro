@@ -3,16 +3,25 @@ import Layout from './Layout.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import WhatsAppWidget from '../components/WhatsAppWidget.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
 
 const { frontmatter } = Astro.props;
 
 // Get all posts to build an internal linking structure (prev/next)
 const allPostsObj = import.meta.glob('../pages/blog/*.md', { eager: true });
 const allPosts = Object.values(allPostsObj);
-const currentUrl = Astro.url.pathname.replace(/\/$/, '');
+
+let currentPath = Astro.url.pathname;
+if (!currentPath.endsWith('/')) {
+  currentPath += '/';
+}
+
 const currentIndex = allPosts.findIndex(post => {
-  const postUrl = post.url?.replace(/\/$/, '');
-  return postUrl === currentUrl;
+  let postUrl = post.url;
+  if (postUrl && !postUrl.endsWith('/')) {
+    postUrl += '/';
+  }
+  return postUrl === currentPath;
 });
 
 let nextPost = null;
@@ -22,6 +31,8 @@ if (currentIndex !== -1 && allPosts.length > 1) {
   nextPost = allPosts[(currentIndex + 1) % allPosts.length];
   prevPost = allPosts[(currentIndex - 1 + allPosts.length) % allPosts.length];
 }
+
+const articleCanonical = new URL(currentPath, "https://www.urgenceplomberie.be").toString();
 
 const articleSchema = {
   "@context": "https://schema.org",
@@ -42,16 +53,22 @@ const articleSchema = {
   },
   "mainEntityOfPage": {
     "@type": "WebPage",
-    "@id": `https://www.urgenceplomberie.be${currentUrl}`
+    "@id": articleCanonical
   }
 };
+
+const breadcrumbItems = [
+  { name: 'Accueil', url: '/' },
+  { name: 'Blog', url: '/blog/' },
+  { name: frontmatter.title }
+];
 ---
-<Layout title={frontmatter.title} description={frontmatter.description}>
+<Layout title={frontmatter.title} description={frontmatter.description} schema={articleSchema}>
   <Header />
-  <script type="application/ld+json" set:html={JSON.stringify(articleSchema)} />
   
   <main class="page-content" style="padding-top: 120px;">
     <div class="container" style="max-width: 900px; margin: 0 auto; margin-bottom: 4rem;">
+      <Breadcrumbs items={breadcrumbItems} />
       <article class="glass card blog-article" style="padding: 3rem; border-radius: 16px;">
         <slot />
       </article>
@@ -60,11 +77,11 @@ const articleSchema = {
         <div class="glass card mt-3" style="padding: 2rem; border-radius: 16px; margin-top: 2rem; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 1rem;">
           <div style="flex: 1; min-width: 250px;">
             <p style="font-size: 0.9rem; color: var(--text-color); margin-bottom: 0.5rem;">Article précédent</p>
-            <a href={prevPost.url} style="color: var(--primary); font-weight: 600; text-decoration: none; font-size: 1.1rem; transition: color 0.3s;">← {prevPost.frontmatter.title}</a>
+            <a href={prevPost.url?.endsWith('/') ? prevPost.url : `${prevPost.url}/`} style="color: var(--primary); font-weight: 600; text-decoration: none; font-size: 1.1rem; transition: color 0.3s;">← {prevPost.frontmatter.title}</a>
           </div>
           <div style="flex: 1; min-width: 250px; text-align: right;">
             <p style="font-size: 0.9rem; color: var(--text-color); margin-bottom: 0.5rem;">Article suivant</p>
-            <a href={nextPost.url} style="color: var(--primary); font-weight: 600; text-decoration: none; font-size: 1.1rem; transition: color 0.3s;">{nextPost.frontmatter.title} →</a>
+            <a href={nextPost.url?.endsWith('/') ? nextPost.url : `${nextPost.url}/`} style="color: var(--primary); font-weight: 600; text-decoration: none; font-size: 1.1rem; transition: color 0.3s;">{nextPost.frontmatter.title} →</a>
           </div>
         </div>
       )}

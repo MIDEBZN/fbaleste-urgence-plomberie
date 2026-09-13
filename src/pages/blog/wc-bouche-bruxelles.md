@@ -60,7 +60,7 @@ Dans la panique, on commet souvent l'irréparable. Voici les erreurs qui aggrave
 
 Si les méthodes naturelles et la ventouse ont échoué, cela signifie que le bouchon est dur (objet solide), compacté, ou qu'il se situe très loin dans la colonne de chute de l'immeuble ou dans les égouts sous le trottoir. L'intervention d'un expert devient alors la seule solution.
 
-Chez **Fbaleste Urgence Plomberie**, nos techniciens spécialisés en [Débouchage](/debouchage) disposent du matériel lourd nécessaire :
+Chez **Fbaleste Urgence Plomberie**, nos techniciens spécialisés en [Débouchage](/debouchage/) disposent du matériel lourd nécessaire :
 - **Le Furet Mécanique Professionnel :** Un long câble métallique rotatif capable de traverser les bouchons les plus coriaces sur plusieurs mètres de profondeur, tout en grattant le calcaire.
 - **L'Hydrocureuse (Haute Pression) :** Pour les bouchons massifs situés dans les égouts. L'hydrocurage propulse de l'eau à très haute pression pour nettoyer la canalisation à neuf.
 - **L'Inspection par Caméra Endoscopique :** Si le problème est récurrent, nous insérons une caméra dans les tuyaux pour vérifier s'il y a une fissure, une racine d'arbre qui obstrue la canalisation (fréquent à Uccle ou Watermael-Boitsfort) ou un affaissement du réseau.
@@ -88,4 +88,4 @@ La loi belge est claire : le débouchage "simple" lié à l'usage quotidien (pap
 > **Toilettes bloquées ? Risque de débordement ? Ne perdez pas de temps !**
 > L'équipe de Fbaleste Urgence Plomberie est équipée pour tout type de débouchage, des WC aux égouts, partout à Bruxelles et environs.
 > 📞 **Appelez-nous au 0465 76 75 11** pour une intervention d'urgence en 30 minutes.
-> [Contactez-nous pour un devis](/contact)
+> [Contactez-nous pour un devis](/contact/)

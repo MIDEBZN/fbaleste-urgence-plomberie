@@ -3,104 +3,198 @@ import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import WhatsAppWidget from '../components/WhatsAppWidget.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
 
-const title = "Recherche et Détection de Fuite Non Destructive Bruxelles";
-const description = "Recherche de fuite d'eau sans casser. Caméra thermique, gaz traceur, écoute électro-acoustique. Rapport certifié pour les assurances à Bruxelles.";
+const title = "Détection de Fuite d’Eau Bruxelles | Recherche Sans Casse";
+const description = "Localisation de fuite sans casse à Bruxelles par caméra thermique, gaz traceur ou écoute. Rapport pour assurance selon intervention. Demandez un devis.";
+
+const faqs = [
+  {
+    question: "Comment se déroule une détection de fuite d'eau sans casse à Bruxelles ?",
+    answer: "Le technicien isole les différents circuits (eau froide, eau chaude, chauffage) pour mesurer les variations de pression. Il emploie ensuite des technologies non destructives ciblées (caméra thermique infrarouge, gaz traceur inoffensif ou capteurs acoustiques) pour localiser la fuite au centimètre près sans démolition."
+  },
+  {
+    question: "L'assurance prend-elle en charge la recherche de fuite d'eau ?",
+    answer: "Dans la grande majorité des contrats d'assurance habitation (assurance incendie et dégâts des eaux) en Belgique, les frais engagés pour localiser la fuite et le rapport d'expertise technique sont intégralement remboursés pour limiter l'aggravation du sinistre."
+  },
+  {
+    question: "Quelle est la différence entre la détection et la réparation de fuite ?",
+    answer: "La détection consiste à repérer avec précision l'emplacement de la fuite cachée et à fournir le compte-rendu technique détaillé pour votre assurance. La réparation désigne les travaux physiques de plomberie (ouverture ciblée, remplacement de tuyau, brasure ou manchon) nécessaires pour stopper l'écoulement."
+  },
+  {
+    question: "Quels sont les signes d'une fuite d'eau cachée dans un mur ou un sol ?",
+    answer: "Une surconsommation inexpliquée sur votre facture d'eau, un compteur d'eau qui continue de tourner lorsque tout est fermé, des taches d'humidité ou de moisissure au bas des murs, ou une chute régulière de pression de votre chaudière indiquent souvent une fuite encastrée."
+  },
+  {
+    question: "Quels équipements utilisez-vous pour localiser une fuite invisible ?",
+    answer: "Nous utilisons des caméras thermiques de haute précision pour détecter les déperditions thermiques des conduites chaudes, des générateurs de gaz traceur (mélange azote/hydrogène non toxique), des microphones d'écoute électro-acoustique et des caméras endoscopiques pour les conduites d'évacuation."
+  }
+];
+
+const serviceSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "@id": "https://www.urgenceplomberie.be/detection-fuite/#service",
+  "name": "Détection et Recherche de Fuite d'Eau sans Casse Bruxelles",
+  "description": description,
+  "provider": {
+    "@id": "https://www.urgenceplomberie.be/#business"
+  },
+  "areaServed": {
+    "@type": "AdministrativeArea",
+    "name": "Région de Bruxelles-Capitale"
+  },
+  "url": "https://www.urgenceplomberie.be/detection-fuite/"
+};
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faqs.map(faq => ({
+    "@type": "Question",
+    "name": faq.question,
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": faq.answer
+    }
+  }))
+};
+
+const breadcrumbItems = [
+  { name: 'Accueil', url: '/' },
+  { name: 'Services', url: '/services/' },
+  { name: 'Détection de Fuite d’Eau' }
+];
 ---
 
-<Layout title={title} description={description}>
+<Layout title={title} description={description} schema={[serviceSchema, faqSchema]}>
   <Header />
   
   <main class="page-content pt-top">
-    <div class="container header-section text-center animate-fade-in">
-      <h1>Recherche et Détection de Fuite à <span class="highlight">Bruxelles</span></h1>
-      <p>Localisation ultra-précise de vos fuites d'eau ou de gaz, sans endommager vos installations.</p>
-      <a href="tel:+32465767511" class="btn btn-primary btn-large mt-1">Prendre Rendez-vous</a>
+    <div class="container">
+      <Breadcrumbs items={breadcrumbItems} />
     </div>
 
+    <div class="container header-section text-center animate-fade-in">
+      <span class="badge badge-tech">Recherche Non Destructive Certifiée</span>
+      <h1>Détection et recherche de fuite d’eau à Bruxelles</h1>
+      <p class="subtitle-text">Localisation précise de fuites d'eau invisibles sans casser vos murs, sols ou carrelages. Rapport technique complet remis pour votre compagnie d'assurance habitation.</p>
+      <div class="header-cta-group mt-1">
+        <a href="tel:+32465767511" class="btn btn-accent btn-large pulse-animation">
+          📞 0465 76 75 11 (Rendez-vous Diagnostic)
+        </a>
+        <a href="/contact/" class="btn btn-primary btn-large">
+          Demander un Devis Diagnostic
+        </a>
+      </div>
+    </div>
+
+    <!-- Section 1: Signs of hidden leak & Section 2: Methods -->
     <div class="container grid mt-3">
       <div class="glass card">
-        <h2>Ce qui est inclus</h2>
+        <h2>Signes d'une fuite d'eau cachée</h2>
+        <p>Une fuite invisible peut causer des détériorations importantes avant d'être détectée visuellement :</p>
         <ul class="check-list">
-          <li>Inspection par caméra thermique (Infrarouge)</li>
-          <li>Recherche par gaz traceur (Azote/Hydrogène)</li>
-          <li>Détection par écoute électro-acoustique</li>
-          <li>Passage de caméra endoscopique dans les conduites</li>
-          <li>Test de mise en pression des tuyauteries</li>
-          <li>Rédaction d'un rapport détaillé pour l'assurance (photos à l'appui)</li>
+          <li><strong>Facture d'eau anormale :</strong> Hausse soudaine de consommation enregistrée par le compteur Vivaqua.</li>
+          <li><strong>Compteur qui tourne en continu :</strong> La petite roulette s'active alors qu'aucun robinet n'est ouvert.</li>
+          <li><strong>Auréoles et cloquage :</strong> Décollement de peinture, moisissures ou papier peint humide au bas des cloisons.</li>
+          <li><strong>Baisse de pression chaudière :</strong> Chute répétée de pression sous 1 bar sans fuite apparente sur les radiateurs.</li>
+          <li><strong>Sensation de sol chaud :</strong> Zone tiède anormale sur carrelage ou parquet liée à une conduite d'eau chaude percée.</li>
         </ul>
       </div>
 
       <div class="glass card">
-        <h2>Problèmes fréquents résolus</h2>
-        <ul class="cross-list">
-          <li>Facture d'eau anormalement élevée</li>
-          <li>Taches d'humidité, moisissures au mur ou plafond</li>
-          <li>Baisse de pression constante dans la chaudière</li>
-          <li>Compteur d'eau qui tourne alors que tout est fermé</li>
-          <li>Odeur persistante d'humidité ou de gaz</li>
+        <h2>Nos méthodes de détection sans casse</h2>
+        <p>Nous déployons des technologies non invasives de pointe adaptées à chaque configuration :</p>
+        <ul class="check-list">
+          <li><strong>Caméra thermique infrarouge :</strong> Visualisation immédiate des gradients de température et des flux d'eau chaude ou de chauffage encastrés.</li>
+          <li><strong>Gaz traceur (Azote/Hydrogène) :</strong> Injection sous pression d'un gaz inoffensif qui s'échappe des micro-fissures et est capté par notre renifleur électronique.</li>
+          <li><strong>Écoute électro-acoustique :</strong> Amplification des fréquences sonores émises par l'eau sous pression fuyant d'une canalisation enterrée.</li>
+          <li><strong>Caméra endoscopique :</strong> Exploration vidéo interne des canalisations d'évacuation d'eaux usées et pluviales.</li>
         </ul>
       </div>
     </div>
 
+    <!-- Section 3: Diagnostic to Report Process -->
     <section class="container mt-3 glass section-padding">
-      <h2 class="text-center">Notre Processus Sans Casse</h2>
+      <h2 class="text-center">Du Diagnostic au Rapport pour Assurance</h2>
+      <p class="text-center max-w-700 mb-2">Un protocole rigoureux en 4 étapes pour sécuriser vos droits et cibler les réparations.</p>
+      
       <div class="process-grid mt-2">
         <div class="process-step">
           <div class="step-num">1</div>
-          <h3>Inspection Visuelle & Pression</h3>
-          <p>Nous isolons les circuits (chaud, froid, chauffage) et testons la pression pour cibler la zone problématique.</p>
+          <h3>Isolation des Réseaux</h3>
+          <p>Mise sous pression séparée des circuits d'eau sanitaire et de chauffage pour déterminer la section défaillante.</p>
         </div>
         <div class="process-step">
           <div class="step-num">2</div>
-          <h3>Technologies de Détection</h3>
-          <p>Utilisation d'imagerie thermique ou de gaz traceur pour voir "à travers" les murs et dalles.</p>
+          <h3>Localisation Précise</h3>
+          <p>Application de la technologie la plus adéquate pour repérer le point d'origine au centimètre près sans démolir.</p>
         </div>
         <div class="process-step">
           <div class="step-num">3</div>
-          <h3>Localisation Exacte</h3>
-          <p>Nous marquons l'emplacement précis de la fuite au centimètre près.</p>
+          <h3>Rapport d'Expertise</h3>
+          <p>Rédaction d'un rapport technique illustré de photos thermiques et graphiques attestant de la cause du dégât des eaux.</p>
         </div>
         <div class="process-step">
           <div class="step-num">4</div>
-          <h3>Rapport & Réparation</h3>
-          <p>Fourniture d'un rapport pour l'assurance et proposition d'un devis pour la réparation ciblée.</p>
+          <h3>Devis de Réparation</h3>
+          <p>Proposition d'un devis séparé pour l'ouverture chirurgicale, le colmatage ou le remplacement de la conduite.</p>
         </div>
       </div>
     </section>
 
+    <!-- Section 4: Insurance Conditions & Price Factors -->
     <div class="container grid mt-3">
       <div class="glass card">
-        <h2>Pourquoi Nous Choisir ?</h2>
-        <ul class="check-list">
-          <li><strong>Zéro Casse Inutile :</strong> Nous évitons les démolitions hasardeuses qui coûtent cher en rénovation.</li>
-          <li><strong>Reconnu par les Assurances :</strong> Nos rapports détaillés facilitent vos démarches d'indemnisation.</li>
-          <li><strong>Matériel de pointe :</strong> Caméras thermiques, gaz traceurs.</li>
+        <h2>Prise en charge par l'Assurance Habitation</h2>
+        <p>En Belgique, la garantie "Dégâts des Eaux" de l'assurance incendie/habitation couvre le coût de la recherche de fuite non destructive lorsqu'un sinistre est avéré.</p>
+        <ul class="arrow-list mt-1">
+          <li><strong>Rapport Conforme :</strong> Notre rapport technique fournit toutes les pièces justificatives exigées par les experts d'assurance.</li>
+          <li><strong>Devis Préalable :</strong> Facturation transparente pour faciliter votre indemnisation par l'assureur.</li>
+          <li><strong>Démarches Simplifiées :</strong> Vous transmettez directement nos constats et photographies à votre courtier ou compagnie.</li>
         </ul>
       </div>
 
-      <div class="glass card info-box">
-        <h2>Disponibilité & Zone d'Intervention</h2>
-        <p><strong>Disponibilité :</strong> Intervention rapide sur rendez-vous ou en urgence en cas de dégât des eaux menaçant la structure.</p>
-        <p><strong>Zone d'Intervention :</strong> Bruxelles, Brabant Wallon, Brabant Flamand.</p>
+      <div class="glass card">
+        <h2>Différence entre Détection et Réparation</h2>
+        <p>Il est important de distinguer ces deux étapes complémentaires :</p>
+        <ul class="arrow-list mt-1">
+          <li><strong>La Détection (Diagnostic) :</strong> C'est la recherche scientifique et non destructive qui localise l'anomalie et produit le rapport légal. Elle ne modifie pas l'installation.</li>
+          <li><strong>La Réparation (Plomberie) :</strong> C'est l'intervention physique de remise en état (découpe localisée, remplacement de manchon, soudure). Elle intervient après accord sur devis.</li>
+          <li>Pour des conseils préventifs, lisez notre article : <a href="/blog/fuite-eau-bruxelles/">Causes et premiers réflexes en cas de fuite d'eau</a>.</li>
+        </ul>
       </div>
     </div>
 
+    <!-- Section 5: Zone & Associated Services -->
+    <div class="container grid mt-3">
+      <div class="glass card info-box">
+        <h2>Zone d'Intervention</h2>
+        <p><strong>Secteur d'intervention :</strong> Région de Bruxelles-Capitale (19 communes : Etterbeek, Auderghem, Ixelles, Uccle, Bruxelles-Ville, Schaerbeek, etc.).</p>
+        <p>Consultez nos pages de proximité : <a href="/zones/plombier-etterbeek/">Plombier Etterbeek</a> et <a href="/zones/plombier-auderghem/">Plombier Auderghem</a>.</p>
+      </div>
+
+      <div class="glass card">
+        <h2>Services Sanitaires Connexes</h2>
+        <ul class="check-list">
+          <li>Fuite sur robinet ou vanne d'arrêt : <a href="/reparation-robinetterie-bruxelles/">Réparation de robinetterie</a></li>
+          <li>Écoulement continu dans la cuvette : <a href="/reparation-toilette-chasse-eau-bruxelles/">Réparation de chasse d'eau</a></li>
+          <li>Tuyau d'évacuation engorgé : <a href="/inspection-camera-canalisation-bruxelles/">Inspection caméra de canalisation</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Section 6: Exact-Match Visible FAQs -->
     <section class="container mt-3 mb-3 glass section-padding">
-      <h2 class="text-center">Questions Fréquentes (FAQ)</h2>
+      <h2 class="text-center">Questions Fréquentes : Détection de Fuite à Bruxelles</h2>
       <div class="faq-list mt-2">
-        <div class="faq-item">
-          <h4>L'assurance rembourse-t-elle la recherche de fuite ?</h4>
-          <p>Dans la grande majorité des cas, oui. Les contrats d'assurance habitation couvrent les frais de recherche de fuite pour limiter le sinistre. Notre rapport est conçu spécifiquement pour leur être transmis.</p>
-        </div>
-        <div class="faq-item">
-          <h4>Pouvez-vous réparer la fuite le jour même ?</h4>
-          <p>Si la fuite est accessible après localisation, nous pouvons procéder à la réparation immédiatement (sur accord du devis). Si la fuite nécessite de casser un carrelage, nous sécurisons l'installation et planifions les travaux.</p>
-        </div>
-        <div class="faq-item">
-          <h4>Qu'est-ce que le gaz traceur ?</h4>
-          <p>C'est un mélange inoffensif et inodore (azote + hydrogène) injecté dans le tuyau vidé de son eau. Le gaz s'échappe par la micro-fuite et remonte à la surface, où il est détecté par notre capteur très sensible.</p>
-        </div>
+        {faqs.map(faq => (
+          <div class="faq-item">
+            <h4>{faq.question}</h4>
+            <p>{faq.answer}</p>
+          </div>
+        ))}
       </div>
     </section>
   </main>
@@ -111,23 +205,50 @@ const description = "Recherche de fuite d'eau sans casser. Caméra thermique, ga
 
 <style>
   .pt-top { padding-top: 120px; }
-  .header-section h1 { font-size: 3rem; margin-bottom: 1rem; }
-  .highlight { color: var(--accent); }
-  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; }
-  .card { padding: 2rem; border-radius: 16px; }
-  .section-padding { padding: 3rem; border-radius: 16px; }
+  .header-section h1 { font-size: 2.8rem; margin-bottom: 0.8rem; color: var(--primary); }
+  .subtitle-text { max-width: 750px; margin: 0 auto 1.5rem auto; font-size: 1.15rem; line-height: 1.6; color: var(--text-main); }
+  .header-cta-group { display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap; margin-bottom: 1rem; }
   
-  .check-list li, .cross-list li { margin-bottom: 0.8rem; position: relative; padding-left: 1.5rem; }
+  .badge-tech {
+    background-color: var(--primary);
+    color: white;
+    padding: 0.4rem 1rem;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 0.85rem;
+    display: inline-block;
+    margin-bottom: 1rem;
+  }
+
+  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2rem; }
+  .card { padding: 2.5rem; border-radius: 16px; }
+  .card h2 { color: var(--primary); margin-bottom: 1.2rem; font-size: 1.5rem; }
+
+  .check-list { list-style: none; padding: 0; }
+  .check-list li { margin-bottom: 0.9rem; line-height: 1.6; position: relative; padding-left: 1.6rem; }
   .check-list li::before { content: '✓'; position: absolute; left: 0; color: var(--primary); font-weight: bold; }
-  .cross-list li::before { content: '⚠'; position: absolute; left: 0; color: var(--accent); font-weight: bold; }
+  .check-list li strong { color: var(--primary); }
   
-  .process-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem; }
-  .process-step { text-align: center; }
-  .step-num { width: 50px; height: 50px; background: var(--primary); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; font-weight: bold; margin: 0 auto 1rem; }
+  .arrow-list { list-style: none; padding: 0; }
+  .arrow-list li { margin-bottom: 1rem; border-bottom: 1px solid rgba(0,0,0,0.06); padding-bottom: 0.5rem; line-height: 1.6; }
+  .arrow-list li strong { color: var(--primary); }
+
+  .section-padding { padding: 3rem; border-radius: 16px; }
+  .max-w-700 { max-width: 700px; margin-left: auto; margin-right: auto; }
   
-  .info-box { background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%); color: white; }
-  .info-box h2 { color: white; }
-  
-  .faq-item { margin-bottom: 1.5rem; border-bottom: 1px solid rgba(0,0,0,0.1); padding-bottom: 1rem; }
-  .faq-item h4 { color: var(--primary); margin-bottom: 0.5rem; }
+  .process-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.5rem; }
+  .process-step { background: rgba(255,255,255,0.7); padding: 1.5rem; border-radius: 12px; border: 1px solid #e2e8f0; }
+  .step-num { width: 36px; height: 36px; background: var(--primary); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; margin-bottom: 0.8rem; }
+  .process-step h3 { font-size: 1.15rem; color: var(--primary); margin-bottom: 0.5rem; }
+  .process-step p { font-size: 0.95rem; line-height: 1.5; color: var(--text-muted); }
+
+  .faq-list { max-width: 850px; margin: 0 auto; }
+  .faq-item { margin-bottom: 1.5rem; border-bottom: 1px solid #e2e8f0; padding-bottom: 1.2rem; }
+  .faq-item:last-child { border-bottom: none; }
+  .faq-item h4 { color: var(--primary); font-size: 1.15rem; margin-bottom: 0.5rem; }
+  .faq-item p { color: var(--text-main); line-height: 1.6; }
+
+  @media (max-width: 768px) {
+    .header-section h1 { font-size: 2.1rem; }
+  }
 </style>

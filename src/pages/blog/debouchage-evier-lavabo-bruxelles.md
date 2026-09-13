@@ -70,4 +70,4 @@ Si vous habitez un immeuble (à Ixelles ou Saint-Gilles par exemple), ce phénom
 > **Un évier ou un lavabo obstinément bouché ? Évitez l'inondation !**
 > L'équipe de Fbaleste intervient rapidement chez vous à Bruxelles avec l'équipement mécanique adapté pour nettoyer vos tuyaux en profondeur, sans produits toxiques.
 > 📞 **Contactez-nous 24/7 au 0465 76 75 11** pour une intervention urgente.
-> [En savoir plus sur nos services de Débouchage](/debouchage)
+> [En savoir plus sur nos services de Débouchage](/debouchage/)

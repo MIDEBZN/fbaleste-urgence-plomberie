@@ -1,5 +1,28 @@
 {
   "name": "fbaleste-urgence-plomberie",
   "cleanUrls": true,
-  "trailingSlash": true
+  "trailingSlash": true,
+  "redirects": [
+    {
+      "source": "/:path*",
+      "has": [
+        {
+          "type": "host",
+          "value": "urgenceplomberie.be"
+        }
+      ],
+      "destination": "https://www.urgenceplomberie.be/:path*",
+      "permanent": true
+    },
+    {
+      "source": "/devis",
+      "destination": "/contact/",
+      "permanent": true
+    },
+    {
+      "source": "/devis/",
+      "destination": "/contact/",
+      "permanent": true
+    }
+  ]
 }

@@ -1,0 +1,86 @@
+---
+interface BreadcrumbItem {
+  name: string;
+  url?: string;
+}
+
+interface Props {
+  items: BreadcrumbItem[];
+}
+
+const { items } = Astro.props;
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": items.map((item, index) => ({
+    "@type": "ListItem",
+    "position": index + 1,
+    "name": item.name,
+    ...(item.url ? { "item": new URL(item.url, "https://www.urgenceplomberie.be").toString() } : {})
+  }))
+};
+---
+
+<nav aria-label="Fil d'Ariane" class="breadcrumbs-nav">
+  <div class="container">
+    <ol class="breadcrumbs-list">
+      {items.map((item, index) => (
+        <li class="breadcrumbs-item">
+          {item.url ? (
+            <a href={item.url} class="breadcrumbs-link">{item.name}</a>
+          ) : (
+            <span class="breadcrumbs-current" aria-current="page">{item.name}</span>
+          )}
+          {index < items.length - 1 && (
+            <span class="breadcrumbs-separator" aria-hidden="true">/</span>
+          )}
+        </li>
+      ))}
+    </ol>
+  </div>
+</nav>
+
+<script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
+
+<style>
+  .breadcrumbs-nav {
+    padding: 0.75rem 0;
+    margin-bottom: 1.5rem;
+    font-size: 0.9rem;
+  }
+  .breadcrumbs-list {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    gap: 0.5rem;
+  }
+  .breadcrumbs-item {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--text-muted);
+  }
+  .breadcrumbs-link {
+    color: var(--primary);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.2s ease;
+  }
+  .breadcrumbs-link:hover {
+    color: var(--accent);
+    text-decoration: underline;
+  }
+  .breadcrumbs-current {
+    color: var(--text-main);
+    font-weight: 600;
+  }
+  .breadcrumbs-separator {
+    color: #94a3b8;
+    font-size: 0.85rem;
+    user-select: none;
+  }
+</style>

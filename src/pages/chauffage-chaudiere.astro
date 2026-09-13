@@ -3,104 +3,175 @@ import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import WhatsAppWidget from '../components/WhatsAppWidget.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
 
-const title = "Chauffagiste Bruxelles | Entretien, Dépannage & Installation Chaudière";
-const description = "Plombier Chauffagiste à Bruxelles. Dépannage de chaudières, contrôle périodique PEB, réparation de radiateurs et chauffe-eau. Toutes marques.";
+const title = "Chauffagiste Urgence Bruxelles 24/7 | Dépannage Chaudière";
+const description = "Chaudière en panne, radiateur froid ou perte de pression à Bruxelles. Diagnostic, dépannage et entretien selon installation. Demandez une intervention.";
+
+const faqs = [
+  {
+    question: "En combien de temps un chauffagiste peut-il intervenir en urgence à Bruxelles ?",
+    answer: "Pour les pannes critiques sans eau chaude ni chauffage en période hivernale, nos techniciens se mobilisent immédiatement sur l'ensemble des 19 communes de Bruxelles pour sécuriser et remettre en service votre installation."
+  },
+  {
+    question: "Quelles marques de chaudières dépannez-vous ?",
+    answer: "Nous assurons le diagnostic et le dépannage des marques les plus répandues en Belgique : Vaillant, Bulex, Viessmann, Junkers, Bosch, Remeha, ACV et Chaffoteaux, avec accès aux pièces détachées certifiées constructeur."
+  },
+  {
+    question: "Pourquoi ma chaudière perd-elle constamment sa pression d'eau ?",
+    answer: "Une baisse répétée sous 1 bar indique généralement soit une fuite sur le circuit de chauffage (radiateurs, tuyauterie), soit une défaillance de la membrane du vase d'expansion ou de la soupape de sécurité. Un contrôle technique s'impose."
+  },
+  {
+    question: "Le contrôle périodique de chaudière au gaz est-il obligatoire à Bruxelles ?",
+    answer: "Oui, la réglementation PEB de Bruxelles Environnement impose un contrôle périodique au minimum tous les 2 ans pour les chaudières au gaz. Nous délivrons l'attestation légale officielle lors de nos visites d'entretien."
+  },
+  {
+    question: "Comment sont établis les tarifs de dépannage de chauffage ?",
+    answer: "Nos tarifs comprennent le forfait déplacement et le temps de recherche de panne. Si une pièce doit être changée (circulateur, thermocouple, sonde, carte électronique), un devis détaillé vous est obligatoirement présenté pour acceptation avant les travaux."
+  }
+];
+
+const serviceSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "@id": "https://www.urgenceplomberie.be/chauffage-chaudiere/#service",
+  "name": "Chauffagiste Urgence Bruxelles 24/7 - Dépannage Chaudière",
+  "description": description,
+  "provider": {
+    "@id": "https://www.urgenceplomberie.be/#business"
+  },
+  "areaServed": {
+    "@type": "AdministrativeArea",
+    "name": "Région de Bruxelles-Capitale"
+  },
+  "url": "https://www.urgenceplomberie.be/chauffage-chaudiere/"
+};
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faqs.map(faq => ({
+    "@type": "Question",
+    "name": faq.question,
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": faq.answer
+    }
+  }))
+};
+
+const breadcrumbItems = [
+  { name: 'Accueil', url: '/' },
+  { name: 'Services', url: '/services/' },
+  { name: 'Chauffagiste Urgence' }
+];
 ---
 
-<Layout title={title} description={description}>
+<Layout title={title} description={description} schema={[serviceSchema, faqSchema]}>
   <Header />
   
   <main class="page-content pt-top">
-    <div class="container header-section text-center animate-fade-in">
-      <h1>Chauffagiste à <span class="highlight">Bruxelles</span> – Chaudières et Chauffage</h1>
-      <p>Votre confort thermique assuré par des chauffagistes certifiés, pour l'installation, l'entretien ou la réparation.</p>
-      <a href="tel:+32465767511" class="btn btn-primary btn-large mt-1 pulse-animation">Appeler un Chauffagiste</a>
+    <div class="container">
+      <Breadcrumbs items={breadcrumbItems} />
     </div>
 
+    <div class="container header-section text-center animate-fade-in">
+      <span class="badge badge-heat">Dépannage Chaudière Gaz 24/7</span>
+      <h1>Chauffagiste en urgence à Bruxelles</h1>
+      <p class="subtitle-text">Chaudière en panne, coupure d'eau chaude, radiateurs froids ou code erreur : nos chauffagistes qualifiés interviennent à Bruxelles pour diagnostiquer et rétablir votre confort thermique.</p>
+      <div class="header-cta-group mt-1">
+        <a href="tel:+32465767511" class="btn btn-accent btn-large pulse-animation">
+          🔥 Urgence Chauffage : 0465 76 75 11
+        </a>
+        <a href="/contact/" class="btn btn-primary btn-large">
+          Prendre Rendez-vous Entretien
+        </a>
+      </div>
+    </div>
+
+    <!-- Section 1: Emergency heating faults & Section 2: Boilers handled -->
     <div class="container grid mt-3">
       <div class="glass card">
-        <h2>Ce qui est inclus</h2>
+        <h2>Pannes urgentes de chauffage traitées</h2>
         <ul class="check-list">
-          <li>Dépannage urgent de chaudière (Gaz, Mazout)</li>
-          <li>Contrôle périodique PEB avec remise d'attestation légale</li>
-          <li>Installation de nouvelles chaudières à condensation</li>
-          <li>Réparation et détartrage de chauffe-eau / boiler électrique</li>
-          <li>Purge, désembouage et réparation de radiateurs</li>
-          <li>Installation de thermostats intelligents</li>
+          <li><strong>Mise en sécurité et codes erreurs :</strong> Chaudière qui s'arrête, voyant rouge clignotant (ex: F28, F22, etc.).</li>
+          <li><strong>Absence totale d'eau chaude sanitaire :</strong> L'eau reste froide ou tiède sous la douche malgré l'activation du robinet.</li>
+          <li><strong>Radiateurs froids :</strong> Air piégé, circulateur grippé ou vanne thermostatique bloquée.</li>
+          <li><strong>Fuite d'eau sur groupe de sécurité ou corps de chauffe :</strong> Écoulement continu sous l'appareil.</li>
+          <li><strong>Chute brutale de pression :</strong> Manomètre tombé à 0 bar empêchant l'allumage du brûleur.</li>
         </ul>
       </div>
 
       <div class="glass card">
-        <h2>Problèmes fréquents résolus</h2>
-        <ul class="cross-list">
-          <li>La chaudière se met en code erreur/sécurité</li>
-          <li>Plus d'eau chaude sanitaire dans la maison</li>
-          <li>Certains radiateurs restent froids en haut ou en bas</li>
-          <li>Bruits anormaux (claquements) dans les tuyaux de chauffage</li>
-          <li>Fuite d'eau sous la chaudière ou chute de pression</li>
+        <h2>Chaudières et systèmes pris en charge</h2>
+        <p>Nos interventions portent sur les technologies modernes et traditionnelles au gaz :</p>
+        <ul class="arrow-list mt-1">
+          <li><strong>Chaudières gaz à condensation et basse température :</strong> Marques Vaillant, Bulex, Viessmann, Junkers, Bosch, etc.</li>
+          <li><strong>Chauffe-eau et boilers sanitaires :</strong> Appareils électriques et instantanés gaz. Découvrez notre service d'<a href="/installation-chauffe-eau-bruxelles/">installation et remplacement de chauffe-eau</a>.</li>
+          <li><strong>Circuits de distribution :</strong> Purge, désembouage de radiateurs, vannes d'arrêt et régulation thermostatique.</li>
+          <li><em>(Note : nous n'assurons pas la livraison de combustible ou de mazout).</em></li>
         </ul>
       </div>
     </div>
 
+    <!-- Section 3: Diagnostic and Repair Process -->
     <section class="container mt-3 glass section-padding">
-      <h2 class="text-center">Notre Processus Chauffage</h2>
+      <h2 class="text-center">Notre Méthode de Dépannage</h2>
       <div class="process-grid mt-2">
         <div class="process-step">
           <div class="step-num">1</div>
-          <h3>Diagnostic Sécurité</h3>
-          <p>Vérification des émissions de CO et des raccordements gaz pour garantir la sécurité.</p>
+          <h3>Contrôle Sécurité</h3>
+          <p>Vérification immédiate de l'étanchéité des raccordements gaz et du bon tirage de l'évacuation des fumées.</p>
         </div>
         <div class="process-step">
           <div class="step-num">2</div>
-          <h3>Analyse Technique</h3>
-          <p>Lecture des codes erreurs et test des composants (brûleur, sonde, circulateur).</p>
+          <h3>Lecture Diagnostic</h3>
+          <p>Analyse des codes défauts, contrôle du manomètre, de la sonde d'ionisation et du circulateur.</p>
         </div>
         <div class="process-step">
           <div class="step-num">3</div>
-          <h3>Réparation / Nettoyage</h3>
-          <p>Remplacement de la pièce défectueuse ou nettoyage complet lors d'un entretien.</p>
+          <h3>Devis Avant Changement</h3>
+          <p>Présentation d'un tarif précis avant tout remplacement de composant défectueux.</p>
         </div>
         <div class="process-step">
           <div class="step-num">4</div>
-          <h3>Réglage Optimal</h3>
-          <p>Optimisation des réglages pour garantir un haut rendement et réduire votre facture d'énergie.</p>
+          <h3>Remise en Service</h3>
+          <p>Test de combustion, réglage de la pression et vérification de la montée en température des radiateurs.</p>
         </div>
       </div>
     </section>
 
+    <!-- Section 4: Maintenance obligations & Guides -->
     <div class="container grid mt-3">
       <div class="glass card">
-        <h2>Pourquoi Nous Choisir ?</h2>
-        <ul class="check-list">
-          <li><strong>Techniciens Agréés :</strong> Habilités par la Région (G1/G2) pour la validation légale de vos installations.</li>
-          <li><strong>Multimarques :</strong> Expertise sur Vaillant, Bulex, Viessmann, Junkers, Bosch, etc.</li>
-          <li><strong>Conseil Énergie :</strong> Nous vous aidons à obtenir les primes régionales pour les nouvelles chaudières éco-performantes.</li>
+        <h2>Entretien Légal et Contrôle PEB</h2>
+        <p>En Région de Bruxelles-Capitale, l'entretien périodique des chaudières au gaz est obligatoire tous les 2 ans.</p>
+        <ul class="check-list mt-1">
+          <li>Délivrance de l'attestation de contrôle périodique PEB légale.</li>
+          <li>Nettoyage complet du brûleur et de la chambre de combustion.</li>
+          <li>Mesure du rendement énergétique et des émissions de monoxyde de carbone (CO).</li>
+          <li>Consultez notre guide : <a href="/blog/entretien-chaudiere-bruxelles/">Pourquoi l'entretien de chaudière est essentiel à Bruxelles</a>.</li>
         </ul>
       </div>
 
       <div class="glass card info-box">
-        <h2>Disponibilité & Zone d'Intervention</h2>
-        <p><strong>Disponibilité :</strong> Interventions d'urgence chauffage (S.O.S froid) en hiver 7j/7. Entretien planifié en semaine.</p>
-        <p><strong>Zone d'Intervention :</strong> Interventions rapides garanties sur tout Bruxelles et les communes limitrophes.</p>
+        <h2>Diagnostic et Conseils Chauffage</h2>
+        <p>Votre radiateur ne chauffe que partiellement ? Consultez nos conseils pratiques : <a href="/blog/problemes-chauffage-bruxelles/">Problèmes de chauffage fréquents et solutions</a>.</p>
+        <p>Vous souhaitez connaître le détail des coûts ? Consultez notre guide des <a href="/blog/tarif-plombier-bruxelles-prix/">tarifs d'un chauffagiste à Bruxelles</a>.</p>
+        <p>Zone d'intervention : les 19 communes de Bruxelles-Capitale (Etterbeek, Auderghem, Ixelles, Uccle, Schaerbeek, etc.).</p>
       </div>
     </div>
 
+    <!-- Section 5: 5 Visible FAQs -->
     <section class="container mt-3 mb-3 glass section-padding">
-      <h2 class="text-center">Questions Fréquentes (FAQ)</h2>
+      <h2 class="text-center">Questions Fréquentes : Chauffagiste à Bruxelles</h2>
       <div class="faq-list mt-2">
-        <div class="faq-item">
-          <h4>Le contrôle de la chaudière est-il obligatoire en Belgique ?</h4>
-          <p>À Bruxelles, le contrôle périodique PEB d'une chaudière au gaz (ou chauffe-eau gaz) doit être effectué au minimum tous les 2 ans. Pour une chaudière au mazout, ce contrôle est annuel. D'autres événements peuvent déclencher un contrôle, comme des travaux sur les composants de combustion. Source officielle : <a href="https://environnement.brussels/" target="_blank" rel="noopener noreferrer">Bruxelles Environnement</a>. Nous fournissons l'attestation requise.</p>
-        </div>
-        <div class="faq-item">
-          <h4>Ma chaudière perd de la pression, que faire ?</h4>
-          <p>Vérifiez d'abord si vous pouvez remettre de l'eau dans le circuit via les robinets de remplissage (viser 1.5 bar). Si la pression retombe rapidement, il y a probablement une fuite dans le circuit ou un problème de vase d'expansion. Appelez-nous.</p>
-        </div>
-        <div class="faq-item">
-          <h4>Qu'est-ce que le désembouage ?</h4>
-          <p>C'est un nettoyage en profondeur du circuit de chauffage pour enlever les boues magnétiques et le tartre qui s'accumulent avec le temps, rendant vos radiateurs moins efficaces et risquant d'endommager la chaudière.</p>
-        </div>
+        {faqs.map(faq => (
+          <div class="faq-item">
+            <h4>{faq.question}</h4>
+            <p>{faq.answer}</p>
+          </div>
+        ))}
       </div>
     </section>
   </main>
@@ -111,23 +182,49 @@ const description = "Plombier Chauffagiste à Bruxelles. Dépannage de chaudièr
 
 <style>
   .pt-top { padding-top: 120px; }
-  .header-section h1 { font-size: 3rem; margin-bottom: 1rem; }
-  .highlight { color: var(--accent); }
-  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; }
-  .card { padding: 2rem; border-radius: 16px; }
-  .section-padding { padding: 3rem; border-radius: 16px; }
+  .header-section h1 { font-size: 2.8rem; margin-bottom: 0.8rem; color: var(--primary); }
+  .subtitle-text { max-width: 750px; margin: 0 auto 1.5rem auto; font-size: 1.15rem; line-height: 1.6; color: var(--text-main); }
+  .header-cta-group { display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap; margin-bottom: 1rem; }
   
-  .check-list li, .cross-list li { margin-bottom: 0.8rem; position: relative; padding-left: 1.5rem; }
+  .badge-heat {
+    background-color: #d97706;
+    color: white;
+    padding: 0.4rem 1rem;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 0.85rem;
+    display: inline-block;
+    margin-bottom: 1rem;
+  }
+
+  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2rem; }
+  .card { padding: 2.5rem; border-radius: 16px; }
+  .card h2 { color: var(--primary); margin-bottom: 1.2rem; font-size: 1.5rem; }
+
+  .check-list { list-style: none; padding: 0; }
+  .check-list li { margin-bottom: 0.9rem; line-height: 1.6; position: relative; padding-left: 1.6rem; }
   .check-list li::before { content: '✓'; position: absolute; left: 0; color: var(--primary); font-weight: bold; }
-  .cross-list li::before { content: '⚠'; position: absolute; left: 0; color: var(--accent); font-weight: bold; }
+  .check-list li strong { color: var(--primary); }
   
-  .process-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem; }
-  .process-step { text-align: center; }
-  .step-num { width: 50px; height: 50px; background: var(--primary); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; font-weight: bold; margin: 0 auto 1rem; }
-  
-  .info-box { background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%); color: white; }
-  .info-box h2 { color: white; }
-  
-  .faq-item { margin-bottom: 1.5rem; border-bottom: 1px solid rgba(0,0,0,0.1); padding-bottom: 1rem; }
-  .faq-item h4 { color: var(--primary); margin-bottom: 0.5rem; }
+  .arrow-list { list-style: none; padding: 0; }
+  .arrow-list li { margin-bottom: 1rem; border-bottom: 1px solid rgba(0,0,0,0.06); padding-bottom: 0.5rem; line-height: 1.6; }
+  .arrow-list li strong { color: var(--primary); }
+
+  .section-padding { padding: 3rem; border-radius: 16px; }
+
+  .process-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.5rem; }
+  .process-step { background: rgba(255,255,255,0.7); padding: 1.5rem; border-radius: 12px; border: 1px solid #e2e8f0; }
+  .step-num { width: 36px; height: 36px; background: var(--primary); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; margin-bottom: 0.8rem; }
+  .process-step h3 { font-size: 1.15rem; color: var(--primary); margin-bottom: 0.5rem; }
+  .process-step p { font-size: 0.95rem; line-height: 1.5; color: var(--text-muted); }
+
+  .faq-list { max-width: 850px; margin: 0 auto; }
+  .faq-item { margin-bottom: 1.5rem; border-bottom: 1px solid #e2e8f0; padding-bottom: 1.2rem; }
+  .faq-item:last-child { border-bottom: none; }
+  .faq-item h4 { color: var(--primary); font-size: 1.15rem; margin-bottom: 0.5rem; }
+  .faq-item p { color: var(--text-main); line-height: 1.6; }
+
+  @media (max-width: 768px) {
+    .header-section h1 { font-size: 2.1rem; }
+  }
 </style>

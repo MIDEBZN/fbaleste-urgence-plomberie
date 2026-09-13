@@ -56,4 +56,4 @@ Oui ! La Région de Bruxelles-Capitale (via les Primes Renolution) propose des a
 > **Vous rénovez une maison de maître ou un appartement ancien à Bruxelles ?**
 > Fbaleste Urgence Plomberie met son expertise à votre service pour le diagnostic, le remplacement des canalisations vétustes et la mise aux normes de votre installation.
 > 📞 **Contactez-nous au 0465 76 75 11** pour planifier une visite technique.
-> [Découvrez nos services d'Installations Sanitaires](/installations-sanitaires)
+> [Découvrez nos services d'Installations Sanitaires](/installations-sanitaires/)

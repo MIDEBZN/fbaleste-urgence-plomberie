@@ -5,8 +5,30 @@ import Footer from '../components/Footer.astro';
 import WhatsAppWidget from '../components/WhatsAppWidget.astro';
 import SocialProof from '../components/SocialProof.astro';
 
-const title = "Plombier Urgence Bruxelles 24/7 | Fbaleste";
-const description = "Besoin d'un plombier en urgence à Bruxelles ? Fbaleste Urgence Plomberie intervient 24/7. Devis transparent et gratuit. Fuite, débouchage, chaudière.";
+const title = "Plombier Bruxelles 24/7 | Fuite, Débouchage, Chauffage";
+const description = "Plombier à Bruxelles disponible 24/7 pour fuite, canalisation bouchée, panne de chaudière et dépannage sanitaire. Devis annoncé avant intervention.";
+
+const communes = [
+  { name: 'Bruxelles Centre (1000)', slug: 'plombier-bruxelles' },
+  { name: 'Schaerbeek (1030)', slug: 'plombier-schaerbeek' },
+  { name: 'Etterbeek (1040)', slug: 'plombier-etterbeek' },
+  { name: 'Ixelles (1050)', slug: 'plombier-ixelles' },
+  { name: 'Saint-Gilles (1060)', slug: 'plombier-saint-gilles' },
+  { name: 'Anderlecht (1070)', slug: 'plombier-anderlecht' },
+  { name: 'Molenbeek-Saint-Jean (1080)', slug: 'plombier-molenbeek-saint-jean' },
+  { name: 'Koekelberg (1081)', slug: 'plombier-koekelberg' },
+  { name: 'Berchem-Sainte-Agathe (1082)', slug: 'plombier-berchem-sainte-agathe' },
+  { name: 'Ganshoren (1083)', slug: 'plombier-ganshoren' },
+  { name: 'Jette (1090)', slug: 'plombier-jette' },
+  { name: 'Evere (1140)', slug: 'plombier-evere' },
+  { name: 'Woluwe-Saint-Pierre (1150)', slug: 'plombier-woluwe-saint-pierre' },
+  { name: 'Auderghem (1160)', slug: 'plombier-auderghem' },
+  { name: 'Watermael-Boitsfort (1170)', slug: 'plombier-watermael-boitsfort' },
+  { name: 'Uccle (1180)', slug: 'plombier-uccle' },
+  { name: 'Forest (1190)', slug: 'plombier-forest' },
+  { name: 'Woluwe-Saint-Lambert (1200)', slug: 'plombier-woluwe-saint-lambert' },
+  { name: 'Saint-Josse-ten-Noode (1210)', slug: 'plombier-saint-josse-ten-noode' },
+];
 ---
 
 <Layout title={title} description={description} preloadImage="/images/hero_bg.png">
@@ -16,69 +38,162 @@ const description = "Besoin d'un plombier en urgence à Bruxelles ? Fbaleste Urg
     <section class="hero">
       <div class="hero-overlay"></div>
       <div class="container hero-content">
-        <div class="hero-glass glass animate-fade-in">
-          <span class="badge badge-emergency">Intervention Rapide à Bruxelles</span>
-          <h1>Plombier Urgence Bruxelles <br/> <span class="highlight">Dépannage 24/7</span></h1>
-          <p class="hero-subtitle">Fuite d'eau, canalisation bouchée, panne de chauffage ? Ne laissez pas la situation s'aggraver. Nos plombiers chauffagistes agréés interviennent immédiatement sur toutes les communes de Bruxelles.</p>
-          
-          <div class="hero-actions">
-            <a href="tel:+32465767511" class="btn btn-accent btn-large pulse-animation">
-              0465 76 75 11 (Urgence)
-            </a>
-            <a href="/devis/" class="btn btn-primary btn-large">
-              Demander un Devis Gratuit
-            </a>
+        <div class="hero-layout">
+          <div class="hero-text-side animate-fade-in">
+            <span class="badge badge-emergency">Service Plomberie 24h/24 & 7j/7</span>
+            <h1>Plombier à Bruxelles pour urgences et dépannages</h1>
+            <p class="hero-subtitle">
+              Fuite d'eau, canalisation bouchée, panne de chaudière ou chauffe-eau défaillant : Fbaleste Urgence Plomberie mobilise ses techniciens qualifiés dans les 19 communes de Bruxelles. Devis clair annoncé avant chaque intervention.
+            </p>
+            
+            <div class="hero-actions">
+              <a href="tel:+32465767511" class="btn btn-accent btn-large pulse-animation" id="hero-emergency-call">
+                📞 0465 76 75 11 (Appel 24/7)
+              </a>
+              <a href="/contact/" class="btn btn-secondary btn-large" id="hero-contact-button">
+                Demander un Devis
+              </a>
+            </div>
+            
+            <div class="trust-signals">
+              <span class="trust-item">✓ Devis préalable annoncé</span>
+              <span class="trust-item">✓ Normes belges respectées</span>
+              <span class="trust-item">✓ Équipements de pointe</span>
+            </div>
           </div>
-          
-          <div class="trust-signals">
-            <span class="trust-item">✓ Artisan Qualifié</span>
-            <span class="trust-item">✓ Prix Transparents</span>
-            <span class="trust-item">✓ Devis Transparent</span>
+
+          <div class="hero-form-side animate-fade-in">
+            <div class="quick-quote-card glass">
+              <div class="quick-quote-header">
+                <h3>Besoin d'un plombier ?</h3>
+                <p>Réponse immédiate ou rappel sous 15 min</p>
+              </div>
+              <form action="https://formsubmit.co/midebzn@gmail.com" method="POST" class="quick-form">
+                <input type="hidden" name="_subject" value="Nouvelle demande express - Accueil Fbaleste" />
+                <input type="hidden" name="_captcha" value="false" />
+                
+                <div class="form-group">
+                  <label for="quick-name" class="visually-hidden">Votre Nom</label>
+                  <input type="text" id="quick-name" name="name" required placeholder="Votre Nom" />
+                </div>
+                
+                <div class="form-group">
+                  <label for="quick-phone" class="visually-hidden">Votre Téléphone</label>
+                  <input type="tel" id="quick-phone" name="phone" required placeholder="Numéro de Téléphone" />
+                </div>
+
+                <div class="form-group">
+                  <label for="quick-service" class="visually-hidden">Type d'intervention</label>
+                  <select id="quick-service" name="service" required>
+                    <option value="" disabled selected>Nature du problème</option>
+                    <option value="Urgence fuite">Fuite d'eau urgente</option>
+                    <option value="Débouchage WC / évier">Canalisation ou WC bouché</option>
+                    <option value="Panne chaudière / chauffage">Panne chaudière / radiateur</option>
+                    <option value="Robinetterie / chasse eau">Robinetterie ou chasse d'eau</option>
+                    <option value="Chauffe-eau">Chauffe-eau / boiler</option>
+                    <option value="Autre demande">Autre intervention plomberie</option>
+                  </select>
+                </div>
+
+                <div class="form-group">
+                  <label for="quick-commune" class="visually-hidden">Votre commune</label>
+                  <input type="text" id="quick-commune" name="commune" placeholder="Votre commune à Bruxelles (ex: Etterbeek, Ixelles)" />
+                </div>
+
+                <button type="submit" class="btn btn-primary w-100" id="hero-submit-quote">
+                  Envoyer ma Demande
+                </button>
+              </form>
+            </div>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="services-overview container mt-3 mb-3">
-      <h2 class="text-center">Nos Services Principaux</h2>
-      <p class="text-center mb-2">Des solutions rapides et durables pour tous vos problèmes de plomberie.</p>
+    <!-- 4 Clear Service Blocks with Descriptive Anchors -->
+    <section class="services-overview container mt-3 mb-3" id="services-principaux">
+      <div class="section-title-wrap text-center">
+        <h2>Nos Interventions de Plomberie à Bruxelles</h2>
+        <p>Des prestations ciblées pour les urgences du quotidien et les rénovations durables.</p>
+      </div>
       
-      <div class="grid">
-        <div class="card glass">
-          <h3>Débouchage Canalisation</h3>
-          <p>Dégorgement d'urgence pour WC, éviers, et égouts. Matériel haute pression pour un débouchage canalisation Bruxelles efficace.</p>
-          <a href="/services#debouchage" class="link-arrow">En savoir plus →</a>
+      <div class="grid services-grid">
+        <div class="card glass service-block">
+          <div class="service-icon">🚨</div>
+          <h3>Dépannage d'Urgence 24/7</h3>
+          <p>Rupture de canalisation, fuite importante, coupure d'eau inopinée ou dégât des eaux. Intervention sécurisée à toute heure.</p>
+          <a href="/depannage-urgence/" class="service-link">Consulter notre service de dépannage plomberie d'urgence →</a>
         </div>
-        <div class="card glass">
-          <h3>Recherche de Fuite</h3>
-          <p>Détection fuite d'eau par caméra thermique. Méthode non destructive pour préserver vos murs et sols. Agrée pour rapport assurance.</p>
-          <a href="/services#fuite" class="link-arrow">En savoir plus →</a>
+        
+        <div class="card glass service-block">
+          <div class="service-icon">🔬</div>
+          <h3>Détection de Fuite d'Eau</h3>
+          <p>Localisation ultra-précise de fuites encastrées sans démolition : caméra thermique, gaz traceur et rapport pour votre assurance.</p>
+          <a href="/detection-fuite/" class="service-link">Découvrir la recherche de fuite d'eau sans casse →</a>
         </div>
-        <div class="card glass">
-          <h3>Plombier Chauffagiste</h3>
-          <p>Entretien chaudière gaz Bruxelles, dépannage chauffage urgent et installation de nouvelles chaudières à condensation.</p>
-          <a href="/services#chauffage" class="link-arrow">En savoir plus →</a>
+        
+        <div class="card glass service-block">
+          <div class="service-icon">🚰</div>
+          <h3>Débouchage de Canalisation</h3>
+          <p>Dégorgement de WC, éviers, douches et colonnes d'évacuation au furet professionnel ou hydrocurage haute pression.</p>
+          <a href="/debouchage/" class="service-link">Accéder à nos prestations de débouchage de canalisation →</a>
+        </div>
+        
+        <div class="card glass service-block">
+          <div class="service-icon">🔥</div>
+          <h3>Chauffagiste & Chaudière</h3>
+          <p>Dépannage de chaudières murales, contrôle périodique légal PEB, remise en pression et détartrage de vos systèmes de chauffe.</p>
+          <a href="/chauffage-chaudiere/" class="service-link">Voir nos solutions de dépannage chauffage et chaudière →</a>
+        </div>
+      </div>
+
+      <!-- Additional Commercial Services Navigation -->
+      <div class="additional-services-bar mt-2 glass text-center">
+        <p><strong>Nos autres prestations spécialisées à Bruxelles :</strong></p>
+        <div class="service-tags-wrap">
+          <a href="/reparation-robinetterie-bruxelles/" class="service-tag-btn">Réparation de robinetterie</a>
+          <a href="/reparation-toilette-chasse-eau-bruxelles/" class="service-tag-btn">Réparation de toilette & chasse d'eau</a>
+          <a href="/inspection-camera-canalisation-bruxelles/" class="service-tag-btn">Inspection caméra de canalisation</a>
+          <a href="/installation-chauffe-eau-bruxelles/" class="service-tag-btn">Installation de chauffe-eau</a>
+          <a href="/installations-sanitaires/" class="service-tag-btn">Installations sanitaires</a>
+          <a href="/traitement-eau/" class="service-tag-btn">Adoucisseur d'eau</a>
         </div>
       </div>
     </section>
     
+    <!-- Information & Process Section -->
     <section class="container mt-3 mb-3 seo-content" style="max-width: 900px; margin-left: auto; margin-right: auto; padding: 2rem;">
-      <h2 style="color: var(--primary); margin-bottom: 1.5rem; font-size: 2rem;">Pourquoi faire appel à notre entreprise de plomberie à Bruxelles ?</h2>
+      <h2 style="color: var(--primary); margin-bottom: 1.5rem; font-size: 2rem;">Pourquoi faire appel à Fbaleste pour votre plomberie à Bruxelles ?</h2>
       <p style="margin-bottom: 1rem; line-height: 1.8;">
-        Faire face à une <strong>urgence plomberie à Bruxelles</strong> (fuite d'eau, canalisation bouchée, panne de chaudière) nécessite l'intervention d'un <em>plombier chauffagiste expérimenté</em>. Chez <strong>Fbaleste Urgence Plomberie</strong>, nous mettons nos 15 années d'expertise au service des particuliers et des professionnels dans les 19 communes de la région de Bruxelles-Capitale.
+        Faire face à un incident de plomberie dans la capitale exige l'intervention d'un technicien consciencieux capable d'établir un diagnostic fiable. Chez <strong>Fbaleste Urgence Plomberie</strong>, nous répondons aux sollicitations des particuliers, copropriétés et commerces dans les 19 communes de la Région de Bruxelles-Capitale.
       </p>
       
-      <h3 style="color: var(--accent); margin-top: 1.5rem; margin-bottom: 1rem;">Un dépannage rapide, documenté et transparent</h3>
+      <h3 style="color: var(--accent); margin-top: 1.5rem; margin-bottom: 1rem;">Un processus transparent et un devis préalable</h3>
       <p style="margin-bottom: 1rem; line-height: 1.8;">
-        Notre savoir-faire nous permet d'identifier l'origine de votre problème en un temps record grâce à des méthodes de <strong>recherche de fuite non destructives</strong> (caméra thermique, gaz traceur). En tant qu'artisans expérimentés, nos réparations respectent les normes belges les plus strictes. Par ailleurs, nous fournissons tous les documents nécessaires pour faciliter vos démarches lors de sinistres liés aux dégâts des eaux.
+        Pour toute intervention, nos techniciens évaluent la situation sur place, identifient la cause racine (usure des joints, entartrage dû à la dureté de l'eau bruxelloise, contre-pente ou vétusté) et vous soumettent un <strong>devis préalable</strong> avant d'engager toute réparation. Vous conservez la pleine maîtrise des coûts.
       </p>
       
-      <h3 style="color: var(--accent); margin-top: 1.5rem; margin-bottom: 1rem;">Transparence et qualité au meilleur prix</h3>
+      <h3 style="color: var(--accent); margin-top: 1.5rem; margin-bottom: 1rem;">Connaissance des spécificités du bâti bruxellois</h3>
       <p style="line-height: 1.8;">
-        Nous comprenons qu'une urgence est toujours stressante. C'est pourquoi notre équipe vous fournit un <strong>devis clair et transparent</strong> avant toute intervention. Qu'il s'agisse d'un débouchage d'égout complexe, de l'entretien de votre chaudière au gaz, ou de l'installation d'un adoucisseur d'eau, nos interventions sont couvertes par notre garantie décennale et une garantie de 2 ans sur les pièces de rechange. Ne laissez pas un dégât des eaux s'aggraver, contactez notre équipe disponible 24h/24 et 7j/7.
+        Des maisons de maître d'Etterbeek et d'Ixelles aux immeubles modernes d'Evere et du quartier européen, les réseaux d'eau présentent des contraintes variables (colonnes en fonte, raccords en plomb anciens, pression fluctuante). Nos spécialistes utilisent des techniques non destructives pour localiser les anomalies sans endommager inutilement les finitions.
       </p>
     </section>
     
+    <!-- 19 Communes Service Area with Descriptive Anchors -->
+    <section class="communes-section container mb-3" id="zones-bruxelles">
+      <div class="card glass text-center" style="padding: 2.5rem 2rem;">
+        <h2>Zones d'Intervention : Nos Plombiers par Commune</h2>
+        <p style="margin-bottom: 1.5rem;">Cliquez sur votre commune pour découvrir nos interventions locales de proximité :</p>
+        <div class="communes-grid">
+          {communes.map((c) => (
+            <a href={`/zones/${c.slug}/`} class="commune-pill" title={`Plombier à ${c.name}`}>
+              Plombier à {c.name}
+            </a>
+          ))}
+        </div>
+      </div>
+    </section>
+
     <SocialProof />
   </main>
   
@@ -89,19 +204,19 @@ const description = "Besoin d'un plombier en urgence à Bruxelles ? Fbaleste Urg
 <style>
   .hero {
     position: relative;
-    height: 100vh;
-    min-height: 600px;
+    min-height: 650px;
     display: flex;
     align-items: center;
     background-image: url('/images/hero_bg.png');
     background-size: cover;
     background-position: center;
+    padding: 120px 0 60px 0;
   }
   
   .hero-overlay {
     position: absolute;
     inset: 0;
-    background: linear-gradient(135deg, rgba(15, 76, 129, 0.8) 0%, rgba(43, 45, 66, 0.8) 100%);
+    background: linear-gradient(135deg, rgba(15, 76, 129, 0.88) 0%, rgba(43, 45, 66, 0.9) 100%);
   }
   
   .hero-content {
@@ -109,41 +224,42 @@ const description = "Besoin d'un plombier en urgence à Bruxelles ? Fbaleste Urg
     z-index: 10;
     width: 100%;
   }
+
+  .hero-layout {
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    gap: 2.5rem;
+    align-items: center;
+  }
   
-  .hero-glass {
-    max-width: 700px;
-    padding: 3rem;
-    border-radius: 16px;
-    background: rgba(255, 255, 255, 0.1);
-    border: 1px solid rgba(255, 255, 255, 0.2);
+  .hero-text-side {
     color: var(--white);
   }
   
-  .hero-glass h1 {
+  .hero-text-side h1 {
     color: var(--white);
-    font-size: 3.5rem;
-    line-height: 1.1;
+    font-size: 3rem;
+    line-height: 1.15;
     margin-top: 1rem;
-  }
-  
-  .highlight {
-    color: var(--accent);
+    font-family: 'Outfit', sans-serif;
   }
   
   .badge-emergency {
     background-color: var(--accent);
     color: white;
-    padding: 0.5rem 1rem;
+    padding: 0.4rem 1rem;
     border-radius: 50px;
     font-weight: 600;
-    font-size: 0.9rem;
+    font-size: 0.85rem;
     display: inline-block;
+    letter-spacing: 0.5px;
   }
   
   .hero-subtitle {
-    font-size: 1.2rem;
+    font-size: 1.15rem;
     margin: 1.5rem 0;
-    opacity: 0.9;
+    line-height: 1.6;
+    color: #f1f5f9;
   }
   
   .hero-actions {
@@ -152,60 +268,210 @@ const description = "Besoin d'un plombier en urgence à Bruxelles ? Fbaleste Urg
     margin-top: 2rem;
     flex-wrap: wrap;
   }
+
+  .btn-secondary {
+    background-color: rgba(255, 255, 255, 0.15);
+    color: var(--white);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+  }
+  .btn-secondary:hover {
+    background-color: var(--white);
+    color: var(--primary);
+  }
   
   .btn-large {
-    padding: 1rem 2rem;
-    font-size: 1.1rem;
+    padding: 0.9rem 1.8rem;
+    font-size: 1.05rem;
+    font-weight: 700;
+    border-radius: 8px;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
   }
   
   .trust-signals {
     display: flex;
-    gap: 1.5rem;
+    gap: 1.2rem;
     margin-top: 2rem;
-    font-size: 0.9rem;
+    font-size: 0.88rem;
     font-weight: 600;
     color: #e2e8f0;
     flex-wrap: wrap;
   }
-  
-  .grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
-  }
-  
-  .card {
+
+  .quick-quote-card {
+    background: rgba(255, 255, 255, 0.95);
+    color: var(--text-main);
     padding: 2rem;
-    border-radius: 12px;
-    transition: transform 0.3s ease;
-  }
-  
-  .card:hover {
-    transform: translateY(-5px);
-  }
-  
-  .card h3 {
-    font-size: 1.5rem;
-    margin-bottom: 1rem;
-  }
-  
-  .link-arrow {
-    display: inline-block;
-    margin-top: 1rem;
-    color: var(--primary);
-    font-weight: 600;
-  }
-  
-  .link-arrow:hover {
-    color: var(--accent);
+    border-radius: 16px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25);
+    border: 1px solid rgba(255, 255, 255, 0.8);
   }
 
-  @media (max-width: 768px) {
-    .hero-glass h1 {
-      font-size: 2.5rem;
+  .quick-quote-header h3 {
+    color: var(--primary);
+    margin-bottom: 0.3rem;
+    font-size: 1.4rem;
+  }
+
+  .quick-quote-header p {
+    font-size: 0.88rem;
+    color: var(--text-muted);
+    margin-bottom: 1.2rem;
+  }
+
+  .quick-form .form-group {
+    margin-bottom: 0.9rem;
+  }
+
+  .quick-form input, .quick-form select {
+    width: 100%;
+    padding: 0.85rem 1rem;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    font-family: inherit;
+    background: #fff;
+    color: var(--text-main);
+    transition: border-color 0.2s;
+  }
+
+  .quick-form input:focus, .quick-form select:focus {
+    outline: none;
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(15, 76, 129, 0.15);
+  }
+
+  .visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+  }
+
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1.8rem;
+  }
+
+  .service-block {
+    padding: 2rem;
+    border-radius: 14px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .service-block:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(15, 76, 129, 0.12);
+  }
+
+  .service-icon {
+    font-size: 2.2rem;
+    margin-bottom: 0.8rem;
+  }
+
+  .service-block h3 {
+    font-size: 1.35rem;
+    color: var(--primary);
+    margin-bottom: 0.7rem;
+  }
+
+  .service-block p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: var(--text-muted);
+    margin-bottom: 1.2rem;
+    flex-grow: 1;
+  }
+
+  .service-link {
+    color: var(--primary);
+    font-weight: 700;
+    text-decoration: none;
+    font-size: 0.95rem;
+    transition: color 0.2s;
+  }
+
+  .service-link:hover {
+    color: var(--accent);
+    text-decoration: underline;
+  }
+
+  .additional-services-bar {
+    padding: 1.5rem;
+    border-radius: 12px;
+    margin-top: 2rem;
+  }
+
+  .service-tags-wrap {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.7rem;
+    margin-top: 0.8rem;
+  }
+
+  .service-tag-btn {
+    background: white;
+    border: 1px solid #cbd5e1;
+    color: var(--primary);
+    padding: 0.45rem 1rem;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.88rem;
+    transition: all 0.2s;
+  }
+
+  .service-tag-btn:hover {
+    background: var(--primary);
+    color: white;
+    border-color: var(--primary);
+  }
+
+  .communes-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.6rem;
+  }
+
+  .commune-pill {
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    color: var(--text-main);
+    padding: 0.45rem 0.9rem;
+    border-radius: 6px;
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-weight: 500;
+    transition: all 0.2s;
+  }
+
+  .commune-pill:hover {
+    background: var(--primary);
+    color: white;
+    border-color: var(--primary);
+  }
+
+  @media (max-width: 968px) {
+    .hero-layout {
+      grid-template-columns: 1fr;
     }
-    .hero-actions {
-      flex-direction: column;
+    .hero-text-side h1 {
+      font-size: 2.3rem;
+    }
+    .hero {
+      padding-top: 100px;
     }
   }
 </style>

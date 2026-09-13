@@ -3,23 +3,33 @@ import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import WhatsAppWidget from '../components/WhatsAppWidget.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
 
-const title = "Plombier Ixelles, Uccle, Schaerbeek | Nos Zones d'Intervention";
-const description = "Intervention plombier rapide sur toute la région de Bruxelles-Capitale. Découvrez nos zones couvertes : Ixelles, Uccle, Schaerbeek, Anderlecht et alentours.";
+const title = "Zones d'Intervention Plombier Bruxelles | Les 19 Communes";
+const description = "Intervention plombier rapide sur toute la région de Bruxelles-Capitale. Découvrez nos zones d'intervention : Etterbeek, Auderghem, Ixelles, Uccle, Schaerbeek et alentours.";
+
+const breadcrumbItems = [
+  { name: 'Accueil', url: '/' },
+  { name: 'Zones d\'intervention' }
+];
 ---
 
 <Layout title={title} description={description}>
   <Header />
   
   <main class="page-content pt-top">
+    <div class="container">
+      <Breadcrumbs items={breadcrumbItems} />
+    </div>
+
     <div class="container header-section text-center animate-fade-in">
-      <h1>Nos Zones <span class="highlight">d'Intervention</span></h1>
-      <p>Un plombier de garde près de chez vous, sur l'ensemble de la Région Bruxelles-Capitale.</p>
+      <h1>Nos Zones <span class="highlight">d'Intervention à Bruxelles</span></h1>
+      <p>Un plombier qualifié disponible pour vos dépannages et installations sur l'ensemble de la Région Bruxelles-Capitale.</p>
     </div>
 
     <div class="container glass content-box mt-2 mb-3">
       <div class="text-center mb-2">
-        <p>Pour garantir une intervention en moins de 30 minutes, nos techniciens sont stratégiquement répartis sur l'ensemble des 19 communes de Bruxelles. Que vous ayez besoin d'un plombier à Ixelles ou d'un chauffagiste à Uccle, nous sommes à votre disposition 24/7.</p>
+        <p>Pour assurer une réactivité optimale et des frais de déplacement maîtrisés, nos techniciens couvrent quotidiennement l'ensemble des 19 communes de Bruxelles. Que vous ayez besoin d'un dépannage à Etterbeek, d'une recherche de fuite à Auderghem ou d'un débouchage à Ixelles, notre équipe est à votre disposition 24/7.</p>
       </div>
 
       <div class="zones-grid">
@@ -62,27 +72,33 @@ const description = "Intervention plombier rapide sur toute la région de Bruxel
   }
   
   .header-section {
-    margin-bottom: 3rem;
+    margin-bottom: 2rem;
   }
   
   .header-section h1 {
     font-size: 3rem;
+    color: var(--primary);
   }
   
   .highlight {
     color: var(--accent);
   }
-
+  
   .content-box {
-    padding: 4rem;
+    padding: 3rem;
     border-radius: 16px;
   }
   
   .zones-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 2rem;
     margin-top: 2rem;
+  }
+  
+  .zones-list {
+    list-style: none;
+    padding: 0;
   }
   
   .zones-list li {
@@ -90,21 +106,29 @@ const description = "Intervention plombier rapide sur toute la région de Bruxel
   }
   
   .zones-list a {
+    display: block;
+    padding: 1rem 1.5rem;
+    background: rgba(255, 255, 255, 0.7);
+    border-radius: 8px;
     color: var(--primary);
     font-weight: 600;
-    transition: color 0.3s ease;
-    display: flex;
-    align-items: center;
-  }
-
-  .zones-list a::before {
-    content: '📍';
-    margin-right: 8px;
-    font-size: 1.2rem;
+    text-decoration: none;
+    border: 1px solid rgba(15, 76, 129, 0.1);
+    transition: all 0.3s ease;
   }
   
   .zones-list a:hover {
-    color: var(--accent);
+    background: var(--primary);
+    color: var(--white);
     transform: translateX(5px);
+  }
+
+  @media (max-width: 768px) {
+    .header-section h1 {
+      font-size: 2.2rem;
+    }
+    .content-box {
+      padding: 1.5rem;
+    }
   }
 </style>

@@ -3,28 +3,434 @@ import Layout from '../../layouts/Layout.astro';
 import Header from '../../components/Header.astro';
 import Footer from '../../components/Footer.astro';
 import WhatsAppWidget from '../../components/WhatsAppWidget.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
 
 export function getStaticPaths() {
   const communes = [
-    { slug: 'plombier-anderlecht', name: 'Anderlecht', cp: '1070', prep: 'd\'', landmarks: 'le Stade Constant Vanden Stock et les Abattoirs', neighborhoods: 'Cureghem, Neerpede, Veeweyde', building_context: 'Les anciens bâtiments industriels rénovés et les maisons de rangée classiques nécessitent souvent une mise aux normes de la plomberie.', nearby: [{name: 'Molenbeek', slug: 'plombier-molenbeek-saint-jean'}, {name: 'Forest', slug: 'plombier-forest'}] },
-    { slug: 'plombier-auderghem', name: 'Auderghem', cp: '1160', prep: 'd\'', landmarks: 'la Forêt de Soignes et le Rouge-Cloître', neighborhoods: 'Saint-Julien, le Transvaal, le quartier de l\'Église', building_context: 'Les villas et habitations résidentielles proches de la forêt font face à des problèmes spécifiques d\'humidité et d\'entretien de chaudières.', nearby: [{name: 'Watermael-Boitsfort', slug: 'plombier-watermael-boitsfort'}, {name: 'Woluwe-Saint-Pierre', slug: 'plombier-woluwe-saint-pierre'}] },
-    { slug: 'plombier-berchem-sainte-agathe', name: 'Berchem-Sainte-Agathe', cp: '1082', prep: 'de ', landmarks: 'le Bois du Wilder et l\'Ancienne Église', neighborhoods: 'le Quartier Schweitzer, Hunderenveld', building_context: 'Les nombreuses nouvelles constructions côtoient des habitations plus anciennes nécessitant un détartrage régulier dû à la dureté de l\'eau locale.', nearby: [{name: 'Ganshoren', slug: 'plombier-ganshoren'}, {name: 'Koekelberg', slug: 'plombier-koekelberg'}] },
-    { slug: 'plombier-etterbeek', name: 'Etterbeek', cp: '1040', prep: 'd\'', landmarks: 'le Parc du Cinquantenaire et la Place Jourdan', neighborhoods: 'La Chasse, le quartier Saint-Michel, le quartier européen', building_context: 'Beaucoup d\'appartements en copropriété et de maisons de maître divisées demandent une expertise en recherche de fuite sans casse et en gestion des colonnes communes.', nearby: [{name: 'Ixelles', slug: 'plombier-ixelles'}, {name: 'Schaerbeek', slug: 'plombier-schaerbeek'}] },
-    { slug: 'plombier-bruxelles', name: 'Bruxelles', cp: '1000', prep: 'de ', landmarks: 'la Grand-Place, la Bourse et le Mont des Arts', neighborhoods: 'les Marolles, le Sablon, le Quartier Européen, le Pentagone', building_context: 'Le centre historique de la ville regorge de conduites anciennes, ce qui entraîne des bouchons fréquents nécessitant un hydrocurage professionnel.', nearby: [{name: 'Ixelles', slug: 'plombier-ixelles'}, {name: 'Saint-Gilles', slug: 'plombier-saint-gilles'}] },
-    { slug: 'plombier-evere', name: 'Evere', cp: '1140', prep: 'd\'', landmarks: 'le Cimetière de Bruxelles et le Musée de la Witloof', neighborhoods: 'Paduwa, Evere-Centre, le haut d\'Evere', building_context: 'Les immeubles à appartements plus récents nécessitent un entretien régulier des chaudières individuelles au gaz pour garantir leur bon rendement.', nearby: [{name: 'Schaerbeek', slug: 'plombier-schaerbeek'}, {name: 'Woluwe-Saint-Lambert', slug: 'plombier-woluwe-saint-lambert'}] },
-    { slug: 'plombier-forest', name: 'Forest', cp: '1190', prep: 'de ', landmarks: 'Forest National et le Parc Duden', neighborhoods: 'Altitude 100, Saint-Denis, le quartier Bervoets', building_context: 'Les dénivelés importants de la commune peuvent influencer la pression d\'eau, nécessitant parfois l\'installation de réducteurs ou de surpresseurs.', nearby: [{name: 'Uccle', slug: 'plombier-uccle'}, {name: 'Saint-Gilles', slug: 'plombier-saint-gilles'}] },
-    { slug: 'plombier-ganshoren', name: 'Ganshoren', cp: '1083', prep: 'de ', landmarks: 'le Château de Rivieren et le Parc Roi Baudouin', neighborhoods: 'le quartier de l\'Exposition, le centre', building_context: 'Les habitations résidentielles nécessitent souvent le remplacement préventif de chauffe-eau vétustes pour éviter les dégâts des eaux.', nearby: [{name: 'Jette', slug: 'plombier-jette'}, {name: 'Berchem-Sainte-Agathe', slug: 'plombier-berchem-sainte-agathe'}] },
-    { slug: 'plombier-ixelles', name: 'Ixelles', cp: '1050', prep: 'd\'', landmarks: 'la Place Flagey et l\'Avenue Louise', neighborhoods: 'le Châtelain, Matonge, le Cimetière d\'Ixelles, l\'ULB', building_context: 'La forte présence de kots étudiants et de colocations entraîne une sollicitation intensive des sanitaires (bouchons fréquents dans les douches et WC).', nearby: [{name: 'Etterbeek', slug: 'plombier-etterbeek'}, {name: 'Saint-Gilles', slug: 'plombier-saint-gilles'}, {name: 'Bruxelles', slug: 'plombier-bruxelles'}] },
-    { slug: 'plombier-jette', name: 'Jette', cp: '1090', prep: 'de ', landmarks: 'la Place du Miroir et le parc de la Jeunesse', neighborhoods: 'Dieleghem, les Jardins de Jette, le centre', building_context: 'On y trouve de nombreuses maisons unifamiliales nécessitant la mise à jour des installations de chauffage pour répondre aux normes actuelles de PEB.', nearby: [{name: 'Ganshoren', slug: 'plombier-ganshoren'}, {name: 'Laeken (Bruxelles)', slug: 'plombier-bruxelles'}] },
-    { slug: 'plombier-koekelberg', name: 'Koekelberg', cp: '1081', prep: 'de ', landmarks: 'l\'imposante Basilique du Sacré-Cœur', neighborhoods: 'le quartier Simonis, le Parc Élisabeth', building_context: 'Les habitations de caractère autour de la basilique ont souvent des réseaux de plomberie d\'origine qu\'il est recommandé d\'inspecter par caméra.', nearby: [{name: 'Molenbeek', slug: 'plombier-molenbeek-saint-jean'}, {name: 'Ganshoren', slug: 'plombier-ganshoren'}] },
-    { slug: 'plombier-molenbeek-saint-jean', name: 'Molenbeek-Saint-Jean', cp: '1080', prep: 'de ', landmarks: 'le Château Karreveld et le bord du Canal', neighborhoods: 'Étangs Noirs, le quartier Mettewie, le centre historique', building_context: 'La diversité des logements, des immeubles modernes aux lofts industriels, requiert une grande polyvalence pour les dépannages sanitaires.', nearby: [{name: 'Anderlecht', slug: 'plombier-anderlecht'}, {name: 'Koekelberg', slug: 'plombier-koekelberg'}] },
-    { slug: 'plombier-saint-gilles', name: 'Saint-Gilles', cp: '1060', prep: 'de ', landmarks: 'le Parvis de Saint-Gilles et la Gare du Midi', neighborhoods: 'la Barrière, le quartier de l\'Hôtel des Monnaies, le haut de Saint-Gilles', building_context: 'Les célèbres maisons Art Nouveau de la commune disposent de toitures et de corniches spécifiques où des fuites sournoises peuvent apparaître.', nearby: [{name: 'Forest', slug: 'plombier-forest'}, {name: 'Ixelles', slug: 'plombier-ixelles'}] },
-    { slug: 'plombier-saint-josse-ten-noode', name: 'Saint-Josse-ten-Noode', cp: '1210', prep: 'de ', landmarks: 'le Jardin Botanique et la Place Madou', neighborhoods: 'le Quartier Nord, la Place Saint-Josse', building_context: 'La commune la plus dense de Bruxelles présente des défis uniques pour les canalisations d\'immeubles partagés, souvent sujets aux engorgements.', nearby: [{name: 'Schaerbeek', slug: 'plombier-schaerbeek'}, {name: 'Bruxelles', slug: 'plombier-bruxelles'}] },
-    { slug: 'plombier-schaerbeek', name: 'Schaerbeek', cp: '1030', prep: 'de ', landmarks: 'le Parc Josaphat et la Gare de Schaerbeek', neighborhoods: 'Plasky, Colignon, la Cage aux Ours, Meiser', building_context: 'Les grandes maisons bourgeoises divisées en appartements posent souvent des problèmes de pression d\'eau aux étages supérieurs.', nearby: [{name: 'Evere', slug: 'plombier-evere'}, {name: 'Saint-Josse', slug: 'plombier-saint-josse-ten-noode'}] },
-    { slug: 'plombier-uccle', name: 'Uccle', cp: '1180', prep: 'd\'', landmarks: 'le Bois de la Cambre et l\'Observatoire', neighborhoods: 'Fort-Jaco, Saint-Job, le Vert Chasseur, le centre', building_context: 'Les grandes propriétés et villas isolées nécessitent souvent l\'installation de systèmes d\'adoucisseur d\'eau performants pour protéger les installations luxueuses.', nearby: [{name: 'Forest', slug: 'plombier-forest'}, {name: 'Watermael-Boitsfort', slug: 'plombier-watermael-boitsfort'}] },
-    { slug: 'plombier-watermael-boitsfort', name: 'Watermael-Boitsfort', cp: '1170', prep: 'de ', landmarks: 'l\'Hippodrome de Boitsfort et les Étangs', neighborhoods: 'le Coin du Balai, les cités-jardins (Floréal, Logis)', building_context: 'Les cités-jardins historiques demandent une attention particulière lors des rénovations sanitaires pour respecter le caractère des bâtiments.', nearby: [{name: 'Auderghem', slug: 'plombier-auderghem'}, {name: 'Uccle', slug: 'plombier-uccle'}] },
-    { slug: 'plombier-woluwe-saint-lambert', name: 'Woluwe-Saint-Lambert', cp: '1200', prep: 'de ', landmarks: 'le Woluwe Shopping Center et le Moulin de Lindekemale', neighborhoods: 'Roodebeek, le quartier Georges Henri, Kapelleveld', building_context: 'Les immeubles à appartements de taille moyenne font face à des besoins réguliers d\'entretien des colonnes de décharge communes.', nearby: [{name: 'Woluwe-Saint-Pierre', slug: 'plombier-woluwe-saint-pierre'}, {name: 'Evere', slug: 'plombier-evere'}] },
-    { slug: 'plombier-woluwe-saint-pierre', name: 'Woluwe-Saint-Pierre', cp: '1150', prep: 'de ', landmarks: 'le Palais Stoclet et le Parc de la Woluwe', neighborhoods: 'le Chant d\'Oiseau, le centre de Stockel, Sainte-Alix', building_context: 'Les résidences récentes et les habitations haut de gamme sont souvent équipées de systèmes de chauffage par le sol qui requièrent un désembouage spécialisé.', nearby: [{name: 'Woluwe-Saint-Lambert', slug: 'plombier-woluwe-saint-lambert'}, {name: 'Auderghem', slug: 'plombier-auderghem'}] }
+    {
+      slug: 'plombier-etterbeek',
+      name: 'Etterbeek',
+      cp: '1040',
+      prep: 'd\'',
+      customTitle: "Plombier Etterbeek 24/7 | Dépannage et Devis | Fbaleste",
+      customH1: "Plombier à Etterbeek disponible 24/7",
+      customDescription: "Besoin d’un plombier à Etterbeek ? Fuite, WC bouché, chaudière et sanitaire. Devis annoncé avant intervention. Appelez le 0465 76 75 11.",
+      landmarks: 'le Parc du Cinquantenaire, la Place Jourdan et La Chasse',
+      neighborhoods: 'La Chasse, le Quartier Saint-Michel, Jourdan, le Quartier Européen',
+      building_context: 'Les maisons de maître subdivisées en appartements et les copropriétés d’Etterbeek présentent fréquemment des colonnes communes anciennes et des problèmes d’équilibrage de pression d’eau. Notre atelier étant établi au 287 Avenue d’Auderghem (1040 Etterbeek), nos techniciens opèrent au cœur même de la commune.',
+      local_proof: 'Nos interventions à Etterbeek bénéficient de notre présence directe sur l’Avenue d’Auderghem. Qu’il s’agisse d’une intervention avenue de Tervueren, rue Chaumontel, place Jourdan ou autour de l’Église Saint-Antoine, nous maîtrisons les contraintes d’accès et les zones de stationnement riverains pour intervenir avec efficacité.',
+      work_examples: [
+        'Réparation en urgence d’une colonne d’eau chaude percée dans une maison de maître divisée près de la Place Jourdan.',
+        'Débouchage haute pression de colonne d’évacuation collective dans un immeuble à La Chasse.',
+        'Détection par caméra thermique d’une fuite encastrée sous plancher d’époque sans démolition, rue de la Tourelle.',
+        'Remplacement de groupe de sécurité et détartrage de boiler électrique entartré quartier Saint-Michel.'
+      ],
+      faqs: [
+        {
+          question: "Êtes-vous réellement basés à Etterbeek ?",
+          answer: "Oui, notre siège et point de départ opérationnel se situe au 287 Avenue d'Auderghem à Etterbeek (1040). Cette proximité immédiate nous permet de réagir sans délai sur l'ensemble de la commune, de Jourdan au boulevard Louis Schmidt."
+        },
+        {
+          question: "Comment gérez-vous le stationnement et l'accès dans les rues d'Etterbeek ?",
+          answer: "Nos véhicules disposent des autorisations professionnelles requises pour stationner en voirie réglementée (zones bleues et vertes de parking.brussels). Pour les rues étroites vers La Chasse ou Saint-Pierre, notre connaissance du quartier permet un acheminement rapide de l'outillage."
+        },
+        {
+          question: "Intervenez-vous sur les colonnes d'évacuation communes en copropriété ?",
+          answer: "Tout à fait. Les immeubles etterbeekois partagent souvent des conduites centenaires. Nous intervenons en accord avec les syndics ou propriétaires pour localiser l'origine privative ou commune du sinistre et fournir un rapport d'intervention clair."
+        },
+        {
+          question: "Quel est le délai pour obtenir un devis écrit à Etterbeek ?",
+          answer: "Pour les dépannages urgents, le devis est rédigé et validé directement sur place avant le début de toute manipulation technique. Pour les travaux d'installation ou de rénovation, un devis détaillé vous est transmis sous 24 à 48 heures."
+        },
+        {
+          question: "Prenez-vous en charge le dépannage de chaudière gaz à Etterbeek ?",
+          answer: "Oui, nous assurons la recherche de panne, la remise en pression, le remplacement de circulateurs et le contrôle périodique légal de vos chaudières murales individuelles au gaz."
+        }
+      ],
+      nearby: [{name: 'Ixelles', slug: 'plombier-ixelles'}, {name: 'Auderghem', slug: 'plombier-auderghem'}, {name: 'Schaerbeek', slug: 'plombier-schaerbeek'}]
+    },
+    {
+      slug: 'plombier-auderghem',
+      name: 'Auderghem',
+      cp: '1160',
+      prep: 'd\'',
+      customTitle: "Plombier Auderghem 24/7 | Dépannage Rapide | Fbaleste",
+      customH1: "Plombier à Auderghem pour urgence et dépannage",
+      customDescription: "Plombier à Auderghem pour fuite, débouchage, chauffe-eau et dépannage sanitaire. Service 24/7 et devis annoncé avant intervention.",
+      landmarks: 'la Forêt de Soignes, le Rouge-Cloître et le viaduc Hermann-Debroux',
+      neighborhoods: 'Saint-Julien, le Transvaal, le quartier de l\'Église Saint-Anne, Val Duchesne',
+      building_context: 'À Auderghem, la diversité architecturale mêle villas résidentielles en bordure de forêt et ensembles d’immeubles le long du boulevard du Souverain. La proximité des espaces verts engendre des problématiques particulières d’humidité ambiante et de racines obstruant les évacuations extérieures.',
+      local_proof: 'Voisins directs d’Auderghem depuis notre base d’Etterbeek, nous empruntons quotidiennement la Chaussée de Wavre et le Boulevard du Souverain pour dépanner rapidement les résidents du quartier Saint-Julien, du Transvaal ou de Val Duchesne.',
+      work_examples: [
+        'Désobstruction de canalisation extérieure envahie par des racines d’arbres près du Rouge-Cloître.',
+        'Remplacement et pose d’un réducteur de pression sur arrivée d’eau d’une villa du quartier Transvaal.',
+        'Réparation urgente d’une chasse d’eau encastrée Geberit fuyant en continu dans un appartement avenue Herrmann-Debroux.',
+        'Remise en route et purge d’un système de chauffage central avant l’hiver dans le quartier Saint-Julien.'
+      ],
+      faqs: [
+        {
+          question: "Combien de temps faut-il pour rejoindre Auderghem depuis vos locaux ?",
+          answer: "Étant situés Avenue d'Auderghem à Etterbeek, nos équipes rejoignent les différents quartiers d'Auderghem (Transvaal, Souverain, Herrmann-Debroux) en seulement quelques minutes via la Chaussée de Wavre."
+        },
+        {
+          question: "Traitez-vous les problèmes de pression d'eau fréquente à Auderghem ?",
+          answer: "Oui. En raison du relief d'Auderghem et des caractéristiques du réseau de distribution, la pression peut être excessive ou insuffisante selon l'altitude. Nous installons des réducteurs de pression pour protéger vos boilers et robinetteries."
+        },
+        {
+          question: "Mon WC est complètement bouché à Auderghem, intervenez-vous la nuit ?",
+          answer: "Notre permanence d'urgence est opérationnelle 24h/24 et 7j/7 pour les urgences sanitaires. Un technicien équipé d'un furet professionnel et de matériel hydrocurage intervient sur simple appel."
+        },
+        {
+          question: "Proposez-vous le détartrage de chauffe-eau à Auderghem ?",
+          answer: "L'eau d'Auderghem est fortement chargée en calcaire. Nous réalisons le détartrage de la cuve, le remplacement de l'anode sacrificielle en magnésium et le contrôle du groupe de sécurité de votre chauffe-eau électrique ou gaz."
+        },
+        {
+          question: "Le devis est-il bien annoncé avant l'intervention à Auderghem ?",
+          answer: "Absolument. Conformément à notre charte de transparence, aucun tournevis n'est sorti avant que le coût des pièces et de la main-d'œuvre ne vous ait été expliqué et accepté."
+        }
+      ],
+      nearby: [{name: 'Etterbeek', slug: 'plombier-etterbeek'}, {name: 'Watermael-Boitsfort', slug: 'plombier-watermael-boitsfort'}, {name: 'Woluwe-Saint-Pierre', slug: 'plombier-woluwe-saint-pierre'}]
+    },
+    {
+      slug: 'plombier-anderlecht',
+      name: 'Anderlecht',
+      cp: '1070',
+      prep: 'd\'',
+      landmarks: 'le Stade Constant Vanden Stock et les Abattoirs',
+      neighborhoods: 'Cureghem, Neerpede, Veeweyde',
+      building_context: 'Les anciens bâtiments industriels rénovés et les maisons de rangée classiques nécessitent souvent une mise aux normes de la plomberie.',
+      local_proof: 'Présents sur tout l’ouest bruxellois, nous intervenons pour les urgences et la rénovation sanitaire des habitations privées et locaux professionnels d’Anderlecht.',
+      work_examples: [
+        'Remplacement d\'un tronçon de canalisation corrodée à Cureghem.',
+        'Débouchage d\'évier et de colonne d\'eaux usées à Veeweyde.'
+      ],
+      faqs: [
+        { question: "Intervenez-vous en urgence à Anderlecht ?", answer: "Oui, notre service de garde intervient 24h/24 et 7j/7 sur l'ensemble d'Anderlecht pour toute fuite d'eau majeure ou canalisation bouchée." },
+        { question: "Le devis est-il gratuit pour les travaux sanitaires à Anderlecht ?", answer: "Pour les rénovations et installations planifiées, le devis est gratuit et détaillé." },
+        { question: "Prenez-vous en charge la recherche de fuite sans casse ?", answer: "Oui, grâce à notre équipement caméra thermique et gaz traceur, nous localisons les fuites sans abîmer les murs." }
+      ],
+      nearby: [{name: 'Molenbeek', slug: 'plombier-molenbeek-saint-jean'}, {name: 'Forest', slug: 'plombier-forest'}]
+    },
+    {
+      slug: 'plombier-bruxelles',
+      name: 'Bruxelles',
+      cp: '1000',
+      prep: 'de ',
+      landmarks: 'la Grand-Place, la Bourse et le Mont des Arts',
+      neighborhoods: 'les Marolles, le Sablon, le Quartier Européen, le Pentagone',
+      building_context: 'Le centre historique de la ville regorge de conduites anciennes en fonte et en plomb, ce qui entraîne des bouchons fréquents et des fuites d’usure.',
+      local_proof: 'Nos plombiers interviennent quotidiennement dans le Pentagone et le centre historique en s’adaptant aux zones piétonnes et restrictions de circulation.',
+      work_examples: [
+        'Débouchage d\'égout sous voirie ancienne dans les Marolles.',
+        'Remplacement de robinetterie ancienne et vannes d\'arrêt au Sablon.'
+      ],
+      faqs: [
+        { question: "Accédez-vous aux zones piétonnes du centre de Bruxelles ?", answer: "Oui, nous disposons des autorisations requises pour les interventions d'urgence dans la zone piétonne du centre-ville." },
+        { question: "Dépannez-vous les commerces et restaurants en urgence ?", answer: "Oui, nous intervenons rapidement pour les bacs à graisse, éviers professionnels et sanitaires de restaurants." },
+        { question: "Quels sont vos tarifs pour une fuite de nuit à Bruxelles 1000 ?", answer: "Le tarif applicable est annoncé de manière transparente au téléphone avant confirmation de notre déplacement." }
+      ],
+      nearby: [{name: 'Ixelles', slug: 'plombier-ixelles'}, {name: 'Saint-Gilles', slug: 'plombier-saint-gilles'}, {name: 'Etterbeek', slug: 'plombier-etterbeek'}]
+    },
+    {
+      slug: 'plombier-ixelles',
+      name: 'Ixelles',
+      cp: '1050',
+      prep: 'd\'',
+      landmarks: 'la Place Flagey, les Étangs d\'Ixelles et l\'Avenue Louise',
+      neighborhoods: 'le Châtelain, Matonge, Flagey, le Cimetière d\'Ixelles, l\'ULB',
+      building_context: 'Les maisons de maître ixelloises et la densité des colocations étudiantes sollicitent fortement les réseaux sanitaires et les équipements de chauffage.',
+      local_proof: 'Limitrophe d’Etterbeek, Ixelles est l’un de nos secteurs d’intervention les plus fréquents, de Flagey au Châtelain.',
+      work_examples: [
+        'Recherche de fuite dans un plancher mitoyen entre deux appartements place Flagey.',
+        'Débouchage d\'urgence de WC suspendu dans un appartement d\'étudiant au Cimetière d\'Ixelles.'
+      ],
+      faqs: [
+        { question: "Intervenez-vous près de Flagey et du Châtelain ?", answer: "Oui, nous intervenons très fréquemment dans tous les quartiers d'Ixelles pour les urgences plomberie." },
+        { question: "Comment réparer un mitigeur qui fuit à Ixelles ?", answer: "Nous remplaçons la cartouche céramique défectueuse ou installons un nouveau robinet certifié." },
+        { question: "Fournissez-vous une facture pour le syndic de copropriété ?", answer: "Oui, toutes nos factures sont précises et conformes pour les syndics et assurances." }
+      ],
+      nearby: [{name: 'Etterbeek', slug: 'plombier-etterbeek'}, {name: 'Saint-Gilles', slug: 'plombier-saint-gilles'}, {name: 'Uccle', slug: 'plombier-uccle'}]
+    },
+    {
+      slug: 'plombier-schaerbeek',
+      name: 'Schaerbeek',
+      cp: '1030',
+      prep: 'de ',
+      landmarks: 'le Parc Josaphat et la Gare de Schaerbeek',
+      neighborhoods: 'Plasky, Colignon, Meiser, la Cage aux Ours',
+      building_context: 'Les grandes demeures bourgeoises divisées en plusieurs logements posent souvent des difficultés de pression d’eau aux étages supérieurs.',
+      local_proof: 'Nous couvrons Schaerbeek depuis les grands axes (Meiser, Reyers, Plasky) pour assurer des dépannages rapides et soignés.',
+      work_examples: [
+        'Dépannage de chaudière gaz en sécurité près du Parc Josaphat.',
+        'Installation d\'un réducteur de pression et remplacement de tuyaux en cuivre quartier Plasky.'
+      ],
+      faqs: [
+        { question: "Proposez-vous le contrôle PEB de chaudière à Schaerbeek ?", answer: "Oui, nous réalisons les entretiens périodiques et délivrons l'attestation légale PEB." },
+        { question: "En combien de temps intervenez-vous à Schaerbeek ?", answer: "Nous mobilisons un technicien dès votre appel selon les conditions de circulation." },
+        { question: "Débouchez-vous les conduites d'eaux usées collectives ?", answer: "Oui, notre furet électrique et nos buses haute pression éliminent efficacement les bouchons tenaces." }
+      ],
+      nearby: [{name: 'Evere', slug: 'plombier-evere'}, {name: 'Saint-Josse', slug: 'plombier-saint-josse-ten-noode'}, {name: 'Etterbeek', slug: 'plombier-etterbeek'}]
+    },
+    {
+      slug: 'plombier-uccle',
+      name: 'Uccle',
+      cp: '1180',
+      prep: 'd\'',
+      landmarks: 'le Bois de la Cambre, l\'Observatoire et la Place Saint-Job',
+      neighborhoods: 'Fort-Jaco, Saint-Job, le Vert Chasseur, Calevoet',
+      building_context: 'Les grandes propriétés et résidences de standing requièrent souvent des installations d’adoucisseurs et l’entretien minutieux de chaufferies.',
+      local_proof: 'Nos artisans desservent l’ensemble des quartiers ucclois avec du matériel de précision et le respect des normes les plus exigeantes.',
+      work_examples: [
+        'Pose d\'un adoucisseur d\'eau pour protéger les sanitaires d\'une villa au Fort-Jaco.',
+        'Détection d\'une fuite sur réseau de chauffage encastré à Saint-Job.'
+      ],
+      faqs: [
+        { question: "Installez-vous des adoucisseurs d'eau à Uccle ?", answer: "Oui, nous installons et entretenons des adoucisseurs adaptés aux logements individuels et collectifs." },
+        { question: "Dépannez-vous les chauffe-eau en panne à Uccle ?", answer: "Oui, diagnostic et remplacement de résistance ou thermostat de chauffe-eau 7j/7." },
+        { question: "Le devis est-il remis avant les travaux ?", answer: "Oui, systématiquement." }
+      ],
+      nearby: [{name: 'Forest', slug: 'plombier-forest'}, {name: 'Ixelles', slug: 'plombier-ixelles'}, {name: 'Watermael-Boitsfort', slug: 'plombier-watermael-boitsfort'}]
+    },
+    {
+      slug: 'plombier-saint-gilles',
+      name: 'Saint-Gilles',
+      cp: '1060',
+      prep: 'de ',
+      landmarks: 'le Parvis de Saint-Gilles et la Maison communale',
+      neighborhoods: 'la Barrière, l\'Hôtel des Monnaies, la Gare du Midi',
+      building_context: 'Les bâtiments Art Nouveau et de la fin du XIXe siècle comportent des arrivées d’eau nécessitant un savoir-faire artisanal scrupuleux.',
+      local_proof: 'Nous intervenons rapidement à Saint-Gilles pour les fuites de robinetterie, les canalisations anciennes et les sanitaires vétustes.',
+      work_examples: [
+        'Remplacement d\'un mécanisme de chasse d\'eau encastrée près du Parvis.',
+        'Réparation de fuite sous évier en cuivre quartier Barrière.'
+      ],
+      faqs: [
+        { question: "Intervenez-vous pour les fuites d'eau la nuit à Saint-Gilles ?", answer: "Oui, notre service d'urgence fonctionne 24h/24." },
+        { question: "Pouvez-vous rénover la plomberie d'une maison ancienne ?", answer: "Oui, nous remettons aux normes actuelles les réseaux d'eau froide et chaude." },
+        { question: "Quel est le coût du déplacement à Saint-Gilles ?", answer: "Le tarif forfaitaire est annoncé clairement dès votre appel téléphonique." }
+      ],
+      nearby: [{name: 'Forest', slug: 'plombier-forest'}, {name: 'Ixelles', slug: 'plombier-ixelles'}, {name: 'Bruxelles', slug: 'plombier-bruxelles'}]
+    },
+    {
+      slug: 'plombier-woluwe-saint-lambert',
+      name: 'Woluwe-Saint-Lambert',
+      cp: '1200',
+      prep: 'de ',
+      landmarks: 'le Woluwe Shopping Center et le Parc de Roodebeek',
+      neighborhoods: 'Roodebeek, Georges Henri, Tomberg, Kapelleveld',
+      building_context: 'Les immeubles d’habitation des années 60-80 connaissent des besoins réguliers de remplacement de colonnes de décharge et de robinetterie.',
+      local_proof: 'Proches du boulevard Brand Whitlock et de l’avenue de Broqueville, nos équipes interviennent rapidement dans toute la commune.',
+      work_examples: [
+        'Débouchage de siphon de baignoire quartier Georges Henri.',
+        'Remplacement de chauffe-eau électrique entartré avenue de Broqueville.'
+      ],
+      faqs: [
+        { question: "Êtes-vous disponibles le week-end à Woluwe-Saint-Lambert ?", answer: "Oui, notre équipe de garde répond aux urgences samedis, dimanches et jours fériés." },
+        { question: "Quelle est la durée de garantie sur vos réparations ?", answer: "Nos travaux et pièces sont garantis conformément aux normes belges." },
+        { question: "Réalisez-vous la recherche de fuite sans démolition ?", answer: "Oui, avec caméra thermique et inspection acoustique." }
+      ],
+      nearby: [{name: 'Woluwe-Saint-Pierre', slug: 'plombier-woluwe-saint-pierre'}, {name: 'Evere', slug: 'plombier-evere'}, {name: 'Etterbeek', slug: 'plombier-etterbeek'}]
+    },
+    {
+      slug: 'plombier-woluwe-saint-pierre',
+      name: 'Woluwe-Saint-Pierre',
+      cp: '1150',
+      prep: 'de ',
+      landmarks: 'le Parc de la Woluwe et la Maison Communale',
+      neighborhoods: 'le Chant d\'Oiseau, Stockel, Sainte-Alix',
+      building_context: 'Quartiers résidentiels calmes où les installations sanitaires soignées et les systèmes de chauffage performants demandent un entretien rigoureux.',
+      local_proof: 'Nous intervenons rapidement à Stockel et au Chant d’Oiseau pour tous dépannages d’urgence et réparations de sanitaires.',
+      work_examples: [
+        'Remplacement d\'un mitigeur de cuisine Grohe à Stockel.',
+        'Purge et désembouage de radiateurs quartier Sainte-Alix.'
+      ],
+      faqs: [
+        { question: "Intervenez-vous à Stockel et au Chant d'Oiseau ?", answer: "Oui, nous couvrons tous les quartiers de Woluwe-Saint-Pierre." },
+        { question: "Pouvez-vous réparer une chasse d'eau suspendue Geberit ?", answer: "Oui, nous disposons des pièces de rechange courantes pour mécanismes encastrés." },
+        { question: "Comment obtenir un devis de plomberie à Woluwe-Saint-Pierre ?", answer: "Appelez le 0465 76 75 11 ou remplissez notre formulaire en ligne." }
+      ],
+      nearby: [{name: 'Woluwe-Saint-Lambert', slug: 'plombier-woluwe-saint-lambert'}, {name: 'Auderghem', slug: 'plombier-auderghem'}, {name: 'Etterbeek', slug: 'plombier-etterbeek'}]
+    },
+    {
+      slug: 'plombier-evere',
+      name: 'Evere',
+      cp: '1140',
+      prep: 'd\'',
+      landmarks: 'le Cimetière de Bruxelles et le quartier Paduwa',
+      neighborhoods: 'Paduwa, Evere-Centre, le Haut d\'Evere',
+      building_context: 'Les résidences récentes et copropriétés nécessitent une maintenance suivie des chaudières individuelles au gaz et des sanitaires.',
+      local_proof: 'Présents sur l’axe Meiser-Paduwa, nous assurons des interventions rapides pour particuliers et gestionnaires d’immeubles.',
+      work_examples: [
+        'Dépannage de fuite sur groupe de sécurité de boiler à Paduwa.',
+        'Débouchage de conduite d\'évacuation commune à Evere-Centre.'
+      ],
+      faqs: [
+        { question: "Dépannez-vous les chaudières à Evere ?", answer: "Oui, pour pannes de pression, circulateur ou brûleur." },
+        { question: "Le devis est-il annoncé avant l'intervention ?", answer: "Oui, toujours." },
+        { question: "Faites-vous le débouchage de WC en urgence ?", answer: "Oui, intervention 24/7." }
+      ],
+      nearby: [{name: 'Schaerbeek', slug: 'plombier-schaerbeek'}, {name: 'Woluwe-Saint-Lambert', slug: 'plombier-woluwe-saint-lambert'}]
+    },
+    {
+      slug: 'plombier-forest',
+      name: 'Forest',
+      cp: '1190',
+      prep: 'de ',
+      landmarks: 'Forest National et le Parc Duden',
+      neighborhoods: 'Altitude 100, Saint-Denis, Bervoets',
+      building_context: 'Les dénivelés notables d’Altitude 100 influencent la pression du réseau d’eau et demandent une vigilance sur les réducteurs de pression.',
+      local_proof: 'Nos plombiers interviennent rapidement sur les hauteurs de Forest comme dans le bas Saint-Denis pour tout problème sanitaire.',
+      work_examples: [
+        'Remplacement d\'un réducteur de pression à Altitude 100.',
+        'Détection de fuite acoustique dans une salle de bain à Saint-Denis.'
+      ],
+      faqs: [
+        { question: "Réparez-vous les canalisations qui vibrent à Forest ?", answer: "Oui, nous éliminons les coups de bélier et régulons la pression d'eau." },
+        { question: "Êtes-vous disponibles le dimanche à Forest ?", answer: "Oui, notre permanence de garde opère 7j/7." },
+        { question: "Quel est le délai d'arrivée en cas de fuite ?", answer: "Nous faisons route dès votre appel avec un outillage adapté." }
+      ],
+      nearby: [{name: 'Uccle', slug: 'plombier-uccle'}, {name: 'Saint-Gilles', slug: 'plombier-saint-gilles'}]
+    },
+    {
+      slug: 'plombier-jette',
+      name: 'Jette',
+      cp: '1090',
+      prep: 'de ',
+      landmarks: 'la Place du Miroir et l\'Hôpital Brugmann',
+      neighborhoods: 'Dieleghem, les Jardins de Jette, le Miroir',
+      building_context: 'De nombreuses maisons unifamiliales et immeubles de moyen gabarit nécessitent l’entretien des installations de chauffage et sanitaires.',
+      local_proof: 'Nous intervenons sur l’ensemble du territoire jettois pour assurer la sécurité de vos conduites d’eau et de gaz.',
+      work_examples: [
+        'Débouchage d\'évier de cuisine refoulant place du Miroir.',
+        'Contrôle périodique de chaudière gaz quartier Dieleghem.'
+      ],
+      faqs: [
+        { question: "Intervenez-vous pour un débouchage d'urgence à Jette ?", answer: "Oui, nous disposons de matériel mécanique et hydrocureur adapté." },
+        { question: "Fournissez-vous l'attestation PEB pour chaudière ?", answer: "Oui, nous délivrons l'attestation officielle de contrôle." },
+        { question: "Les prix sont-ils transparents ?", answer: "Oui, le devis est validé avant travaux." }
+      ],
+      nearby: [{name: 'Ganshoren', slug: 'plombier-ganshoren'}, {name: 'Bruxelles', slug: 'plombier-bruxelles'}]
+    },
+    {
+      slug: 'plombier-molenbeek-saint-jean',
+      name: 'Molenbeek-Saint-Jean',
+      cp: '1080',
+      prep: 'de ',
+      landmarks: 'le Château Karreveld et les abords du Canal',
+      neighborhoods: 'Étangs Noirs, Mettewie, Quartier Maritime',
+      building_context: 'La variété des logements, des lofts du canal aux immeubles résidentiels de Mettewie, requiert une polyvalence technique complète.',
+      local_proof: 'Nos plombiers se déplacent rapidement à Molenbeek pour stopper les fuites et rétablir l’écoulement des eaux usées.',
+      work_examples: [
+        'Colmatage d\'urgence d\'un tuyau de plomb fuyant quartier Maritime.',
+        'Débouchage de colonne d\'évacuation boulevard Mettewie.'
+      ],
+      faqs: [
+        { question: "Intervenez-vous la nuit à Molenbeek ?", answer: "Oui, notre équipe de garde répond 24h/24." },
+        { question: "Pouvez-vous remplacer un robinet qui goutte ?", answer: "Oui, réparation ou remplacement immédiat sur place." },
+        { question: "Comment payer la facture d'intervention ?", answer: "Paiement par carte, virement ou selon accord professionnel." }
+      ],
+      nearby: [{name: 'Anderlecht', slug: 'plombier-anderlecht'}, {name: 'Koekelberg', slug: 'plombier-koekelberg'}]
+    },
+    {
+      slug: 'plombier-koekelberg',
+      name: 'Koekelberg',
+      cp: '1081',
+      prep: 'de ',
+      landmarks: 'la Basilique du Sacré-Cœur et le Parc Élisabeth',
+      neighborhoods: 'Simonis, le Parc Élisabeth, quartier Basilique',
+      building_context: 'Les maisons de caractère autour du parc Élisabeth disposent de tuyauteries anciennes qu’il convient de diagnostiquer avec précaution.',
+      local_proof: 'Interventions ponctuelles et rapides autour de la station Simonis et des boulevards environnants.',
+      work_examples: [
+        'Recherche de fuite sous plancher dans un appartement avenue du Panthéon.',
+        'Réparation de flotteur de chasse d\'eau Simonis.'
+      ],
+      faqs: [
+        { question: "Êtes-vous qualifiés pour les vieilles plomberies à Koekelberg ?", answer: "Oui, nous traitons le cuivre, le PVC, la fonte et le plomb." },
+        { question: "Que faire en attendant votre arrivée pour une grosse fuite ?", answer: "Coupez la vanne générale d'arrivée d'eau et épongez." },
+        { question: "Le devis est-il sans engagement ?", answer: "Oui, vous validez le tarif avant toute réparation." }
+      ],
+      nearby: [{name: 'Molenbeek', slug: 'plombier-molenbeek-saint-jean'}, {name: 'Ganshoren', slug: 'plombier-ganshoren'}]
+    },
+    {
+      slug: 'plombier-ganshoren',
+      name: 'Ganshoren',
+      cp: '1083',
+      prep: 'de ',
+      landmarks: 'le Parc Roi Baudouin et le Marais de Ganshoren',
+      neighborhoods: 'l\'Exposition, le Centre, avenue Van Overbeke',
+      building_context: 'Les habitations calmes nécessitent souvent le détartrage préventif des boilers et la remise en état des canalisations de vidange.',
+      local_proof: 'Nous intervenons rapidement à Ganshoren pour tous besoins d’entretien et de dépannage sanitaire.',
+      work_examples: [
+        'Détartrage d\'un chauffe-eau électrique entartré avenue Van Overbeke.',
+        'Débouchage de douche bouchée par du savon et des cheveux.'
+      ],
+      faqs: [
+        { question: "Comment éviter l'entartrage de mon chauffe-eau à Ganshoren ?", answer: "Un entretien tous les 2 à 3 ans ou l'installation d'un adoucisseur d'eau est fortement recommandé." },
+        { question: "Dépannez-vous les fuites le samedi à Ganshoren ?", answer: "Oui, service d'urgence 7j/7." },
+        { question: "Quel est le délai d'intervention moyen ?", answer: "Nous partons immédiatement après confirmation téléphonique." }
+      ],
+      nearby: [{name: 'Jette', slug: 'plombier-jette'}, {name: 'Berchem-Sainte-Agathe', slug: 'plombier-berchem-sainte-agathe'}]
+    },
+    {
+      slug: 'plombier-berchem-sainte-agathe',
+      name: 'Berchem-Sainte-Agathe',
+      cp: '1082',
+      prep: 'de ',
+      landmarks: 'la Place Docteur Schweitzer et le Bois du Wilder',
+      neighborhoods: 'Schweitzer, Hunderenveld, Cité Moderne',
+      building_context: 'Habitations individuelles et petits collectifs nécessitant l’entretien suivi des sanitaires et des chaudières.',
+      local_proof: 'Déplacements rapides sur l’ensemble de Berchem-Sainte-Agathe pour sécuriser vos équipements sanitaires.',
+      work_examples: [
+        'Débouchage de WC refoulant place Schweitzer.',
+        'Remplacement d\'un robinet d\'arrêt grippé à Hunderenveld.'
+      ],
+      faqs: [
+        { question: "Intervenez-vous place Schweitzer ?", answer: "Oui, nous desservons toute la commune." },
+        { question: "Mon robinet d'arrêt fuit, que faire ?", answer: "Appelez-nous, nous remplaçons la tête ou la vanne complète." },
+        { question: "Proposez-vous des devis clairs ?", answer: "Oui, le montant est convenu avant le début des travaux." }
+      ],
+      nearby: [{name: 'Ganshoren', slug: 'plombier-ganshoren'}, {name: 'Koekelberg', slug: 'plombier-koekelberg'}]
+    },
+    {
+      slug: 'plombier-saint-josse-ten-noode',
+      name: 'Saint-Josse-ten-Noode',
+      cp: '1210',
+      prep: 'de ',
+      landmarks: 'la Place Madou et le Jardin Botanique',
+      neighborhoods: 'Quartier Nord, Place Saint-Josse, Madou',
+      building_context: 'Forte densité urbaine avec des immeubles partagés où les canalisations d’évacuation requièrent un entretien attentif pour éviter les engorgements.',
+      local_proof: 'Proches du quartier européen et de Madou, nous répondons aux urgences de plomberie des riverains de Saint-Josse.',
+      work_examples: [
+        'Débouchage d\'urgence de colonne d\'évacuation collective place Saint-Josse.',
+        'Réparation de fuite d\'eau sur mitigeur de lavabo près de Madou.'
+      ],
+      faqs: [
+        { question: "Comment débouchez-vous une colonne collective à Saint-Josse ?", answer: "Nous utilisons un furet mécanique électrique ou une buse haute pression pour dégager les bouchons." },
+        { question: "Le service d'urgence fonctionne-t-il la nuit ?", answer: "Oui, permanence 24/7." },
+        { question: "Le devis est-il obligatoirement annoncé avant ?", answer: "Oui, conformément à nos engagements de transparence." }
+      ],
+      nearby: [{name: 'Schaerbeek', slug: 'plombier-schaerbeek'}, {name: 'Bruxelles', slug: 'plombier-bruxelles'}]
+    },
+    {
+      slug: 'plombier-watermael-boitsfort',
+      name: 'Watermael-Boitsfort',
+      cp: '1170',
+      prep: 'de ',
+      landmarks: 'les cités-jardins Floréal et Le Logis, les Étangs',
+      neighborhoods: 'le Coin du Balai, Floréal, Le Logis, Boitsfort-Centre',
+      building_context: 'Les cités-jardins et habitations de caractère requièrent un soin scrupuleux lors des interventions pour préserver les matériaux d’origine.',
+      local_proof: 'Voisins d’Auderghem et d’Etterbeek, nous intervenons avec promptitude dans le cadre verdoyant de Watermael-Boitsfort.',
+      work_examples: [
+        'Détection sans casse d\'une fuite encastrée dans une cité-jardin.',
+        'Détartrage d\'un chauffe-eau électrique au Coin du Balai.'
+      ],
+      faqs: [
+        { question: "Intervenez-vous dans les cités-jardins Floréal et Le Logis ?", answer: "Oui, nous respectons scrupuleusement la configuration des lieux." },
+        { question: "Comment régler une fuite de radiateur à Watermael-Boitsfort ?", answer: "Nous resserrons les raccords, remplaçons le robinet thermostatique ou purgeons le circuit." },
+        { question: "Quel est le délai pour une urgence plomberie ?", answer: "Nous nous déplaçons immédiatement après votre appel." }
+      ],
+      nearby: [{name: 'Auderghem', slug: 'plombier-auderghem'}, {name: 'Uccle', slug: 'plombier-uccle'}]
+    }
   ];
 
   return communes.map(c => ({
@@ -33,104 +439,192 @@ export function getStaticPaths() {
   }));
 }
 
-const { name, cp, prep, landmarks, neighborhoods, building_context, nearby } = Astro.props;
+const { 
+  name, 
+  cp, 
+  prep, 
+  customTitle, 
+  customH1, 
+  customDescription, 
+  landmarks, 
+  neighborhoods, 
+  building_context, 
+  local_proof, 
+  work_examples = [], 
+  faqs = [], 
+  nearby = [] 
+} = Astro.props;
 
-const title = `Plombier à ${name} (${cp}) 24/7 – Dépannage et Urgences | Fbaleste`;
-const description = `Besoin d'un plombier en urgence sur la commune ${prep}${name} (${cp}) ? Intervention rapide, devis transparent. Débouchage, recherche de fuite, chauffagiste agréé.`;
+const pageTitle = customTitle || `Plombier à ${name} (${cp}) 24/7 | Dépannage et Urgences | Fbaleste`;
+const pageH1 = customH1 || `Plombier à ${name} (${cp}) – Dépannage et Urgences 24/7`;
+const pageDescription = customDescription || `Besoin d'un plombier en urgence sur la commune ${prep}${name} (${cp}) ? Intervention rapide, devis transparent. Débouchage, recherche de fuite, chauffagiste agréé.`;
+
+const canonicalPath = `/zones/${Astro.params.commune}/`;
+
+const serviceSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "@id": `https://www.urgenceplomberie.be${canonicalPath}#service`,
+  "name": `Plombier ${name} - Dépannage & Urgences Plomberie`,
+  "description": pageDescription,
+  "provider": {
+    "@id": "https://www.urgenceplomberie.be/#business"
+  },
+  "areaServed": {
+    "@type": "AdministrativeArea",
+    "name": `${name}, Région de Bruxelles-Capitale`
+  },
+  "url": `https://www.urgenceplomberie.be${canonicalPath}`
+};
+
+const faqSchema = faqs.length > 0 ? {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faqs.map(f => ({
+    "@type": "Question",
+    "name": f.question,
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": f.answer
+    }
+  }))
+} : null;
+
+const schemasToPass = [serviceSchema];
+if (faqSchema) schemasToPass.push(faqSchema);
+
+const breadcrumbItems = [
+  { name: 'Accueil', url: '/' },
+  { name: 'Zones d\'intervention', url: '/zones/' },
+  { name: `Plombier ${name}` }
+];
 ---
 
-<Layout title={title} description={description}>
+<Layout title={pageTitle} description={pageDescription} schema={schemasToPass}>
   <Header />
   
   <main class="page-content pt-top">
-    <div class="container header-section text-center animate-fade-in">
-      <nav aria-label="breadcrumb" class="breadcrumb-nav mb-2" style="font-size: 0.9rem; margin-bottom: 2rem;">
-        <ol style="list-style: none; padding: 0; display: flex; justify-content: center; gap: 0.5rem; color: var(--text-muted);">
-          <li><a href="/" style="color: var(--primary); text-decoration: none;">Accueil</a> <span aria-hidden="true">&rarr;</span></li>
-          <li><a href="/zones/" style="color: var(--primary); text-decoration: none;">Zones d'intervention</a> <span aria-hidden="true">&rarr;</span></li>
-          <li aria-current="page">Plombier {name}</li>
-        </ol>
-      </nav>
-      <h1>Plombier à <span class="highlight">{name}</span> – Dépannage et Urgences 24/7</h1>
-      <p>Votre artisan de proximité, disponible tous les jours pour toute la commune {prep}{name} ({cp}).</p>
-      <a href="tel:+32465767511" class="btn btn-accent btn-large mt-1 pulse-animation">Appeler un Plombier : 0465 76 75 11</a>
+    <div class="container">
+      <Breadcrumbs items={breadcrumbItems} />
     </div>
 
+    <div class="container header-section text-center animate-fade-in">
+      <span class="badge badge-emergency">Intervention 24/7 à {name} ({cp})</span>
+      <h1>{pageH1}</h1>
+      <p class="commune-lead">Votre artisan de proximité pour tout dépannage sanitaire, fuite d'eau, canalisation bouchée et problème de chaudière {prep}{name}.</p>
+      <div class="header-cta-group mt-1">
+        <a href="tel:+32465767511" class="btn btn-accent btn-large pulse-animation">
+          📞 Appeler à {name} : 0465 76 75 11
+        </a>
+        <a href="/contact/" class="btn btn-primary btn-large">
+          Demander un Devis Avant Travaux
+        </a>
+      </div>
+    </div>
+
+    <!-- Local Specifics & Context -->
     <div class="container mt-3">
       <div class="glass card content-wrap">
-        <h2>Nos services de plomberie à {name}</h2>
-        <p>En tant qu'entreprise ancrée dans la région bruxelloise, Fbaleste Urgence Plomberie intervient régulièrement à <strong>{name}</strong>. Nous offrons une gamme complète de services pour répondre à toutes vos urgences et vos projets de rénovation :</p>
-        <ul class="check-list mt-1">
-          <li><strong>Dépannage Urgent :</strong> Réparation de fuites d'eau invisibles, tuyaux percés et robinetterie défectueuse.</li>
-          <li><strong>Débouchage :</strong> Dégorgement de canalisations, WC bouchés, éviers et baignoires avec matériel haute pression.</li>
-          <li><strong>Chauffage :</strong> Dépannage de chaudières, contrôle périodique PEB, et réparation de chauffe-eau.</li>
-        </ul>
+        <h2>Nos Services de Plomberie à {name} ({cp})</h2>
+        <p>{local_proof}</p>
+        <p>{building_context}</p>
         
-        <h3>Problèmes fréquents dans les logements {prep}{name}</h3>
-        <p>{building_context} De plus, l'eau très dure de Bruxelles (souvent au-delà de 30°f) provoque un entartrage rapide de vos installations. Nos techniciens connaissent ces particularités locales et sont équipés pour y remédier durablement.</p>
+        <div class="services-focus-grid mt-2 mb-2">
+          <div class="service-focus-card">
+            <h4>🚨 Dépannage d'Urgence</h4>
+            <p>Fuite d'eau active, WC bouché, tuyau cassé. Sécurisation immédiate à toute heure.</p>
+            <a href="/depannage-urgence/" class="sub-link">Voir notre service d'urgence 24/7 →</a>
+          </div>
+          <div class="service-focus-card">
+            <h4>🔬 Détection de Fuite</h4>
+            <p>Recherche non destructive par caméra thermique et gaz traceur avec rapport d'assurance.</p>
+            <a href="/detection-fuite/" class="sub-link">Découvrir la détection sans casse →</a>
+          </div>
+          <div class="service-focus-card">
+            <h4>🚰 Débouchage Professionnel</h4>
+            <p>Curage haute pression et furet mécanique pour WC, éviers et égouts de {name}.</p>
+            <a href="/debouchage/" class="sub-link">Consulter nos solutions de débouchage →</a>
+          </div>
+          <div class="service-focus-card">
+            <h4>🔥 Dépannage Chauffage</h4>
+            <p>Dépannage de chaudière au gaz, réarmement, purge de radiateurs et contrôle légal PEB.</p>
+            <a href="/chauffage-chaudiere/" class="sub-link">Accéder au service chauffagiste →</a>
+          </div>
+        </div>
 
-        <h3>Quartiers desservis</h3>
-        <p>Nos plombiers couvrent l'intégralité du code postal {cp}. Nous intervenons rapidement dans les quartiers tels que <strong>{neighborhoods}</strong>. Que vous résidiez près de <strong>{landmarks}</strong> ou dans les rues résidentielles avoisinantes, notre connaissance du terrain nous permet d'éviter les axes encombrés pour vous dépanner au plus vite.</p>
+        <h3>Quartiers et Repères Desservis {prep}{name}</h3>
+        <p>Nos plombiers couvrent l'intégralité du code postal {cp}, y compris les quartiers tels que <strong>{neighborhoods}</strong> et les abords de <strong>{landmarks}</strong>.</p>
       </div>
     </div>
 
+    <!-- Work examples if available -->
+    {work_examples && work_examples.length > 0 && (
+      <div class="container mt-3">
+        <div class="glass card content-wrap">
+          <h2>Exemples Réents d'Interventions Réalisées à {name}</h2>
+          <ul class="check-list mt-1">
+            {work_examples.map(example => (
+              <li>{example}</li>
+            ))}
+          </ul>
+        </div>
+      </div>
+    )}
+
+    <!-- Pricing and Commitment -->
     <div class="container grid mt-3 mb-3">
       <div class="glass card">
-        <h2>Tarifs et Devis</h2>
-        <p>Chez Fbaleste, la transparence est primordiale. Fini les mauvaises surprises au moment de payer.</p>
+        <h2>Méthode de Facturation & Devis Écrit</h2>
+        <p>Chez Fbaleste Urgence Plomberie, la transparence est absolue :</p>
         <ul class="arrow-list mt-1">
-          <li><strong>Déplacement et Diagnostic :</strong> Un tarif forfaitaire clair annoncé dès votre appel.</li>
-          <li><strong>Devis Avant Travaux :</strong> Aucune réparation n'est commencée sans votre accord explicite sur le prix.</li>
-          <li><strong>Interventions Soir & Week-end :</strong> Nos tarifs de garde sont transparents et majorés uniquement selon les dispositions légales et conventionnelles. Le prix final vous est toujours communiqué au préalable.</li>
+          <li><strong>Forfait Déplacement Annoncé :</strong> Tarif clair indiqué dès votre prise de contact téléphonique.</li>
+          <li><strong>Devis Avant Réparation :</strong> Le technicien examine la situation et vous remet un devis précis. Aucune réparation n'est lancée sans votre feu vert explicite.</li>
+          <li><strong>Garde de Nuit & Week-end :</strong> Majorations réglementées communiquées en toute clarté au préalable.</li>
+          <li>Pour en savoir plus, consultez notre guide sur les <a href="/blog/tarif-plombier-bruxelles-prix/">tarifs d'un plombier à Bruxelles en 2026</a>.</li>
         </ul>
       </div>
 
       <div class="glass card">
-        <h2>Pourquoi choisir Fbaleste à {name} ?</h2>
-        <p>Contrairement aux plateformes de dépannage nationales qui sous-traitent, nous sommes une véritable entreprise locale.</p>
+        <h2>Pourquoi Faire Appel à Notre Équipe à {name} ?</h2>
         <ul class="check-list mt-1">
-          <li><strong>Proximité :</strong> Notre temps de réponse est optimisé pour la région bruxelloise (habituellement entre 30 et 60 minutes).</li>
-          <li><strong>Expertise :</strong> Artisans qualifiés et respectueux des normes belges (PEB).</li>
-          <li><strong>Garantie :</strong> Travail soigné et facturation détaillée pour vos assurances.</li>
+          <li><strong>Artisan Local :</strong> Une véritable implantation bruxelloise (siège à Etterbeek) garantissant un temps de route direct.</li>
+          <li><strong>Matériel Professionnel :</strong> Équipements modernes de détection, outillage de pointe et pièces de rechange certifiées dans nos camionnettes.</li>
+          <li><strong>Normes Belges :</strong> Respect scrupuleux des réglementations techniques et attestations conformes pour vos assurances.</li>
         </ul>
       </div>
     </div>
     
-    <div class="container mt-3 mb-3">
-      <div class="glass card content-wrap">
-        <h2>FAQ Locale : Plomberie à {name}</h2>
-        
-        <div class="faq-item">
-          <h4>Intervenez-vous la nuit et le dimanche à {name} ?</h4>
-          <p>Oui, notre service de garde est opérationnel 24h/24 et 7j/7 pour les urgences sévères (grosse fuite d'eau, canalisation totalement bouchée, panne totale de chauffage en hiver).</p>
-        </div>
-        
-        <div class="faq-item">
-          <h4>Le devis est-il communiqué avant l'intervention ?</h4>
-          <p>Absolument. Une fois sur place, le technicien évalue le problème et vous remet un devis clair. Si vous acceptez, la réparation commence immédiatement.</p>
-        </div>
-        
-        <div class="faq-item">
-          <h4>Prenez-vous en charge la recherche de fuite sans casse ?</h4>
-          <p>Oui, nous utilisons des caméras endoscopiques, des caméras thermiques et des détecteurs acoustiques pour trouver les fuites encastrées dans les murs ou sous les sols de votre logement à {name}, limitant ainsi les dégâts.</p>
+    <!-- Distinct 5 FAQs -->
+    {faqs && faqs.length > 0 && (
+      <div class="container mt-3 mb-3">
+        <div class="glass card content-wrap">
+          <h2>FAQ Locale : Vos Questions sur la Plomberie à {name}</h2>
+          <div class="faq-list mt-2">
+            {faqs.map(faq => (
+              <div class="faq-item">
+                <h4>{faq.question}</h4>
+                <p>{faq.answer}</p>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
-    </div>
+    )}
     
+    <!-- Interlinking Communes -->
     <div class="container mt-3 mb-3 text-center">
-      <h3 style="color: var(--white); margin-bottom: 1rem;">Communes Voisines</h3>
-      <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 1rem;">
+      <h3 style="color: var(--white); margin-bottom: 1rem;">Communes Limitrophes Desservies</h3>
+      <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 0.8rem;">
         {nearby.map((n) => (
-          <a href={`/zones/${n.slug}/`} class="btn btn-outline" style="background: rgba(255,255,255,0.1); color: white; border: 1px solid rgba(255,255,255,0.3); padding: 0.5rem 1rem; border-radius: 50px; text-decoration: none; transition: background 0.3s;">
+          <a href={`/zones/${n.slug}/`} class="btn-nearby">
             Plombier à {n.name}
           </a>
         ))}
       </div>
       <div class="mt-3">
-        <a href="/zones/" class="btn btn-primary" style="margin-top: 2rem;">&larr; Retour à toutes les zones d'intervention</a>
+        <a href="/zones/" class="btn btn-primary" style="margin-top: 1.5rem;">← Voir les 19 communes de Bruxelles</a>
       </div>
     </div>
-
   </main>
   
   <WhatsAppWidget />
@@ -139,26 +633,88 @@ const description = `Besoin d'un plombier en urgence sur la commune ${prep}${nam
 
 <style>
   .pt-top { padding-top: 120px; }
-  .header-section h1 { font-size: 2.8rem; margin-bottom: 1rem; }
-  .highlight { color: var(--accent); }
+  .header-section h1 { font-size: 2.8rem; margin-bottom: 0.8rem; color: var(--primary); }
+  .commune-lead { max-width: 750px; margin: 0 auto 1.5rem auto; font-size: 1.15rem; line-height: 1.6; }
+  .header-cta-group { display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap; margin-bottom: 1rem; }
+  
+  .badge-emergency {
+    background-color: var(--accent);
+    color: white;
+    padding: 0.4rem 1rem;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 0.85rem;
+    display: inline-block;
+    margin-bottom: 1rem;
+  }
   
   .content-wrap { padding: 3rem; border-radius: 16px; }
-  .content-wrap h2, .content-wrap h3 { color: var(--primary); margin-top: 1.5rem; margin-bottom: 0.8rem; }
-  .content-wrap p { margin-bottom: 1rem; line-height: 1.6; }
+  .content-wrap h2 { color: var(--primary); margin-top: 0; margin-bottom: 1rem; font-size: 1.6rem; }
+  .content-wrap h3 { color: var(--accent); margin-top: 1.5rem; margin-bottom: 0.8rem; font-size: 1.3rem; }
+  .content-wrap p { margin-bottom: 1rem; line-height: 1.7; font-size: 1.05rem; }
   
-  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; }
-  .card { padding: 2rem; border-radius: 16px; }
-  .card h2 { color: var(--primary); margin-bottom: 1rem; }
+  .services-focus-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 1.2rem;
+  }
+  .service-focus-card {
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    padding: 1.2rem;
+    border-radius: 10px;
+  }
+  .service-focus-card h4 {
+    margin: 0 0 0.5rem 0;
+    color: var(--primary);
+    font-size: 1.1rem;
+  }
+  .service-focus-card p {
+    font-size: 0.9rem;
+    margin-bottom: 0.8rem;
+    color: var(--text-muted);
+  }
+  .sub-link {
+    color: var(--primary);
+    font-weight: 600;
+    font-size: 0.88rem;
+    text-decoration: underline;
+  }
+  .sub-link:hover { color: var(--accent); }
+
+  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2rem; }
+  .card { padding: 2.5rem; border-radius: 16px; }
+  .card h2 { color: var(--primary); margin-bottom: 1rem; font-size: 1.5rem; }
   
-  .check-list li { margin-bottom: 0.8rem; position: relative; padding-left: 1.5rem; line-height: 1.5; }
+  .check-list { list-style: none; padding: 0; }
+  .check-list li { margin-bottom: 0.8rem; position: relative; padding-left: 1.6rem; line-height: 1.6; }
   .check-list li::before { content: '✓'; position: absolute; left: 0; color: var(--primary); font-weight: bold; }
   
   .arrow-list { list-style: none; padding: 0; }
-  .arrow-list li { margin-bottom: 1rem; border-bottom: 1px solid rgba(0,0,0,0.1); padding-bottom: 0.5rem; line-height: 1.5; }
+  .arrow-list li { margin-bottom: 1rem; border-bottom: 1px solid rgba(0,0,0,0.06); padding-bottom: 0.5rem; line-height: 1.6; }
+  .arrow-list li strong { color: var(--primary); }
   
-  .faq-item { margin-bottom: 1.5rem; border-bottom: 1px solid #e2e8f0; padding-bottom: 1rem; }
+  .faq-list { max-width: 850px; margin: 0 auto; }
+  .faq-item { margin-bottom: 1.5rem; border-bottom: 1px solid #e2e8f0; padding-bottom: 1.2rem; }
   .faq-item:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
-  .faq-item h4 { color: var(--primary); margin-bottom: 0.5rem; }
-  
-  .btn-outline:hover { background: rgba(255,255,255,0.2) !important; }
+  .faq-item h4 { color: var(--primary); font-size: 1.15rem; margin-bottom: 0.5rem; }
+  .faq-item p { color: var(--text-main); line-height: 1.6; }
+
+  .btn-nearby {
+    background: rgba(255,255,255,0.15);
+    color: white;
+    border: 1px solid rgba(255,255,255,0.3);
+    padding: 0.5rem 1.2rem;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: background 0.3s;
+  }
+  .btn-nearby:hover { background: rgba(255,255,255,0.3); }
+
+  @media (max-width: 768px) {
+    .header-section h1 { font-size: 2.1rem; }
+    .content-wrap { padding: 1.8rem; }
+  }
 </style>

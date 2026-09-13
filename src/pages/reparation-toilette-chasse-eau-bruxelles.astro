@@ -1,0 +1,225 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import WhatsAppWidget from '../components/WhatsAppWidget.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+
+const title = "Réparation Toilette et Chasse d’Eau Bruxelles | 24/7";
+const description = "Dépannage et réparation de WC et chasse d'eau à Bruxelles. Fuite continue, mécanisme Geberit, flotteur entartré et remplacement. Intervention 24/7.";
+
+const faqs = [
+  {
+    question: "Pourquoi ma chasse d'eau coule-t-elle continuellement dans la cuvette ?",
+    answer: "Un écoulement permanent est causé soit par un clapet d'étanchéité usé ou entartré par l'eau dure de Bruxelles, soit par un robinet flotteur déréglé ou percé qui ne coupe plus l'arrivée d'eau. Cette anomalie peut gaspiller jusqu'à 600 litres d'eau potable par jour."
+  },
+  {
+    question: "Réparez-vous les mécanismes de chasse d'eau encastrés (WC suspendu Geberit) ?",
+    answer: "Oui. L'intervention sur un bâti-support encastré s'effectue sans casser la faïence murale en passant directement par la trappe de la plaque de déclenchement. Nous disposons des pièces de rechange d'origine pour les systèmes Geberit, Grohe et Siamp."
+  },
+  {
+    question: "En combien de temps intervenez-vous pour une fuite d'eau sur un WC à Bruxelles ?",
+    answer: "Une fuite d'eau au pied de la cuvette ou un robinet d'arrêt de WC défaillant peut provoquer un dégât des eaux rapide. Notre service d'urgence 24/7 se mobilise immédiatement sur toute la Région de Bruxelles-Capitale."
+  },
+  {
+    question: "Quand faut-il envisager de remplacer complètement la cuvette de WC ?",
+    answer: "Si la céramique est fissurée, si le fond de cuvette est irrémédiablement incrusté de calcaire ou si vous souhaitez passer à un modèle suspendu sans bride (Rimfree) plus hygiénique et économe en eau, le remplacement complet est préconisé."
+  },
+  {
+    question: "Quels sont les tarifs pour la réparation d'une chasse d'eau ?",
+    answer: "Le coût comprend le déplacement du technicien, le diagnostic et le remplacement du mécanisme défectueux (robinet flotteur, clapet, joint de cloche ou mécanisme complet). Le montant exact vous est communiqué et validé par devis avant toute intervention."
+  }
+];
+
+const serviceSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "@id": "https://www.urgenceplomberie.be/reparation-toilette-chasse-eau-bruxelles/#service",
+  "name": "Réparation Toilette et Chasse d'Eau Bruxelles",
+  "description": description,
+  "provider": {
+    "@id": "https://www.urgenceplomberie.be/#business"
+  },
+  "areaServed": {
+    "@type": "AdministrativeArea",
+    "name": "Région de Bruxelles-Capitale"
+  },
+  "url": "https://www.urgenceplomberie.be/reparation-toilette-chasse-eau-bruxelles/"
+};
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faqs.map(faq => ({
+    "@type": "Question",
+    "name": faq.question,
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": faq.answer
+    }
+  }))
+};
+
+const breadcrumbItems = [
+  { name: 'Accueil', url: '/' },
+  { name: 'Services', url: '/services/' },
+  { name: 'Réparation Toilette & Chasse d’Eau' }
+];
+---
+
+<Layout title={title} description={description} schema={[serviceSchema, faqSchema]}>
+  <Header />
+  
+  <main class="page-content pt-top">
+    <div class="container">
+      <Breadcrumbs items={breadcrumbItems} />
+    </div>
+
+    <div class="container header-section text-center animate-fade-in">
+      <span class="badge badge-toilet">Dépannage Sanitaire 24/7</span>
+      <h1>Réparation de toilette et chasse d’eau à Bruxelles</h1>
+      <p class="subtitle-text">Chasse d'eau qui coule sans arrêt, flotteur qui ne se remplit plus, fuite au pied de la cuvette ou mécanisme de WC suspendu cassé : dépannage d'urgence dans les 19 communes de Bruxelles.</p>
+      <div class="header-cta-group mt-1">
+        <a href="tel:+32465767511" class="btn btn-accent btn-large pulse-animation">
+          📞 0465 76 75 11 (Urgence WC)
+        </a>
+        <a href="/contact/" class="btn btn-primary btn-large">
+          Demander un Devis Réparation
+        </a>
+      </div>
+    </div>
+
+    <div class="container grid mt-3">
+      <div class="glass card">
+        <h2>Nos interventions sur WC & chasses d'eau</h2>
+        <ul class="check-list">
+          <li>Réparation de chasses d'eau encastrées dans le mur (bâti Geberit, Grohe, etc.)</li>
+          <li>Remplacement de robinets flotteurs silencieux anti-coup de bélier</li>
+          <li>Remplacement de joints de cloche, clapets et membranes entartrés</li>
+          <li>Colmatage de fuite d'eau sur le robinet d'arrêt ou le flexible d'alimentation</li>
+          <li>Remplacement de joint d'étanchéité au sol ou pipe d'évacuation fuyante</li>
+          <li>Pose complète de nouveaux WC au sol ou WC suspendus sans bride</li>
+        </ul>
+      </div>
+
+      <div class="glass card">
+        <h2>Dysfonctionnements fréquents traités</h2>
+        <ul class="cross-list">
+          <li>Filet d'eau permanent coulant au fond de la cuvette</li>
+          <li>Chasse d'eau qui ne se remplit plus ou met un temps infini</li>
+          <li>Bouton poussoir bloqué ou mécanisme intérieur décroché</li>
+          <li>Eau qui s'infiltre sur le carrelage à chaque fois qu'on tire la chasse</li>
+          <li>WC instable qui bouge ou odeur d'égout provenant du joint d'évacuation</li>
+        </ul>
+      </div>
+    </div>
+
+    <section class="container mt-3 glass section-padding">
+      <h2 class="text-center">Protocole d'Intervention Rapide</h2>
+      <div class="process-grid mt-2">
+        <div class="process-step">
+          <div class="step-num">1</div>
+          <h3>Diagnostic Réservoir</h3>
+          <p>Inspection du niveau d'eau, du flotteur et du joint de culot pour cibler l'usure ou l'entartrage.</p>
+        </div>
+        <div class="process-step">
+          <div class="step-num">2</div>
+          <h3>Devis Transparent</h3>
+          <p>Présentation du coût exact de la réparation ou des pièces de rechange avant de commencer.</p>
+        </div>
+        <div class="process-step">
+          <div class="step-num">3</div>
+          <h3>Remplacement Pièces</h3>
+          <p>Démontage soigné (par trappe pour WC encastré), détartrage et pose d'organes d'étanchéité neufs.</p>
+        </div>
+        <div class="process-step">
+          <div class="step-num">4</div>
+          <h3>Contrôle d'Étanchéité</h3>
+          <p>Test de remplissage, coupure nette de l'arrivée d'eau et contrôle de l'absence de micro-fuite.</p>
+        </div>
+      </div>
+    </section>
+
+    <div class="container grid mt-3">
+      <div class="glass card">
+        <h2>Prix et Démarche de Devis</h2>
+        <p>Une fuite de chasse d'eau engendre un coût d'eau très élevé si elle n'est pas traitée rapidement. Nos engagements :</p>
+        <ul class="arrow-list mt-1">
+          <li><strong>Tarif annoncé avant intervention :</strong> Aucune manipulation sans votre validation préalable.</li>
+          <li><strong>Pièces professionnelles en stock :</strong> Nos camionnettes disposent des mécanismes courants pour réparer sur-le-champ.</li>
+          <li><strong>Garde d'urgence 24/7 :</strong> Si le WC fuit abondamment ou inonde le sol, notre équipe intervient à toute heure.</li>
+          <li>Si vos toilettes sont également engorgées, consultez notre service de <a href="/debouchage/">débouchage de canalisation</a>.</li>
+        </ul>
+      </div>
+
+      <div class="glass card info-box">
+        <h2>Zones et Services Associés</h2>
+        <ul class="check-list">
+          <li>Interventions à <a href="/zones/plombier-etterbeek/">Etterbeek</a>, <a href="/zones/plombier-auderghem/">Auderghem</a> et toutes les communes bruxelloises.</li>
+          <li>Robinet d'arrêt ou mitigeur fuyant ? <a href="/reparation-robinetterie-bruxelles/">Réparation de robinetterie</a></li>
+          <li>Rénovation de vos toilettes ? <a href="/installations-sanitaires/">Installations sanitaires et WC</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <section class="container mt-3 mb-3 glass section-padding">
+      <h2 class="text-center">Questions Fréquentes sur la Réparation de Toilette</h2>
+      <div class="faq-list mt-2">
+        {faqs.map(faq => (
+          <div class="faq-item">
+            <h4>{faq.question}</h4>
+            <p>{faq.answer}</p>
+          </div>
+        ))}
+      </div>
+    </section>
+  </main>
+  
+  <WhatsAppWidget />
+  <Footer />
+</Layout>
+
+<style>
+  .pt-top { padding-top: 120px; }
+  .header-section h1 { font-size: 2.8rem; margin-bottom: 0.8rem; color: var(--primary); }
+  .subtitle-text { max-width: 750px; margin: 0 auto 1.5rem auto; font-size: 1.15rem; line-height: 1.6; color: var(--text-main); }
+  .header-cta-group { display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap; margin-bottom: 1rem; }
+  
+  .badge-toilet {
+    background-color: #0284c7;
+    color: white;
+    padding: 0.4rem 1rem;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 0.85rem;
+    display: inline-block;
+    margin-bottom: 1rem;
+  }
+
+  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2rem; }
+  .card { padding: 2.5rem; border-radius: 16px; }
+  .card h2 { color: var(--primary); margin-bottom: 1.2rem; font-size: 1.5rem; }
+
+  .check-list, .cross-list { list-style: none; padding: 0; }
+  .check-list li, .cross-list li { margin-bottom: 0.9rem; line-height: 1.6; position: relative; padding-left: 1.6rem; }
+  .check-list li::before { content: '✓'; position: absolute; left: 0; color: var(--primary); font-weight: bold; }
+  .cross-list li::before { content: '⚠'; position: absolute; left: 0; color: var(--accent); font-weight: bold; }
+
+  .section-padding { padding: 3rem; border-radius: 16px; }
+
+  .process-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.5rem; }
+  .process-step { background: rgba(255,255,255,0.7); padding: 1.5rem; border-radius: 12px; border: 1px solid #e2e8f0; }
+  .step-num { width: 36px; height: 36px; background: var(--primary); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; margin-bottom: 0.8rem; }
+  .process-step h3 { font-size: 1.15rem; color: var(--primary); margin-bottom: 0.5rem; }
+  .process-step p { font-size: 0.95rem; line-height: 1.5; color: var(--text-muted); }
+
+  .faq-list { max-width: 850px; margin: 0 auto; }
+  .faq-item { margin-bottom: 1.5rem; border-bottom: 1px solid #e2e8f0; padding-bottom: 1.2rem; }
+  .faq-item:last-child { border-bottom: none; }
+  .faq-item h4 { color: var(--primary); font-size: 1.15rem; margin-bottom: 0.5rem; }
+  .faq-item p { color: var(--text-main); line-height: 1.6; }
+
+  @media (max-width: 768px) {
+    .header-section h1 { font-size: 2.1rem; }
+  }
+</style>

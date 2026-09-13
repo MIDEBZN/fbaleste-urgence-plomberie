@@ -1,0 +1,225 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import WhatsAppWidget from '../components/WhatsAppWidget.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+
+const title = "Réparation Robinetterie Bruxelles | Fuite et Remplacement";
+const description = "Réparation et remplacement de robinetterie à Bruxelles : mitigeur qui fuit, cartouche céramique, vanne d'arrêt et robinet de cuisine. Devis clair avant travaux.";
+
+const faqs = [
+  {
+    question: "Faut-il réparer ou remplacer un robinet qui goutte ?",
+    answer: "Si le corps du robinet est en bon état et qu'il s'agit d'une marque de qualité (Grohe, Hansgrohe), le remplacement de la cartouche céramique ou des joints toriques suffit généralement. Si le robinet est oxydé, fortement entartré par l'eau dure bruxelloise ou bas de gamme, un remplacement complet est plus économique et durable."
+  },
+  {
+    question: "Combien d'eau un robinet qui fuit gaspille-t-il à Bruxelles ?",
+    answer: "Un robinet qui goutte au rythme d'une goutte par seconde gaspille environ 4 litres d'eau par heure, soit près de 35 000 litres d'eau par an. Vu le tarif de l'eau à Bruxelles, cette fuite peut alourdir votre facture annuelle de plus de 150 euros."
+  },
+  {
+    question: "Intervenez-vous pour une vanne d'arrêt bloquée ou fuyante ?",
+    answer: "Oui. Une vanne d'arrêt générale ou un robinet d'arrêt sous évier grippé par le calcaire peut casser lors d'une tentative de fermeture. Nous remplaçons les vannes défectueuses par des vannes à boisseau sphérique quart de tour plus fiables."
+  },
+  {
+    question: "Achetez-vous le robinet ou puis-je fournir mon propre mitigeur ?",
+    answer: "Nous pouvons fournir des mitigeurs certifiés de qualité professionnelle avec garantie sur le matériel et la pose, ou installer le modèle que vous avez vous-même acheté en magasin spécialisé."
+  },
+  {
+    question: "Quels sont les facteurs qui influencent le tarif d'intervention ?",
+    answer: "Le tarif comprend le déplacement, le temps de main-d'œuvre et le coût de la cartouche ou du nouveau mitigeur. L'accessibilité sous l'évier ou la présence de raccords anciens en plomb peuvent influencer le temps nécessaire. Le montant exact vous est communiqué sur devis avant intervention."
+  }
+];
+
+const serviceSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "@id": "https://www.urgenceplomberie.be/reparation-robinetterie-bruxelles/#service",
+  "name": "Réparation et Remplacement de Robinetterie Bruxelles",
+  "description": description,
+  "provider": {
+    "@id": "https://www.urgenceplomberie.be/#business"
+  },
+  "areaServed": {
+    "@type": "AdministrativeArea",
+    "name": "Région de Bruxelles-Capitale"
+  },
+  "url": "https://www.urgenceplomberie.be/reparation-robinetterie-bruxelles/"
+};
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faqs.map(faq => ({
+    "@type": "Question",
+    "name": faq.question,
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": faq.answer
+    }
+  }))
+};
+
+const breadcrumbItems = [
+  { name: 'Accueil', url: '/' },
+  { name: 'Services', url: '/services/' },
+  { name: 'Réparation Robinetterie' }
+];
+---
+
+<Layout title={title} description={description} schema={[serviceSchema, faqSchema]}>
+  <Header />
+  
+  <main class="page-content pt-top">
+    <div class="container">
+      <Breadcrumbs items={breadcrumbItems} />
+    </div>
+
+    <div class="container header-section text-center animate-fade-in">
+      <span class="badge badge-tech">Intervention Robinetterie 24/7</span>
+      <h1>Réparation et remplacement de robinetterie à Bruxelles</h1>
+      <p class="subtitle-text">Mitigeur de cuisine qui fuit, colonne de douche bloquée, robinet de lavabo entartré ou vanne d'arrêt fuyante : intervention rapide et soignée dans les 19 communes de Bruxelles.</p>
+      <div class="header-cta-group mt-1">
+        <a href="tel:+32465767511" class="btn btn-accent btn-large pulse-animation">
+          📞 0465 76 75 11 (Appel Dépannage)
+        </a>
+        <a href="/contact/" class="btn btn-primary btn-large">
+          Demander un Devis Robinetterie
+        </a>
+      </div>
+    </div>
+
+    <div class="container grid mt-3">
+      <div class="glass card">
+        <h2>Nos interventions sur la robinetterie</h2>
+        <ul class="check-list">
+          <li>Remplacement de cartouches céramiques sur mitigeurs d'évier, lavabo et douche</li>
+          <li>Réparation et changement de têtes de robinets mélangeurs traditionnels</li>
+          <li>Remplacement de flexibles d'alimentation d'eau tressés inox</li>
+          <li>Pose de mitigeurs thermostatiques haute précision avec sécurité anti-brûlure</li>
+          <li>Changement de vannes d'arrêt générales, sous évier ou pour WC</li>
+          <li>Remplacement de mousseurs aérateurs entartrés pour retrouver un débit optimal</li>
+        </ul>
+      </div>
+
+      <div class="glass card">
+        <h2>Pannes fréquentes traitées</h2>
+        <ul class="cross-list">
+          <li>Robinet qui goutte en continu au niveau du bec</li>
+          <li>Fuite d'eau à la base du mitigeur inondant le placard sous évier</li>
+          <li>Poignée dure ou bloquée par l'accumulation de calcaire bruxellois</li>
+          <li>Incapacité à régler la température (l'eau reste brûlante ou glacée)</li>
+          <li>Vanne d'arrêt qui suinte ou refuse de se fermer lors d'un départ</li>
+        </ul>
+      </div>
+    </div>
+
+    <section class="container mt-3 glass section-padding">
+      <h2 class="text-center">Notre Méthode de Réparation</h2>
+      <div class="process-grid mt-2">
+        <div class="process-step">
+          <div class="step-num">1</div>
+          <h3>Diagnostic & Étanchéité</h3>
+          <p>Démontage soigné pour identifier si la fuite provient de la cartouche, des joints ou du corps métallique.</p>
+        </div>
+        <div class="process-step">
+          <div class="step-num">2</div>
+          <h3>Conseil Réparer / Remplacer</h3>
+          <p>Nous évaluons l'usure pour vous conseiller en toute honnêteté la solution la plus économique.</p>
+        </div>
+        <div class="process-step">
+          <div class="step-num">3</div>
+          <h3>Pose aux Normes</h3>
+          <p>Installation avec raccords d'étanchéité neufs et serrage adapté pour préserver les plans de travail.</p>
+        </div>
+        <div class="process-step">
+          <div class="step-num">4</div>
+          <h3>Mise sous Pression</h3>
+          <p>Contrôle du débit d'eau chaude et froide, absence de micro-fuite et nettoyage des surfaces.</p>
+        </div>
+      </div>
+    </section>
+
+    <div class="container grid mt-3">
+      <div class="glass card">
+        <h2>Facteurs de Prix et Devis Clair</h2>
+        <p>Le coût d'une réparation de robinetterie dépend de plusieurs éléments transparents :</p>
+        <ul class="arrow-list mt-1">
+          <li><strong>Le type de prestation :</strong> Simple remplacement de joint/cartouche vs pose d'une robinetterie neuve.</li>
+          <li><strong>La marque et la gamme :</strong> Installation de robinetterie fournie par le client ou modèles professionnels Grohe/Hansgrohe fournis par nos soins.</li>
+          <li><strong>L'accessibilité des tuyauteries :</strong> Raccordement sous évier encombré ou réfection de vieilles conduites.</li>
+          <li>Pour des conseils d'entretien, consultez notre guide : <a href="/blog/robinet-qui-fuit-bruxelles/">Robinet qui fuit à Bruxelles : réparer ou remplacer ?</a></li>
+        </ul>
+      </div>
+
+      <div class="glass card info-box">
+        <h2>Services Sanitaires Complémentaires</h2>
+        <ul class="check-list">
+          <li>Votre WC fuit également ? <a href="/reparation-toilette-chasse-eau-bruxelles/">Réparation toilette et chasse d'eau</a></li>
+          <li>Projet complet de salle de bain ? <a href="/installations-sanitaires/">Installations sanitaires et rénovation</a></li>
+          <li>Pour stopper le tartre sur vos robinets : <a href="/traitement-eau/">Installation d'adoucisseur d'eau</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <section class="container mt-3 mb-3 glass section-padding">
+      <h2 class="text-center">Questions Fréquentes sur la Robinetterie à Bruxelles</h2>
+      <div class="faq-list mt-2">
+        {faqs.map(faq => (
+          <div class="faq-item">
+            <h4>{faq.question}</h4>
+            <p>{faq.answer}</p>
+          </div>
+        ))}
+      </div>
+    </section>
+  </main>
+  
+  <WhatsAppWidget />
+  <Footer />
+</Layout>
+
+<style>
+  .pt-top { padding-top: 120px; }
+  .header-section h1 { font-size: 2.8rem; margin-bottom: 0.8rem; color: var(--primary); }
+  .subtitle-text { max-width: 750px; margin: 0 auto 1.5rem auto; font-size: 1.15rem; line-height: 1.6; color: var(--text-main); }
+  .header-cta-group { display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap; margin-bottom: 1rem; }
+  
+  .badge-tech {
+    background-color: var(--primary);
+    color: white;
+    padding: 0.4rem 1rem;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 0.85rem;
+    display: inline-block;
+    margin-bottom: 1rem;
+  }
+
+  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2rem; }
+  .card { padding: 2.5rem; border-radius: 16px; }
+  .card h2 { color: var(--primary); margin-bottom: 1.2rem; font-size: 1.5rem; }
+
+  .check-list, .cross-list { list-style: none; padding: 0; }
+  .check-list li, .cross-list li { margin-bottom: 0.9rem; line-height: 1.6; position: relative; padding-left: 1.6rem; }
+  .check-list li::before { content: '✓'; position: absolute; left: 0; color: var(--primary); font-weight: bold; }
+  .cross-list li::before { content: '⚠'; position: absolute; left: 0; color: var(--accent); font-weight: bold; }
+
+  .section-padding { padding: 3rem; border-radius: 16px; }
+
+  .process-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.5rem; }
+  .process-step { background: rgba(255,255,255,0.7); padding: 1.5rem; border-radius: 12px; border: 1px solid #e2e8f0; }
+  .step-num { width: 36px; height: 36px; background: var(--primary); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; margin-bottom: 0.8rem; }
+  .process-step h3 { font-size: 1.15rem; color: var(--primary); margin-bottom: 0.5rem; }
+  .process-step p { font-size: 0.95rem; line-height: 1.5; color: var(--text-muted); }
+
+  .faq-list { max-width: 850px; margin: 0 auto; }
+  .faq-item { margin-bottom: 1.5rem; border-bottom: 1px solid #e2e8f0; padding-bottom: 1.2rem; }
+  .faq-item:last-child { border-bottom: none; }
+  .faq-item h4 { color: var(--primary); font-size: 1.15rem; margin-bottom: 0.5rem; }
+  .faq-item p { color: var(--text-main); line-height: 1.6; }
+
+  @media (max-width: 768px) {
+    .header-section h1 { font-size: 2.1rem; }
+  }
+</style>

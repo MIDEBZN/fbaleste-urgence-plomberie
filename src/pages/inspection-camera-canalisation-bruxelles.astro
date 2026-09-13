@@ -1,0 +1,223 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import WhatsAppWidget from '../components/WhatsAppWidget.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+
+const title = "Inspection Caméra Canalisation Bruxelles | Diagnostic Vidéo";
+const description = "Inspection de canalisation par caméra vidéo à Bruxelles. Diagnostic précis des bouchons, fissures et racines avec rapport technique. Demandez un devis.";
+
+const faqs = [
+  {
+    question: "Quand est-il recommandé de réaliser une inspection caméra de canalisation ?",
+    answer: "L'inspection vidéo est vivement conseillée lors de bouchons à répétition, d'odeurs persistantes d'égout non résolues par un débouchage classique, d'un affaissement de sol ou avant l'achat d'un bien immobilier ancien pour vérifier l'état du réseau d'égouttage enterré."
+  },
+  {
+    question: "Fournissez-vous un rapport écrit et les vidéos de l'inspection ?",
+    answer: "Oui. À l'issue du passage de la caméra, nous fournissons un compte-rendu technique détaillé mentionnant le métrage exact des anomalies (fissures, racines, tartre, contre-pente) accompagné des captures d'images ou de l'enregistrement vidéo utilisable pour vos assurances ou travaux de réfection."
+  },
+  {
+    question: "L'inspection caméra permet-elle également de déboucher le tuyau ?",
+    answer: "La caméra a un rôle de diagnostic : elle localise l'obstacle et révèle l'état des parois. Si la conduite est totalement obstruée par des résidus solides ou de l'eau croupie, un curage haute pression préalable est effectué pour nettoyer la lentille et permettre une visibilité optimale."
+  },
+  {
+    question: "Quelles sont les limites techniques d'une caméra endoscopique ?",
+    answer: "Nos caméras d'inspection circulent dans les conduites de diamètre 40 mm à plus de 250 mm. Elles peuvent être bloquées par un coude à 90° trop serré dans une tuyauterie de petit diamètre ou par un effondrement complet du réseau empêchant la tête optique d'avancer."
+  },
+  {
+    question: "Quels sont les facteurs qui déterminent le tarif d'une inspection vidéo ?",
+    answer: "Le tarif dépend de la longueur du réseau à inspecter, de la nécessité d'un hydrocurage préparatoire et de l'accessibilité des regards de visite. Le devis est systématiquement fixé et accepté avant le déploiement du matériel."
+  }
+];
+
+const serviceSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "@id": "https://www.urgenceplomberie.be/inspection-camera-canalisation-bruxelles/#service",
+  "name": "Inspection Caméra de Canalisation Bruxelles",
+  "description": description,
+  "provider": {
+    "@id": "https://www.urgenceplomberie.be/#business"
+  },
+  "areaServed": {
+    "@type": "AdministrativeArea",
+    "name": "Région de Bruxelles-Capitale"
+  },
+  "url": "https://www.urgenceplomberie.be/inspection-camera-canalisation-bruxelles/"
+};
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faqs.map(faq => ({
+    "@type": "Question",
+    "name": faq.question,
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": faq.answer
+    }
+  }))
+};
+
+const breadcrumbItems = [
+  { name: 'Accueil', url: '/' },
+  { name: 'Services', url: '/services/' },
+  { name: 'Inspection Caméra' }
+];
+---
+
+<Layout title={title} description={description} schema={[serviceSchema, faqSchema]}>
+  <Header />
+  
+  <main class="page-content pt-top">
+    <div class="container">
+      <Breadcrumbs items={breadcrumbItems} />
+    </div>
+
+    <div class="container header-section text-center animate-fade-in">
+      <span class="badge badge-camera">Diagnostic Vidéo Haute Définition</span>
+      <h1>Inspection de canalisation par caméra à Bruxelles</h1>
+      <p class="subtitle-text">Localisation vidéo précise des anomalies, cassures, racines et contre-pentes dans vos égouts et tuyauteries d'évacuation à Bruxelles avec rapport technique certifié.</p>
+      <div class="header-cta-group mt-1">
+        <a href="tel:+32465767511" class="btn btn-accent btn-large pulse-animation">
+          📞 0465 76 75 11 (Rendez-vous Diagnostic)
+        </a>
+        <a href="/contact/" class="btn btn-primary btn-large">
+          Demander un Devis Caméra
+        </a>
+      </div>
+    </div>
+
+    <div class="container grid mt-3">
+      <div class="glass card">
+        <h2>Quand réaliser une inspection vidéo ?</h2>
+        <ul class="check-list">
+          <li><strong>Bouchons récurrents :</strong> Si votre WC ou évier se rebouche tous les quelques mois sans explication apparente.</li>
+          <li><strong>Odeurs d'égout tenaces :</strong> Suspicion de rupture, déboîtement de joint ou fissure dans une colonne encastrée.</li>
+          <li><strong>Affaissement de pavés ou humidité :</strong> Conduite d'égouttage souterraine rompue déversant les eaux usées sous les fondations.</li>
+          <li><strong>Audit avant achat immobilier :</strong> État des lieux du réseau d'assainissement dans les anciennes maisons bruxelloises.</li>
+          <li><strong>Vérification post-curage :</strong> Contrôle de l'absence résiduelle de tartre ou de calcaire incrusté.</li>
+        </ul>
+      </div>
+
+      <div class="glass card">
+        <h2>Équipements et Technologies Déployés</h2>
+        <ul class="arrow-list mt-1">
+          <li><strong>Caméras poussées étanches HD :</strong> Têtes rotatives équipées de LED haute luminosité pour tuyaux de 40 à 150 mm.</li>
+          <li><strong>Sonde émettrice intégrée :</strong> Localisation de la tête de caméra en surface à l'aide d'un récepteur électromagnétique au centimètre près.</li>
+          <li><strong>Compteur métrique à l'écran :</strong> Affichage en direct de la distance parcourue pour repérer l'endroit précis où creuser.</li>
+          <li><strong>Enregistrement numérique :</strong> Export des photos et vidéos pour remise au propriétaire, syndic ou expert d'assurance.</li>
+        </ul>
+      </div>
+    </div>
+
+    <section class="container mt-3 glass section-padding">
+      <h2 class="text-center">Protocole d'Inspection Vidéo</h2>
+      <div class="process-grid mt-2">
+        <div class="process-step">
+          <div class="step-num">1</div>
+          <h3>Préparation Accès</h3>
+          <p>Ouverture du regard de visite, siphon de sol ou dépose temporaire de cuvette de WC pour introduire la tête optique.</p>
+        </div>
+        <div class="process-step">
+          <div class="step-num">2</div>
+          <h3>Exploration Vidéo</h3>
+          <p>Progression contrôlée du jonc de poussée dans la conduite avec observation en direct sur moniteur de contrôle.</p>
+        </div>
+        <div class="process-step">
+          <div class="step-num">3</div>
+          <h3>Marquage Défaut</h3>
+          <p>Détection en surface de la sonde au niveau de l'anomalie repérée (fissure, intrusion de racine ou écrasement).</p>
+        </div>
+        <div class="process-step">
+          <div class="step-num">4</div>
+          <h3>Rapport d'Expertise</h3>
+          <p>Remise du compte-rendu technique et préconisation de la solution appropriée (curage ou réparation ciblée).</p>
+        </div>
+      </div>
+    </section>
+
+    <div class="container grid mt-3">
+      <div class="glass card">
+        <h2>Complémentarité avec le Débouchage</h2>
+        <p>L'inspection vidéo ne remplace pas le débouchage : elle en garantit la pertinence et l'efficacité à long terme :</p>
+        <ul class="check-list mt-1">
+          <li>Si la conduite est obstruée, nous procédons d'abord à un <a href="/debouchage/">débouchage haute pression</a>.</li>
+          <li>Une fois l'eau évacuée, la caméra inspecte les parois propres pour trouver la cause structurelle de l'engorgement.</li>
+          <li>Consultez également notre guide détaillé : <a href="/blog/prix-debouchage-canalisation-bruxelles/">Tarifs et méthodes de débouchage à Bruxelles</a>.</li>
+        </ul>
+      </div>
+
+      <div class="glass card info-box">
+        <h2>Zone et Déplacement</h2>
+        <p><strong>Zone couverte :</strong> L'ensemble des 19 communes de Bruxelles-Capitale (Ixelles, Schaerbeek, Uccle, Etterbeek, Auderghem, Molenbeek, etc.).</p>
+        <p>Besoin d'une recherche de fuite sans casse dans vos murs ? Découvrez notre service de <a href="/detection-fuite/">détection de fuite d'eau</a>.</p>
+      </div>
+    </div>
+
+    <section class="container mt-3 mb-3 glass section-padding">
+      <h2 class="text-center">Questions Fréquentes sur l'Inspection Caméra</h2>
+      <div class="faq-list mt-2">
+        {faqs.map(faq => (
+          <div class="faq-item">
+            <h4>{faq.question}</h4>
+            <p>{faq.answer}</p>
+          </div>
+        ))}
+      </div>
+    </section>
+  </main>
+  
+  <WhatsAppWidget />
+  <Footer />
+</Layout>
+
+<style>
+  .pt-top { padding-top: 120px; }
+  .header-section h1 { font-size: 2.8rem; margin-bottom: 0.8rem; color: var(--primary); }
+  .subtitle-text { max-width: 750px; margin: 0 auto 1.5rem auto; font-size: 1.15rem; line-height: 1.6; color: var(--text-main); }
+  .header-cta-group { display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap; margin-bottom: 1rem; }
+  
+  .badge-camera {
+    background-color: var(--primary);
+    color: white;
+    padding: 0.4rem 1rem;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 0.85rem;
+    display: inline-block;
+    margin-bottom: 1rem;
+  }
+
+  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2rem; }
+  .card { padding: 2.5rem; border-radius: 16px; }
+  .card h2 { color: var(--primary); margin-bottom: 1.2rem; font-size: 1.5rem; }
+
+  .check-list { list-style: none; padding: 0; }
+  .check-list li { margin-bottom: 0.9rem; line-height: 1.6; position: relative; padding-left: 1.6rem; }
+  .check-list li::before { content: '✓'; position: absolute; left: 0; color: var(--primary); font-weight: bold; }
+  .check-list li strong { color: var(--primary); }
+  
+  .arrow-list { list-style: none; padding: 0; }
+  .arrow-list li { margin-bottom: 1rem; border-bottom: 1px solid rgba(0,0,0,0.06); padding-bottom: 0.5rem; line-height: 1.6; }
+  .arrow-list li strong { color: var(--primary); }
+
+  .section-padding { padding: 3rem; border-radius: 16px; }
+
+  .process-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.5rem; }
+  .process-step { background: rgba(255,255,255,0.7); padding: 1.5rem; border-radius: 12px; border: 1px solid #e2e8f0; }
+  .step-num { width: 36px; height: 36px; background: var(--primary); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; margin-bottom: 0.8rem; }
+  .process-step h3 { font-size: 1.15rem; color: var(--primary); margin-bottom: 0.5rem; }
+  .process-step p { font-size: 0.95rem; line-height: 1.5; color: var(--text-muted); }
+
+  .faq-list { max-width: 850px; margin: 0 auto; }
+  .faq-item { margin-bottom: 1.5rem; border-bottom: 1px solid #e2e8f0; padding-bottom: 1.2rem; }
+  .faq-item:last-child { border-bottom: none; }
+  .faq-item h4 { color: var(--primary); font-size: 1.15rem; margin-bottom: 0.5rem; }
+  .faq-item p { color: var(--text-main); line-height: 1.6; }
+
+  @media (max-width: 768px) {
+    .header-section h1 { font-size: 2.1rem; }
+  }
+</style>
