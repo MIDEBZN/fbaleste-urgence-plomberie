@@ -31,7 +31,7 @@ const communes = [
 ];
 ---
 
-<Layout title={title} description={description} preloadImage="/images/hero_bg.png">
+<Layout title={title} description={description} preloadImage="/images/hero_bg.webp">
   <Header />
   
   <main>
@@ -65,7 +65,7 @@ const communes = [
           <div class="hero-form-side animate-fade-in">
             <div class="quick-quote-card glass">
               <div class="quick-quote-header">
-                <h3>Besoin d'un plombier ?</h3>
+                <h2>Besoin d'un plombier ?</h2>
                 <p>Réponse immédiate ou rappel sous 15 min</p>
               </div>
               <form action="https://formsubmit.co/midebzn@gmail.com" method="POST" class="quick-form">
@@ -207,7 +207,7 @@ const communes = [
     min-height: 650px;
     display: flex;
     align-items: center;
-    background-image: url('/images/hero_bg.png');
+    background-image: url('/images/hero_bg.webp');
     background-size: cover;
     background-position: center;
     padding: 120px 0 60px 0;
@@ -309,6 +309,7 @@ const communes = [
     border: 1px solid rgba(255, 255, 255, 0.8);
   }
 
+  .quick-quote-header h2,
   .quick-quote-header h3 {
     color: var(--primary);
     margin-bottom: 0.3rem;
