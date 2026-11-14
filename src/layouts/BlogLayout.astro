@@ -39,9 +39,13 @@ const articleSchema = {
   "@type": "Article",
   "headline": frontmatter.title,
   "description": frontmatter.description,
+  "image": "https://www.urgenceplomberie.be/images/og-cover.png",
+  "datePublished": frontmatter.pubDate || "2026-09-13",
+  "dateModified": frontmatter.updatedDate || frontmatter.pubDate || "2026-09-13",
   "author": {
     "@type": "Organization",
-    "name": "Fbaleste Urgence Plomberie"
+    "name": "Fbaleste Urgence Plomberie",
+    "url": "https://www.urgenceplomberie.be/"
   },
   "publisher": {
     "@type": "Organization",

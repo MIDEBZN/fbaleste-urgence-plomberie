@@ -1,8 +1,13 @@
 ---
+interface Props {
+  hideContactForm?: boolean;
+}
+
+const { hideContactForm = false } = Astro.props;
 import TrustBanner from './TrustBanner.astro';
 import GlobalContactForm from './GlobalContactForm.astro';
 ---
-<GlobalContactForm />
+{!hideContactForm && <GlobalContactForm />}
 <TrustBanner />
 <footer class="footer">
   <div class="container footer-grid">

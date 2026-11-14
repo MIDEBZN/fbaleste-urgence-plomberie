@@ -12,21 +12,29 @@
       </div>
       <div class="contact-form-container">
         <form action="https://formsubmit.co/midebzn@gmail.com" method="POST" class="global-form">
-          <input type="hidden" name="_subject" value="Nouveau contact depuis le site web Fbaleste !">
-          <input type="hidden" name="_captcha" value="false">
+          <input type="hidden" name="_subject" value="Nouveau contact depuis le site web Fbaleste !" />
+          <input type="hidden" name="_captcha" value="false" />
+          <!-- Protection antispam par champ pot-de-miel (honeypot) -->
+          <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off" />
           
           <div class="form-row">
             <div class="form-group">
-              <input type="text" name="name" required placeholder="Votre Nom / Entreprise" />
+              <label for="global-name" class="visually-hidden">Votre Nom ou Entreprise</label>
+              <input type="text" id="global-name" name="name" required placeholder="Votre Nom / Entreprise" autocomplete="name" />
             </div>
             <div class="form-group">
-              <input type="tel" name="phone" required placeholder="Votre Numéro de Téléphone" />
+              <label for="global-phone" class="visually-hidden">Votre Numéro de Téléphone</label>
+              <input type="tel" id="global-phone" name="phone" required placeholder="Votre Numéro de Téléphone (ex: 04XX XX XX XX)" autocomplete="tel" />
             </div>
           </div>
           <div class="form-group">
-            <textarea name="message" rows="3" required placeholder="Décrivez votre problème (ex: Fuite d'eau, chaudière en panne...)"></textarea>
+            <label for="global-message" class="visually-hidden">Description de votre problème ou projet</label>
+            <textarea id="global-message" name="message" rows="3" required placeholder="Décrivez votre problème (ex: Fuite d'eau, chaudière en panne, WC bouché...)"></textarea>
           </div>
           <button type="submit" class="btn btn-primary w-100">Demander une intervention</button>
+          <p class="form-privacy-note">
+            🔒 Vos coordonnées sont transmises via le routeur technique FormSubmit pour organiser votre dépannage ou devis. Consultez notre <a href="/politique-confidentialite/">Politique de confidentialité</a>.
+          </p>
         </form>
       </div>
     </div>
@@ -83,6 +91,16 @@
     width: 100%; 
     padding: 1rem;
     font-size: 1.1rem;
+  }
+  .form-privacy-note {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    margin-top: 0.75rem;
+    line-height: 1.4;
+  }
+  .form-privacy-note a {
+    color: var(--primary);
+    text-decoration: underline;
   }
 
   @media (max-width: 768px) {

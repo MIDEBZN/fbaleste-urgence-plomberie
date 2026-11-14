@@ -457,7 +457,7 @@ const {
 
 const pageTitle = customTitle || `Plombier à ${name} (${cp}) 24/7 | Dépannage et Urgences | Fbaleste`;
 const pageH1 = customH1 || `Plombier à ${name} (${cp}) – Dépannage et Urgences 24/7`;
-const pageDescription = customDescription || `Besoin d'un plombier en urgence sur la commune ${prep}${name} (${cp}) ? Intervention rapide, devis transparent. Débouchage, recherche de fuite, chauffagiste agréé.`;
+const pageDescription = customDescription || `Besoin d'un plombier en urgence sur la commune ${prep}${name} (${cp}) ? Intervention rapide, devis transparent. Débouchage, recherche de fuite, dépannage chauffage.`;
 
 const canonicalPath = `/zones/${Astro.params.commune}/`;
 
@@ -561,7 +561,7 @@ const breadcrumbItems = [
     {work_examples && work_examples.length > 0 && (
       <div class="container mt-3">
         <div class="glass card content-wrap">
-          <h2>Exemples Réents d'Interventions Réalisées à {name}</h2>
+          <h2>Interventions et Situations Fréquentes Traitées à {name}</h2>
           <ul class="check-list mt-1">
             {work_examples.map(example => (
               <li>{example}</li>
@@ -588,7 +588,7 @@ const breadcrumbItems = [
         <h2>Pourquoi Faire Appel à Notre Équipe à {name} ?</h2>
         <ul class="check-list mt-1">
           <li><strong>Artisan Local :</strong> Une véritable implantation bruxelloise (siège à Etterbeek) garantissant un temps de route direct.</li>
-          <li><strong>Matériel Professionnel :</strong> Équipements modernes de détection, outillage de pointe et pièces de rechange certifiées dans nos camionnettes.</li>
+          <li><strong>Matériel Professionnel :</strong> Équipements modernes de détection, outillage de pointe et pièces de rechange conformes aux normes belges.</li>
           <li><strong>Normes Belges :</strong> Respect scrupuleux des réglementations techniques et attestations conformes pour vos assurances.</li>
         </ul>
       </div>

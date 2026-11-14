@@ -7,11 +7,11 @@ description: "Votre assurance habitation rembourse-t-elle la recherche de fuite 
 # L’assurance habitation rembourse-t-elle une recherche de fuite à Etterbeek ?
 
 > **Réponse express (Extrait AEO / Synthèse Vocale)**  
-> Oui, en Belgique, la quasi-totalité des assurances habitation (volet Dégâts des Eaux de l'assurance incendie) remboursent les frais de recherche de fuite non destructive engagés pour localiser l’origine du sinistre, sur présentation d’une déclaration sous 8 jours, de la facture acquittée et du rapport technique de l'artisan plombier. Contactez Fbaleste au **0465 76 75 11**.
+> En Belgique, la majorité des assurances habitation (garantie Dégâts des Eaux de l'assurance incendie) prévoient la prise en charge des frais de recherche de fuite non destructive engagés pour localiser l’origine du sinistre, sous réserve des clauses de votre police, sur présentation d’une déclaration sous 8 jours, de la facture acquittée et du compte rendu technique de l'artisan plombier. Contactez Fbaleste au **0465 76 75 11**.
 
 Face à une infiltration d'eau soudaine dans un appartement à Etterbeek, de nombreux résidents hésitent à faire appel à un plombier spécialisé par crainte d'une facture de diagnostic élevée qui resterait à leur charge.
 
-Rassurez-vous : en droit belge des assurances, la recherche et la localisation de la fuite font partie intégrante des mesures de sauvegarde du bâtiment. Voici les règles précises de prise en charge par les compagnies d'assurance (AG Insurance, AXA, Baloise, Ethias, KBC, Belfius) et la marche à suivre pour être remboursé rapidement.
+Rassurez-vous : en droit belge des assurances, la recherche et la localisation de la fuite font généralement partie des mesures de sauvegarde du bâtiment. La prise en charge effective dépend toujours des conditions générales et particulières de votre contrat d'assurance habitation. Voici les principes usuels de prise en charge par les compagnies d'assurance (AG Insurance, AXA, Baloise, Ethias, KBC, Belfius) et la marche à suivre pour constituer votre dossier.
 
 ---
 
@@ -21,9 +21,9 @@ Il est fondamental de distinguer trois postes de dépenses lors d'un dégât des
 
 | Type de dépense | Pris en charge par l'assurance ? | Qui paie in fine ? |
 |---|---|---|
-| **1. La recherche de fuite non destructive** (caméra thermique, gaz traceur, acoustique) | ✅ **OUI (100 % sous déduction éventuelle de franchise)** | L'assurance habitation de l'occupant ou l'assurance collective de l'immeuble. |
+| **1. La recherche de fuite non destructive** (caméra thermique, gaz traceur, acoustique) | ✅ **Fréquemment pris en charge (selon contrat et franchise)** | L'assurance habitation de l'occupant ou l'assurance collective de l'immeuble. |
 | **2. La réparation de la canalisation défaillante** (remplacement du joint, soudure du tuyau) | ❌ **NON (sauf option spécifique du contrat)** | Le propriétaire de la canalisation (ou le copropriétaire responsable). |
-| **3. La remise en état des dommages consécutifs** (peintures, plâtres, parquets, meubles) | ✅ **OUI (indemnisation intégrale après expertise)** | L'assurance incendie / dégât des eaux de l'immeuble ou de la partie lésée. |
+| **3. La remise en état des dommages consécutifs** (peintures, plâtres, parquets, meubles) | ✅ **OUI (indemnisation après expertise selon police)** | L'assurance incendie / dégât des eaux de l'immeuble ou de la partie lésée. |
 
 ---
 
@@ -59,9 +59,9 @@ Dans la majorité des immeubles à Etterbeek (vers la place Jourdan, La Chasse o
 
 ---
 
-## Obtenez un rapport de détection de fuite 100 % conforme pour votre assurance
+## Obtenez un rapport de détection de fuite détaillé pour votre assurance
 
-Fbaleste Urgence Plomberie vous fournit une facture détaillée et un dossier technique complet avec clichés thermiques reconnu par toutes les compagnies d'assurance belges.
+Fbaleste Urgence Plomberie vous fournit une facture claire et un rapport technique descriptif avec clichés thermiques pour faciliter l'instruction de votre dossier auprès de votre compagnie d'assurance.
 
 📞 **Urgence Dégât des Eaux à Etterbeek** : [0465 76 75 11](tel:0465767511)  
 🔗 Consultez notre service de détection sur [/detection-fuite/](/detection-fuite/) ou contactez notre agence locale sur [/zones/plombier-etterbeek/](/zones/plombier-etterbeek/).

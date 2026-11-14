@@ -59,20 +59,22 @@ const breadcrumbItems = [
         <form action="https://formsubmit.co/midebzn@gmail.com" method="POST">
           <input type="hidden" name="_subject" value="Nouveau message depuis le site Web Fbaleste !" />
           <input type="hidden" name="_captcha" value="false" />
+          <!-- Protection antispam pot-de-miel -->
+          <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off" />
           
           <div class="form-group">
             <label for="name">Nom / Entreprise</label>
-            <input type="text" id="name" name="name" required placeholder="Votre nom" />
+            <input type="text" id="name" name="name" required placeholder="Votre nom" autocomplete="name" />
           </div>
           
           <div class="form-group">
             <label for="email">Email</label>
-            <input type="email" id="email" name="email" required placeholder="votre@email.com" />
+            <input type="email" id="email" name="email" required placeholder="votre@email.com" autocomplete="email" />
           </div>
           
           <div class="form-group">
             <label for="phone">Téléphone</label>
-            <input type="tel" id="phone" name="phone" required placeholder="04XX XX XX XX" />
+            <input type="tel" id="phone" name="phone" required placeholder="04XX XX XX XX" autocomplete="tel" />
           </div>
           
           <div class="form-group">
@@ -81,13 +83,16 @@ const breadcrumbItems = [
           </div>
           
           <button type="submit" class="btn btn-primary w-100">Envoyer la demande</button>
+          <p class="form-privacy-note">
+            🔒 Vos coordonnées sont transmises via le routeur technique FormSubmit pour organiser votre dépannage ou devis. Consultez notre <a href="/politique-confidentialite/">Politique de confidentialité</a>.
+          </p>
         </form>
       </div>
     </div>
   </main>
   
   <WhatsAppWidget />
-  <Footer />
+  <Footer hideContactForm={true} />
 </Layout>
 
 <style>
@@ -165,6 +170,18 @@ const breadcrumbItems = [
 
   .w-100 {
     width: 100%;
+  }
+
+  .form-privacy-note {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    margin-top: 0.75rem;
+    line-height: 1.4;
+  }
+
+  .form-privacy-note a {
+    color: var(--primary);
+    text-decoration: underline;
   }
 
   @media (max-width: 768px) {

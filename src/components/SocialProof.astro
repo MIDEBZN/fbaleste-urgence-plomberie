@@ -24,32 +24,41 @@
     </div>
   </div>
 
-  <!-- Testimonials -->
+  <!-- Customer Feedback & Commitments -->
   <div class="testimonials-section container mb-3">
     <div class="text-center mb-2">
-      <h2>Ils nous recommandent</h2>
+      <h2>Avis &amp; Engagements Qualité</h2>
+      <p class="subtitle-trust">La satisfaction de nos clients et la clarté de nos interventions à Bruxelles sont notre priorité absolue.</p>
       <div class="review-badge mt-1">
-        <span class="stars">★★★★★</span>
-        <strong>Avis Clients</strong> (Retours de nos interventions à Bruxelles)
+        <a href="https://maps.app.goo.gl/WW4tpxVLW8qVs56M6" target="_blank" rel="noopener noreferrer" class="google-review-link">
+          <span class="stars">★★★★★</span>
+          <strong>Consultez notre profil vérifié sur Google Maps</strong>
+        </a>
       </div>
     </div>
     
-    <div class="testimonials-grid mt-2">
-      <div class="testimonial-card glass">
-        <div class="stars">★★★★★</div>
-        <p>"Intervention hyper rapide un dimanche soir pour une fuite sous l'évier. Le plombier a été très pro, m'a expliqué le problème et le prix était clair dès le début. Je recommande vivement !"</p>
-        <div class="author mt-1"><strong>— Sophie M.</strong> (Ixelles)</div>
+    <div class="commitments-grid mt-2">
+      <div class="commitment-card glass">
+        <div class="commitment-icon">📜</div>
+        <h3>Devis Clair Avant Travaux</h3>
+        <p>Le technicien évalue la situation sur place, vous explique l'origine de la panne et valide le devis avec vous avant toute manipulation technique.</p>
       </div>
-      <div class="testimonial-card glass">
-        <div class="stars">★★★★★</div>
-        <p>"Chaudière en panne en plein hiver. Fbaleste est arrivé en moins d'une heure. Pièce changée sur place car ils avaient le stock. Travail propre et soigné."</p>
-        <div class="author mt-1"><strong>— Thomas V.</strong> (Uccle)</div>
+      <div class="commitment-card glass">
+        <div class="commitment-icon">🔬</div>
+        <h3>Matériel Professionnel</h3>
+        <p>Caméras d'inspection vidéo, caméras thermiques infrarouges, furets électriques et hydrocurage sans produits corrosifs pour préserver vos tuyauteries.</p>
       </div>
-      <div class="testimonial-card glass">
-        <div class="stars">★★★★★</div>
-        <p>"J'ai fait appel à eux pour un débouchage d'égout compliqué. Équipement au top (caméra, haute pression). Le rapport d'intervention m'a permis d'être remboursé par mon assurance."</p>
-        <div class="author mt-1"><strong>— Ahmed K.</strong> (Bruxelles-Ville)</div>
+      <div class="commitment-card glass">
+        <div class="commitment-icon">📍</div>
+        <h3>Artisan Bruxellois Local</h3>
+        <p>Implantés au 287 Avenue d'Auderghem à Etterbeek, nous intervenons en direct dans les 19 communes de Bruxelles sans plateformes intermédiaires.</p>
       </div>
+    </div>
+
+    <div class="text-center mt-2">
+      <a href="https://maps.app.goo.gl/WW4tpxVLW8qVs56M6" target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="display: inline-block;">
+        ⭐ Voir nos avis clients ou laisser votre avis sur Google
+      </a>
     </div>
   </div>
 
@@ -119,20 +128,54 @@
     font-size: 1.2rem;
   }
   
-  .testimonials-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
+  .subtitle-trust {
+    max-width: 650px;
+    margin: 0.5rem auto 0 auto;
+    color: var(--text-muted);
   }
-  .testimonial-card {
+
+  .google-review-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--primary);
+    text-decoration: none;
+    transition: color 0.2s ease;
+  }
+  .google-review-link:hover {
+    color: var(--accent);
+  }
+
+  .commitments-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+  }
+  .commitment-card {
     padding: 2rem;
     border-radius: 16px;
     border: 1px solid #e2e8f0;
+    text-align: left;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
   }
-  .testimonial-card p {
-    font-style: italic;
-    margin: 1rem 0;
+  .commitment-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(15, 76, 129, 0.08);
+  }
+  .commitment-icon {
+    font-size: 2rem;
+    margin-bottom: 0.8rem;
+  }
+  .commitment-card h3 {
+    font-size: 1.25rem;
+    color: var(--primary);
+    margin-bottom: 0.5rem;
+  }
+  .commitment-card p {
     color: var(--text-muted);
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin: 0;
   }
   
   .map-section {

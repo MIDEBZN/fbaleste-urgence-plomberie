@@ -27,6 +27,7 @@ const businessSchema = {
   "name": "Fbaleste Urgence Plomberie",
   "url": "https://www.urgenceplomberie.be/",
   "logo": "https://www.urgenceplomberie.be/logo.png",
+  "image": "https://www.urgenceplomberie.be/images/og-cover.png",
   "telephone": "+32465767511",
   "email": "contact@urgenceplomberie.be",
   "priceRange": "€€",
@@ -43,6 +44,11 @@ const businessSchema = {
     "addressLocality": "Etterbeek",
     "addressRegion": "Bruxelles-Capitale",
     "addressCountry": "BE"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 50.831866,
+    "longitude": 4.386670
   },
   "areaServed": {
     "@type": "AdministrativeArea",
@@ -82,14 +88,17 @@ if (customSchema) {
 		<meta property="og:url" content={canonicalURL} />
 		<meta property="og:title" content={title} />
 		<meta property="og:description" content={description} />
-		<meta property="og:image" content={new URL('/logo.png', Astro.site || 'https://www.urgenceplomberie.be')} />
+		<meta property="og:image" content={new URL('/images/og-cover.png', Astro.site || 'https://www.urgenceplomberie.be')} />
+		<meta property="og:image:width" content="1200" />
+		<meta property="og:image:height" content="630" />
+		<meta property="og:image:alt" content="Fbaleste Urgence Plomberie Bruxelles" />
 
 		<!-- Twitter -->
 		<meta property="twitter:card" content="summary_large_image" />
 		<meta property="twitter:url" content={canonicalURL} />
 		<meta property="twitter:title" content={title} />
 		<meta property="twitter:description" content={description} />
-		<meta property="twitter:image" content={new URL('/logo.png', Astro.site || 'https://www.urgenceplomberie.be')} />
+		<meta property="twitter:image" content={new URL('/images/og-cover.png', Astro.site || 'https://www.urgenceplomberie.be')} />
 
 		<link rel="alternate" hreflang="fr-BE" href={canonicalURL} />
 		<link rel="preconnect" href="https://fonts.googleapis.com">

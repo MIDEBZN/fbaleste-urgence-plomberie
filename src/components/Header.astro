@@ -3,12 +3,18 @@
 <header class="header glass" id="main-header">
   <div class="container header-content">
     <div class="logo">
-      <a href="/">
-        <img src="/logo.webp" alt="Fbaleste Urgence Plomberie Logo" width="50" height="50" style="height: 50px; width: auto;" />
+      <a href="/" aria-label="Accueil Fbaleste Urgence Plomberie">
+        <img src="/logo.webp" alt="Fbaleste Urgence Plomberie" width="50" height="50" style="height: 50px; width: auto;" />
       </a>
     </div>
+
+    <button type="button" class="mobile-menu-toggle" id="menu-toggle" aria-expanded="false" aria-controls="main-nav" aria-label="Ouvrir le menu de navigation">
+      <span class="hamburger-bar"></span>
+      <span class="hamburger-bar"></span>
+      <span class="hamburger-bar"></span>
+    </button>
     
-    <nav class="main-nav">
+    <nav class="main-nav" id="main-nav" aria-label="Navigation principale">
       <ul>
         <li><a href="/">Accueil</a></li>
         <li><a href="/services/">Services</a></li>
@@ -20,7 +26,7 @@
     </nav>
     
     <div class="cta-wrapper">
-      <a href="tel:+32465767511" class="btn btn-accent pulse-animation">
+      <a href="tel:+32465767511" class="btn btn-accent pulse-animation" aria-label="Appeler le service d'urgence au 0465 76 75 11">
         SOS 24/7 : 0465 76 75 11
       </a>
     </div>
@@ -55,6 +61,26 @@
     color: var(--accent);
   }
   
+  .mobile-menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem;
+    flex-direction: column;
+    gap: 5px;
+    z-index: 1001;
+  }
+  
+  .hamburger-bar {
+    display: block;
+    width: 24px;
+    height: 3px;
+    background-color: var(--primary);
+    border-radius: 2px;
+    transition: all 0.3s ease;
+  }
+
   .main-nav ul {
     display: flex;
     gap: 2rem;
@@ -97,16 +123,67 @@
   }
 
   @media (max-width: 768px) {
+    .mobile-menu-toggle {
+      display: flex;
+    }
+    
     .main-nav {
       display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      width: 100%;
+      background: rgba(255, 255, 255, 0.98);
+      backdrop-filter: blur(12px);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+      padding: 1.5rem 2rem;
+      border-top: 1px solid #e2e8f0;
+    }
+    
+    .main-nav.is-open {
+      display: block;
+    }
+    
+    .main-nav ul {
+      flex-direction: column;
+      gap: 1.2rem;
+    }
+    
+    .main-nav a {
+      font-size: 1.1rem;
+      display: block;
+    }
+    
+    .cta-wrapper .btn {
+      padding: 0.5rem 0.8rem;
+      font-size: 0.85rem;
     }
   }
 </style>
 
 <script>
-  // Add solid background to sticky header on scroll
+  // Mobile menu toggle & sticky header
   document.addEventListener('DOMContentLoaded', () => {
     const header = document.getElementById('main-header');
+    const menuToggle = document.getElementById('menu-toggle');
+    const mainNav = document.getElementById('main-nav');
+
+    if (menuToggle && mainNav) {
+      menuToggle.addEventListener('click', () => {
+        const isOpen = mainNav.classList.toggle('is-open');
+        menuToggle.setAttribute('aria-expanded', String(isOpen));
+        menuToggle.setAttribute('aria-label', isOpen ? 'Fermer le menu' : 'Ouvrir le menu de navigation');
+      });
+
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && mainNav.classList.contains('is-open')) {
+          mainNav.classList.remove('is-open');
+          menuToggle.setAttribute('aria-expanded', 'false');
+          menuToggle.focus();
+        }
+      });
+    }
+
     if (header) {
       window.addEventListener('scroll', () => {
         if (window.scrollY > 50) {

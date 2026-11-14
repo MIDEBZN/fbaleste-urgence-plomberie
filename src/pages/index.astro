@@ -71,15 +71,17 @@ const communes = [
               <form action="https://formsubmit.co/midebzn@gmail.com" method="POST" class="quick-form">
                 <input type="hidden" name="_subject" value="Nouvelle demande express - Accueil Fbaleste" />
                 <input type="hidden" name="_captcha" value="false" />
+                <!-- Protection antispam pot-de-miel -->
+                <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off" />
                 
                 <div class="form-group">
                   <label for="quick-name" class="visually-hidden">Votre Nom</label>
-                  <input type="text" id="quick-name" name="name" required placeholder="Votre Nom" />
+                  <input type="text" id="quick-name" name="name" required placeholder="Votre Nom" autocomplete="name" />
                 </div>
                 
                 <div class="form-group">
                   <label for="quick-phone" class="visually-hidden">Votre Téléphone</label>
-                  <input type="tel" id="quick-phone" name="phone" required placeholder="Numéro de Téléphone" />
+                  <input type="tel" id="quick-phone" name="phone" required placeholder="Numéro de Téléphone" autocomplete="tel" />
                 </div>
 
                 <div class="form-group">
@@ -103,6 +105,9 @@ const communes = [
                 <button type="submit" class="btn btn-primary w-100" id="hero-submit-quote">
                   Envoyer ma Demande
                 </button>
+                <p class="form-privacy-note">
+                  🔒 Données traitées via FormSubmit pour votre demande. Consultez notre <a href="/politique-confidentialite/">Politique de confidentialité</a>.
+                </p>
               </form>
             </div>
           </div>
@@ -342,6 +347,19 @@ const communes = [
     outline: none;
     border-color: var(--primary);
     box-shadow: 0 0 0 3px rgba(15, 76, 129, 0.15);
+  }
+
+  .form-privacy-note {
+    font-size: 0.78rem;
+    color: var(--text-muted);
+    margin-top: 0.75rem;
+    line-height: 1.35;
+    text-align: center;
+  }
+
+  .form-privacy-note a {
+    color: var(--primary);
+    text-decoration: underline;
   }
 
   .visually-hidden {
